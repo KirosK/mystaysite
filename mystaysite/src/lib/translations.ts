@@ -301,7 +301,7 @@ export const translations = {
       legal: "Νομικά",
       legalList: ["Όροι Χρήσης"],
       copyright:
-        "© 2026 MyStaySite - Φτιάχνουμε websites που φέρνουν κρατήσεις.",
+        "© 2026 mystaysite.com - Φτιάχνουμε websites που φέρνουν κρατήσεις.",
     },
     whatsapp: {
       prefill: "Γεια σας! Ενδιαφέρομαι για κατασκευή website για το κατάλυμά μου.",
@@ -631,7 +631,7 @@ export const translations = {
       legal: "Legal",
       legalList: ["Terms of Use"],
       copyright:
-        "© 2026 MyStaySite - We build websites that bring bookings.",
+        "© 2026 mystaysite.com - We build websites that bring bookings.",
     },
     whatsapp: {
       prefill: "Hi! I'm interested in a website for my property.",
