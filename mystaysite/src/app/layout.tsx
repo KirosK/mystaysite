@@ -61,7 +61,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://mystaysite.com",
   },
-  verification: {},
+  verification: {
+    google: "googlefc417ebe34185aed",
+  },
 };
 
 export default function RootLayout({
