@@ -56,6 +56,11 @@ export default function Footer() {
                   {t.footer.legalList[0]}
                 </a>
               </li>
+              <li>
+                <a href="/privacy" className="text-sm text-gray-400 hover:text-gray-200 transition-colors">
+                  {t.footer.legalList[1]}
+                </a>
+              </li>
             </ul>
           </div>
         </div>

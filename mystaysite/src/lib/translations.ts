@@ -291,7 +291,7 @@ export const translations = {
       error: "Κάτι πήγε στραβά. Στείλε μας απευθείας στο WhatsApp",
       infoPhone: "+30 697 458 5063",
       infoWhatsapp: "WhatsApp",
-      infoEmail: "info@mystaysite.gr",
+      infoEmail: "info@mystaysite.com",
       infoHours: "Δευτέρα - Σάββατο, 9:00 - 21:00",
     },
     footer: {
@@ -299,7 +299,7 @@ export const translations = {
       quickLinks: "Σύνδεσμοι",
       quickLinkItems: ["Δείγματα", "Τιμές", "FAQ", "Επικοινωνία"],
       legal: "Νομικά",
-      legalList: ["Όροι Χρήσης"],
+      legalList: ["Όροι Χρήσης", "Πολιτική Απορρήτου"],
       copyright:
         "© 2026 mystaysite.com - Φτιάχνουμε websites που φέρνουν κρατήσεις.",
     },
@@ -621,7 +621,7 @@ export const translations = {
       error: "Something went wrong. Message us directly on WhatsApp",
       infoPhone: "+30 697 458 5063",
       infoWhatsapp: "WhatsApp",
-      infoEmail: "info@mystaysite.gr",
+      infoEmail: "info@mystaysite.com",
       infoHours: "Monday - Saturday, 9:00 - 21:00",
     },
     footer: {
@@ -629,7 +629,7 @@ export const translations = {
       quickLinks: "Links",
       quickLinkItems: ["Portfolio", "Pricing", "FAQ", "Contact"],
       legal: "Legal",
-      legalList: ["Terms of Use"],
+      legalList: ["Terms of Use", "Privacy Policy"],
       copyright:
         "© 2026 mystaysite.com - We build websites that bring bookings.",
     },

@@ -5,7 +5,7 @@ import { useLang } from "@/lib/language-context";
 import { useAnimateOnScroll } from "@/lib/use-animate-on-scroll";
 
 const PHONE = "306974585063";
-const EMAIL = "info@mystaysite.gr";
+const EMAIL = "info@mystaysite.com";
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -39,11 +39,28 @@ export default function Contact() {
   );
   const emailUrl = `mailto:${EMAIL}?subject=${emailSubject}&body=${emailBody}`;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!canSubmit) return;
 
     const pkgLabel = selectedPackage || t.contact.packageOptions[0];
+
+    // Backup: send to Formspree (replace YOUR_FORM_ID with your Formspree form ID)
+    try {
+      await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          link,
+          contact,
+          package: pkgLabel,
+          source: "mystaysite.com",
+        }),
+      });
+    } catch {
+      // Formspree backup failed silently, WhatsApp still works
+    }
+
     const msg = [
       lang === "gr" ? "Νέο αίτημα mockup:" : "New mockup request:",
       "",

@@ -9,11 +9,11 @@ const content = {
     sections: [
       {
         heading: "1. Εισαγωγή",
-        text: "Καλώς ήρθατε στο MyStaySite.gr. Χρησιμοποιώντας τον ιστότοπο και τις υπηρεσίες μας, αποδέχεστε τους παρακάτω όρους χρήσης. Αν δεν συμφωνείτε, παρακαλούμε μην χρησιμοποιήσετε τις υπηρεσίες μας.",
+        text: "Καλώς ήρθατε στο mystaysite.com. Χρησιμοποιώντας τον ιστότοπο και τις υπηρεσίες μας, αποδέχεστε τους παρακάτω όρους χρήσης. Αν δεν συμφωνείτε, παρακαλούμε μην χρησιμοποιήσετε τις υπηρεσίες μας.",
       },
       {
         heading: "2. Περιγραφή Υπηρεσιών",
-        text: "Η MyStaySite.gr προσφέρει υπηρεσίες σχεδιασμού και κατασκευής ιστοσελίδων για ενοικιαζόμενα δωμάτια, βίλες και καταλύματα στην Ελλάδα. Οι υπηρεσίες περιλαμβάνουν κατασκευή website, SEO, σύστημα κρατήσεων, ενσωμάτωση κριτικών και τεχνική υποστήριξη, ανάλογα με το επιλεγμένο πακέτο.",
+        text: "Η mystaysite.com προσφέρει υπηρεσίες σχεδιασμού και κατασκευής ιστοσελίδων για ενοικιαζόμενα δωμάτια, βίλες και καταλύματα στην Ελλάδα. Οι υπηρεσίες περιλαμβάνουν κατασκευή website, SEO, σύστημα κρατήσεων, ενσωμάτωση κριτικών και τεχνική υποστήριξη, ανάλογα με το επιλεγμένο πακέτο.",
       },
       {
         heading: "3. Τιμολόγηση & Πληρωμές",
@@ -25,7 +25,7 @@ const content = {
       },
       {
         heading: "5. Ιδιοκτησία & Πνευματικά Δικαιώματα",
-        text: "Μετά την ολοκλήρωση της πληρωμής, ο πελάτης αποκτά πλήρη ιδιοκτησία του website, του περιεχομένου και του κώδικα. Ο πελάτης είναι υπεύθυνος για τη διατήρηση του domain και του hosting. Η MyStaySite.gr διατηρεί το δικαίωμα χρήσης του project στο portfolio της, εκτός αν συμφωνηθεί διαφορετικά.",
+        text: "Μετά την ολοκλήρωση της πληρωμής, ο πελάτης αποκτά πλήρη ιδιοκτησία του website, του περιεχομένου και του κώδικα. Ο πελάτης είναι υπεύθυνος για τη διατήρηση του domain και του hosting. Η mystaysite.com διατηρεί το δικαίωμα χρήσης του project στο portfolio της, εκτός αν συμφωνηθεί διαφορετικά.",
       },
       {
         heading: "6. Υποχρεώσεις Πελάτη",
@@ -41,11 +41,11 @@ const content = {
       },
       {
         heading: "9. Περιορισμός Ευθύνης",
-        text: "Η MyStaySite.gr δεν ευθύνεται για απώλεια εσόδων, δεδομένων ή κερδών που προκύπτουν από τη χρήση ή αδυναμία χρήσης του website. Δεν εγγυόμαστε συγκεκριμένα αποτελέσματα κρατήσεων ή κατάταξης στο Google. Η μέγιστη ευθύνη μας περιορίζεται στο ποσό που καταβλήθηκε για τις υπηρεσίες.",
+        text: "Η mystaysite.com δεν ευθύνεται για απώλεια εσόδων, δεδομένων ή κερδών που προκύπτουν από τη χρήση ή αδυναμία χρήσης του website. Δεν εγγυόμαστε συγκεκριμένα αποτελέσματα κρατήσεων ή κατάταξης στο Google. Η μέγιστη ευθύνη μας περιορίζεται στο ποσό που καταβλήθηκε για τις υπηρεσίες.",
       },
       {
         heading: "10. Προστασία Δεδομένων",
-        text: "Τα προσωπικά δεδομένα που συλλέγονται χρησιμοποιούνται αποκλειστικά για την παροχή υπηρεσιών. Δεν μοιραζόμαστε δεδομένα με τρίτους χωρίς τη συγκατάθεσή σας. Μπορείτε να ζητήσετε τη διαγραφή των δεδομένων σας ανά πάσα στιγμή μέσω email στο info@mystaysite.gr.",
+        text: "Τα προσωπικά δεδομένα που συλλέγονται χρησιμοποιούνται αποκλειστικά για την παροχή υπηρεσιών. Δεν μοιραζόμαστε δεδομένα με τρίτους χωρίς τη συγκατάθεσή σας. Μπορείτε να ζητήσετε τη διαγραφή των δεδομένων σας ανά πάσα στιγμή μέσω email στο info@mystaysite.com.",
       },
       {
         heading: "11. Εφαρμοστέο Δίκαιο",
@@ -53,11 +53,11 @@ const content = {
       },
       {
         heading: "12. Τροποποιήσεις Όρων",
-        text: "Η MyStaySite.gr διατηρεί το δικαίωμα να τροποποιεί τους παρόντες όρους. Οι αλλαγές θα αναρτώνται σε αυτή τη σελίδα. Η συνέχιση χρήσης των υπηρεσιών μετά από αλλαγή αποτελεί αποδοχή των νέων όρων.",
+        text: "Η mystaysite.com διατηρεί το δικαίωμα να τροποποιεί τους παρόντες όρους. Οι αλλαγές θα αναρτώνται σε αυτή τη σελίδα. Η συνέχιση χρήσης των υπηρεσιών μετά από αλλαγή αποτελεί αποδοχή των νέων όρων.",
       },
       {
         heading: "13. Επικοινωνία",
-        text: "Για ερωτήσεις σχετικά με τους όρους χρήσης, επικοινωνήστε μαζί μας:\n\nEmail: info@mystaysite.gr\nWebsite: mystaysite.gr",
+        text: "Για ερωτήσεις σχετικά με τους όρους χρήσης, επικοινωνήστε μαζί μας:\n\nEmail: info@mystaysite.com\nWebsite: mystaysite.com",
       },
     ],
   },
@@ -67,11 +67,11 @@ const content = {
     sections: [
       {
         heading: "1. Introduction",
-        text: "Welcome to MyStaySite.gr. By using our website and services, you agree to the following terms of use. If you do not agree, please do not use our services.",
+        text: "Welcome to mystaysite.com. By using our website and services, you agree to the following terms of use. If you do not agree, please do not use our services.",
       },
       {
         heading: "2. Description of Services",
-        text: "MyStaySite.gr offers website design and development services for vacation rentals, villas and accommodations in Greece. Services include website development, SEO, booking systems, review integration and technical support, depending on the selected package.",
+        text: "mystaysite.com offers website design and development services for vacation rentals, villas and accommodations in Greece. Services include website development, SEO, booking systems, review integration and technical support, depending on the selected package.",
       },
       {
         heading: "3. Pricing & Payments",
@@ -83,7 +83,7 @@ const content = {
       },
       {
         heading: "5. Ownership & Copyright",
-        text: "After full payment, the client acquires full ownership of the website, content and code. The client is responsible for maintaining the domain and hosting. MyStaySite.gr retains the right to use the project in its portfolio, unless otherwise agreed.",
+        text: "After full payment, the client acquires full ownership of the website, content and code. The client is responsible for maintaining the domain and hosting. mystaysite.com retains the right to use the project in its portfolio, unless otherwise agreed.",
       },
       {
         heading: "6. Client Obligations",
@@ -99,11 +99,11 @@ const content = {
       },
       {
         heading: "9. Limitation of Liability",
-        text: "MyStaySite.gr is not liable for loss of revenue, data or profits arising from the use or inability to use the website. We do not guarantee specific booking results or Google rankings. Our maximum liability is limited to the amount paid for the services.",
+        text: "mystaysite.com is not liable for loss of revenue, data or profits arising from the use or inability to use the website. We do not guarantee specific booking results or Google rankings. Our maximum liability is limited to the amount paid for the services.",
       },
       {
         heading: "10. Data Protection",
-        text: "Personal data collected is used exclusively for service provision. We do not share data with third parties without your consent. You may request deletion of your data at any time by emailing info@mystaysite.gr.",
+        text: "Personal data collected is used exclusively for service provision. We do not share data with third parties without your consent. You may request deletion of your data at any time by emailing info@mystaysite.com.",
       },
       {
         heading: "11. Governing Law",
@@ -111,11 +111,11 @@ const content = {
       },
       {
         heading: "12. Amendments",
-        text: "MyStaySite.gr reserves the right to modify these terms. Changes will be posted on this page. Continued use of services after a change constitutes acceptance of the new terms.",
+        text: "mystaysite.com reserves the right to modify these terms. Changes will be posted on this page. Continued use of services after a change constitutes acceptance of the new terms.",
       },
       {
         heading: "13. Contact",
-        text: "For questions regarding the terms of service, contact us:\n\nEmail: info@mystaysite.gr\nWebsite: mystaysite.gr",
+        text: "For questions regarding the terms of service, contact us:\n\nEmail: info@mystaysite.com\nWebsite: mystaysite.com",
       },
     ],
   },
