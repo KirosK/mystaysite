@@ -22,7 +22,7 @@ const projects: Project[] = [
     bookingScore: "9.5",
     googleScore: "5.0",
     features: ["Κρατήσεις", "Reviews", "SEO", "Παραλίες"],
-    url: "https://rodavgi.vercel.app/",
+    url: "https://rodavgiapartments.com/",
     image: "/portfolio/rodavgi/hero.png",
   },
   {

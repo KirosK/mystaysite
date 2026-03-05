@@ -121,7 +121,7 @@ export const translations = {
           name: "RODAVGI",
           property: "RODAVGI Apartments",
           location: "Χαλκιδική",
-          url: "https://rodavgi.vercel.app/",
+          url: "https://rodavgiapartments.com/",
         },
         {
           text: "Μου έφτιαξαν το site σε 6 μέρες. Ό,τι ακριβώς ζήτησα. Και ήδη μου βγήκε σε κρατήσεις η πρώτη σεζόν.",
@@ -244,7 +244,7 @@ export const translations = {
         },
         {
           q: "Χρειάζομαι domain;",
-          a: "Αν δεν έχεις, σου βρίσκουμε και σου εγκαθιστούμε ένα (π.χ. www.villaeleni.gr ή www.rodavgi.gr). Κοστίζει ~€10-15/χρόνο.",
+          a: "Αν δεν έχεις, σου βρίσκουμε και σου εγκαθιστούμε ένα (π.χ. www.villaeleni.gr ή www.rodavgiapartments.com). Κοστίζει ~€10-15/χρόνο.",
         },
         {
           q: "Μπορώ να αλλάζω μόνος μου πράγματα στο site;",
@@ -275,7 +275,7 @@ export const translations = {
       whatsappPrefill: "Γεια! Θέλω δωρεάν mockup. Ορίστε το link μου: ",
       divider: "ή συμπλήρωσε",
       linkLabel: "Booking ή Airbnb link",
-      linkPlaceholder: "π.χ. booking.com/hotel/rodavgi",
+      linkPlaceholder: "π.χ. booking.com/hotel/... ή rodavgiapartments.com",
       contactLabel: "Email ή τηλέφωνο",
       contactPlaceholder: "π.χ. info@villaeleni.gr ή 69XXXXXXXX",
       packageLabel: "Πακέτο που σε ενδιαφέρει",
@@ -461,7 +461,7 @@ export const translations = {
           name: "RODAVGI",
           property: "RODAVGI Apartments",
           location: "Halkidiki",
-          url: "https://rodavgi.vercel.app/",
+          url: "https://rodavgiapartments.com/",
         },
         {
           text: "They built my site in 6 days. Exactly what I asked for. And it already paid for itself the first season.",
@@ -584,7 +584,7 @@ export const translations = {
         },
         {
           q: "Do I need a domain?",
-          a: "If you don't have one, we find and set up one for you (e.g. www.villaeleni.gr or www.rodavgi.gr). Costs ~€10-15/year.",
+          a: "If you don't have one, we find and set up one for you (e.g. www.villaeleni.gr or www.rodavgiapartments.com). Costs ~€10-15/year.",
         },
         {
           q: "Can I edit the site myself?",
@@ -615,7 +615,7 @@ export const translations = {
       whatsappPrefill: "Hi! I'd like a free mockup. Here's my link: ",
       divider: "or fill in",
       linkLabel: "Booking or Airbnb link",
-      linkPlaceholder: "e.g. booking.com/hotel/rodavgi",
+      linkPlaceholder: "e.g. booking.com/hotel/... or rodavgiapartments.com",
       contactLabel: "Email or phone",
       contactPlaceholder: "e.g. info@villaeleni.gr or +30 69XXXXXXXX",
       packageLabel: "Package you're interested in",

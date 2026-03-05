@@ -6,7 +6,7 @@ function BrowserMockup() {
   return (
     <div className="animate-float relative">
       <a
-        href="https://rodavgi.vercel.app/"
+        href="https://rodavgiapartments.com/"
         target="_blank"
         rel="noopener noreferrer"
         className="block bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200 hover:shadow-3xl transition-shadow duration-300 group"
@@ -21,7 +21,7 @@ function BrowserMockup() {
           <div className="flex-1 mx-3">
             <div className="bg-white rounded-md px-3 py-1 text-xs text-gray-500 text-center border border-gray-200 flex items-center justify-center gap-1.5">
               <svg className="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" /></svg>
-              rodavgi.vercel.app
+              rodavgiapartments.com
             </div>
           </div>
           <div className="text-[10px] text-gray-400 font-medium">GR / EN</div>
@@ -30,7 +30,7 @@ function BrowserMockup() {
         {/* Real website via iframe */}
         <div className="relative w-full overflow-hidden" style={{ height: "420px" }}>
           <iframe
-            src="https://rodavgi.vercel.app/"
+            src="https://rodavgiapartments.com/"
             title="RODAVGI Apartments"
             className="absolute top-0 left-0 border-0 pointer-events-none"
             style={{
