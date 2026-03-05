@@ -10,5 +10,6 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: "https://mystaysite.com/sitemap.xml",
+    host: "https://mystaysite.com",
   };
 }

@@ -1,0 +1,58 @@
+# MyStaySite
+
+> Professional websites for vacation rentals, villas, studios and apartments worldwide. Direct bookings, SEO, reviews integration. From €349. Free mockup in 48 hours.
+
+## About
+
+MyStaySite builds professional websites for accommodation owners who want to reduce their dependency on OTAs like Booking.com and Airbnb. We help property owners get direct bookings through their own website, saving 15-20% commission per reservation.
+
+## Services
+
+- Custom responsive website design and development
+- Online booking system with calendar and date picker
+- Reviews aggregation (Booking.com + Google + Airbnb)
+- SEO setup and Google indexing (guaranteed in 14 days)
+- Multi-language support (Greek, English, German, Italian, etc.)
+- Google Analytics and conversion tracking
+- Google Business Profile setup and optimization
+- Google Ads campaign setup
+- Social media setup and content creation
+- Monthly maintenance and updates
+
+## Pricing
+
+- Starter: €349 — One-page website, photos, SEO basics, SSL, Google Business Profile, delivered in 2-5 days
+- Professional: €599 — Full website with booking system, reviews section, 2 languages, Google Analytics, photo gallery
+- Premium: €1,499 — Complete digital setup with online payments, iCal sync, 3+ languages, blog, copywriting, Google Ads, social media, PMS integration
+- Monthly maintenance: €29/month (optional)
+
+## Guarantees
+
+- Free mockup before you pay — don't like it, don't pay
+- Google-indexed in 14 days or we work for free until it is
+- Lighthouse performance score 90+
+- 6 months bug-free guarantee
+
+## Portfolio
+
+- RODAVGI Apartments (Sithonia, Halkidiki) — https://rodavgiapartments.com
+- Achilleas Peaceful Place (Sithonia, Halkidiki) — https://achilleas-peaceful-place.vercel.app
+
+## Pages
+
+- Homepage: https://mystaysite.com
+- Portfolio case study: https://mystaysite.com/portfolio/achilleas-peaceful-place
+- Terms of Service: https://mystaysite.com/terms
+- Privacy Policy: https://mystaysite.com/privacy
+- Embeddable badge: https://mystaysite.com/badge
+
+## Contact
+
+- Email: info@mystaysite.com
+- Phone: +30 697 458 5063
+- WhatsApp: https://wa.me/306974585063
+- Website: https://mystaysite.com
+
+## Payment Methods
+
+Bank transfer, Stripe, Viva Wallet, Crypto, Mastercard, Amex

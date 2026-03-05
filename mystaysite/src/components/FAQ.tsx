@@ -28,9 +28,10 @@ function AccordionItem({ question, answer }: { question: string; answer: string 
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="px-5 pb-4 text-sm text-text-secondary leading-relaxed">
-          {answer}
-        </div>
+        <div
+          className="px-5 pb-4 text-sm text-text-secondary leading-relaxed [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-primary-dark"
+          dangerouslySetInnerHTML={{ __html: answer }}
+        />
       </div>
     </div>
   );

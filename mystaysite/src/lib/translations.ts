@@ -236,7 +236,7 @@ export const translations = {
       items: [
         {
           q: "Πόσο κοστίζει;",
-          a: "Ξεκινάμε από €349 για ένα απλό single-page site. Τα περισσότερα καταλύματα επιλέγουν τη Μηχανή Κρατήσεων στα €599. Για ολοκληρωμένο digital setup (site + marketing + content) υπάρχει το Premium στα €1,499.",
+          a: 'Ξεκινάμε από €349 για ένα απλό single-page site. Τα περισσότερα καταλύματα επιλέγουν τη Μηχανή Κρατήσεων στα €599. Για ολοκληρωμένο digital setup (site + marketing + content) υπάρχει το Premium στα €1,499. <a href="/#pricing">Δες τα πακέτα</a>.',
         },
         {
           q: "Πόσο χρόνο χρειάζεται;",
@@ -252,7 +252,7 @@ export const translations = {
         },
         {
           q: "Θα με βρίσκουν στο Google;",
-          a: "Εγγυόμαστε ότι το site σου θα είναι indexed στο Google μέσα σε 14 ημέρες. Δεν εγγυόμαστε #1 θέση, αλλά εγγυόμαστε ότι θα υπάρχεις - κάτι που τώρα δεν ισχύει.",
+          a: 'Εγγυόμαστε ότι το site σου θα είναι indexed στο Google μέσα σε 14 ημέρες. Δεν εγγυόμαστε #1 θέση, αλλά εγγυόμαστε ότι θα υπάρχεις - κάτι που τώρα δεν ισχύει. <a href="/portfolio/achilleas-peaceful-place">Δες ένα παράδειγμα</a>.',
         },
         {
           q: "Παίρνετε ποσοστό από τις κρατήσεις μου;",
@@ -260,7 +260,7 @@ export const translations = {
         },
         {
           q: "Τι γίνεται αν δεν μου αρέσει;",
-          a: "Σου στέλνουμε mockup ΠΡΙΝ ξεκινήσουμε. Αν δεν σε ικανοποιεί, δεν πληρώνεις ούτε ευρώ. Μηδέν υποχρεώσεις.",
+          a: 'Σου στέλνουμε mockup ΠΡΙΝ ξεκινήσουμε. Αν δεν σε ικανοποιεί, δεν πληρώνεις ούτε ευρώ. Μηδέν υποχρεώσεις. <a href="/#contact">Ζήτα δωρεάν mockup</a>.',
         },
         {
           q: "Έχω ήδη site αλλά είναι παλιό. Μπορείτε να το ανανεώσετε;",
@@ -298,6 +298,11 @@ export const translations = {
       tagline: "Websites για ενοικιαζόμενα δωμάτια & καταλύματα",
       quickLinks: "Σύνδεσμοι",
       quickLinkItems: ["Δείγματα", "Τιμές", "FAQ", "Επικοινωνία"],
+      portfolio: "Portfolio",
+      portfolioItems: [
+        { label: "RODAVGI Apartments", url: "https://rodavgiapartments.com" },
+        { label: "Achilleas Peaceful Place", url: "/portfolio/achilleas-peaceful-place" },
+      ],
       legal: "Νομικά",
       legalList: ["Όροι Χρήσης", "Πολιτική Απορρήτου"],
       paymentMethods: "Τρόποι πληρωμής",
@@ -576,7 +581,7 @@ export const translations = {
       items: [
         {
           q: "How much does it cost?",
-          a: "Starting from €349 for a simple single-page site. Most properties choose The Booking Machine at €599. For a complete digital setup (site + marketing + content) there's Premium at €1,499.",
+          a: 'Starting from €349 for a simple single-page site. Most properties choose The Booking Machine at €599. For a complete digital setup (site + marketing + content) there\'s Premium at €1,499. <a href="/#pricing">See packages</a>.',
         },
         {
           q: "How long does it take?",
@@ -592,7 +597,7 @@ export const translations = {
         },
         {
           q: "Will people find me on Google?",
-          a: "We guarantee your site will be indexed on Google within 14 days. We can't guarantee #1 position, but we guarantee you'll exist - which right now you don't.",
+          a: 'We guarantee your site will be indexed on Google within 14 days. We can\'t guarantee #1 position, but we guarantee you\'ll exist - which right now you don\'t. <a href="/portfolio/achilleas-peaceful-place">See an example</a>.',
         },
         {
           q: "Do you take a percentage of my bookings?",
@@ -600,7 +605,7 @@ export const translations = {
         },
         {
           q: "What if I don't like it?",
-          a: "We send you a mockup BEFORE we start. If it doesn't satisfy you, you don't pay a single euro. Zero obligations.",
+          a: 'We send you a mockup BEFORE we start. If it doesn\'t satisfy you, you don\'t pay a single euro. Zero obligations. <a href="/#contact">Request a free mockup</a>.',
         },
         {
           q: "I have a site but it's old. Can you redesign it?",
@@ -638,6 +643,11 @@ export const translations = {
       tagline: "Websites for vacation rentals & accommodations",
       quickLinks: "Links",
       quickLinkItems: ["Portfolio", "Pricing", "FAQ", "Contact"],
+      portfolio: "Portfolio",
+      portfolioItems: [
+        { label: "RODAVGI Apartments", url: "https://rodavgiapartments.com" },
+        { label: "Achilleas Peaceful Place", url: "/portfolio/achilleas-peaceful-place" },
+      ],
       legal: "Legal",
       legalList: ["Terms of Use", "Privacy Policy"],
       paymentMethods: "Payment methods",

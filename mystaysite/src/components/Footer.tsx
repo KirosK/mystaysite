@@ -77,18 +77,35 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-bold text-white mb-3">{t.footer.quickLinks}</h4>
             <ul className="space-y-2">
-              {t.footer.quickLinkItems.map((item, i) => (
-                <li key={i}>
-                  <button
-                    onClick={() => {
-                      const targets = ["#portfolio", "#pricing", "#faq", "#contact"];
-                      const el = document.querySelector(targets[i]);
-                      if (el) el.scrollIntoView({ behavior: "smooth" });
-                    }}
+              {t.footer.quickLinkItems.map((item, i) => {
+                const targets = ["/#portfolio", "/#pricing", "/#faq", "/#contact"];
+                return (
+                  <li key={i}>
+                    <a
+                      href={targets[i]}
+                      className="text-sm text-gray-400 hover:text-gray-200 transition-colors"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          {/* Portfolio */}
+          <div>
+            <h4 className="text-sm font-bold text-white mb-3">{t.footer.portfolio}</h4>
+            <ul className="space-y-2">
+              {t.footer.portfolioItems.map((item: { label: string; url: string }) => (
+                <li key={item.url}>
+                  <a
+                    href={item.url}
+                    {...(item.url.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     className="text-sm text-gray-400 hover:text-gray-200 transition-colors"
                   >
-                    {item}
-                  </button>
+                    {item.label}
+                  </a>
                 </li>
               ))}
             </ul>
