@@ -212,7 +212,7 @@ export const translations = {
       termsLink: "Όροι χρήσης & πληρωμών",
     },
     guarantee: {
-      sectionTitle: "4 εγγυήσεις. Μηδέν ρίσκο.",
+      sectionTitle: "3 εγγυήσεις. Μηδέν ρίσκο.",
       subtitle: "Παίρνουμε εμείς όλο το ρίσκο. Εσύ δεν ρισκάρεις τίποτα.",
       items: [
         {
@@ -556,7 +556,7 @@ export const translations = {
       termsLink: "Terms of service & payments",
     },
     guarantee: {
-      sectionTitle: "4 guarantees. Zero risk.",
+      sectionTitle: "3 guarantees. Zero risk.",
       subtitle: "We take all the risk. You risk nothing.",
       items: [
         {
