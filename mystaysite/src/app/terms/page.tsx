@@ -17,7 +17,7 @@ const content = {
       },
       {
         heading: "3. Τιμολόγηση & Πληρωμές",
-        text: "Οι τιμές αναφέρονται σε εφάπαξ κόστος κατασκευής, εκτός αν ορίζεται διαφορετικά. Η μηνιαία συντήρηση (€29/μήνα) είναι προαιρετική. Η πληρωμή γίνεται μετά την έγκριση του mockup από τον πελάτη. Δεν υπάρχει χρέωση για το αρχικό mockup. Αποδεκτοί τρόποι πληρωμής: τραπεζική μεταφορά, Stripe, Viva Wallet.",
+        text: "Οι τιμές αναφέρονται σε εφάπαξ κόστος κατασκευής, εκτός αν ορίζεται διαφορετικά. Η μηνιαία συντήρηση (€29/μήνα) είναι προαιρετική. Η πληρωμή γίνεται μετά την έγκριση του mockup από τον πελάτη. Δεν υπάρχει χρέωση για το αρχικό mockup. Αποδεκτοί τρόποι πληρωμής: τραπεζική μεταφορά, Stripe, Viva Wallet, Crypto, Mastercard, Amex.",
       },
       {
         heading: "4. Εγγυήσεις",
@@ -75,7 +75,7 @@ const content = {
       },
       {
         heading: "3. Pricing & Payments",
-        text: "Prices refer to a one-time development cost, unless otherwise stated. Monthly maintenance (€29/month) is optional. Payment is made after the client approves the mockup. There is no charge for the initial mockup. Accepted payment methods: bank transfer, Stripe, Viva Wallet.",
+        text: "Prices refer to a one-time development cost, unless otherwise stated. Monthly maintenance (€29/month) is optional. Payment is made after the client approves the mockup. There is no charge for the initial mockup. Accepted payment methods: bank transfer, Stripe, Viva Wallet, Crypto, Mastercard, Amex.",
       },
       {
         heading: "4. Guarantees",

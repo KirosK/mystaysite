@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import CookieConsentAndAnalytics from "@/components/CookieConsentAndAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mystaysite.com"),
@@ -74,21 +75,6 @@ export default function RootLayout({
   return (
     <html lang="el" className="scroll-smooth">
       <head>
-        {/* Google Analytics (GA4) - Replace G-S05LEDF6JW with your Measurement ID */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S05LEDF6JW" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S05LEDF6JW');`,
-          }}
-        />
-
-        {/* Meta/Facebook Pixel - Replace 49013716985302 with your Pixel ID */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','49013716985302');fbq('track','PageView');`,
-          }}
-        />
-
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -144,7 +130,7 @@ export default function RootLayout({
                       "@type": "Offer",
                       name: "Professional",
                       description: "Πλήρες website με online κρατήσεις και SEO",
-                      price: "699",
+                      price: "599",
                       priceCurrency: "EUR",
                     },
                     {
@@ -173,7 +159,7 @@ export default function RootLayout({
                     name: "Πόσο κοστίζει ένα website για ενοικιαζόμενα δωμάτια;",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Τα πακέτα ξεκινούν από €349 για one-page website, €699 για πλήρες website με online κρατήσεις, και €1499 για premium με booking engine και digital marketing.",
+                      text: "Τα πακέτα ξεκινούν από €349 για one-page website, €599 για πλήρες website με online κρατήσεις, και €1499 για premium με booking engine και digital marketing.",
                     },
                   },
                   {
@@ -181,7 +167,7 @@ export default function RootLayout({
                     name: "Σε πόσο καιρό παραδίδεται το website;",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Το website παραδίδεται σε 5-7 εργάσιμες ημέρες, ανάλογα με το πακέτο.",
+                      text: "Το website παραδίδεται σε 2-5 εργάσιμες ημέρες, ανάλογα με το πακέτο.",
                     },
                   },
                   {
@@ -198,7 +184,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <CookieConsentAndAnalytics />
+      </body>
     </html>
   );
 }

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useLang } from "@/lib/language-context";
 import { useAnimateOnScroll } from "@/lib/use-animate-on-scroll";
+import { trackLead } from "@/lib/analytics";
 
 const PHONE = "306974585063";
 const EMAIL = "info@mystaysite.com";
@@ -73,6 +74,7 @@ export default function Contact() {
       `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`,
       "_blank"
     );
+    trackLead("contact_form");
     setStatus("success");
   };
 

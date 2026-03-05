@@ -2,6 +2,7 @@
 
 import { useLang } from "@/lib/language-context";
 import { useAnimateOnScroll } from "@/lib/use-animate-on-scroll";
+import { trackCtaClick } from "@/lib/analytics";
 
 const PHONE = "306974585063";
 
@@ -127,6 +128,7 @@ function PlanCard({ plan, tier, badge, onCta }: PlanCardProps) {
 }
 
 function openWhatsApp(planName: string, lang: string) {
+  trackCtaClick("pricing_cta", planName);
   const msg =
     lang === "gr"
       ? `Γεια σας! Ενδιαφέρομαι για το πακέτο ${planName}. Μπορούμε να μιλήσουμε;`

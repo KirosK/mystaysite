@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useLang } from "@/lib/language-context";
+import { trackLead } from "@/lib/analytics";
 
 const EMAIL_TO = "info@mystaysite.com";
 const FORMSPREE_FORM_ID = "xeerjqzn";
@@ -109,6 +110,7 @@ export default function ChatBot() {
           source: "ChatBot",
         }),
       });
+      trackLead("chatbot");
     } catch {
       const subject = encodeURIComponent("New Lead - MyStaySite ChatBot");
       const body = encodeURIComponent(
