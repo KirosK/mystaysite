@@ -137,6 +137,7 @@ export const translations = {
         },
       ],
       googleRating: "5.0 στο Google",
+      caseStudyLink: "Δες αναλυτικό case study →",
     },
     pricing: {
       sectionTitle: "Διάλεξε το πακέτο σου",
@@ -208,6 +209,7 @@ export const translations = {
       guarantee:
         "Αν δεν σου αρέσει το mockup, δεν πληρώνεις τίποτα. Μηδέν ρίσκο.",
       custom: "Θες κάτι custom; Μίλα μαζί μας",
+      termsLink: "Όροι χρήσης & πληρωμών",
     },
     guarantee: {
       sectionTitle: "4 εγγυήσεις. Μηδέν ρίσκο.",
@@ -230,6 +232,7 @@ export const translations = {
           text: "Αν κάτι δεν λειτουργεί σωστά μέσα σε 6 μήνες, το φτιάχνουμε δωρεάν. Χωρίς ερωτήσεις, χωρίς χρεώσεις.",
         },
       ],
+      ctaLink: "Ξεκίνα με δωρεάν mockup",
     },
     faq: {
       sectionTitle: "Απαντήσεις που ψάχνεις",
@@ -482,6 +485,7 @@ export const translations = {
         },
       ],
       googleRating: "5.0 on Google",
+      caseStudyLink: "See detailed case study →",
     },
     pricing: {
       sectionTitle: "Choose your plan",
@@ -553,6 +557,7 @@ export const translations = {
       guarantee:
         "If you don't like the mockup, you don't pay anything. Zero risk.",
       custom: "Need something custom? Talk to us",
+      termsLink: "Terms of service & payments",
     },
     guarantee: {
       sectionTitle: "4 guarantees. Zero risk.",
@@ -575,6 +580,7 @@ export const translations = {
           text: "If something doesn't work properly within 6 months, we fix it for free. No questions asked, no charges.",
         },
       ],
+      ctaLink: "Start with a free mockup",
     },
     faq: {
       sectionTitle: "Answers you're looking for",

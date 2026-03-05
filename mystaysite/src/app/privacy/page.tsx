@@ -133,6 +133,20 @@ export default function PrivacyPolicy() {
             </div>
           ))}
         </div>
+
+        <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <a href="/" className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
+            ← {lang === "gr" ? "Αρχική" : "Home"}
+          </a>
+          <span className="hidden sm:inline text-gray-300">·</span>
+          <a href="/terms" className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
+            {lang === "gr" ? "Όροι Χρήσης" : "Terms of Service"}
+          </a>
+          <span className="hidden sm:inline text-gray-300">·</span>
+          <a href="/#contact" className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
+            {lang === "gr" ? "Επικοινωνία" : "Contact"}
+          </a>
+        </div>
       </main>
     </div>
   );

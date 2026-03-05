@@ -224,9 +224,17 @@ export default function AchilleasCaseStudy() {
           </div>
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="/" className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
             ← Πίσω στην αρχική
+          </a>
+          <span className="hidden sm:inline text-gray-300">·</span>
+          <a href="/#pricing" className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
+            Δες τα πακέτα μας
+          </a>
+          <span className="hidden sm:inline text-gray-300">·</span>
+          <a href="/#portfolio" className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
+            Δες όλα τα projects
           </a>
         </div>
       </main>

@@ -35,6 +35,15 @@ export default function GuaranteeStack() {
             </div>
           ))}
         </div>
+
+        <div className="text-center mt-10">
+          <a
+            href="/#contact"
+            className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white text-sm font-semibold px-6 py-3 rounded-lg transition-colors shadow-lg shadow-accent/20"
+          >
+            {t.guarantee.ctaLink}
+          </a>
+        </div>
       </div>
     </section>
   );

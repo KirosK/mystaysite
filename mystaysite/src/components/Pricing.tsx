@@ -188,6 +188,11 @@ export default function Pricing() {
           >
             {t.pricing.custom}
           </button>
+          <p className="text-xs text-text-secondary pt-2">
+            <a href="/terms" className="text-primary hover:text-primary-dark underline underline-offset-2 transition-colors">
+              {t.pricing.termsLink}
+            </a>
+          </p>
         </div>
       </div>
     </section>

@@ -74,12 +74,18 @@ export default function Testimonials() {
           })}
         </div>
 
-        {/* Google rating */}
-        <div className="flex justify-center mt-10">
+        {/* Google rating + portfolio link */}
+        <div className="flex flex-col items-center gap-3 mt-10">
           <div className="inline-flex items-center gap-2 bg-yellow-50 border border-yellow-200 rounded-full px-5 py-2">
             <span className="text-sm">⭐</span>
             <span className="text-sm font-semibold text-yellow-800">{t.testimonials.googleRating}</span>
           </div>
+          <a
+            href="/portfolio/achilleas-peaceful-place"
+            className="text-sm text-primary hover:text-primary-dark font-medium underline underline-offset-2 transition-colors"
+          >
+            {t.testimonials.caseStudyLink}
+          </a>
         </div>
       </div>
     </section>
