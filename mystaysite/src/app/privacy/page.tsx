@@ -37,7 +37,7 @@ const content = {
       },
       {
         heading: "8. Επικοινωνία",
-        text: "Για ερωτήσεις σχετικά με την πολιτική απορρήτου, επικοινωνήστε μαζί μας: Email: info@mystaysite.com | Τηλέφωνο: +30 697 458 5063",
+        text: "Για ερωτήσεις σχετικά με την πολιτική απορρήτου, επικοινωνήστε μαζί μας: info@mystaysite.com",
       },
     ],
   },
@@ -75,7 +75,7 @@ const content = {
       },
       {
         heading: "8. Contact",
-        text: "For questions about this privacy policy, contact us: Email: info@mystaysite.com | Phone: +30 697 458 5063",
+        text: "For questions about this privacy policy, contact us: info@mystaysite.com",
       },
     ],
   },

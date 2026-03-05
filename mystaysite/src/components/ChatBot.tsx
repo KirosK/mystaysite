@@ -3,7 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 import { useLang } from "@/lib/language-context";
 
-const EMAIL_TO = "info@mystaysite.gr";
+const EMAIL_TO = "info@mystaysite.com";
+const FORMSPREE_FORM_ID = "xeerjqzn";
 
 type Step =
   | "greeting"
@@ -97,18 +98,23 @@ export default function ChatBot() {
     }
   };
 
-  const sendLead = (link: string, contactInfo: string) => {
-    const subject = encodeURIComponent("New Lead - MyStaySite ChatBot");
-    const body = encodeURIComponent(
-      `New mockup request from ChatBot:\n\nBooking/Airbnb Link: ${link}\nContact: ${contactInfo}\n\nSent from MyStaySite.gr chatbot`
-    );
-
-    const mailWindow = window.open(
-      `mailto:${EMAIL_TO}?subject=${subject}&body=${body}`,
-      "_self"
-    );
-    if (!mailWindow) {
-      window.location.href = `mailto:${EMAIL_TO}?subject=${subject}&body=${body}`;
+  const sendLead = async (link: string, contactInfo: string) => {
+    try {
+      await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          link,
+          contact: contactInfo,
+          source: "ChatBot",
+        }),
+      });
+    } catch {
+      const subject = encodeURIComponent("New Lead - MyStaySite ChatBot");
+      const body = encodeURIComponent(
+        `New mockup request from ChatBot:\n\nBooking/Airbnb Link: ${link}\nContact: ${contactInfo}\n\nSent from mystaysite.com chatbot`
+      );
+      window.open(`mailto:${EMAIL_TO}?subject=${subject}&body=${body}`, "_self");
     }
   };
 
