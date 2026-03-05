@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | MyStaySite",
   },
   description:
-    "Κατασκευή επαγγελματικών websites για ενοικιαζόμενα δωμάτια, βίλες, studios και apartments. Online κρατήσεις, κριτικές Booking & Google, SEO στο Google. Από €349. Δωρεάν mockup σε 48 ώρες. Σταμάτα να πληρώνεις 15-20% προμήθεια στο Booking.",
+    "Επαγγελματικά websites για ενοικιαζόμενα δωμάτια, βίλες & apartments. Online κρατήσεις, SEO, κριτικές. Από €349. Δωρεάν mockup σε 48 ώρες.",
   keywords: [
     "κατασκευή ιστοσελίδας ενοικιαζόμενα δωμάτια",
     "website ενοικιαζόμενα δωμάτια",
