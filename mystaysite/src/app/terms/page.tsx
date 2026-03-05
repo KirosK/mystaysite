@@ -49,7 +49,7 @@ const content = {
       },
       {
         heading: "11. Εφαρμοστέο Δίκαιο",
-        text: "Οι παρόντες όροι διέπονται από το Ελληνικό Δίκαιο. Κάθε διαφορά που προκύπτει υπάγεται στα αρμόδια δικαστήρια της Θεσσαλονίκης.",
+        text: "Οι παρόντες όροι διέπονται από το Ελληνικό Δίκαιο.",
       },
       {
         heading: "12. Τροποποιήσεις Όρων",
@@ -107,7 +107,7 @@ const content = {
       },
       {
         heading: "11. Governing Law",
-        text: "These terms are governed by Greek Law. Any dispute arising shall be subject to the competent courts of Thessaloniki.",
+        text: "These terms are governed by Greek Law.",
       },
       {
         heading: "12. Amendments",
