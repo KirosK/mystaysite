@@ -160,7 +160,7 @@ export const translations = {
           "Παράδοση σε 2-5 ημέρες",
           "6 μήνες εγγύηση",
         ],
-        cta: "Δωρεάν mockup",
+        cta: "Θέλω δωρεάν mockup",
         ctaSub: "Βλέπεις πρώτα, πληρώνεις μετά",
       },
       professional: {
@@ -200,7 +200,7 @@ export const translations = {
           "12 μήνες priority support",
           "Μηνιαία αναφορά performance",
         ],
-        cta: "Στήσε ΟΛΟ το digital σου",
+        cta: "Θέλω ολοκληρωμένο setup",
         ctaSub: "Website + Marketing + Content. Done-for-you.",
       },
       maintenance:
@@ -226,8 +226,8 @@ export const translations = {
           text: "Εγγυόμαστε performance score 90+ στο Google Lighthouse. Μπορείς να το τσεκάρεις μόνος σου. Αν δεν το πετύχουμε, το φτιάχνουμε δωρεάν.",
         },
         {
-          title: "Το φτιάχνουμε δωρεάν. Πάντα.",
-          text: "Αν κάτι δεν λειτουργεί σωστά, το φτιάχνουμε δωρεάν. Χωρίς ερωτήσεις, χωρίς χρεώσεις, χωρίς δικαιολογίες.",
+          title: "6 μήνες bug-free εγγύηση",
+          text: "Αν κάτι δεν λειτουργεί σωστά μέσα σε 6 μήνες, το φτιάχνουμε δωρεάν. Χωρίς ερωτήσεις, χωρίς χρεώσεις.",
         },
       ],
     },
@@ -490,7 +490,7 @@ export const translations = {
           "Delivered in 2-5 days",
           "6 months guarantee",
         ],
-        cta: "Free mockup",
+        cta: "I want a free mockup",
         ctaSub: "See it first, pay later",
       },
       professional: {
@@ -530,7 +530,7 @@ export const translations = {
           "12 months priority support",
           "Monthly performance report",
         ],
-        cta: "Build my ENTIRE digital presence",
+        cta: "I want complete setup",
         ctaSub: "Website + Marketing + Content. Done-for-you.",
       },
       maintenance:
@@ -556,8 +556,8 @@ export const translations = {
           text: "We guarantee a performance score of 90+ on Google Lighthouse. You can check it yourself. If we don't hit it, we fix it for free.",
         },
         {
-          title: "We fix it free. Always.",
-          text: "If something doesn't work properly, we fix it for free. No questions asked, no charges, no excuses.",
+          title: "6 months bug-free guarantee",
+          text: "If something doesn't work properly within 6 months, we fix it for free. No questions asked, no charges.",
         },
       ],
     },
