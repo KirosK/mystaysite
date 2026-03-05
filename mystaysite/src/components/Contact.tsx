@@ -45,9 +45,9 @@ export default function Contact() {
 
     const pkgLabel = selectedPackage || t.contact.packageOptions[0];
 
-    // Backup: send to Formspree (replace YOUR_FORM_ID with your Formspree form ID)
+    // Backup: send to Formspree (replace xeerjqzn with your Formspree form ID)
     try {
-      await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      await fetch("https://formspree.io/f/xeerjqzn", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
