@@ -64,7 +64,6 @@ function ProjectCard({ project }: { project: Project }) {
           alt={project.name}
           width={1440}
           height={900}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
           className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
         />
         <div className="absolute top-3 right-3 bg-green-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1">

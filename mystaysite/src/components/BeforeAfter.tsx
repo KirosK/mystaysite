@@ -161,7 +161,6 @@ export default function BeforeAfter() {
               alt={current[l]}
               width={1440}
               height={900}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 720px"
               className={`w-full h-auto ${view === "before" ? "grayscale-[5%] opacity-95" : ""}`}
             />
           </div>
@@ -215,7 +214,7 @@ export default function BeforeAfter() {
                   : "border-transparent opacity-50 hover:opacity-80"
               }`}
             >
-              <Image src={img.src} alt={img[l]} width={220} height={138} sizes="110px" className="w-full h-auto" />
+              <Image src={img.src} alt={img[l]} width={220} height={138} className="w-full h-auto" />
             </button>
           ))}
         </div>

@@ -64,7 +64,7 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                 </svg>
               </div>
-              <div className="font-heading">
+              <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                 <span className="text-lg font-extrabold text-white">my</span>
                 <span className="text-lg font-extrabold text-primary">stay</span>
                 <span className="text-lg font-extrabold text-white">site</span>
@@ -157,7 +157,7 @@ export default function Footer() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
               </svg>
             </div>
-            <span className="font-heading">
+            <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
               Built by{" "}
               <span className="font-bold text-gray-400 group-hover:text-gray-200">my</span>
               <span className="font-bold text-primary group-hover:text-primary">stay</span>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useLang } from "@/lib/language-context";
-import Image from "next/image";
 
 function BrowserMockup() {
   return (
@@ -28,24 +27,12 @@ function BrowserMockup() {
           <div className="text-[10px] text-gray-400 font-medium">GR / EN</div>
         </div>
 
-        {/* Screenshot on mobile, iframe on desktop */}
+        {/* Real website via iframe */}
         <div className="relative w-full overflow-hidden" style={{ height: "420px" }}>
-          {/* Mobile: fast static image */}
-          <div className="block lg:hidden absolute inset-0">
-            <Image
-              src="/portfolio/rodavgi/hero.png"
-              alt="RODAVGI Apartments website"
-              fill
-              sizes="(max-width: 1024px) 100vw, 0px"
-              className="object-cover object-top"
-              priority
-            />
-          </div>
-          {/* Desktop: live iframe */}
           <iframe
             src="https://rodavgiapartments.com/"
             title="RODAVGI Apartments"
-            className="hidden lg:block absolute top-0 left-0 border-0 pointer-events-none"
+            className="absolute top-0 left-0 border-0 pointer-events-none"
             style={{
               width: "1440px",
               height: "1000px",
