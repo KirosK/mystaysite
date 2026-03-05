@@ -2,6 +2,53 @@
 
 import { useLang } from "@/lib/language-context";
 
+function PaymentIcon({ type }: { type: string }) {
+  const className = "w-3.5 h-3.5 text-gray-500 shrink-0";
+  switch (type) {
+    case "bank":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3" />
+        </svg>
+      );
+    case "stripe":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.549-2.354 1.549-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.571-7.305z" />
+        </svg>
+      );
+    case "viva":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l6.9 3.45v6.74L12 18.82l-6.9-3.45V7.63L12 4.18z" />
+        </svg>
+      );
+    case "crypto":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83M19.07 4.93l-2.83 2.83M7.76 16.24l-2.83 2.83" />
+          <circle cx="12" cy="12" r="4" />
+        </svg>
+      );
+    case "mastercard":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="9" cy="12" r="7" fill="currentColor" opacity="0.7" />
+          <circle cx="15" cy="12" r="7" fill="currentColor" opacity="0.5" />
+        </svg>
+      );
+    case "amex":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" />
+          <path d="M7 9l3 4 2-3 2 4h2" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
+
 export default function Footer() {
   const { t } = useLang();
 
@@ -62,6 +109,20 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Payment methods */}
+        <div className="border-t border-white/10 pt-6 mb-4">
+          <p className="text-xs text-gray-500 mb-2">{t.footer.paymentMethods}</p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
+            {t.footer.paymentMethodsItems.map((item: { key: string; label: string }, i: number) => (
+              <span key={item.key} className="inline-flex items-center gap-1.5 text-xs text-gray-500">
+                <PaymentIcon type={item.key} />
+                <span>{item.label}</span>
+                {i < t.footer.paymentMethodsItems.length - 1 && <span className="text-gray-600">·</span>}
+              </span>
+            ))}
           </div>
         </div>
 

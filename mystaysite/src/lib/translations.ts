@@ -300,6 +300,16 @@ export const translations = {
       quickLinkItems: ["Δείγματα", "Τιμές", "FAQ", "Επικοινωνία"],
       legal: "Νομικά",
       legalList: ["Όροι Χρήσης", "Πολιτική Απορρήτου"],
+      paymentMethods: "Τρόποι πληρωμής",
+      paymentMethodsList: "Τραπεζική μεταφορά · Stripe · Viva Wallet · Crypto · Mastercard · Amex",
+      paymentMethodsItems: [
+        { key: "bank", label: "Τραπεζική μεταφορά" },
+        { key: "stripe", label: "Stripe" },
+        { key: "viva", label: "Viva Wallet" },
+        { key: "crypto", label: "Crypto" },
+        { key: "mastercard", label: "Mastercard" },
+        { key: "amex", label: "Amex" },
+      ],
       copyright:
         "© 2026 mystaysite.com - Φτιάχνουμε websites που φέρνουν κρατήσεις.",
     },
@@ -630,6 +640,16 @@ export const translations = {
       quickLinkItems: ["Portfolio", "Pricing", "FAQ", "Contact"],
       legal: "Legal",
       legalList: ["Terms of Use", "Privacy Policy"],
+      paymentMethods: "Payment methods",
+      paymentMethodsList: "Bank transfer · Stripe · Viva Wallet · Crypto · Mastercard · Amex",
+      paymentMethodsItems: [
+        { key: "bank", label: "Bank transfer" },
+        { key: "stripe", label: "Stripe" },
+        { key: "viva", label: "Viva Wallet" },
+        { key: "crypto", label: "Crypto" },
+        { key: "mastercard", label: "Mastercard" },
+        { key: "amex", label: "Amex" },
+      ],
       copyright:
         "© 2026 mystaysite.com - We build websites that bring bookings.",
     },
