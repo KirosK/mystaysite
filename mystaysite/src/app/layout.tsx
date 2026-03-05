@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | MyStaySite",
   },
   description:
-    "Κατασκευή επαγγελματικών websites για ενοικιαζόμενα δωμάτια, βίλες, studios και apartments στην Ελλάδα. Online κρατήσεις, κριτικές Booking & Google, SEO στο Google. Από €349. Δωρεάν mockup σε 48 ώρες. Σταμάτα να πληρώνεις 15-20% προμήθεια στο Booking.",
+    "Κατασκευή επαγγελματικών websites για ενοικιαζόμενα δωμάτια, βίλες, studios και apartments. Online κρατήσεις, κριτικές Booking & Google, SEO στο Google. Από €349. Δωρεάν mockup σε 48 ώρες. Σταμάτα να πληρώνεις 15-20% προμήθεια στο Booking.",
   keywords: [
     "κατασκευή ιστοσελίδας ενοικιαζόμενα δωμάτια",
     "website ενοικιαζόμενα δωμάτια",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MyStaySite | Κατασκευή Website για Ενοικιαζόμενα Δωμάτια",
     description:
-      "Επαγγελματικά websites για καταλύματα στην Ελλάδα. Online κρατήσεις, κριτικές, SEO. Από €349. Δωρεάν mockup σε 48 ώρες.",
+      "Επαγγελματικά websites για καταλύματα. Online κρατήσεις, κριτικές, SEO. Από €349. Δωρεάν mockup σε 48 ώρες.",
     url: "https://mystaysite.com",
     siteName: "MyStaySite",
     locale: "el_GR",
@@ -105,10 +105,10 @@ export default function RootLayout({
                 name: "MyStaySite",
                 url: "https://mystaysite.com",
                 description:
-                  "Κατασκευή επαγγελματικών websites για ενοικιαζόμενα δωμάτια, βίλες, studios και apartments στην Ελλάδα. Online κρατήσεις, κριτικές, SEO.",
+                  "Κατασκευή επαγγελματικών websites για ενοικιαζόμενα δωμάτια, βίλες, studios και apartments. Online κρατήσεις, κριτικές, SEO.",
                 areaServed: {
-                  "@type": "Country",
-                  name: "Greece",
+                  "@type": "Place",
+                  name: "Worldwide",
                 },
                 serviceType: [
                   "Κατασκευή ιστοσελίδας",

@@ -13,7 +13,7 @@ const content = {
       },
       {
         heading: "2. Περιγραφή Υπηρεσιών",
-        text: "Η mystaysite.com προσφέρει υπηρεσίες σχεδιασμού και κατασκευής ιστοσελίδων για ενοικιαζόμενα δωμάτια, βίλες και καταλύματα στην Ελλάδα. Οι υπηρεσίες περιλαμβάνουν κατασκευή website, SEO, σύστημα κρατήσεων, ενσωμάτωση κριτικών και τεχνική υποστήριξη, ανάλογα με το επιλεγμένο πακέτο.",
+        text: "Η mystaysite.com προσφέρει υπηρεσίες σχεδιασμού και κατασκευής ιστοσελίδων για ενοικιαζόμενα δωμάτια, βίλες και καταλύματα παγκοσμίως. Οι υπηρεσίες περιλαμβάνουν κατασκευή website, SEO, σύστημα κρατήσεων, ενσωμάτωση κριτικών και τεχνική υποστήριξη, ανάλογα με το επιλεγμένο πακέτο.",
       },
       {
         heading: "3. Τιμολόγηση & Πληρωμές",
@@ -71,7 +71,7 @@ const content = {
       },
       {
         heading: "2. Description of Services",
-        text: "mystaysite.com offers website design and development services for vacation rentals, villas and accommodations in Greece. Services include website development, SEO, booking systems, review integration and technical support, depending on the selected package.",
+        text: "mystaysite.com offers website design and development services for vacation rentals, villas and accommodations worldwide. Services include website development, SEO, booking systems, review integration and technical support, depending on the selected package.",
       },
       {
         heading: "3. Pricing & Payments",

@@ -22,7 +22,7 @@ export const translations = {
     trust: {
       delivery: "Παράδοση σε 2-5 ημέρες",
       google: "Στο Google σε 14 ημέρες",
-      greek: "100% Ελληνικά",
+      greek: "Προσωπική εξυπηρέτηση",
       mockup: "Δωρεάν mockup πριν πληρώσεις",
     },
     proof: {
@@ -295,7 +295,7 @@ export const translations = {
       infoHours: "Δευτέρα - Σάββατο, 9:00 - 21:00",
     },
     footer: {
-      tagline: "Websites για ενοικιαζόμενα δωμάτια στην Ελλάδα",
+      tagline: "Websites για ενοικιαζόμενα δωμάτια & καταλύματα",
       quickLinks: "Σύνδεσμοι",
       quickLinkItems: ["Δείγματα", "Τιμές", "FAQ", "Επικοινωνία"],
       legal: "Νομικά",
@@ -363,7 +363,7 @@ export const translations = {
     trust: {
       delivery: "Delivered in 2-5 days",
       google: "On Google in 14 days",
-      greek: "100% Greek support",
+      greek: "Personal support",
       mockup: "Free mockup before you pay",
     },
     proof: {
@@ -635,7 +635,7 @@ export const translations = {
       infoHours: "Monday - Saturday, 9:00 - 21:00",
     },
     footer: {
-      tagline: "Websites for vacation rentals in Greece",
+      tagline: "Websites for vacation rentals & accommodations",
       quickLinks: "Links",
       quickLinkItems: ["Portfolio", "Pricing", "FAQ", "Contact"],
       legal: "Legal",
