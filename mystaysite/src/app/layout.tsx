@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import CookieConsentAndAnalytics from "@/components/CookieConsentAndAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mystaysite.com"),
@@ -75,6 +74,17 @@ export default function RootLayout({
   return (
     <html lang="el" className="scroll-smooth">
       <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S05LEDF6JW" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S05LEDF6JW');`,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','49013716985302');fbq('track','PageView');`,
+          }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -184,10 +194,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased">
-        {children}
-        <CookieConsentAndAnalytics />
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
