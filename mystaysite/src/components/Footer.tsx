@@ -3,7 +3,7 @@
 import { useLang } from "@/lib/language-context";
 
 function PaymentIcon({ type }: { type: string }) {
-  const className = "w-3.5 h-3.5 text-gray-500 shrink-0";
+  const className = "w-3.5 h-3.5 text-gray-400 shrink-0";
   switch (type) {
     case "bank":
       return (
@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Quick links */}
           <div>
-            <h4 className="text-sm font-bold text-white mb-3">{t.footer.quickLinks}</h4>
+            <h3 className="text-sm font-bold text-white mb-3">{t.footer.quickLinks}</h3>
             <ul className="space-y-2">
               {t.footer.quickLinkItems.map((item, i) => {
                 const targets = ["/#portfolio", "/#pricing", "/#faq", "/#contact"];
@@ -95,7 +95,7 @@ export default function Footer() {
 
           {/* Portfolio */}
           <div>
-            <h4 className="text-sm font-bold text-white mb-3">{t.footer.portfolio}</h4>
+            <h3 className="text-sm font-bold text-white mb-3">{t.footer.portfolio}</h3>
             <ul className="space-y-2">
               {t.footer.portfolioItems.map((item: { label: string; url: string }) => (
                 <li key={item.url}>
@@ -113,7 +113,7 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="text-sm font-bold text-white mb-3">{t.footer.legal}</h4>
+            <h3 className="text-sm font-bold text-white mb-3">{t.footer.legal}</h3>
             <ul className="space-y-2">
               <li>
                 <a href="/terms" className="text-sm text-gray-400 hover:text-gray-200 transition-colors">
@@ -131,10 +131,10 @@ export default function Footer() {
 
         {/* Payment methods */}
         <div className="border-t border-white/10 pt-6 mb-4">
-          <p className="text-xs text-gray-500 mb-2">{t.footer.paymentMethods}</p>
+          <p className="text-xs text-gray-400 mb-2">{t.footer.paymentMethods}</p>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
             {t.footer.paymentMethodsItems.map((item: { key: string; label: string }, i: number) => (
-              <span key={item.key} className="inline-flex items-center gap-1.5 text-xs text-gray-500">
+              <span key={item.key} className="inline-flex items-center gap-1.5 text-xs text-gray-400">
                 <PaymentIcon type={item.key} />
                 <span>{item.label}</span>
                 {i < t.footer.paymentMethodsItems.length - 1 && <span className="text-gray-600">·</span>}
@@ -145,12 +145,12 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-500">{t.footer.copyright}</p>
+          <p className="text-xs text-gray-400">{t.footer.copyright}</p>
           <a
             href="https://mystaysite.com?ref=badge"
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center gap-1.5 text-gray-500 text-xs hover:text-gray-300 transition-colors group"
+            className="inline-flex items-center gap-1.5 text-gray-400 text-xs hover:text-gray-300 transition-colors group"
           >
             <div className="w-4 h-4 bg-primary rounded flex items-center justify-center group-hover:shadow-sm transition-shadow">
               <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.2}>

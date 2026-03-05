@@ -149,11 +149,12 @@ export default function Contact() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-300 mb-1.5">
+                  <label htmlFor="contact-link" className="block text-sm font-semibold text-gray-300 mb-1.5">
                     {t.contact.linkLabel}{" "}
                     <span className="text-accent">*</span>
                   </label>
                   <input
+                    id="contact-link"
                     type="text"
                     required
                     value={link}
@@ -164,11 +165,12 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-300 mb-1.5">
+                  <label htmlFor="contact-info" className="block text-sm font-semibold text-gray-300 mb-1.5">
                     {t.contact.contactLabel}{" "}
                     <span className="text-accent">*</span>
                   </label>
                   <input
+                    id="contact-info"
                     type="text"
                     required
                     value={contact}
@@ -179,10 +181,11 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-300 mb-1.5">
+                  <label htmlFor="contact-package" className="block text-sm font-semibold text-gray-300 mb-1.5">
                     {t.contact.packageLabel}
                   </label>
                   <select
+                    id="contact-package"
                     value={selectedPackage}
                     onChange={(e) => setSelectedPackage(e.target.value)}
                     className="w-full px-4 py-3.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors appearance-none cursor-pointer"

@@ -113,10 +113,11 @@ export default function BeforeAfter() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => switchView("before")}
+              aria-label="Before"
               className={`w-7 h-7 rounded-full flex items-center justify-center transition-all cursor-pointer ${
                 view === "before"
                   ? "bg-red-500 text-white shadow-sm"
-                  : "bg-gray-200 text-gray-400 hover:bg-gray-300"
+                  : "bg-gray-200 text-gray-500 hover:bg-gray-300"
               }`}
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
@@ -133,10 +134,11 @@ export default function BeforeAfter() {
             </span>
             <button
               onClick={() => switchView("after")}
+              aria-label="After"
               className={`w-7 h-7 rounded-full flex items-center justify-center transition-all cursor-pointer ${
                 view === "after"
                   ? "bg-emerald-500 text-white shadow-sm"
-                  : "bg-gray-200 text-gray-400 hover:bg-gray-300"
+                  : "bg-gray-200 text-gray-500 hover:bg-gray-300"
               }`}
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
@@ -166,6 +168,7 @@ export default function BeforeAfter() {
           {/* Nav arrows */}
           <button
             onClick={prev}
+            aria-label="Previous image"
             className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 active:bg-black/70 backdrop-blur text-white flex items-center justify-center transition-colors cursor-pointer"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
@@ -174,6 +177,7 @@ export default function BeforeAfter() {
           </button>
           <button
             onClick={next}
+            aria-label="Next image"
             className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 active:bg-black/70 backdrop-blur text-white flex items-center justify-center transition-colors cursor-pointer"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>

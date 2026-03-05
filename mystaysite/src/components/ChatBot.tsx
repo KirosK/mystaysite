@@ -148,6 +148,7 @@ export default function ChatBot() {
             <button
               onClick={() => setOpen(false)}
               className="text-gray-400 hover:text-white transition-colors p-1"
+              aria-label="Close chat"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -218,6 +219,7 @@ export default function ChatBot() {
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
+                  aria-label={step === "askLink" ? "Website link" : "Contact info"}
                   placeholder={
                     step === "askLink"
                       ? t.chatbot.linkPlaceholder
@@ -249,6 +251,7 @@ export default function ChatBot() {
       {/* Floating button */}
       <button
         onClick={open ? () => setOpen(false) : handleOpen}
+        aria-label={open ? "Close chat" : "Open chat"}
         className={`fixed bottom-20 right-4 lg:bottom-6 lg:right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-105 ${
           open
             ? "bg-gray-600 hover:bg-gray-700"
