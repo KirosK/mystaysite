@@ -98,18 +98,20 @@ export default function Hero() {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-              <button
-                onClick={() => scrollTo("#contact")}
-                className="bg-accent hover:bg-accent-dark text-white text-base font-semibold px-7 py-3.5 rounded-lg transition-colors shadow-lg shadow-accent/20"
+              <a
+                href="/#contact"
+                onClick={(e) => { e.preventDefault(); scrollTo("#contact"); }}
+                className="bg-accent hover:bg-accent-dark text-white text-base font-semibold px-7 py-3.5 rounded-lg transition-colors shadow-lg shadow-accent/20 text-center"
               >
                 {t.hero.cta}
-              </button>
-              <button
-                onClick={() => scrollTo("#portfolio")}
-                className="text-primary hover:text-primary-dark font-medium text-base transition-colors underline underline-offset-4"
+              </a>
+              <a
+                href="/#portfolio"
+                onClick={(e) => { e.preventDefault(); scrollTo("#portfolio"); }}
+                className="text-primary hover:text-primary-dark font-medium text-base transition-colors underline underline-offset-4 text-center"
               >
                 {t.hero.ctaSecondary}
-              </button>
+              </a>
             </div>
           </div>
 

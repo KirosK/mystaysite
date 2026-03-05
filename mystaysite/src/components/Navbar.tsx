@@ -80,13 +80,14 @@ export default function Navbar() {
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-6">
           {links.map((link) => (
-            <button
+            <a
               key={link.href}
-              onClick={() => scrollTo(link.href)}
+              href={`/${link.href}`}
+              onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
               className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
             >
               {link.label}
-            </button>
+            </a>
           ))}
         </div>
 
@@ -102,12 +103,13 @@ export default function Navbar() {
           </button>
 
           {/* CTA */}
-          <button
-            onClick={() => scrollTo("#contact")}
+          <a
+            href="/#contact"
+            onClick={(e) => { e.preventDefault(); scrollTo("#contact"); }}
             className="bg-accent hover:bg-accent-dark text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
           >
             {t.nav.cta}
-          </button>
+          </a>
         </div>
 
         {/* Mobile controls */}
@@ -141,20 +143,22 @@ export default function Navbar() {
         <div className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-border shadow-lg">
           <div className="px-4 py-4 space-y-3">
             {links.map((link) => (
-              <button
+              <a
                 key={link.href}
-                onClick={() => scrollTo(link.href)}
+                href={`/${link.href}`}
+                onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
                 className="block w-full text-left text-base font-medium text-text-secondary hover:text-text-primary transition-colors py-2"
               >
                 {link.label}
-              </button>
+              </a>
             ))}
-            <button
-              onClick={() => scrollTo("#contact")}
-              className="w-full bg-accent hover:bg-accent-dark text-white text-sm font-semibold px-5 py-3 rounded-lg transition-colors mt-2"
+            <a
+              href="/#contact"
+              onClick={(e) => { e.preventDefault(); scrollTo("#contact"); }}
+              className="block w-full text-center bg-accent hover:bg-accent-dark text-white text-sm font-semibold px-5 py-3 rounded-lg transition-colors mt-2"
             >
               {t.nav.cta}
-            </button>
+            </a>
           </div>
         </div>
       )}

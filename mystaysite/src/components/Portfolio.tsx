@@ -135,12 +135,13 @@ export default function Portfolio() {
           <p className="text-text-secondary text-base mb-6">
             {t.portfolio.bottomText}
           </p>
-          <button
-            onClick={() => scrollTo("#contact")}
-            className="bg-accent hover:bg-accent-dark text-white text-base font-semibold px-7 py-3 rounded-lg transition-colors shadow-lg shadow-accent/20 cursor-pointer"
+          <a
+            href="/#contact"
+            onClick={(e) => { e.preventDefault(); scrollTo("#contact"); }}
+            className="inline-block bg-accent hover:bg-accent-dark text-white text-base font-semibold px-7 py-3 rounded-lg transition-colors shadow-lg shadow-accent/20"
           >
             {t.portfolio.cta}
-          </button>
+          </a>
         </div>
       </div>
     </section>
