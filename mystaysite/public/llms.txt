@@ -30,7 +30,6 @@ MyStaySite builds professional websites for accommodation owners who want to red
 
 - Free mockup before you pay — don't like it, don't pay
 - Google-indexed in 14 days or we work for free until it is
-- Lighthouse performance score 90+
 - 6 months bug-free guarantee
 
 ## Portfolio

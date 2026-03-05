@@ -224,10 +224,6 @@ export const translations = {
           text: "Εγγυόμαστε ότι το site σου θα εμφανίζεται στο Google μέσα σε 14 ημέρες. Αν δεν εμφανιστεί, δουλεύουμε δωρεάν μέχρι να εμφανιστεί. Κανένας ανταγωνιστής δεν σου δίνει αυτήν την εγγύηση.",
         },
         {
-          title: "Lighthouse Score 90+",
-          text: "Εγγυόμαστε performance score 90+ στο Google Lighthouse. Μπορείς να το τσεκάρεις μόνος σου. Αν δεν το πετύχουμε, το φτιάχνουμε δωρεάν.",
-        },
-        {
           title: "6 μήνες bug-free εγγύηση",
           text: "Αν κάτι δεν λειτουργεί σωστά μέσα σε 6 μήνες, το φτιάχνουμε δωρεάν. Χωρίς ερωτήσεις, χωρίς χρεώσεις.",
         },
@@ -570,10 +566,6 @@ export const translations = {
         {
           title: "Google-Ready in 14 days",
           text: "We guarantee your site will appear on Google within 14 days. If it doesn't, we work for free until it does. No competitor offers this guarantee.",
-        },
-        {
-          title: "Lighthouse Score 90+",
-          text: "We guarantee a performance score of 90+ on Google Lighthouse. You can check it yourself. If we don't hit it, we fix it for free.",
         },
         {
           title: "6 months bug-free guarantee",

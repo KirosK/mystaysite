@@ -21,7 +21,7 @@ const content = {
       },
       {
         heading: "4. Εγγυήσεις",
-        text: "Πληρώνεις ΜΟΝΟ αν σου αρέσει: Αν δεν εγκρίνεις το mockup, δεν χρεώνεσαι. Google-Ready σε 14 ημέρες: Εγγυόμαστε ότι το site σου θα είναι indexed στο Google εντός 14 ημερών. Lighthouse Score 90+: Εγγυόμαστε performance score 90+ στο Google Lighthouse. Δωρεάν διορθώσεις: Αν κάτι δεν λειτουργεί σωστά, το φτιάχνουμε δωρεάν.",
+        text: "Πληρώνεις ΜΟΝΟ αν σου αρέσει: Αν δεν εγκρίνεις το mockup, δεν χρεώνεσαι. Google-Ready σε 14 ημέρες: Εγγυόμαστε ότι το site σου θα είναι indexed στο Google εντός 14 ημερών. Δωρεάν διορθώσεις: Αν κάτι δεν λειτουργεί σωστά, το φτιάχνουμε δωρεάν.",
       },
       {
         heading: "5. Ιδιοκτησία & Πνευματικά Δικαιώματα",
@@ -79,7 +79,7 @@ const content = {
       },
       {
         heading: "4. Guarantees",
-        text: "Pay ONLY if you like it: If you don't approve the mockup, you are not charged. Google-Ready in 14 days: We guarantee your site will be indexed on Google within 14 days. Lighthouse Score 90+: We guarantee a performance score of 90+ on Google Lighthouse. Free fixes: If something doesn't work properly, we fix it for free.",
+        text: "Pay ONLY if you like it: If you don't approve the mockup, you are not charged. Google-Ready in 14 days: We guarantee your site will be indexed on Google within 14 days. Free fixes: If something doesn't work properly, we fix it for free.",
       },
       {
         heading: "5. Ownership & Copyright",
