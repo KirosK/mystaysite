@@ -35,7 +35,7 @@ MyStaySite builds professional websites for accommodation owners who want to red
 ## Portfolio
 
 - RODAVGI Apartments (Sithonia, Halkidiki) — https://rodavgiapartments.com
-- Achilleas Peaceful Place (Sithonia, Halkidiki) — https://achilleas-peaceful-place.vercel.app
+- Achilleas Peaceful Place (Sithonia, Halkidiki) — https://achilleasplace.gr
 
 ## Pages
 

@@ -31,7 +31,7 @@ const projects: Project[] = [
     bookingScore: "9.7",
     googleScore: "5.0",
     features: ["Κρατήσεις", "Reviews", "SEO", "6 Διαμ/τα"],
-    url: "https://achilleas-peaceful-place.vercel.app/",
+    url: "https://achilleasplace.gr/",
     image: "/portfolio/achilleas/after-01-hero.png",
     caseStudyUrl: "/portfolio/achilleas-peaceful-place",
   },

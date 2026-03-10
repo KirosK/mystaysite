@@ -183,10 +183,10 @@ export default function AchilleasCaseStudy() {
         <div className="bg-white rounded-xl border border-gray-100 p-6 mb-16 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
           <div>
             <h3 className="font-bold text-gray-900">Δες το live site</h3>
-            <p className="text-sm text-gray-500 mt-0.5">achilleas-peaceful-place.vercel.app</p>
+            <p className="text-sm text-gray-500 mt-0.5">achilleasplace.gr</p>
           </div>
           <a
-            href="https://achilleas-peaceful-place.vercel.app/"
+            href="https://achilleasplace.gr/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#0EA5E9] hover:bg-[#0284C7] text-white font-bold px-6 py-3 rounded-xl transition-colors"
