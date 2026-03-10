@@ -300,7 +300,7 @@ export const translations = {
       portfolio: "Portfolio",
       portfolioItems: [
         { label: "RODAVGI Apartments", url: "https://rodavgiapartments.com" },
-        { label: "Achilleas Peaceful Place", url: "/portfolio/achilleas-peaceful-place" },
+        { label: "Achilleas Peaceful Place", url: "https://achilleasplace.gr" },
       ],
       legal: "Νομικά",
       legalList: ["Όροι Χρήσης", "Πολιτική Απορρήτου"],
@@ -644,7 +644,7 @@ export const translations = {
       portfolio: "Portfolio",
       portfolioItems: [
         { label: "RODAVGI Apartments", url: "https://rodavgiapartments.com" },
-        { label: "Achilleas Peaceful Place", url: "/portfolio/achilleas-peaceful-place" },
+        { label: "Achilleas Peaceful Place", url: "https://achilleasplace.gr" },
       ],
       legal: "Legal",
       legalList: ["Terms of Use", "Privacy Policy"],
