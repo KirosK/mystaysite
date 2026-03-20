@@ -45,6 +45,7 @@ export default function Navbar() {
     { href: "#portfolio", label: t.nav.portfolio },
     { href: "#pricing", label: t.nav.pricing },
     { href: "#faq", label: t.nav.faq },
+    { href: "/blog", label: t.nav.blog, isRoute: true },
     { href: "#contact", label: t.nav.contact },
   ];
 
@@ -79,16 +80,26 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-6">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={`/${link.href}`}
-              onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
-              className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          {links.map((link) =>
+            "isRoute" in link && link.isRoute ? (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <a
+                key={link.href}
+                href={`/${link.href}`}
+                onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
+                className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
+              >
+                {link.label}
+              </a>
+            )
+          )}
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
@@ -142,16 +153,26 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-border shadow-lg">
           <div className="px-4 py-4 space-y-3">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={`/${link.href}`}
-                onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
-                className="block w-full text-left text-base font-medium text-text-secondary hover:text-text-primary transition-colors py-2"
-              >
-                {link.label}
-              </a>
-            ))}
+            {links.map((link) =>
+              "isRoute" in link && link.isRoute ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="block w-full text-left text-base font-medium text-text-secondary hover:text-text-primary transition-colors py-2"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <a
+                  key={link.href}
+                  href={`/${link.href}`}
+                  onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
+                  className="block w-full text-left text-base font-medium text-text-secondary hover:text-text-primary transition-colors py-2"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
             <a
               href="/#contact"
               onClick={(e) => { e.preventDefault(); scrollTo("#contact"); }}

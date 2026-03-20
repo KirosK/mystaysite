@@ -8,6 +8,7 @@ export const translations = {
       portfolio: "Δείγματα",
       pricing: "Πακέτα",
       faq: "FAQ",
+      blog: "Blog",
       contact: "Επικοινωνία",
       cta: "Ζητήστε Demo",
     },
@@ -293,7 +294,7 @@ export const translations = {
     footer: {
       tagline: "Websites για ενοικιαζόμενα δωμάτια & καταλύματα",
       quickLinks: "Σύνδεσμοι",
-      quickLinkItems: ["Δείγματα", "Πακέτα", "FAQ", "Επικοινωνία"],
+      quickLinkItems: ["Δείγματα", "Πακέτα", "FAQ", "Blog", "Επικοινωνία"],
       portfolio: "Portfolio",
       portfolioItems: [
         { label: "Villa Afroditi", url: "https://www.antiparos-afroditivillas.gr" },
@@ -352,6 +353,7 @@ export const translations = {
       portfolio: "Portfolio",
       pricing: "Packages",
       faq: "FAQ",
+      blog: "Blog",
       contact: "Contact",
       cta: "Request Demo",
     },
@@ -636,7 +638,7 @@ export const translations = {
     footer: {
       tagline: "Websites for vacation rentals & accommodations",
       quickLinks: "Links",
-      quickLinkItems: ["Portfolio", "Packages", "FAQ", "Contact"],
+      quickLinkItems: ["Portfolio", "Packages", "FAQ", "Blog", "Contact"],
       portfolio: "Portfolio",
       portfolioItems: [
         { label: "Villa Afroditi", url: "https://www.antiparos-afroditivillas.gr" },

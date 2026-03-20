@@ -1,7 +1,15 @@
 import type { MetadataRoute } from "next";
+import { getAllPosts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://mystaysite.com";
+
+  const blogPosts = getAllPosts().map((post) => ({
+    url: `${baseUrl}/blog/${post.frontmatter.slug}`,
+    lastModified: new Date(post.frontmatter.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
 
   return [
     {
@@ -10,6 +18,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    ...blogPosts,
     {
       url: `${baseUrl}/portfolio/achilleas-peaceful-place`,
       lastModified: new Date(),

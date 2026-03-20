@@ -78,7 +78,7 @@ export default function Footer() {
             <h3 className="text-sm font-bold text-white mb-3">{t.footer.quickLinks}</h3>
             <ul className="space-y-2">
               {t.footer.quickLinkItems.map((item, i) => {
-                const targets = ["/#portfolio", "/#pricing", "/#faq", "/#contact"];
+                const targets = ["/#portfolio", "/#pricing", "/#faq", "/blog", "/#contact"];
                 return (
                   <li key={i}>
                     <a
