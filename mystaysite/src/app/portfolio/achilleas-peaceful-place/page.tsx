@@ -201,11 +201,11 @@ export default function AchilleasCaseStudy() {
             Θες κάτι παρόμοιο;
           </h2>
           <p className="text-gray-400 mb-6 max-w-lg mx-auto">
-            Στείλε μας το Booking ή Airbnb link σου. Σε 48 ώρες βλέπεις δωρεάν mockup.
+            Στείλε μας μήνυμα και σου ετοιμάζουμε δωρεάν demo.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://wa.me/306974585063?text=%CE%93%CE%B5%CE%B9%CE%B1!%20%CE%98%CE%AD%CE%BB%CF%89%20%CE%B4%CF%89%CF%81%CE%B5%CE%AC%CE%BD%20mockup."
+              href="https://wa.me/306974585063?text=%CE%93%CE%B5%CE%B9%CE%B1!%20%CE%98%CE%AD%CE%BB%CF%89%20demo."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white font-bold px-6 py-3.5 rounded-xl transition-colors shadow-lg shadow-[#25D366]/20"
@@ -219,7 +219,7 @@ export default function AchilleasCaseStudy() {
               href="/#contact"
               className="inline-flex items-center justify-center bg-[#F97316] hover:bg-[#EA580C] text-white font-bold px-6 py-3.5 rounded-xl transition-colors"
             >
-              Δωρεάν mockup
+              Ζητήστε Demo
             </a>
           </div>
         </div>

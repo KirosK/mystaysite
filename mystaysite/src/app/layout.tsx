@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | MyStaySite",
   },
   description:
-    "Επαγγελματικά websites για ενοικιαζόμενα δωμάτια, βίλες & apartments. Online κρατήσεις, SEO, κριτικές. Από €349. Δωρεάν mockup σε 48 ώρες.",
+    "Φτιάχνουμε επαγγελματικά websites για τουριστικά καταλύματα στην Ελλάδα. Direct bookings χωρίς προμήθεια Booking. 3 live sites. Ζητήστε demo.",
   keywords: [
     "κατασκευή ιστοσελίδας ενοικιαζόμενα δωμάτια",
     "website ενοικιαζόμενα δωμάτια",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MyStaySite | Κατασκευή Website για Ενοικιαζόμενα Δωμάτια",
     description:
-      "Επαγγελματικά websites για καταλύματα. Online κρατήσεις, κριτικές, SEO. Από €349. Δωρεάν mockup σε 48 ώρες.",
+      "Φτιάχνουμε επαγγελματικά websites για τουριστικά καταλύματα. Direct bookings, κριτικές, SEO. Ζητήστε demo.",
     url: "https://mystaysite.com",
     siteName: "MyStaySite",
     locale: "el_GR",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MyStaySite | Website για Ενοικιαζόμενα Δωμάτια",
     description:
-      "Επαγγελματικά websites για καταλύματα. Online κρατήσεις, κριτικές, SEO. Από €349.",
+      "Φτιάχνουμε επαγγελματικά websites για τουριστικά καταλύματα. Direct bookings, κριτικές, SEO. Ζητήστε demo.",
   },
   robots: {
     index: true,
@@ -122,42 +122,13 @@ export default function RootLayout({
                   "Website για ενοικιαζόμενα δωμάτια",
                   "SEO για καταλύματα",
                 ],
-                priceRange: "€349 - €1499",
                 telephone: "+30 697 458 5063",
                 email: "info@mystaysite.com",
                 address: {
                   "@type": "PostalAddress",
                   addressCountry: "GR",
-                  addressRegion: "Χαλκιδική",
                 },
                 sameAs: [],
-                hasOfferCatalog: {
-                  "@type": "OfferCatalog",
-                  name: "Πακέτα κατασκευής website",
-                  itemListElement: [
-                    {
-                      "@type": "Offer",
-                      name: "Starter",
-                      description: "One-page website για ενοικιαζόμενα δωμάτια",
-                      price: "349",
-                      priceCurrency: "EUR",
-                    },
-                    {
-                      "@type": "Offer",
-                      name: "Professional",
-                      description: "Πλήρες website με online κρατήσεις και SEO",
-                      price: "599",
-                      priceCurrency: "EUR",
-                    },
-                    {
-                      "@type": "Offer",
-                      name: "Premium",
-                      description: "Premium website με booking engine, SEO και digital marketing",
-                      price: "1499",
-                      priceCurrency: "EUR",
-                    },
-                  ],
-                },
               },
               {
                 "@context": "https://schema.org",
@@ -175,7 +146,7 @@ export default function RootLayout({
                     name: "Πόσο κοστίζει ένα website για ενοικιαζόμενα δωμάτια;",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Τα πακέτα ξεκινούν από €349 για one-page website, €599 για πλήρες website με online κρατήσεις, και €1499 για premium με booking engine και digital marketing.",
+                      text: "Κάθε κατάλυμα έχει διαφορετικές ανάγκες. Ζητήστε ένα δωρεάν demo και σας ετοιμάζουμε προσωπική προσφορά. Χωρίς δέσμευση.",
                     },
                   },
                   {

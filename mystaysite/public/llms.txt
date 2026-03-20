@@ -1,6 +1,6 @@
 # MyStaySite
 
-> Professional websites for vacation rentals, villas, studios and apartments worldwide. Direct bookings, SEO, reviews integration. From €349. Free mockup in 48 hours.
+> Professional websites for vacation rentals, villas, studios and apartments worldwide. Direct bookings, SEO, reviews integration. Request a demo.
 
 ## About
 
@@ -19,21 +19,24 @@ MyStaySite builds professional websites for accommodation owners who want to red
 - Social media setup and content creation
 - Monthly maintenance and updates
 
-## Pricing
+## Packages
 
-- Starter: €349 — One-page website, photos, SEO basics, SSL, Google Business Profile, delivered in 2-5 days
-- Professional: €599 — Full website with booking system, reviews section, 2 languages, Google Analytics, photo gallery
-- Premium: €1,499 — Complete digital setup with online payments, iCal sync, 3+ languages, blog, copywriting, Google Ads, social media, PMS integration
-- Monthly maintenance: €29/month (optional)
+- Starter — One-page website, photos, SEO basics, SSL, Google Business Profile, delivered in 2-5 days
+- Professional — Full website with booking system, reviews section, 2 languages, Google Analytics, photo gallery
+- Premium — Complete digital setup with online payments, iCal sync, 3+ languages, blog, copywriting, Google Ads, social media, PMS integration
+- Monthly maintenance available (optional)
+
+Contact us for pricing.
 
 ## Guarantees
 
-- Free mockup before you pay — don't like it, don't pay
+- Free demo before you pay — don't like it, don't pay
 - Google-indexed in 14 days or we work for free until it is
 - 6 months bug-free guarantee
 
 ## Portfolio
 
+- Villa Afroditi (Antiparos) — https://www.antiparos-afroditivillas.gr
 - RODAVGI Apartments (Sithonia, Halkidiki) — https://rodavgiapartments.com
 - Achilleas Peaceful Place (Sithonia, Halkidiki) — https://achilleasplace.gr
 

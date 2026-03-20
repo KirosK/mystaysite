@@ -17,11 +17,11 @@ const content = {
       },
       {
         heading: "3. Τιμολόγηση & Πληρωμές",
-        text: "Οι τιμές αναφέρονται σε εφάπαξ κόστος κατασκευής, εκτός αν ορίζεται διαφορετικά. Η μηνιαία συντήρηση (€29/μήνα) είναι προαιρετική. Η πληρωμή γίνεται μετά την έγκριση του mockup από τον πελάτη. Δεν υπάρχει χρέωση για το αρχικό mockup. Αποδεκτοί τρόποι πληρωμής: τραπεζική μεταφορά, Stripe, Viva Wallet, Crypto, Mastercard, Amex.",
+        text: "Οι τιμές αναφέρονται σε εφάπαξ κόστος κατασκευής, εκτός αν ορίζεται διαφορετικά. Η μηνιαία συντήρηση είναι προαιρετική. Η πληρωμή γίνεται μετά την έγκριση του demo από τον πελάτη. Δεν υπάρχει χρέωση για το αρχικό demo. Αποδεκτοί τρόποι πληρωμής: τραπεζική μεταφορά, Stripe, Viva Wallet, Crypto, Mastercard, Amex.",
       },
       {
         heading: "4. Εγγυήσεις",
-        text: "Πληρώνεις ΜΟΝΟ αν σου αρέσει: Αν δεν εγκρίνεις το mockup, δεν χρεώνεσαι. Google-Ready σε 14 ημέρες: Εγγυόμαστε ότι το site σου θα είναι indexed στο Google εντός 14 ημερών. Δωρεάν διορθώσεις: Αν κάτι δεν λειτουργεί σωστά, το φτιάχνουμε δωρεάν.",
+        text: "Πληρώνεις ΜΟΝΟ αν σου αρέσει: Αν δεν εγκρίνεις το demo, δεν χρεώνεσαι. Google-Ready σε 14 ημέρες: Εγγυόμαστε ότι το site σου θα είναι indexed στο Google εντός 14 ημερών. Δωρεάν διορθώσεις: Αν κάτι δεν λειτουργεί σωστά, το φτιάχνουμε δωρεάν.",
       },
       {
         heading: "5. Ιδιοκτησία & Πνευματικά Δικαιώματα",
@@ -37,7 +37,7 @@ const content = {
       },
       {
         heading: "8. Ακύρωση",
-        text: "Ο πελάτης μπορεί να ακυρώσει πριν την έγκριση του mockup χωρίς καμία χρέωση. Μετά την έγκριση του mockup και την έναρξη ανάπτυξης, η ακύρωση συνεπάγεται χρέωση 50% της αξίας του πακέτου. Η μηνιαία συντήρηση μπορεί να ακυρωθεί ανά πάσα στιγμή.",
+        text: "Ο πελάτης μπορεί να ακυρώσει πριν την έγκριση του demo χωρίς καμία χρέωση. Μετά την έγκριση του demo και την έναρξη ανάπτυξης, η ακύρωση συνεπάγεται χρέωση 50% της αξίας του πακέτου. Η μηνιαία συντήρηση μπορεί να ακυρωθεί ανά πάσα στιγμή.",
       },
       {
         heading: "9. Περιορισμός Ευθύνης",
@@ -75,11 +75,11 @@ const content = {
       },
       {
         heading: "3. Pricing & Payments",
-        text: "Prices refer to a one-time development cost, unless otherwise stated. Monthly maintenance (€29/month) is optional. Payment is made after the client approves the mockup. There is no charge for the initial mockup. Accepted payment methods: bank transfer, Stripe, Viva Wallet, Crypto, Mastercard, Amex.",
+        text: "Prices refer to a one-time development cost, unless otherwise stated. Monthly maintenance is optional. Payment is made after the client approves the demo. There is no charge for the initial demo. Accepted payment methods: bank transfer, Stripe, Viva Wallet, Crypto, Mastercard, Amex.",
       },
       {
         heading: "4. Guarantees",
-        text: "Pay ONLY if you like it: If you don't approve the mockup, you are not charged. Google-Ready in 14 days: We guarantee your site will be indexed on Google within 14 days. Free fixes: If something doesn't work properly, we fix it for free.",
+        text: "Pay ONLY if you like it: If you don't approve the demo, you are not charged. Google-Ready in 14 days: We guarantee your site will be indexed on Google within 14 days. Free fixes: If something doesn't work properly, we fix it for free.",
       },
       {
         heading: "5. Ownership & Copyright",
@@ -95,7 +95,7 @@ const content = {
       },
       {
         heading: "8. Cancellation",
-        text: "The client may cancel before mockup approval without any charge. After mockup approval and development start, cancellation incurs a 50% charge of the package value. Monthly maintenance can be cancelled at any time.",
+        text: "The client may cancel before demo approval without any charge. After demo approval and development start, cancellation incurs a 50% charge of the package value. Monthly maintenance can be cancelled at any time.",
       },
       {
         heading: "9. Limitation of Liability",

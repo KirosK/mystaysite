@@ -61,11 +61,11 @@ export default function ChatBot() {
       }, 600);
     } else if (idx === 1) {
       setTimeout(() => {
-        addBot(t.chatbot.pricingReply);
+        addBot(t.chatbot.howReply);
       }, 600);
     } else {
       setTimeout(() => {
-        addBot(t.chatbot.howReply);
+        addBot(t.chatbot.samplesReply);
       }, 600);
     }
   };
@@ -114,7 +114,7 @@ export default function ChatBot() {
     } catch {
       const subject = encodeURIComponent("New Lead - MyStaySite ChatBot");
       const body = encodeURIComponent(
-        `New mockup request from ChatBot:\n\nBooking/Airbnb Link: ${link}\nContact: ${contactInfo}\n\nSent from mystaysite.com chatbot`
+        `New demo request from ChatBot:\n\nBooking/Airbnb Link: ${link}\nContact: ${contactInfo}\n\nSent from mystaysite.com chatbot`
       );
       window.open(`mailto:${EMAIL_TO}?subject=${subject}&body=${body}`, "_self");
     }

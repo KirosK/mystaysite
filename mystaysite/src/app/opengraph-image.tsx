@@ -115,7 +115,7 @@ export default function OgImage() {
               gap: 8,
             }}
           >
-            <span style={{ fontSize: 18, color: "#60A5FA", fontWeight: 600 }}>From €349</span>
+            <span style={{ fontSize: 18, color: "#60A5FA", fontWeight: 600 }}>3 Live Sites</span>
           </div>
           <div
             style={{
@@ -128,7 +128,7 @@ export default function OgImage() {
               gap: 8,
             }}
           >
-            <span style={{ fontSize: 18, color: "#60A5FA", fontWeight: 600 }}>Free Mockup 48h</span>
+            <span style={{ fontSize: 18, color: "#60A5FA", fontWeight: 600 }}>Free Demo</span>
           </div>
         </div>
       </div>

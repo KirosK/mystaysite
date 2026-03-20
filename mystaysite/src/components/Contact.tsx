@@ -21,22 +21,23 @@ export default function Contact() {
   const { t, lang } = useLang();
   const ref = useAnimateOnScroll();
 
-  const [link, setLink] = useState("");
+  const [name, setName] = useState("");
   const [contact, setContact] = useState("");
-  const [selectedPackage, setSelectedPackage] = useState("");
+  const [link, setLink] = useState("");
+  const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const canSubmit = link.trim() !== "" && contact.trim() !== "";
+  const canSubmit = name.trim() !== "" && contact.trim() !== "";
 
   const whatsappPrefill = encodeURIComponent(t.contact.whatsappPrefill);
   const whatsappUrl = `https://wa.me/${PHONE}?text=${whatsappPrefill}`;
   const emailSubject = encodeURIComponent(
-    lang === "gr" ? "Ενδιαφέρομαι για website" : "Interested in a website"
+    lang === "gr" ? "Ενδιαφέρομαι για demo" : "Interested in a demo"
   );
   const emailBody = encodeURIComponent(
     lang === "gr"
-      ? "Γεια σας! Θέλω δωρεάν mockup. Ορίστε το link μου: "
-      : "Hi! I'd like a free mockup. Here's my link: "
+      ? "Γεια σας! Ενδιαφέρομαι για demo. "
+      : "Hi! I'm interested in a demo. "
   );
   const emailUrl = `mailto:${EMAIL}?subject=${emailSubject}&body=${emailBody}`;
 
@@ -44,17 +45,15 @@ export default function Contact() {
     e.preventDefault();
     if (!canSubmit) return;
 
-    const pkgLabel = selectedPackage || t.contact.packageOptions[0];
-
-    // Backup: send to Formspree (replace xeerjqzn with your Formspree form ID)
     try {
       await fetch("https://formspree.io/f/xeerjqzn", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          link,
+          name,
           contact,
-          package: pkgLabel,
+          link: link || "(not provided)",
+          message: message || "(not provided)",
           source: "mystaysite.com",
         }),
       });
@@ -63,11 +62,12 @@ export default function Contact() {
     }
 
     const msg = [
-      lang === "gr" ? "Νέο αίτημα mockup:" : "New mockup request:",
+      lang === "gr" ? "Νέο αίτημα demo:" : "New demo request:",
       "",
-      `Link: ${link}`,
+      `${t.contact.nameLabel}: ${name}`,
       `${t.contact.contactLabel}: ${contact}`,
-      `${t.contact.packageLabel}: ${pkgLabel}`,
+      ...(link ? [`Link: ${link}`] : []),
+      ...(message ? [`${t.contact.messageLabel}: ${message}`] : []),
     ].join("\n");
 
     window.open(
@@ -93,7 +93,6 @@ export default function Contact() {
         ref={ref}
         className="relative max-w-6xl mx-auto px-4 sm:px-6 animate-fade-in-up"
       >
-        {/* Title */}
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-4">
             {t.contact.sectionTitle}
@@ -104,11 +103,8 @@ export default function Contact() {
         </div>
 
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
-          {/* Left column: CTAs + Form (3/5) */}
           <div className="lg:col-span-3">
-            {/* Contact buttons row */}
             <div className="grid grid-cols-2 gap-3">
-              {/* WhatsApp */}
               <a
                 href={whatsappUrl}
                 target="_blank"
@@ -119,7 +115,6 @@ export default function Contact() {
                 WhatsApp
               </a>
 
-              {/* Email */}
               <a
                 href={emailUrl}
                 className="flex flex-col items-center justify-center gap-2 py-4 px-3 bg-[#EA4335] hover:bg-[#d33426] text-white font-bold text-sm rounded-lg transition-colors shadow-lg shadow-[#EA4335]/20"
@@ -131,14 +126,12 @@ export default function Contact() {
               </a>
             </div>
 
-            {/* Divider */}
             <div className="flex items-center gap-4 my-8">
               <div className="flex-1 h-px bg-white/10" />
               <span className="text-gray-500 text-sm">{t.contact.divider}</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
 
-            {/* Minimal form */}
             {status === "success" ? (
               <div className="bg-white/5 border border-white/10 rounded-xl p-8 text-center">
                 <div className="text-3xl mb-3">✅</div>
@@ -149,17 +142,17 @@ export default function Contact() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label htmlFor="contact-link" className="block text-sm font-semibold text-gray-300 mb-1.5">
-                    {t.contact.linkLabel}{" "}
+                  <label htmlFor="contact-name" className="block text-sm font-semibold text-gray-300 mb-1.5">
+                    {t.contact.nameLabel}{" "}
                     <span className="text-accent">*</span>
                   </label>
                   <input
-                    id="contact-link"
+                    id="contact-name"
                     type="text"
                     required
-                    value={link}
-                    onChange={(e) => setLink(e.target.value)}
-                    placeholder={t.contact.linkPlaceholder}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder={t.contact.namePlaceholder}
                     className="w-full px-4 py-3.5 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors"
                   />
                 </div>
@@ -181,22 +174,31 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="contact-package" className="block text-sm font-semibold text-gray-300 mb-1.5">
-                    {t.contact.packageLabel}
+                  <label htmlFor="contact-link" className="block text-sm font-semibold text-gray-300 mb-1.5">
+                    {t.contact.linkLabel}
                   </label>
-                  <select
-                    id="contact-package"
-                    value={selectedPackage}
-                    onChange={(e) => setSelectedPackage(e.target.value)}
-                    className="w-full px-4 py-3.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors appearance-none cursor-pointer"
-                    style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 16px center' }}
-                  >
-                    {t.contact.packageOptions.map((opt, i) => (
-                      <option key={i} value={opt} className="bg-[#1E293B] text-white">
-                        {opt}
-                      </option>
-                    ))}
-                  </select>
+                  <input
+                    id="contact-link"
+                    type="text"
+                    value={link}
+                    onChange={(e) => setLink(e.target.value)}
+                    placeholder={t.contact.linkPlaceholder}
+                    className="w-full px-4 py-3.5 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="contact-message" className="block text-sm font-semibold text-gray-300 mb-1.5">
+                    {t.contact.messageLabel}
+                  </label>
+                  <textarea
+                    id="contact-message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder={t.contact.messagePlaceholder}
+                    rows={3}
+                    className="w-full px-4 py-3.5 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors resize-none"
+                  />
                 </div>
 
                 <button
@@ -225,10 +227,8 @@ export default function Contact() {
             )}
           </div>
 
-          {/* Right column: Contact info (2/5) */}
           <div className="lg:col-span-2">
             <div className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-5">
-              {/* Phone */}
               <a
                 href={`tel:+${PHONE}`}
                 className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group"
@@ -241,7 +241,6 @@ export default function Contact() {
                 <span className="text-sm font-medium">{t.contact.infoPhone}</span>
               </a>
 
-              {/* WhatsApp */}
               <a
                 href={whatsappUrl}
                 target="_blank"
@@ -254,7 +253,6 @@ export default function Contact() {
                 <span className="text-sm font-medium">WhatsApp</span>
               </a>
 
-              {/* Email */}
               <a
                 href={emailUrl}
                 className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group"

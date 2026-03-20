@@ -13,9 +13,20 @@ interface Project {
   url: string;
   image: string;
   caseStudyUrl?: string;
+  isNew?: boolean;
 }
 
 const projects: Project[] = [
+  {
+    name: "Villa Afroditi",
+    location: "Γλυφά, Αντίπαρος",
+    bookingScore: "",
+    googleScore: "",
+    features: ["Κρατήσεις", "Reviews", "SEO", "3 Γλώσσες", "Πισίνες"],
+    url: "https://www.antiparos-afroditivillas.gr/",
+    image: "/portfolio/afroditi/hero.png",
+    isNew: true,
+  },
   {
     name: "RODAVGI Apartments",
     location: "Παραλία Συκιάς, Σιθωνία, Χαλκιδική",
@@ -40,7 +51,6 @@ const projects: Project[] = [
 function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-      {/* Browser frame */}
       <div className="bg-gray-100 px-3 py-2 flex items-center gap-2 border-b border-gray-200">
         <div className="flex gap-1">
           <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
@@ -57,7 +67,6 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
 
-      {/* Screenshot */}
       <a href={project.url} target="_blank" rel="noopener noreferrer" className="block relative overflow-hidden cursor-pointer">
         <Image
           src={project.image}
@@ -66,9 +75,16 @@ function ProjectCard({ project }: { project: Project }) {
           height={900}
           className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
         />
-        <div className="absolute top-3 right-3 bg-green-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
-          <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
-          Live
+        <div className="absolute top-3 right-3 flex items-center gap-1.5">
+          {project.isNew && (
+            <span className="bg-amber-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg">
+              NEW
+            </span>
+          )}
+          <span className="bg-green-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
+            <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+            Live
+          </span>
         </div>
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
           <span className="bg-white/95 backdrop-blur text-sm font-bold text-gray-900 px-5 py-2.5 rounded-xl shadow-xl">
@@ -77,20 +93,25 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
       </a>
 
-      {/* Info */}
       <div className="px-4 py-4 border-t border-gray-100">
         <div className="mb-2">
           <div className="text-sm font-bold text-gray-900">{project.name}</div>
           <div className="text-[11px] text-gray-500">{project.location}</div>
         </div>
-        <div className="flex items-center gap-2 mb-3">
-          <span className="bg-blue-50 text-blue-700 text-[10px] font-bold px-2 py-0.5 rounded">
-            Booking {project.bookingScore}
-          </span>
-          <span className="bg-yellow-50 text-yellow-700 text-[10px] font-bold px-2 py-0.5 rounded">
-            Google {project.googleScore}
-          </span>
-        </div>
+        {(project.bookingScore || project.googleScore) && (
+          <div className="flex items-center gap-2 mb-3">
+            {project.bookingScore && (
+              <span className="bg-blue-50 text-blue-700 text-[10px] font-bold px-2 py-0.5 rounded">
+                Booking {project.bookingScore}
+              </span>
+            )}
+            {project.googleScore && (
+              <span className="bg-yellow-50 text-yellow-700 text-[10px] font-bold px-2 py-0.5 rounded">
+                Google {project.googleScore}
+              </span>
+            )}
+          </div>
+        )}
         <div className="flex gap-1.5 flex-wrap">
           {project.features.map((f, i) => (
             <span key={i} className="bg-gray-100 text-gray-600 text-[10px] font-medium px-2 py-0.5 rounded-full">
@@ -124,8 +145,7 @@ export default function Portfolio() {
           </p>
         </div>
 
-        {/* Project cards */}
-        <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto mb-10">
           {projects.map((p, i) => (
             <ProjectCard key={i} project={p} />
           ))}
