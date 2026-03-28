@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-const BLOG_DIR = path.join(process.cwd(), "content", "blog");
+const BLOG_BASE = path.join(process.cwd(), "content", "blog");
 
 export interface PostFrontmatter {
   title: string;
@@ -26,13 +26,22 @@ export function calculateReadingTime(content: string): number {
   return Math.max(1, Math.ceil(words / 200));
 }
 
-export function getAllPosts(): Post[] {
-  if (!fs.existsSync(BLOG_DIR)) return [];
+function getBlogDir(locale?: string): string {
+  if (locale === "en") {
+    const enDir = path.join(BLOG_BASE, "en");
+    if (fs.existsSync(enDir)) return enDir;
+  }
+  return BLOG_BASE;
+}
 
-  const files = fs.readdirSync(BLOG_DIR).filter((f) => f.endsWith(".mdx"));
+export function getAllPosts(locale?: string): Post[] {
+  const dir = getBlogDir(locale);
+  if (!fs.existsSync(dir)) return [];
+
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".mdx"));
 
   const posts = files.map((filename) => {
-    const filePath = path.join(BLOG_DIR, filename);
+    const filePath = path.join(dir, filename);
     const raw = fs.readFileSync(filePath, "utf-8");
     const { data, content } = matter(raw);
 
@@ -50,17 +59,44 @@ export function getAllPosts(): Post[] {
   );
 }
 
-export function getPostBySlug(slug: string): Post | null {
-  const posts = getAllPosts();
-  return posts.find((p) => p.frontmatter.slug === slug) ?? null;
+export function getPostBySlug(slug: string, locale?: string): Post | null {
+  if (locale === "en") {
+    const enDir = path.join(BLOG_BASE, "en");
+    if (fs.existsSync(enDir)) {
+      const enPost = readPostFromDir(enDir, slug);
+      if (enPost) return enPost;
+    }
+  }
+  return readPostFromDir(BLOG_BASE, slug);
+}
+
+function readPostFromDir(dir: string, slug: string): Post | null {
+  const files = fs.existsSync(dir)
+    ? fs.readdirSync(dir).filter((f) => f.endsWith(".mdx"))
+    : [];
+
+  for (const filename of files) {
+    const filePath = path.join(dir, filename);
+    const raw = fs.readFileSync(filePath, "utf-8");
+    const { data, content } = matter(raw);
+    if ((data as PostFrontmatter).slug === slug) {
+      return {
+        frontmatter: data as PostFrontmatter,
+        content,
+        readingTime: calculateReadingTime(content),
+      };
+    }
+  }
+  return null;
 }
 
 export function getRelatedPosts(
   currentSlug: string,
   category: string,
-  limit = 3
+  limit = 3,
+  locale?: string
 ): Post[] {
-  const posts = getAllPosts();
+  const posts = getAllPosts(locale);
   return posts
     .filter(
       (p) =>
@@ -70,6 +106,6 @@ export function getRelatedPosts(
     .slice(0, limit);
 }
 
-export function getAllSlugs(): string[] {
-  return getAllPosts().map((p) => p.frontmatter.slug);
+export function getAllSlugs(locale?: string): string[] {
+  return getAllPosts(locale).map((p) => p.frontmatter.slug);
 }

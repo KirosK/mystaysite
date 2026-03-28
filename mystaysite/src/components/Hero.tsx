@@ -1,17 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import { useLang } from "@/lib/language-context";
 
 function BrowserMockup() {
   return (
-    <div className="animate-float relative">
+    <div className="animate-float relative animate-hero-fade-in">
       <a
         href="https://rodavgiapartments.com/"
         target="_blank"
         rel="noopener noreferrer"
         className="block bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200 hover:shadow-3xl transition-shadow duration-300 group"
       >
-        {/* Browser chrome */}
         <div className="bg-gray-100 px-4 py-2.5 flex items-center gap-2 border-b border-gray-200">
           <div className="flex gap-1.5">
             <div className="w-3 h-3 rounded-full bg-red-400" />
@@ -27,22 +27,15 @@ function BrowserMockup() {
           <div className="text-[10px] text-gray-400 font-medium">GR / EN</div>
         </div>
 
-        {/* Real website via iframe */}
-        <div className="relative w-full overflow-hidden" style={{ height: "420px" }}>
-          <iframe
-            src="https://rodavgiapartments.com/"
-            title="RODAVGI Apartments"
-            className="absolute top-0 left-0 border-0 pointer-events-none"
-            style={{
-              width: "1440px",
-              height: "1000px",
-              transform: "scale(0.42)",
-              transformOrigin: "top left",
-            }}
-            loading="lazy"
-            tabIndex={-1}
+        <div className="relative w-full overflow-hidden">
+          <Image
+            src="/portfolio/rodavgi/hero.png"
+            alt="RODAVGI Apartments - Επαγγελματικό website καταλύματος"
+            width={1200}
+            height={800}
+            priority
+            className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
           />
-          {/* Hover overlay */}
           <div className="absolute inset-0 bg-transparent group-hover:bg-black/5 transition-colors flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100">
             <span className="bg-white/90 backdrop-blur text-xs font-semibold text-text-primary px-4 py-2 rounded-full shadow-lg">
               Δες το live site ↗

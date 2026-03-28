@@ -15,6 +15,7 @@ interface PlanData {
   readonly features: readonly string[];
   readonly cta: string;
   readonly ctaSub?: string;
+  readonly priceSub?: string;
 }
 
 type PlanTier = "starter" | "professional" | "premium";
@@ -90,8 +91,15 @@ function PlanCard({ plan, tier, badge, onCta }: PlanCardProps) {
           </p>
         </div>
 
-        <div className={`text-2xl font-extrabold mb-5 ${s.price}`}>
-          {plan.price}
+        <div className="mb-5">
+          <div className={`text-3xl font-extrabold ${s.price}`}>
+            {plan.price}
+          </div>
+          {plan.priceSub && (
+            <p className={`text-xs mt-1 ${isDark ? "text-gray-500" : "text-text-secondary"}`}>
+              {plan.priceSub}
+            </p>
+          )}
         </div>
 
         {plan.includes && (

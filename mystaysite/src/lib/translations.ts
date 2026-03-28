@@ -7,6 +7,12 @@ export const translations = {
       how: "Πώς Λειτουργεί",
       portfolio: "Δείγματα",
       pricing: "Πακέτα",
+      services: "Υπηρεσίες",
+      servicesItems: [
+        { label: "Google Ads", href: "/services/google-ads" },
+        { label: "Social Media", href: "/services/social-media" },
+        { label: "SEO", href: "/services/seo" },
+      ],
       faq: "FAQ",
       blog: "Blog",
       contact: "Επικοινωνία",
@@ -29,6 +35,10 @@ export const translations = {
     proof: {
       stat1: "9.5/10 Booking.com score πελάτη μας",
       stat2: "€0 προμήθεια σε κάθε κράτηση",
+    },
+    urgency: {
+      banner: "Δεχόμαστε 5 νέα projects τον μήνα. 3 θέσεις διαθέσιμες.",
+      seasonal: "Παράδοση εγγυημένη πριν τη σεζόν 2026",
     },
     pain: {
       sectionTitle: "Αυτά σου κοστίζουν χρήματα. Τώρα.",
@@ -149,7 +159,8 @@ export const translations = {
       starter: {
         name: "STARTER",
         tagline: "Η πρώτη σου online παρουσία",
-        price: "Επικοινωνήστε",
+        price: "Από €349",
+        priceSub: "εφάπαξ + €29/μήνα συντήρηση",
         target: "Για 1-3 δωμάτια",
         features: [
           "Custom responsive website",
@@ -168,7 +179,8 @@ export const translations = {
       professional: {
         name: "PROFESSIONAL",
         tagline: "Η μηχανή κρατήσεων",
-        price: "Επικοινωνήστε",
+        price: "Από €599",
+        priceSub: "εφάπαξ + €29/μήνα συντήρηση",
         target: "Για 3-10 δωμάτια",
         includes: "Ό,τι έχει το Starter, PLUS:",
         features: [
@@ -186,7 +198,8 @@ export const translations = {
       premium: {
         name: "PREMIUM",
         tagline: "Ολοκληρωμένο digital setup",
-        price: "Επικοινωνήστε",
+        price: "Κατόπιν προσφοράς",
+        priceSub: "Προσαρμοσμένη τιμή",
         target: "Για βίλες & πολλαπλά καταλύματα",
         includes: "Ό,τι έχει το Professional, PLUS:",
         features: [
@@ -206,7 +219,7 @@ export const translations = {
         ctaSub: "Website + Marketing + Content. Done-for-you.",
       },
       maintenance:
-        "Προαιρετικό: Μηνιαία συντήρηση (αλλαγές φωτογραφιών, τιμών, σεζόν, νέο content)",
+        "Προαιρετικό: Μηνιαία συντήρηση €29/μήνα (αλλαγές φωτογραφιών, τιμών, σεζόν, νέο content)",
       guarantee:
         "Αν δεν σου αρέσει το demo, δεν πληρώνεις τίποτα. Μηδέν ρίσκο.",
       custom: "Θες κάτι custom; Μίλα μαζί μας",
@@ -323,6 +336,11 @@ export const translations = {
       whatsapp: "WhatsApp",
       sendLink: "Ζητήστε Demo",
     },
+    exitPopup: {
+      title: "Φεύγετε χωρίς δωρεάν demo;",
+      text: "Δείτε πώς θα μοιάζει το δικό σας website σε 2-5 μέρες. Χωρίς δέσμευση.",
+      cta: "Ζητήστε Demo",
+    },
     chatbot: {
       title: "Κύρος | MyStaySite",
       subtitle: "Απαντάμε σε < 1 λεπτό",
@@ -352,6 +370,12 @@ export const translations = {
       how: "How It Works",
       portfolio: "Portfolio",
       pricing: "Packages",
+      services: "Services",
+      servicesItems: [
+        { label: "Google Ads", href: "/services/google-ads" },
+        { label: "Social Media", href: "/services/social-media" },
+        { label: "SEO", href: "/services/seo" },
+      ],
       faq: "FAQ",
       blog: "Blog",
       contact: "Contact",
@@ -374,6 +398,10 @@ export const translations = {
     proof: {
       stat1: "9.5/10 Booking.com client score",
       stat2: "€0 commission on every booking",
+    },
+    urgency: {
+      banner: "We accept 5 new projects per month. 3 spots available.",
+      seasonal: "Guaranteed delivery before the 2026 season",
     },
     pain: {
       sectionTitle: "This is costing you money. Right now.",
@@ -493,7 +521,8 @@ export const translations = {
       starter: {
         name: "STARTER",
         tagline: "Your first online presence",
-        price: "Contact us",
+        price: "From €349",
+        priceSub: "one-time + €29/mo maintenance",
         target: "For 1-3 rooms",
         features: [
           "Custom responsive website",
@@ -512,7 +541,8 @@ export const translations = {
       professional: {
         name: "PROFESSIONAL",
         tagline: "The booking machine",
-        price: "Contact us",
+        price: "From €599",
+        priceSub: "one-time + €29/mo maintenance",
         target: "For 3-10 rooms",
         includes: "Everything in Starter, PLUS:",
         features: [
@@ -530,7 +560,8 @@ export const translations = {
       premium: {
         name: "PREMIUM",
         tagline: "Complete digital setup",
-        price: "Contact us",
+        price: "Custom quote",
+        priceSub: "Tailored pricing",
         target: "For villas & multiple properties",
         includes: "Everything in Professional, PLUS:",
         features: [
@@ -550,7 +581,7 @@ export const translations = {
         ctaSub: "Website + Marketing + Content. Done-for-you.",
       },
       maintenance:
-        "Optional: Monthly maintenance (photo changes, pricing, seasonal content)",
+        "Optional: Monthly maintenance €29/mo (photo changes, pricing, seasonal content)",
       guarantee:
         "If you don't like the demo, you don't pay anything. Zero risk.",
       custom: "Need something custom? Talk to us",
@@ -666,6 +697,11 @@ export const translations = {
     mobileCta: {
       whatsapp: "WhatsApp",
       sendLink: "Request Demo",
+    },
+    exitPopup: {
+      title: "Leaving without a free demo?",
+      text: "See what your website will look like in 2-5 days. No commitment.",
+      cta: "Request Demo",
     },
     chatbot: {
       title: "Kyros | MyStaySite",

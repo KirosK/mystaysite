@@ -27,7 +27,7 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const canSubmit = name.trim() !== "" && contact.trim() !== "";
+  const canSubmit = contact.trim() !== "";
 
   const whatsappPrefill = encodeURIComponent(t.contact.whatsappPrefill);
   const whatsappUrl = `https://wa.me/${PHONE}?text=${whatsappPrefill}`;
@@ -143,13 +143,11 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="contact-name" className="block text-sm font-semibold text-gray-300 mb-1.5">
-                    {t.contact.nameLabel}{" "}
-                    <span className="text-accent">*</span>
+                    {t.contact.nameLabel}
                   </label>
                   <input
                     id="contact-name"
                     type="text"
-                    required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder={t.contact.namePlaceholder}

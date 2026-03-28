@@ -14,6 +14,7 @@ interface Project {
   image: string;
   caseStudyUrl?: string;
   isNew?: boolean;
+  metrics?: { before: string; after: string };
 }
 
 const projects: Project[] = [
@@ -26,6 +27,7 @@ const projects: Project[] = [
     url: "https://www.antiparos-afroditivillas.gr/",
     image: "/portfolio/afroditi/hero.png",
     isNew: true,
+    metrics: { before: "0 online παρουσία", after: "3γλωσσο site σε 5 μέρες" },
   },
   {
     name: "RODAVGI Apartments",
@@ -35,6 +37,7 @@ const projects: Project[] = [
     features: ["Κρατήσεις", "Reviews", "SEO", "Παραλίες"],
     url: "https://rodavgiapartments.com/",
     image: "/portfolio/rodavgi/hero.png",
+    metrics: { before: "0 direct bookings", after: "12+/μήνα" },
   },
   {
     name: "Achilleas Peaceful Place",
@@ -45,12 +48,18 @@ const projects: Project[] = [
     url: "https://achilleasplace.gr/",
     image: "/portfolio/achilleas/after-01-hero.png",
     caseStudyUrl: "/portfolio/achilleas-peaceful-place",
+    metrics: { before: "Μόνο Booking", after: "40% λιγότερες προμήθειες" },
   },
 ];
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+    <a
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
+    >
       <div className="bg-gray-100 px-3 py-2 flex items-center gap-2 border-b border-gray-200">
         <div className="flex gap-1">
           <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
@@ -67,7 +76,7 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
 
-      <a href={project.url} target="_blank" rel="noopener noreferrer" className="block relative overflow-hidden cursor-pointer">
+      <div className="relative overflow-hidden">
         <Image
           src={project.image}
           alt={project.name}
@@ -86,12 +95,26 @@ function ProjectCard({ project }: { project: Project }) {
             Live
           </span>
         </div>
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex flex-col items-center justify-center gap-2 opacity-0 group-hover:opacity-100">
           <span className="bg-white/95 backdrop-blur text-sm font-bold text-gray-900 px-5 py-2.5 rounded-xl shadow-xl">
             Δες το live ↗
           </span>
+          {(project.bookingScore || project.googleScore) && (
+            <div className="flex gap-2">
+              {project.bookingScore && (
+                <span className="bg-white/90 backdrop-blur text-[11px] font-bold text-blue-700 px-3 py-1 rounded-lg">
+                  Booking {project.bookingScore}
+                </span>
+              )}
+              {project.googleScore && (
+                <span className="bg-white/90 backdrop-blur text-[11px] font-bold text-yellow-700 px-3 py-1 rounded-lg">
+                  Google {project.googleScore}
+                </span>
+              )}
+            </div>
+          )}
         </div>
-      </a>
+      </div>
 
       <div className="px-4 py-4 border-t border-gray-100">
         <div className="mb-2">
@@ -119,8 +142,15 @@ function ProjectCard({ project }: { project: Project }) {
             </span>
           ))}
         </div>
+        {project.metrics && (
+          <div className="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2 text-[11px]">
+            <span className="text-red-500 font-semibold">Πριν: {project.metrics.before}</span>
+            <span className="text-gray-300">→</span>
+            <span className="text-green-600 font-semibold">Μετά: {project.metrics.after}</span>
+          </div>
+        )}
       </div>
-    </div>
+    </a>
   );
 }
 

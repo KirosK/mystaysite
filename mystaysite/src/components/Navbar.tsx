@@ -34,6 +34,7 @@ export default function Navbar() {
   const { lang, toggleLang, t } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -100,6 +101,33 @@ export default function Navbar() {
               </a>
             )
           )}
+          <div
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1">
+              {t.nav.services}
+              <svg className={`w-3.5 h-3.5 transition-transform ${servicesOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+            {servicesOpen && (
+              <div className="absolute top-full left-0 pt-2">
+                <div className="bg-white rounded-xl shadow-xl border border-gray-200 py-2 min-w-[180px]">
+                  {t.nav.servicesItems.map((item) => (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      className="block px-4 py-2.5 text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-gray-50 transition-colors"
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
@@ -173,6 +201,18 @@ export default function Navbar() {
                 </a>
               )
             )}
+            <div className="border-t border-gray-200 pt-2">
+              <p className="text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">{t.nav.services}</p>
+              {t.nav.servicesItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="block w-full text-left text-base font-medium text-text-secondary hover:text-text-primary transition-colors py-2 pl-3"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
             <a
               href="/#contact"
               onClick={(e) => { e.preventDefault(); scrollTo("#contact"); }}
