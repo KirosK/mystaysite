@@ -7,7 +7,6 @@ import Hero from "@/components/Hero";
 import PainPoints from "@/components/PainPoints";
 import Solution from "@/components/Solution";
 import Portfolio from "@/components/Portfolio";
-import Testimonials from "@/components/Testimonials";
 import HowItWorks from "@/components/HowItWorks";
 import Pricing from "@/components/Pricing";
 import GuaranteeStack from "@/components/GuaranteeStack";
@@ -30,7 +29,6 @@ export default function Home() {
         <PainPoints />
         <Solution />
         <Portfolio />
-        <Testimonials />
         <HowItWorks />
 
         <Pricing />

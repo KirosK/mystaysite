@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Post } from "@/lib/blog";
 
@@ -19,16 +20,29 @@ export default function BlogCard({ post }: { post: Post }) {
   const { frontmatter, readingTime } = post;
   const colorClass =
     categoryColors[frontmatter.category] || "bg-gray-100 text-gray-700";
+  const hasImage = frontmatter.image && frontmatter.image.length > 0;
 
   return (
     <Link
       href={`/blog/${frontmatter.slug}`}
       className="group block bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100"
     >
-      <div className={`aspect-[16/9] overflow-hidden bg-gradient-to-br ${categoryBgGradients[frontmatter.category] || "from-gray-500 to-gray-700"} flex items-center justify-center p-6`}>
-        <span className="text-white/90 font-bold text-lg text-center leading-tight line-clamp-3">
-          {frontmatter.title}
-        </span>
+      <div className="aspect-[16/9] overflow-hidden relative">
+        {hasImage ? (
+          <Image
+            src={frontmatter.image}
+            alt={frontmatter.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        ) : (
+          <div className={`w-full h-full bg-gradient-to-br ${categoryBgGradients[frontmatter.category] || "from-gray-500 to-gray-700"} flex items-center justify-center p-6`}>
+            <span className="text-white/90 font-bold text-lg text-center leading-tight line-clamp-3">
+              {frontmatter.title}
+            </span>
+          </div>
+        )}
       </div>
       <div className="p-5 md:p-6">
         <div className="flex items-center gap-3 mb-3">
