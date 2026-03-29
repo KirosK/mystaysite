@@ -34,6 +34,7 @@ function BrowserMockup() {
             width={1200}
             height={800}
             priority
+            sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 600px"
             className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-transparent group-hover:bg-black/5 transition-colors flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100">

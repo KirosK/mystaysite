@@ -33,17 +33,24 @@
 
 @layer utilities {
   .font-mono-nums {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--font-jetbrains), "JetBrains Mono", monospace;
   }
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
+  50% { transform: translateY(-8px); }
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+  animation: none;
+  will-change: transform;
+}
+
+@media (min-width: 768px) {
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
 }
 
 @keyframes count-up {

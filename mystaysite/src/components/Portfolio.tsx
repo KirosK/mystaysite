@@ -80,8 +80,10 @@ function ProjectCard({ project }: { project: Project }) {
         <Image
           src={project.image}
           alt={project.name}
-          width={1440}
-          height={900}
+          width={800}
+          height={500}
+          sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 380px"
+          loading="lazy"
           className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
         />
         <div className="absolute top-3 right-3 flex items-center gap-1.5">
