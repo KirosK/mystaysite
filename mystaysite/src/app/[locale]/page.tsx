@@ -4,15 +4,16 @@ import dynamic from "next/dynamic";
 import { LanguageProvider } from "@/lib/language-context";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import PainPoints from "@/components/PainPoints";
-import Solution from "@/components/Solution";
-import Portfolio from "@/components/Portfolio";
-import HowItWorks from "@/components/HowItWorks";
-import Pricing from "@/components/Pricing";
-import GuaranteeStack from "@/components/GuaranteeStack";
-import FAQ from "@/components/FAQ";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+
+const PainPoints = dynamic(() => import("@/components/PainPoints"));
+const Solution = dynamic(() => import("@/components/Solution"));
+const Portfolio = dynamic(() => import("@/components/Portfolio"));
+const HowItWorks = dynamic(() => import("@/components/HowItWorks"));
+const Pricing = dynamic(() => import("@/components/Pricing"));
+const GuaranteeStack = dynamic(() => import("@/components/GuaranteeStack"));
+const FAQ = dynamic(() => import("@/components/FAQ"));
+const Contact = dynamic(() => import("@/components/Contact"));
+const Footer = dynamic(() => import("@/components/Footer"));
 
 const MobileStickyCTA = dynamic(() => import("@/components/MobileStickyCTA"), { ssr: false });
 const ChatBot = dynamic(() => import("@/components/ChatBot"), { ssr: false });

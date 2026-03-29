@@ -29,7 +29,7 @@ function BrowserMockup() {
 
         <div className="relative w-full overflow-hidden">
           <Image
-            src="/portfolio/rodavgi/hero.png"
+            src="/portfolio/rodavgi/hero.jpg"
             alt="RODAVGI Apartments - Επαγγελματικό website καταλύματος"
             width={1200}
             height={800}

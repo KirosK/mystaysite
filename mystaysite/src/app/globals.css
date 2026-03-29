@@ -22,12 +22,12 @@
   }
 
   body {
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), "DM Sans", sans-serif;
     color: var(--color-text-primary);
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
   }
 }
 

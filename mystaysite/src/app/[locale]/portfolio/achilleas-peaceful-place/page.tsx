@@ -4,23 +4,23 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
 
 const BEFORE = [
-  { src: "/portfolio/achilleas/before-01-hero.png", label: "Αρχική" },
-  { src: "/portfolio/achilleas/before-02-about.png", label: "Σχετικά" },
-  { src: "/portfolio/achilleas/before-03-rooms.png", label: "Στόχος" },
-  { src: "/portfolio/achilleas/before-04-gallery.png", label: "Gallery" },
-  { src: "/portfolio/achilleas/before-05-area.png", label: "Φωτογραφίες" },
-  { src: "/portfolio/achilleas/before-06-contact.png", label: "Επικοινωνία" },
-  { src: "/portfolio/achilleas/before-07-footer.png", label: "Footer" },
+  { src: "/portfolio/achilleas/before-01-hero.jpg", label: "Αρχική" },
+  { src: "/portfolio/achilleas/before-02-about.jpg", label: "Σχετικά" },
+  { src: "/portfolio/achilleas/before-03-rooms.jpg", label: "Στόχος" },
+  { src: "/portfolio/achilleas/before-04-gallery.jpg", label: "Gallery" },
+  { src: "/portfolio/achilleas/before-05-area.jpg", label: "Φωτογραφίες" },
+  { src: "/portfolio/achilleas/before-06-contact.jpg", label: "Επικοινωνία" },
+  { src: "/portfolio/achilleas/before-07-footer.jpg", label: "Footer" },
 ];
 
 const AFTER = [
-  { src: "/portfolio/achilleas/after-01-hero.png", label: "Hero" },
-  { src: "/portfolio/achilleas/after-02-intro.png", label: "Highlights" },
-  { src: "/portfolio/achilleas/after-03-apartments.png", label: "Διαμερίσματα" },
-  { src: "/portfolio/achilleas/after-04-amenities.png", label: "Χώροι" },
-  { src: "/portfolio/achilleas/after-05-location.png", label: "Τοποθεσία" },
-  { src: "/portfolio/achilleas/after-06-reviews.png", label: "Κριτικές" },
-  { src: "/portfolio/achilleas/after-07-contact.png", label: "Κράτηση" },
+  { src: "/portfolio/achilleas/after-01-hero.jpg", label: "Hero" },
+  { src: "/portfolio/achilleas/after-02-intro.jpg", label: "Highlights" },
+  { src: "/portfolio/achilleas/after-03-apartments.jpg", label: "Διαμερίσματα" },
+  { src: "/portfolio/achilleas/after-04-amenities.jpg", label: "Χώροι" },
+  { src: "/portfolio/achilleas/after-05-location.jpg", label: "Τοποθεσία" },
+  { src: "/portfolio/achilleas/after-06-reviews.jpg", label: "Κριτικές" },
+  { src: "/portfolio/achilleas/after-07-contact.jpg", label: "Κράτηση" },
 ];
 
 function ImagePanel({ images, color, label, subtitle }: {

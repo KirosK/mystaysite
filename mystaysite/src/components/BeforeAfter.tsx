@@ -6,23 +6,23 @@ import { useAnimateOnScroll } from "@/lib/use-animate-on-scroll";
 import Image from "next/image";
 
 const BEFORE = [
-  { src: "/portfolio/achilleas/before-01-hero.png", gr: "Αρχική", en: "Home" },
-  { src: "/portfolio/achilleas/before-02-about.png", gr: "Σχετικά", en: "About" },
-  { src: "/portfolio/achilleas/before-03-rooms.png", gr: "Στόχος", en: "Mission" },
-  { src: "/portfolio/achilleas/before-04-gallery.png", gr: "Gallery", en: "Gallery" },
-  { src: "/portfolio/achilleas/before-05-area.png", gr: "Φωτογραφίες", en: "Photos" },
-  { src: "/portfolio/achilleas/before-06-contact.png", gr: "Επικοινωνία", en: "Contact" },
-  { src: "/portfolio/achilleas/before-07-footer.png", gr: "Footer", en: "Footer" },
+  { src: "/portfolio/achilleas/before-01-hero.jpg", gr: "Αρχική", en: "Home" },
+  { src: "/portfolio/achilleas/before-02-about.jpg", gr: "Σχετικά", en: "About" },
+  { src: "/portfolio/achilleas/before-03-rooms.jpg", gr: "Στόχος", en: "Mission" },
+  { src: "/portfolio/achilleas/before-04-gallery.jpg", gr: "Gallery", en: "Gallery" },
+  { src: "/portfolio/achilleas/before-05-area.jpg", gr: "Φωτογραφίες", en: "Photos" },
+  { src: "/portfolio/achilleas/before-06-contact.jpg", gr: "Επικοινωνία", en: "Contact" },
+  { src: "/portfolio/achilleas/before-07-footer.jpg", gr: "Footer", en: "Footer" },
 ];
 
 const AFTER = [
-  { src: "/portfolio/achilleas/after-01-hero.png", gr: "Hero", en: "Hero" },
-  { src: "/portfolio/achilleas/after-02-intro.png", gr: "Highlights", en: "Highlights" },
-  { src: "/portfolio/achilleas/after-03-apartments.png", gr: "Διαμερίσματα", en: "Apartments" },
-  { src: "/portfolio/achilleas/after-04-amenities.png", gr: "Χώροι", en: "Spaces" },
-  { src: "/portfolio/achilleas/after-05-location.png", gr: "Τοποθεσία", en: "Location" },
-  { src: "/portfolio/achilleas/after-06-reviews.png", gr: "Κριτικές", en: "Reviews" },
-  { src: "/portfolio/achilleas/after-07-contact.png", gr: "Κράτηση", en: "Booking" },
+  { src: "/portfolio/achilleas/after-01-hero.jpg", gr: "Hero", en: "Hero" },
+  { src: "/portfolio/achilleas/after-02-intro.jpg", gr: "Highlights", en: "Highlights" },
+  { src: "/portfolio/achilleas/after-03-apartments.jpg", gr: "Διαμερίσματα", en: "Apartments" },
+  { src: "/portfolio/achilleas/after-04-amenities.jpg", gr: "Χώροι", en: "Spaces" },
+  { src: "/portfolio/achilleas/after-05-location.jpg", gr: "Τοποθεσία", en: "Location" },
+  { src: "/portfolio/achilleas/after-06-reviews.jpg", gr: "Κριτικές", en: "Reviews" },
+  { src: "/portfolio/achilleas/after-07-contact.jpg", gr: "Κράτηση", en: "Booking" },
 ];
 
 function useSwipe(onLeft: () => void, onRight: () => void) {
