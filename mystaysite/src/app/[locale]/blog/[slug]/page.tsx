@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllSlugs, getPostBySlug, getRelatedPosts } from "@/lib/blog";
@@ -154,12 +155,14 @@ export default async function BlogPostPage({ params }: PageProps) {
         </header>
 
         {frontmatter.image && (
-          <div className="mb-10 rounded-2xl overflow-hidden">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+          <div className="mb-10 rounded-2xl overflow-hidden relative aspect-[16/9]">
+            <Image
               src={frontmatter.image}
               alt={frontmatter.title}
-              className="w-full aspect-[16/9] object-cover"
+              fill
+              sizes="(max-width: 768px) 100vw, 720px"
+              className="object-cover"
+              priority
             />
           </div>
         )}
@@ -180,7 +183,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {related.map((p) => (
-                <BlogCard key={p.frontmatter.slug} post={p} />
+                <BlogCard key={p.frontmatter.slug} post={p} locale={locale} />
               ))}
             </div>
           </section>

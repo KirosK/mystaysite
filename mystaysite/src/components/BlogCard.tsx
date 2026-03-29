@@ -16,15 +16,16 @@ const categoryBgGradients: Record<string, string> = {
   Tips: "from-amber-500 to-amber-600",
 };
 
-export default function BlogCard({ post }: { post: Post }) {
+export default function BlogCard({ post, locale }: { post: Post; locale?: string }) {
   const { frontmatter, readingTime } = post;
   const colorClass =
     categoryColors[frontmatter.category] || "bg-gray-100 text-gray-700";
   const hasImage = frontmatter.image && frontmatter.image.length > 0;
+  const prefix = locale ? `/${locale}` : "";
 
   return (
     <Link
-      href={`/blog/${frontmatter.slug}`}
+      href={`${prefix}/blog/${frontmatter.slug}`}
       className="group block bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100"
     >
       <div className="aspect-[16/9] overflow-hidden relative">
@@ -52,7 +53,7 @@ export default function BlogCard({ post }: { post: Post }) {
             {frontmatter.category}
           </span>
           <span className="text-xs text-gray-400">
-            {readingTime} λεπτά ανάγνωση
+            {readingTime} {locale === "en" ? "min read" : "λεπτά ανάγνωση"}
           </span>
         </div>
         <h3 className="text-lg font-bold text-[#1a1a2e] mb-2 group-hover:text-[#f57c51] transition-colors line-clamp-2">
@@ -62,7 +63,7 @@ export default function BlogCard({ post }: { post: Post }) {
           {frontmatter.excerpt}
         </p>
         <div className="text-xs text-gray-400">
-          {new Date(frontmatter.date).toLocaleDateString("el-GR", {
+          {new Date(frontmatter.date).toLocaleDateString(locale === "en" ? "en-US" : "el-GR", {
             year: "numeric",
             month: "long",
             day: "numeric",

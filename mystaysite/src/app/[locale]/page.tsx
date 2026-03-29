@@ -1,5 +1,6 @@
 "use client";
 
+import { use } from "react";
 import dynamic from "next/dynamic";
 import { LanguageProvider } from "@/lib/language-context";
 import Navbar from "@/components/Navbar";
@@ -21,9 +22,10 @@ const ExitIntentPopup = dynamic(() => import("@/components/ExitIntentPopup"), { 
 const FloatingCTA = dynamic(() => import("@/components/FloatingCTA"), { ssr: false });
 const CookieConsent = dynamic(() => import("@/components/CookieConsent"), { ssr: false });
 
-export default function Home() {
+export default function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = use(params);
   return (
-    <LanguageProvider>
+    <LanguageProvider initialLocale={locale}>
       <Navbar />
       <main>
         <Hero />
