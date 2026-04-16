@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useLang } from "@/lib/language-context";
 
-function BrowserMockup() {
+function BrowserMockup({ viewLiveLabel }: { viewLiveLabel: string }) {
   return (
     <div className="animate-float relative animate-hero-fade-in">
       <a
@@ -39,7 +39,7 @@ function BrowserMockup() {
           />
           <div className="absolute inset-0 bg-transparent group-hover:bg-black/5 transition-colors flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100">
             <span className="bg-white/90 backdrop-blur text-xs font-semibold text-text-primary px-4 py-2 rounded-full shadow-lg">
-              Δες το live site ↗
+              {viewLiveLabel}
             </span>
           </div>
         </div>
@@ -69,11 +69,16 @@ function BrowserMockup() {
 }
 
 export default function Hero() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const urlLocale = lang === "en" ? "en" : "el";
 
-  const scrollTo = (id: string) => {
+  const scrollTo = (id: string): boolean => {
     const el = document.querySelector(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      return true;
+    }
+    return false;
   };
 
   return (
@@ -93,15 +98,15 @@ export default function Hero() {
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
               <a
-                href="/#contact"
-                onClick={(e) => { e.preventDefault(); scrollTo("#contact"); }}
+                href={`/${urlLocale}#contact`}
+                onClick={(e) => { if (scrollTo("#contact")) e.preventDefault(); }}
                 className="bg-accent hover:bg-accent-dark text-white text-base font-semibold px-7 py-3.5 rounded-lg transition-colors shadow-lg shadow-accent/20 text-center"
               >
                 {t.hero.cta}
               </a>
               <a
-                href="/#portfolio"
-                onClick={(e) => { e.preventDefault(); scrollTo("#portfolio"); }}
+                href={`/${urlLocale}#portfolio`}
+                onClick={(e) => { if (scrollTo("#portfolio")) e.preventDefault(); }}
                 className="text-primary hover:text-primary-dark font-medium text-base transition-colors underline underline-offset-4 text-center"
               >
                 {t.hero.ctaSecondary}
@@ -113,7 +118,7 @@ export default function Hero() {
           <div className="relative">
             <div className="absolute -top-10 -right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
-            <BrowserMockup />
+            <BrowserMockup viewLiveLabel={t.portfolio.mockupViewLive} />
           </div>
         </div>
 

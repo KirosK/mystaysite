@@ -9,6 +9,40 @@ function slugify(text: string): string {
     .trim();
 }
 
+function prefixLocale(href: string | undefined, locale: string): string | undefined {
+  if (!href) return href;
+  if (href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:")) return href;
+  if (href.startsWith("#")) return href;
+  if (href.startsWith(`/${locale}/`) || href === `/${locale}`) return href;
+  if (href.startsWith("/el/") || href === "/el" || href.startsWith("/en/") || href === "/en") return href;
+  if (href.startsWith("/")) {
+    if (href === "/") return `/${locale}`;
+    return `/${locale}${href}`;
+  }
+  return href;
+}
+
+export function buildMdxComponents(locale: string): MDXComponentsType {
+  return {
+    ...mdxComponents,
+    a: ({ children, href, ...props }) => {
+      const localized = prefixLocale(href, locale);
+      return (
+        <a
+          href={localized}
+          className="text-[#f57c51] font-medium hover:underline transition-colors"
+          {...(href?.startsWith("http")
+            ? { target: "_blank", rel: "noopener noreferrer" }
+            : {})}
+          {...props}
+        >
+          {children}
+        </a>
+      );
+    },
+  };
+}
+
 export const mdxComponents: MDXComponentsType = {
   h2: ({ children, ...props }) => (
     <h2

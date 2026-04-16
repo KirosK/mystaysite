@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 
 interface ServiceData {
@@ -10,7 +8,25 @@ interface ServiceData {
   faq: { q: string; a: string }[];
 }
 
-export default function ServicePage({ data }: { data: ServiceData }) {
+interface ServicePageProps {
+  data: ServiceData;
+  locale: string;
+}
+
+export default function ServicePage({ data, locale }: ServicePageProps) {
+  const isEn = locale === "en";
+  const urlLocale = isEn ? "en" : "el";
+  const labels = {
+    whatsIncluded: isEn ? "What's included" : "Τι περιλαμβάνει",
+    faqTitle: isEn ? "Frequently asked questions" : "Συχνές ερωτήσεις",
+    ctaTitle: isEn ? "Get started today" : "Ξεκινήστε σήμερα",
+    ctaText: isEn
+      ? "Request a free evaluation of your property and see how we can increase your bookings."
+      : "Ζητήστε δωρεάν αξιολόγηση του καταλύματός σας και δείτε πώς μπορούμε να αυξήσουμε τις κρατήσεις σας.",
+    ctaPrimary: isEn ? "Get a Quote" : "Ζητήστε Προσφορά",
+    ctaSecondary: isEn ? "See our work" : "Δείτε δείγματα",
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
@@ -31,7 +47,7 @@ export default function ServicePage({ data }: { data: ServiceData }) {
       <section className="py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-center mb-12">
-            Τι περιλαμβάνει
+            {labels.whatsIncluded}
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {data.features.map((feature, i) => (
@@ -58,7 +74,7 @@ export default function ServicePage({ data }: { data: ServiceData }) {
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-center mb-12">
-            Συχνές ερωτήσεις
+            {labels.faqTitle}
           </h2>
           <div className="space-y-4">
             {data.faq.map((item, i) => (
@@ -90,23 +106,21 @@ export default function ServicePage({ data }: { data: ServiceData }) {
       <section className="py-16 md:py-24">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-3xl font-extrabold mb-4">
-            Ξεκινήστε σήμερα
+            {labels.ctaTitle}
           </h2>
-          <p className="text-gray-600 mb-8">
-            Ζητήστε δωρεάν αξιολόγηση του καταλύματός σας και δείτε πώς μπορούμε να αυξήσουμε τις κρατήσεις σας.
-          </p>
+          <p className="text-gray-600 mb-8">{labels.ctaText}</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
-              href="/#contact"
+              href={`/${urlLocale}#contact`}
               className="bg-accent hover:bg-accent-dark text-white font-bold text-base px-8 py-3.5 rounded-lg transition-colors shadow-lg shadow-accent/20"
             >
-              Ζητήστε Προσφορά
+              {labels.ctaPrimary}
             </Link>
             <Link
-              href="/#portfolio"
+              href={`/${urlLocale}#portfolio`}
               className="text-primary hover:text-primary-dark font-medium text-base transition-colors underline underline-offset-4"
             >
-              Δείτε δείγματα
+              {labels.ctaSecondary}
             </Link>
           </div>
         </div>

@@ -1,30 +1,41 @@
 "use client";
 
-import { useState, useRef, useCallback, useEffect } from "react";
+import { useState, useRef, useCallback, useEffect, use } from "react";
 import Image from "next/image";
 
-const BEFORE = [
-  { src: "/portfolio/achilleas/before-01-hero.jpg", label: "Αρχική" },
-  { src: "/portfolio/achilleas/before-02-about.jpg", label: "Σχετικά" },
-  { src: "/portfolio/achilleas/before-03-rooms.jpg", label: "Στόχος" },
-  { src: "/portfolio/achilleas/before-04-gallery.jpg", label: "Gallery" },
-  { src: "/portfolio/achilleas/before-05-area.jpg", label: "Φωτογραφίες" },
-  { src: "/portfolio/achilleas/before-06-contact.jpg", label: "Επικοινωνία" },
-  { src: "/portfolio/achilleas/before-07-footer.jpg", label: "Footer" },
+const BEFORE_SRC = [
+  "/portfolio/achilleas/before-01-hero.jpg",
+  "/portfolio/achilleas/before-02-about.jpg",
+  "/portfolio/achilleas/before-03-rooms.jpg",
+  "/portfolio/achilleas/before-04-gallery.jpg",
+  "/portfolio/achilleas/before-05-area.jpg",
+  "/portfolio/achilleas/before-06-contact.jpg",
+  "/portfolio/achilleas/before-07-footer.jpg",
 ];
 
-const AFTER = [
-  { src: "/portfolio/achilleas/after-01-hero.jpg", label: "Hero" },
-  { src: "/portfolio/achilleas/after-02-intro.jpg", label: "Highlights" },
-  { src: "/portfolio/achilleas/after-03-apartments.jpg", label: "Διαμερίσματα" },
-  { src: "/portfolio/achilleas/after-04-amenities.jpg", label: "Χώροι" },
-  { src: "/portfolio/achilleas/after-05-location.jpg", label: "Τοποθεσία" },
-  { src: "/portfolio/achilleas/after-06-reviews.jpg", label: "Κριτικές" },
-  { src: "/portfolio/achilleas/after-07-contact.jpg", label: "Κράτηση" },
+const AFTER_SRC = [
+  "/portfolio/achilleas/after-01-hero.jpg",
+  "/portfolio/achilleas/after-02-intro.jpg",
+  "/portfolio/achilleas/after-03-apartments.jpg",
+  "/portfolio/achilleas/after-04-amenities.jpg",
+  "/portfolio/achilleas/after-05-location.jpg",
+  "/portfolio/achilleas/after-06-reviews.jpg",
+  "/portfolio/achilleas/after-07-contact.jpg",
 ];
+
+const BEFORE_LABELS_EL = ["Αρχική", "Σχετικά", "Στόχος", "Gallery", "Φωτογραφίες", "Επικοινωνία", "Footer"];
+const BEFORE_LABELS_EN = ["Home", "About", "Purpose", "Gallery", "Photos", "Contact", "Footer"];
+const AFTER_LABELS_EL = ["Hero", "Highlights", "Διαμερίσματα", "Χώροι", "Τοποθεσία", "Κριτικές", "Κράτηση"];
+const AFTER_LABELS_EN = ["Hero", "Highlights", "Apartments", "Spaces", "Location", "Reviews", "Booking"];
+
+function buildImages(src: string[], labels: string[]) {
+  return src.map((s, i) => ({ src: s, label: labels[i] }));
+}
+
+type ImageItem = { src: string; label: string };
 
 function ImagePanel({ images, color, label, subtitle }: {
-  images: typeof BEFORE;
+  images: ImageItem[];
   color: "red" | "emerald";
   label: string;
   subtitle: string;
@@ -126,12 +137,65 @@ function ImagePanel({ images, color, label, subtitle }: {
   );
 }
 
-export default function AchilleasCaseStudy() {
+export default function AchilleasCaseStudy({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = use(params);
+  const isEn = locale === "en";
+  const urlLocale = isEn ? "en" : "el";
+
+  const copy = isEn
+    ? {
+        backHome: "← Home",
+        caseStudy: "Case Study",
+        location: "Skala Sykias, Halkidiki",
+        subtitle:
+          "From a basic website to a modern site with bookings, reviews from 3 platforms, and Google SEO.",
+        beforeAfterTitle: "Before & After",
+        beforeAfterText: "7 screenshots from each version. Tap the arrows or swipe.",
+        beforeLabel: "BEFORE",
+        afterLabel: "AFTER",
+        liveTitle: "View the live site",
+        openSite: "Open the site ↗",
+        ctaTitle: "Want something like this?",
+        ctaText:
+          "Send us a message and we'll prepare a detailed quote within 24 hours.",
+        ctaPrimary: "Get a Quote",
+        backToHome: "← Back to home",
+        seePricing: "See our packages",
+        seePortfolio: "See all projects",
+      }
+    : {
+        backHome: "← Αρχική",
+        caseStudy: "Case Study",
+        location: "Σκάλα Συκιάς, Χαλκιδική",
+        subtitle:
+          "Από ένα βασικό website σε ένα σύγχρονο site με κρατήσεις, κριτικές από 3 πλατφόρμες, και Google SEO.",
+        beforeAfterTitle: "Πριν & Μετά",
+        beforeAfterText: "7 screenshots από κάθε version. Κάνε κλικ στα βελάκια ή swipe.",
+        beforeLabel: "ΠΡΙΝ",
+        afterLabel: "ΜΕΤΑ",
+        liveTitle: "Δες το live site",
+        openSite: "Άνοιξε το site ↗",
+        ctaTitle: "Θες κάτι παρόμοιο;",
+        ctaText:
+          "Στείλε μας μήνυμα και σου ετοιμάζουμε αναλυτική προσφορά σε 24 ώρες.",
+        ctaPrimary: "Ζητήστε Προσφορά",
+        backToHome: "← Πίσω στην αρχική",
+        seePricing: "Δες τα πακέτα μας",
+        seePortfolio: "Δες όλα τα projects",
+      };
+
+  const before = buildImages(BEFORE_SRC, isEn ? BEFORE_LABELS_EN : BEFORE_LABELS_EL);
+  const after = buildImages(AFTER_SRC, isEn ? AFTER_LABELS_EN : AFTER_LABELS_EL);
+
   return (
     <div className="min-h-screen bg-[#FAFBFC]">
       <header className="bg-white border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-5 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2 group">
+          <a href={`/${urlLocale}`} className="flex items-center gap-2 group">
             <div className="w-8 h-8 bg-[#0EA5E9] rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
               <svg className="w-4.5 h-4.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
@@ -143,46 +207,39 @@ export default function AchilleasCaseStudy() {
               <span className="text-lg font-extrabold text-gray-900">site</span>
             </div>
           </a>
-          <a href="/" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">
-            ← Αρχική
+          <a href={`/${urlLocale}`} className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">
+            {copy.backHome}
           </a>
         </div>
       </header>
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-        {/* Title */}
         <div className="max-w-3xl mb-12">
           <div className="flex items-center gap-3 mb-4 flex-wrap">
             <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full">
-              Case Study
+              {copy.caseStudy}
             </span>
-            <span className="text-sm text-gray-400">Σκάλα Συκιάς, Χαλκιδική</span>
+            <span className="text-sm text-gray-400">{copy.location}</span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
             Achilleas Peaceful Place
           </h1>
-          <p className="text-lg text-gray-500 leading-relaxed">
-            Από ένα βασικό website σε ένα σύγχρονο site με κρατήσεις,
-            κριτικές από 3 πλατφόρμες, και Google SEO.
-          </p>
+          <p className="text-lg text-gray-500 leading-relaxed">{copy.subtitle}</p>
         </div>
 
-
-        {/* Before / After — side by side */}
         <div className="mb-16">
-          <h2 className="text-2xl font-extrabold text-gray-900 mb-2">Πριν & Μετά</h2>
-          <p className="text-gray-500 mb-8">7 screenshots από κάθε version. Κάνε κλικ στα βελάκια ή swipe.</p>
+          <h2 className="text-2xl font-extrabold text-gray-900 mb-2">{copy.beforeAfterTitle}</h2>
+          <p className="text-gray-500 mb-8">{copy.beforeAfterText}</p>
 
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-            <ImagePanel images={BEFORE} color="red" label="ΠΡΙΝ" subtitle="" />
-            <ImagePanel images={AFTER} color="emerald" label="ΜΕΤΑ" subtitle="" />
+            <ImagePanel images={before} color="red" label={copy.beforeLabel} subtitle="" />
+            <ImagePanel images={after} color="emerald" label={copy.afterLabel} subtitle="" />
           </div>
         </div>
 
-        {/* Live link */}
         <div className="bg-white rounded-xl border border-gray-100 p-6 mb-16 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
           <div>
-            <h3 className="font-bold text-gray-900">Δες το live site</h3>
+            <h3 className="font-bold text-gray-900">{copy.liveTitle}</h3>
             <p className="text-sm text-gray-500 mt-0.5">achilleasplace.gr</p>
           </div>
           <a
@@ -191,21 +248,22 @@ export default function AchilleasCaseStudy() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#0EA5E9] hover:bg-[#0284C7] text-white font-bold px-6 py-3 rounded-xl transition-colors"
           >
-            Ανοιξε το site ↗
+            {copy.openSite}
           </a>
         </div>
 
-        {/* CTA */}
         <div className="bg-[#0F172A] rounded-2xl p-8 md:p-12 text-center">
           <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-3">
-            Θες κάτι παρόμοιο;
+            {copy.ctaTitle}
           </h2>
-          <p className="text-gray-400 mb-6 max-w-lg mx-auto">
-            Στείλε μας μήνυμα και σου ετοιμάζουμε αναλυτική προσφορά σε 24 ώρες.
-          </p>
+          <p className="text-gray-400 mb-6 max-w-lg mx-auto">{copy.ctaText}</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://wa.me/306974585063?text=%CE%93%CE%B5%CE%B9%CE%B1!%20%CE%96%CE%B7%CF%84%CF%8E%20%CF%80%CF%81%CE%BF%CF%83%CF%86%CE%BF%CF%81%CE%AC%20%CE%B3%CE%B9%CE%B1%20website."
+              href={`https://wa.me/306974585063?text=${encodeURIComponent(
+                isEn
+                  ? "Hi! I'd like a quote for a website."
+                  : "Γεια! Ζητώ προσφορά για website."
+              )}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white font-bold px-6 py-3.5 rounded-xl transition-colors shadow-lg shadow-[#25D366]/20"
@@ -216,25 +274,25 @@ export default function AchilleasCaseStudy() {
               WhatsApp
             </a>
             <a
-              href="/#contact"
+              href={`/${urlLocale}#contact`}
               className="inline-flex items-center justify-center bg-[#F97316] hover:bg-[#EA580C] text-white font-bold px-6 py-3.5 rounded-xl transition-colors"
             >
-              Ζητήστε Προσφορά
+              {copy.ctaPrimary}
             </a>
           </div>
         </div>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="/" className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
-            ← Πίσω στην αρχική
+          <a href={`/${urlLocale}`} className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
+            {copy.backToHome}
           </a>
           <span className="hidden sm:inline text-gray-300">·</span>
-          <a href="/#pricing" className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
-            Δες τα πακέτα μας
+          <a href={`/${urlLocale}#pricing`} className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
+            {copy.seePricing}
           </a>
           <span className="hidden sm:inline text-gray-300">·</span>
-          <a href="/#portfolio" className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
-            Δες όλα τα projects
+          <a href={`/${urlLocale}#portfolio`} className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
+            {copy.seePortfolio}
           </a>
         </div>
       </main>

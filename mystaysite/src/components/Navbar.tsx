@@ -32,6 +32,7 @@ function FlagEN() {
 
 export default function Navbar() {
   const { lang, toggleLang, t } = useLang();
+  const urlLocale = lang === "en" ? "en" : "el";
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -46,14 +47,18 @@ export default function Navbar() {
     { href: "#portfolio", label: t.nav.portfolio },
     { href: "#pricing", label: t.nav.pricing },
     { href: "#faq", label: t.nav.faq },
-    { href: "/blog", label: t.nav.blog, isRoute: true },
+    { href: `/${urlLocale}/blog`, label: t.nav.blog, isRoute: true },
     { href: "#contact", label: t.nav.contact },
   ];
 
-  const scrollTo = (href: string) => {
+  const scrollTo = (href: string): boolean => {
     setMobileOpen(false);
     const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      return true;
+    }
+    return false;
   };
 
   return (
@@ -66,7 +71,7 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 md:h-18">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2 group">
+        <a href={`/${urlLocale}`} className="flex items-center gap-2 group">
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
             <svg className="w-4.5 h-4.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
@@ -93,8 +98,8 @@ export default function Navbar() {
             ) : (
               <a
                 key={link.href}
-                href={`/${link.href}`}
-                onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
+                href={`/${urlLocale}${link.href}`}
+                onClick={(e) => { if (scrollTo(link.href)) e.preventDefault(); }}
                 className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
               >
                 {link.label}
@@ -118,7 +123,7 @@ export default function Navbar() {
                   {t.nav.servicesItems.map((item) => (
                     <a
                       key={item.href}
-                      href={item.href}
+                      href={`/${urlLocale}${item.href}`}
                       className="block px-4 py-2.5 text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-gray-50 transition-colors"
                     >
                       {item.label}
@@ -143,8 +148,8 @@ export default function Navbar() {
 
           {/* CTA */}
           <a
-            href="/#contact"
-            onClick={(e) => { e.preventDefault(); scrollTo("#contact"); }}
+            href={`/${urlLocale}#contact`}
+            onClick={(e) => { if (scrollTo("#contact")) e.preventDefault(); }}
             className="bg-accent hover:bg-accent-dark text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
           >
             {t.nav.cta}
@@ -193,8 +198,8 @@ export default function Navbar() {
               ) : (
                 <a
                   key={link.href}
-                  href={`/${link.href}`}
-                  onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
+                  href={`/${urlLocale}${link.href}`}
+                  onClick={(e) => { if (scrollTo(link.href)) e.preventDefault(); }}
                   className="block w-full text-left text-base font-medium text-text-secondary hover:text-text-primary transition-colors py-2"
                 >
                   {link.label}
@@ -206,7 +211,7 @@ export default function Navbar() {
               {t.nav.servicesItems.map((item) => (
                 <a
                   key={item.href}
-                  href={item.href}
+                  href={`/${urlLocale}${item.href}`}
                   className="block w-full text-left text-base font-medium text-text-secondary hover:text-text-primary transition-colors py-2 pl-3"
                 >
                   {item.label}
@@ -214,8 +219,8 @@ export default function Navbar() {
               ))}
             </div>
             <a
-              href="/#contact"
-              onClick={(e) => { e.preventDefault(); scrollTo("#contact"); }}
+              href={`/${urlLocale}#contact`}
+              onClick={(e) => { if (scrollTo("#contact")) e.preventDefault(); }}
               className="block w-full text-center bg-accent hover:bg-accent-dark text-white text-sm font-semibold px-5 py-3 rounded-lg transition-colors mt-2"
             >
               {t.nav.cta}

@@ -104,6 +104,30 @@ export const translations = {
         "Αυτά είναι μόνο δείγματα. Το δικό σου site θα είναι φτιαγμένο 100% για ΕΣΕ'ΝΑ.",
       cta: "Θέλω κάτι παρόμοιο",
       seeMore: "Δες περισσότερα",
+      viewLive: "Δες το live ↗",
+      mockupViewLive: "Δες το live site ↗",
+      before: "Πριν",
+      after: "Μετά",
+      projects: [
+        {
+          location: "Γλυφά, Αντίπαρος",
+          features: ["Κρατήσεις", "Reviews", "SEO", "3 Γλώσσες", "Πισίνες"],
+          metricsBefore: "0 online παρουσία",
+          metricsAfter: "3γλωσσο site σε 5 μέρες",
+        },
+        {
+          location: "Παραλία Συκιάς, Σιθωνία, Χαλκιδική",
+          features: ["Κρατήσεις", "Reviews", "SEO", "Παραλίες"],
+          metricsBefore: "0 direct bookings",
+          metricsAfter: "12+/μήνα",
+        },
+        {
+          location: "Σκάλα Συκιάς, Σιθωνία, Χαλκιδική",
+          features: ["Κρατήσεις", "Reviews", "SEO", "6 Διαμ/τα"],
+          metricsBefore: "Μόνο Booking",
+          metricsAfter: "40% λιγότερες προμήθειες",
+        },
+      ],
     },
     howItWorks: {
       sectionTitle:
@@ -467,6 +491,30 @@ export const translations = {
         "These are just samples. Your site will be built 100% for YOU.",
       cta: "I want something like this",
       seeMore: "See more",
+      viewLive: "View live ↗",
+      mockupViewLive: "View live site ↗",
+      before: "Before",
+      after: "After",
+      projects: [
+        {
+          location: "Glyfa, Antiparos",
+          features: ["Bookings", "Reviews", "SEO", "3 Languages", "Pools"],
+          metricsBefore: "0 online presence",
+          metricsAfter: "3-language site in 5 days",
+        },
+        {
+          location: "Sykia Beach, Sithonia, Halkidiki",
+          features: ["Bookings", "Reviews", "SEO", "Beaches"],
+          metricsBefore: "0 direct bookings",
+          metricsAfter: "12+/month",
+        },
+        {
+          location: "Skala Sykias, Sithonia, Halkidiki",
+          features: ["Bookings", "Reviews", "SEO", "6 Apartments"],
+          metricsBefore: "Booking.com only",
+          metricsAfter: "40% fewer commissions",
+        },
+      ],
     },
     howItWorks: {
       sectionTitle:

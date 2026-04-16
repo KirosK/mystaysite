@@ -3,7 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllSlugs, getPostBySlug, getRelatedPosts } from "@/lib/blog";
-import { mdxComponents } from "@/components/MDXComponents";
+import { buildMdxComponents } from "@/components/MDXComponents";
 import BlogCTA from "@/components/BlogCTA";
 import ShareButtons from "@/components/ShareButtons";
 import TableOfContents from "@/components/TableOfContents";
@@ -33,7 +33,7 @@ export async function generateMetadata({
   const url = `https://mystaysite.com/${locale}/blog/${frontmatter.slug}`;
 
   return {
-    title: `${frontmatter.title} | MyStaySite Blog`,
+    title: { absolute: `${frontmatter.title} | MyStaySite Blog` },
     description: frontmatter.excerpt,
     keywords: frontmatter.keywords,
     openGraph: {
@@ -170,7 +170,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <TableOfContents items={headings} />
 
         <div className="prose-custom">
-          <MDXRemote source={content} components={mdxComponents} />
+          <MDXRemote source={content} components={buildMdxComponents(locale)} />
         </div>
 
         <ShareButtons title={frontmatter.title} url={url} locale={locale} />

@@ -6,53 +6,60 @@ import Image from "next/image";
 
 interface Project {
   name: string;
-  location: string;
   bookingScore: string;
   googleScore: string;
-  features: string[];
   url: string;
   image: string;
   caseStudyUrl?: string;
   isNew?: boolean;
-  metrics?: { before: string; after: string };
 }
 
 const projects: Project[] = [
   {
     name: "Villa Afroditi",
-    location: "Γλυφά, Αντίπαρος",
     bookingScore: "",
     googleScore: "",
-    features: ["Κρατήσεις", "Reviews", "SEO", "3 Γλώσσες", "Πισίνες"],
     url: "https://www.antiparos-afroditivillas.gr/",
     image: "/portfolio/afroditi/hero.jpg",
     isNew: true,
-    metrics: { before: "0 online παρουσία", after: "3γλωσσο site σε 5 μέρες" },
   },
   {
     name: "RODAVGI Apartments",
-    location: "Παραλία Συκιάς, Σιθωνία, Χαλκιδική",
     bookingScore: "9.5",
     googleScore: "5.0",
-    features: ["Κρατήσεις", "Reviews", "SEO", "Παραλίες"],
     url: "https://rodavgiapartments.com/",
     image: "/portfolio/rodavgi/hero.jpg",
-    metrics: { before: "0 direct bookings", after: "12+/μήνα" },
   },
   {
     name: "Achilleas Peaceful Place",
-    location: "Σκάλα Συκιάς, Σιθωνία, Χαλκιδική",
     bookingScore: "9.7",
     googleScore: "5.0",
-    features: ["Κρατήσεις", "Reviews", "SEO", "6 Διαμ/τα"],
     url: "https://achilleasplace.gr/",
     image: "/portfolio/achilleas/after-01-hero.jpg",
     caseStudyUrl: "/portfolio/achilleas-peaceful-place",
-    metrics: { before: "Μόνο Booking", after: "40% λιγότερες προμήθειες" },
   },
 ];
 
-function ProjectCard({ project }: { project: Project }) {
+interface ProjectI18n {
+  location: string;
+  features: readonly string[];
+  metricsBefore: string;
+  metricsAfter: string;
+}
+
+function ProjectCard({
+  project,
+  i18n,
+  viewLiveLabel,
+  beforeLabel,
+  afterLabel,
+}: {
+  project: Project;
+  i18n: ProjectI18n;
+  viewLiveLabel: string;
+  beforeLabel: string;
+  afterLabel: string;
+}) {
   return (
     <a
       href={project.url}
@@ -99,7 +106,7 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex flex-col items-center justify-center gap-2 opacity-0 group-hover:opacity-100">
           <span className="bg-white/95 backdrop-blur text-sm font-bold text-gray-900 px-5 py-2.5 rounded-xl shadow-xl">
-            Δες το live ↗
+            {viewLiveLabel}
           </span>
           {(project.bookingScore || project.googleScore) && (
             <div className="flex gap-2">
@@ -121,7 +128,7 @@ function ProjectCard({ project }: { project: Project }) {
       <div className="px-4 py-4 border-t border-gray-100">
         <div className="mb-2">
           <div className="text-sm font-bold text-gray-900">{project.name}</div>
-          <div className="text-[11px] text-gray-500">{project.location}</div>
+          <div className="text-[11px] text-gray-500">{i18n.location}</div>
         </div>
         {(project.bookingScore || project.googleScore) && (
           <div className="flex items-center gap-2 mb-3">
@@ -138,17 +145,17 @@ function ProjectCard({ project }: { project: Project }) {
           </div>
         )}
         <div className="flex gap-1.5 flex-wrap">
-          {project.features.map((f, i) => (
+          {i18n.features.map((f, i) => (
             <span key={i} className="bg-gray-100 text-gray-600 text-[10px] font-medium px-2 py-0.5 rounded-full">
               {f}
             </span>
           ))}
         </div>
-        {project.metrics && (
+        {(i18n.metricsBefore || i18n.metricsAfter) && (
           <div className="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2 text-[11px]">
-            <span className="text-red-500 font-semibold">Πριν: {project.metrics.before}</span>
+            <span className="text-red-500 font-semibold">{beforeLabel}: {i18n.metricsBefore}</span>
             <span className="text-gray-300">→</span>
-            <span className="text-green-600 font-semibold">Μετά: {project.metrics.after}</span>
+            <span className="text-green-600 font-semibold">{afterLabel}: {i18n.metricsAfter}</span>
           </div>
         )}
       </div>
@@ -157,12 +164,17 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export default function Portfolio() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const ref = useAnimateOnScroll();
+  const urlLocale = lang === "en" ? "en" : "el";
 
-  const scrollTo = (id: string) => {
+  const scrollTo = (id: string): boolean => {
     const el = document.querySelector(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      return true;
+    }
+    return false;
   };
 
   return (
@@ -179,7 +191,14 @@ export default function Portfolio() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto mb-10">
           {projects.map((p, i) => (
-            <ProjectCard key={i} project={p} />
+            <ProjectCard
+              key={i}
+              project={p}
+              i18n={t.portfolio.projects[i]}
+              viewLiveLabel={t.portfolio.viewLive}
+              beforeLabel={t.portfolio.before}
+              afterLabel={t.portfolio.after}
+            />
           ))}
         </div>
 
@@ -188,8 +207,8 @@ export default function Portfolio() {
             {t.portfolio.bottomText}
           </p>
           <a
-            href="/#contact"
-            onClick={(e) => { e.preventDefault(); scrollTo("#contact"); }}
+            href={`/${urlLocale}#contact`}
+            onClick={(e) => { if (scrollTo("#contact")) e.preventDefault(); }}
             className="inline-block bg-accent hover:bg-accent-dark text-white text-base font-semibold px-7 py-3 rounded-lg transition-colors shadow-lg shadow-accent/20"
           >
             {t.portfolio.cta}

@@ -50,7 +50,14 @@ function PaymentIcon({ type }: { type: string }) {
 }
 
 export default function Footer() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const urlLocale = lang === "en" ? "en" : "el";
+  const isEn = lang === "en";
+
+  const openCookieSettings = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new Event("mss:open-cookie-settings"));
+  };
 
   return (
     <footer className="bg-bg-darker py-12 md:py-16">
@@ -78,7 +85,13 @@ export default function Footer() {
             <h3 className="text-sm font-bold text-white mb-3">{t.footer.quickLinks}</h3>
             <ul className="space-y-2">
               {t.footer.quickLinkItems.map((item, i) => {
-                const targets = ["/#portfolio", "/#pricing", "/#faq", "/blog", "/#contact"];
+                const targets = [
+                  `/${urlLocale}#portfolio`,
+                  `/${urlLocale}#pricing`,
+                  `/${urlLocale}#faq`,
+                  `/${urlLocale}/blog`,
+                  `/${urlLocale}#contact`,
+                ];
                 return (
                   <li key={i}>
                     <a
@@ -116,14 +129,23 @@ export default function Footer() {
             <h3 className="text-sm font-bold text-white mb-3">{t.footer.legal}</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/terms" className="text-sm text-gray-400 hover:text-gray-200 transition-colors">
+                <a href={`/${urlLocale}/terms`} className="text-sm text-gray-400 hover:text-gray-200 transition-colors">
                   {t.footer.legalList[0]}
                 </a>
               </li>
               <li>
-                <a href="/privacy" className="text-sm text-gray-400 hover:text-gray-200 transition-colors">
+                <a href={`/${urlLocale}/privacy`} className="text-sm text-gray-400 hover:text-gray-200 transition-colors">
                   {t.footer.legalList[1]}
                 </a>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={openCookieSettings}
+                  className="text-sm text-gray-400 hover:text-gray-200 transition-colors text-left"
+                >
+                  {isEn ? "Cookie settings" : "Ρυθμίσεις cookies"}
+                </button>
               </li>
             </ul>
           </div>

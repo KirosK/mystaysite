@@ -12,9 +12,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const isEn = locale === "en";
 
   return {
-    title: isEn
-      ? "Blog | MyStaySite — Tips for Vacation Rentals"
-      : "Blog | MyStaySite — Συμβουλές για Τουριστικά Καταλύματα",
+    title: {
+      absolute: isEn
+        ? "Blog | MyStaySite — Tips for Vacation Rentals"
+        : "Blog | MyStaySite — Συμβουλές για Τουριστικά Καταλύματα",
+    },
     description: isEn
       ? "Practical advice for vacation rental owners. SEO, marketing, direct bookings. From the MyStaySite team."
       : "Πρακτικές συμβουλές για ιδιοκτήτες ενοικιαζόμενων δωματίων. SEO, marketing, direct bookings, μείωση προμηθειών.",
