@@ -93,7 +93,7 @@ export default async function BlogPage({ params }: PageProps) {
                       href={`/${locale}#contact`}
                       className="shrink-0 bg-[#f57c51] hover:bg-[#e06a42] text-white font-bold px-6 py-3 rounded-xl transition-colors"
                     >
-                      {isEn ? "Request Demo" : "Ζητήστε Demo"}
+                      {isEn ? "Get a Quote" : "Ζητήστε Προσφορά"}
                     </a>
                   </div>
                 )}

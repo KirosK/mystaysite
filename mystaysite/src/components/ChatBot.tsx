@@ -114,7 +114,7 @@ export default function ChatBot() {
     } catch {
       const subject = encodeURIComponent("New Lead - MyStaySite ChatBot");
       const body = encodeURIComponent(
-        `New demo request from ChatBot:\n\nBooking/Airbnb Link: ${link}\nContact: ${contactInfo}\n\nSent from mystaysite.com chatbot`
+        `New quote request from ChatBot:\n\nBooking/Airbnb Link: ${link}\nContact: ${contactInfo}\n\nSent from mystaysite.com chatbot`
       );
       window.open(`mailto:${EMAIL_TO}?subject=${subject}&body=${body}`, "_self");
     }

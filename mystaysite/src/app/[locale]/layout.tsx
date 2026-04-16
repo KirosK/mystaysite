@@ -50,8 +50,8 @@ export async function generateMetadata({
       template: "%s | MyStaySite",
     },
     description: isEn
-      ? "We build professional websites for vacation rentals in Greece. Direct bookings without Booking commission. 3 live sites. Request a demo."
-      : "Φτιάχνουμε επαγγελματικά websites για τουριστικά καταλύματα στην Ελλάδα. Direct bookings χωρίς προμήθεια Booking. 3 live sites. Ζητήστε demo.",
+      ? "We build professional websites for vacation rentals in Greece. Direct bookings without Booking commission. 3 live sites. Get a quote."
+      : "Φτιάχνουμε επαγγελματικά websites για τουριστικά καταλύματα στην Ελλάδα. Direct bookings χωρίς προμήθεια Booking. 3 live sites. Ζητήστε προσφορά.",
     keywords: [
       "κατασκευή ιστοσελίδας ενοικιαζόμενα δωμάτια",
       "website ενοικιαζόμενα δωμάτια",
@@ -66,8 +66,8 @@ export async function generateMetadata({
         ? "MyStaySite | Websites for Vacation Rentals"
         : "MyStaySite | Κατασκευή Website για Ενοικιαζόμενα Δωμάτια",
       description: isEn
-        ? "Professional websites for vacation rentals. Direct bookings, reviews, SEO. Request a demo."
-        : "Φτιάχνουμε επαγγελματικά websites για τουριστικά καταλύματα. Direct bookings, κριτικές, SEO. Ζητήστε demo.",
+        ? "Professional websites for vacation rentals. Direct bookings, reviews, SEO. Get a quote."
+        : "Φτιάχνουμε επαγγελματικά websites για τουριστικά καταλύματα. Direct bookings, κριτικές, SEO. Ζητήστε προσφορά.",
       url: `https://mystaysite.com/${locale}`,
       siteName: "MyStaySite",
       locale: isEn ? "en_US" : "el_GR",
@@ -163,7 +163,7 @@ export default async function LocaleLayout({
                     name: "Πόσο κοστίζει ένα website για ενοικιαζόμενα δωμάτια;",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Κάθε κατάλυμα έχει διαφορετικές ανάγκες. Ζητήστε ένα δωρεάν demo και σας ετοιμάζουμε προσωπική προσφορά.",
+                      text: "Κάθε κατάλυμα έχει διαφορετικές ανάγκες. Ζητήστε προσφορά και σας ετοιμάζουμε προσωπικό πλάνο. Ξεκινάμε με 30% προκαταβολή.",
                     },
                   },
                   {

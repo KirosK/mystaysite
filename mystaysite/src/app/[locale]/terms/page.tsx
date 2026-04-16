@@ -17,11 +17,11 @@ const content = {
       },
       {
         heading: "3. Τιμολόγηση & Πληρωμές",
-        text: "Οι τιμές αναφέρονται σε εφάπαξ κόστος κατασκευής, εκτός αν ορίζεται διαφορετικά. Η μηνιαία συντήρηση είναι προαιρετική. Η πληρωμή γίνεται μετά την έγκριση του demo από τον πελάτη. Δεν υπάρχει χρέωση για το αρχικό demo. Αποδεκτοί τρόποι πληρωμής: τραπεζική μεταφορά, Stripe, Viva Wallet, Crypto, Mastercard, Amex.",
+        text: "Οι τιμές αναφέρονται σε εφάπαξ κόστος κατασκευής, εκτός αν ορίζεται διαφορετικά. Η μηνιαία συντήρηση είναι προαιρετική. Η συνεργασία ξεκινά με προκαταβολή 30% της αξίας του πακέτου, ενώ το υπόλοιπο 70% καταβάλλεται με την παράδοση και έγκριση του τελικού site. Αποδεκτοί τρόποι πληρωμής: τραπεζική μεταφορά, Stripe, Viva Wallet, Crypto, Mastercard, Amex.",
       },
       {
         heading: "4. Εγγυήσεις",
-        text: "Πληρώνεις ΜΟΝΟ αν σου αρέσει: Αν δεν εγκρίνεις το demo, δεν χρεώνεσαι. Google-Ready σε 14 ημέρες: Εγγυόμαστε ότι το site σου θα είναι indexed στο Google εντός 14 ημερών. Δωρεάν διορθώσεις: Αν κάτι δεν λειτουργεί σωστά, το φτιάχνουμε δωρεάν.",
+        text: "Απεριόριστα revisions: Κάνουμε όσες διορθώσεις χρειάζονται μέχρι να είστε 100% ικανοποιημένοι, πριν την τελική παράδοση. Google-Ready σε 14 ημέρες: Εγγυόμαστε ότι το site σας θα είναι indexed στο Google εντός 14 ημερών από την παράδοση. 6 μήνες bug-free εγγύηση: Αν κάτι δεν λειτουργεί σωστά εντός 6 μηνών, το διορθώνουμε δωρεάν.",
       },
       {
         heading: "5. Ιδιοκτησία & Πνευματικά Δικαιώματα",
@@ -37,7 +37,7 @@ const content = {
       },
       {
         heading: "8. Ακύρωση",
-        text: "Ο πελάτης μπορεί να ακυρώσει πριν την έγκριση του demo χωρίς καμία χρέωση. Μετά την έγκριση του demo και την έναρξη ανάπτυξης, η ακύρωση συνεπάγεται χρέωση 50% της αξίας του πακέτου. Η μηνιαία συντήρηση μπορεί να ακυρωθεί ανά πάσα στιγμή.",
+        text: "Η προκαταβολή 30% δεν επιστρέφεται μετά την έναρξη των εργασιών, καθώς καλύπτει το αρχικό σχεδιαστικό και τεχνικό έργο. Αν ο πελάτης ζητήσει ακύρωση μετά την παράδοση του αρχικού design αλλά πριν την ολοκλήρωση, το υπόλοιπο 70% δεν οφείλεται. Η μηνιαία συντήρηση μπορεί να ακυρωθεί ανά πάσα στιγμή.",
       },
       {
         heading: "9. Περιορισμός Ευθύνης",
@@ -75,11 +75,11 @@ const content = {
       },
       {
         heading: "3. Pricing & Payments",
-        text: "Prices refer to a one-time development cost, unless otherwise stated. Monthly maintenance is optional. Payment is made after the client approves the demo. There is no charge for the initial demo. Accepted payment methods: bank transfer, Stripe, Viva Wallet, Crypto, Mastercard, Amex.",
+        text: "Prices refer to a one-time development cost, unless otherwise stated. Monthly maintenance is optional. The engagement starts with a 30% deposit of the package value, with the remaining 70% paid upon delivery and approval of the final site. Accepted payment methods: bank transfer, Stripe, Viva Wallet, Crypto, Mastercard, Amex.",
       },
       {
         heading: "4. Guarantees",
-        text: "Pay ONLY if you like it: If you don't approve the demo, you are not charged. Google-Ready in 14 days: We guarantee your site will be indexed on Google within 14 days. Free fixes: If something doesn't work properly, we fix it for free.",
+        text: "Unlimited revisions: We make as many changes as needed until you're 100% satisfied, before final delivery. Google-Ready in 14 days: We guarantee your site will be indexed on Google within 14 days of delivery. 6-month bug-free guarantee: If something doesn't work properly within 6 months, we fix it for free.",
       },
       {
         heading: "5. Ownership & Copyright",
@@ -95,7 +95,7 @@ const content = {
       },
       {
         heading: "8. Cancellation",
-        text: "The client may cancel before demo approval without any charge. After demo approval and development start, cancellation incurs a 50% charge of the package value. Monthly maintenance can be cancelled at any time.",
+        text: "The 30% deposit is non-refundable once work has begun, as it covers the initial design and technical work. If the client cancels after initial design delivery but before completion, the remaining 70% is not owed. Monthly maintenance can be cancelled at any time.",
       },
       {
         heading: "9. Limitation of Liability",

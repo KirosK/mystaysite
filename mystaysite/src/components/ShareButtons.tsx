@@ -5,9 +5,11 @@ import { useState } from "react";
 interface ShareButtonsProps {
   title: string;
   url: string;
+  locale?: string;
 }
 
-export default function ShareButtons({ title, url }: ShareButtonsProps) {
+export default function ShareButtons({ title, url, locale = "el" }: ShareButtonsProps) {
+  const shareLabel = locale === "en" ? "Share:" : "Κοινοποίηση:";
   const [copied, setCopied] = useState(false);
 
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(`${title} — ${url}`)}`;
@@ -25,7 +27,7 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
 
   return (
     <div className="flex items-center gap-3 my-8">
-      <span className="text-sm font-semibold text-gray-500">Κοινοποίηση:</span>
+      <span className="text-sm font-semibold text-gray-500">{shareLabel}</span>
       <a
         href={whatsappUrl}
         target="_blank"

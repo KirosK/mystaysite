@@ -128,7 +128,7 @@ export default function OgImage() {
               gap: 8,
             }}
           >
-            <span style={{ fontSize: 18, color: "#60A5FA", fontWeight: 600 }}>Free Demo</span>
+            <span style={{ fontSize: 18, color: "#60A5FA", fontWeight: 600 }}>Get a Quote</span>
           </div>
         </div>
       </div>

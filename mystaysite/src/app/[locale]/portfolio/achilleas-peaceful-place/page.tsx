@@ -201,11 +201,11 @@ export default function AchilleasCaseStudy() {
             Θες κάτι παρόμοιο;
           </h2>
           <p className="text-gray-400 mb-6 max-w-lg mx-auto">
-            Στείλε μας μήνυμα και σου ετοιμάζουμε δωρεάν demo.
+            Στείλε μας μήνυμα και σου ετοιμάζουμε αναλυτική προσφορά σε 24 ώρες.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://wa.me/306974585063?text=%CE%93%CE%B5%CE%B9%CE%B1!%20%CE%98%CE%AD%CE%BB%CF%89%20demo."
+              href="https://wa.me/306974585063?text=%CE%93%CE%B5%CE%B9%CE%B1!%20%CE%96%CE%B7%CF%84%CF%8E%20%CF%80%CF%81%CE%BF%CF%83%CF%86%CE%BF%CF%81%CE%AC%20%CE%B3%CE%B9%CE%B1%20website."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white font-bold px-6 py-3.5 rounded-xl transition-colors shadow-lg shadow-[#25D366]/20"
@@ -219,7 +219,7 @@ export default function AchilleasCaseStudy() {
               href="/#contact"
               className="inline-flex items-center justify-center bg-[#F97316] hover:bg-[#EA580C] text-white font-bold px-6 py-3.5 rounded-xl transition-colors"
             >
-              Ζητήστε Demo
+              Ζητήστε Προσφορά
             </a>
           </div>
         </div>

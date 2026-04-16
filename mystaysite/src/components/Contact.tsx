@@ -32,12 +32,12 @@ export default function Contact() {
   const whatsappPrefill = encodeURIComponent(t.contact.whatsappPrefill);
   const whatsappUrl = `https://wa.me/${PHONE}?text=${whatsappPrefill}`;
   const emailSubject = encodeURIComponent(
-    lang === "gr" ? "Ενδιαφέρομαι για demo" : "Interested in a demo"
+    lang === "gr" ? "Ζητώ προσφορά για website" : "Website quote request"
   );
   const emailBody = encodeURIComponent(
     lang === "gr"
-      ? "Γεια σας! Ενδιαφέρομαι για demo. "
-      : "Hi! I'm interested in a demo. "
+      ? "Γεια σας! Θα ήθελα προσφορά για website. "
+      : "Hi! I'd like a quote for a website. "
   );
   const emailUrl = `mailto:${EMAIL}?subject=${emailSubject}&body=${emailBody}`;
 
@@ -62,7 +62,7 @@ export default function Contact() {
     }
 
     const msg = [
-      lang === "gr" ? "Νέο αίτημα demo:" : "New demo request:",
+      lang === "gr" ? "Νέο αίτημα προσφοράς:" : "New quote request:",
       "",
       `${t.contact.nameLabel}: ${name}`,
       `${t.contact.contactLabel}: ${contact}`,

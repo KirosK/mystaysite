@@ -173,8 +173,8 @@ export default async function BlogPostPage({ params }: PageProps) {
           <MDXRemote source={content} components={mdxComponents} />
         </div>
 
-        <ShareButtons title={frontmatter.title} url={url} />
-        <BlogCTA />
+        <ShareButtons title={frontmatter.title} url={url} locale={locale} />
+        <BlogCTA locale={locale} />
 
         {related.length > 0 && (
           <section className="mt-16">

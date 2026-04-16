@@ -16,21 +16,21 @@ export const translations = {
       faq: "FAQ",
       blog: "Blog",
       contact: "Επικοινωνία",
-      cta: "Ζητήστε Demo",
+      cta: "Ζητήστε Προσφορά",
     },
     hero: {
       title: "Σταμάτα να δουλεύεις για το Booking.",
       titleHighlight: "Ασε το Booking να δουλεύει για σένα.",
       subtitle:
         "Το κατάλυμά σου αξίζει δική του θέση στο Google. Σου φτιάχνουμε επαγγελματικό website με κριτικές, φωτογραφίες και SEO. Όταν κάποιος ψάξει, βρίσκει ΕΣΕΝΑ.",
-      cta: "Ζητήστε Demo",
+      cta: "Ζητήστε Προσφορά",
       ctaSecondary: "Δείτε δείγματα",
     },
     trust: {
       delivery: "Παράδοση σε 2-5 ημέρες",
       google: "Στο Google σε 14 ημέρες",
       greek: "Προσωπική εξυπηρέτηση",
-      mockup: "Δωρεάν demo πριν πληρώσεις",
+      mockup: "30% προκαταβολή για να ξεκινήσουμε",
     },
     proof: {
       stat1: "9.5/10 Booking.com score πελάτη μας",
@@ -221,17 +221,17 @@ export const translations = {
       maintenance:
         "Προαιρετικό: Μηνιαία συντήρηση €29/μήνα (αλλαγές φωτογραφιών, τιμών, σεζόν, νέο content)",
       guarantee:
-        "Αν δεν σου αρέσει το demo, δεν πληρώνεις τίποτα. Μηδέν ρίσκο.",
+        "Απεριόριστα revisions μέχρι να είσαι ικανοποιημένος. 6 μήνες εγγύηση.",
       custom: "Θες κάτι custom; Μίλα μαζί μας",
       termsLink: "Όροι χρήσης & πληρωμών",
     },
     guarantee: {
       sectionTitle: "3 εγγυήσεις. Μηδέν ρίσκο.",
-      subtitle: "Παίρνουμε εμείς όλο το ρίσκο. Εσύ δεν ρισκάρεις τίποτα.",
+      subtitle: "Δίκαιη συνεργασία. Εσύ ξέρεις τι πληρώνεις και τι παίρνεις.",
       items: [
         {
-          title: "Πληρώνεις ΜΟΝΟ αν σου αρέσει",
-          text: "Σου στέλνουμε δωρεάν demo ΠΡΙΝ πληρώσεις. Δεν σου αρέσει; Δεν χρωστάς ούτε ευρώ. Φεύγεις χωρίς υποχρεώσεις.",
+          title: "Απεριόριστα revisions",
+          text: "Ξεκινάμε με 30% προκαταβολή και κάνουμε όσα revisions χρειάζονται μέχρι να είσαι 100% ικανοποιημένος. Το υπόλοιπο 70% πληρώνεται με την παράδοση.",
         },
         {
           title: "Google-Ready σε 14 ημέρες",
@@ -242,18 +242,18 @@ export const translations = {
           text: "Αν κάτι δεν λειτουργεί σωστά μέσα σε 6 μήνες, το φτιάχνουμε δωρεάν. Χωρίς ερωτήσεις, χωρίς χρεώσεις.",
         },
       ],
-      ctaLink: "Ζητήστε Demo",
+      ctaLink: "Ζητήστε Προσφορά",
     },
     faq: {
       sectionTitle: "Απαντήσεις που ψάχνεις",
       items: [
         {
           q: "Πόσο κοστίζει;",
-          a: 'Κάθε κατάλυμα έχει διαφορετικές ανάγκες. Ζητήστε ένα δωρεάν demo και σας ετοιμάζουμε προσωπική προσφορά. Χωρίς δέσμευση. <a href="/#pricing">Δες τα πακέτα</a>.',
+          a: 'Κάθε κατάλυμα έχει διαφορετικές ανάγκες. Ζητήστε προσφορά και σας ετοιμάζουμε προσωπικό πλάνο. Ξεκινάμε με 30% προκαταβολή. <a href="/#pricing">Δες τα πακέτα</a>.',
         },
         {
           q: "Πόσο χρόνο χρειάζεται;",
-          a: "2-5 εργάσιμες ημέρες μετά την έγκριση του demo. Τα απλούστερα sites μπορεί να είναι έτοιμα σε 2 ημέρες.",
+          a: "2-5 εργάσιμες ημέρες από τη στιγμή που ξεκινάμε. Τα απλούστερα sites μπορεί να είναι έτοιμα σε 2 ημέρες.",
         },
         {
           q: "Χρειάζομαι domain;",
@@ -272,8 +272,8 @@ export const translations = {
           a: "ΟΧΙ. Ποτέ. 0%. Οι κρατήσεις είναι 100% δικές σου. Πληρώνεις μία φορά για το site ή/και μηνιαία συντήρηση. Τέλος.",
         },
         {
-          q: "Τι γίνεται αν δεν μου αρέσει;",
-          a: 'Σου στέλνουμε demo ΠΡΙΝ ξεκινήσουμε. Αν δεν σε ικανοποιεί, δεν πληρώνεις ούτε ευρώ. Μηδέν υποχρεώσεις. <a href="/#contact">Ζητήστε Demo</a>.',
+          q: "Τι γίνεται αν δεν μου αρέσει το αποτέλεσμα;",
+          a: 'Κάνουμε απεριόριστα revisions μέχρι να είσαι 100% ικανοποιημένος. Ξεκινάμε με 30% προκαταβολή και το υπόλοιπο πληρώνεται με την παράδοση. Επιπλέον, 6 μήνες εγγύηση bug-free. <a href="/#contact">Ζητήστε Προσφορά</a>.',
         },
         {
           q: "Έχω ήδη site αλλά είναι παλιό. Μπορείτε να το ανανεώσετε;",
@@ -285,7 +285,7 @@ export const translations = {
       sectionTitle: "Πάρε τις κρατήσεις στα χέρια σου",
       subtitle: "Συμπληρώστε τη φόρμα ή στείλτε μας μήνυμα. Σας απαντάμε εντός 24 ωρών.",
       whatsappCta: "Στείλε μας στο WhatsApp",
-      whatsappPrefill: "Γεια! Ενδιαφέρομαι για demo. ",
+      whatsappPrefill: "Γεια! Ενδιαφέρομαι για κατασκευή website. ",
       divider: "ή συμπλήρωσε",
       nameLabel: "Όνομα",
       namePlaceholder: "π.χ. Γιώργος Παπαδόπουλος",
@@ -295,7 +295,7 @@ export const translations = {
       contactPlaceholder: "π.χ. info@villaeleni.gr ή 69XXXXXXXX",
       messageLabel: "Μήνυμα (προαιρετικό)",
       messagePlaceholder: "Πείτε μας λίγα λόγια για το κατάλυμά σας...",
-      cta: "Ζητήστε Demo",
+      cta: "Ζητήστε Προσφορά",
       responseTime: "Απαντάμε σε λιγότερο από 24 ώρες",
       success: "Ευχαριστούμε! Θα επικοινωνήσουμε μαζί σας σύντομα.",
       error: "Κάτι πήγε στραβά. Στείλε μας απευθείας στο WhatsApp",
@@ -334,28 +334,28 @@ export const translations = {
     },
     mobileCta: {
       whatsapp: "WhatsApp",
-      sendLink: "Ζητήστε Demo",
+      sendLink: "Ζητήστε Προσφορά",
     },
     exitPopup: {
-      title: "Φεύγετε χωρίς δωρεάν demo;",
-      text: "Δείτε πώς θα μοιάζει το δικό σας website σε 2-5 μέρες. Χωρίς δέσμευση.",
-      cta: "Ζητήστε Demo",
+      title: "Θέλετε επαγγελματικό website;",
+      text: "Δείτε πώς μπορούμε να σας βοηθήσουμε σε 2-5 μέρες. Ζητήστε προσφορά χωρίς δέσμευση.",
+      cta: "Ζητήστε Προσφορά",
     },
     chatbot: {
       title: "Κύρος | MyStaySite",
       subtitle: "Απαντάμε σε < 1 λεπτό",
       greeting: "Γεια σου! Είμαι ο Κύρος από την MyStaySite. Φτιάχνουμε websites για ενοικιαζόμενα δωμάτια. Πώς μπορώ να σε βοηθήσω;",
       options: [
-        "Θέλω demo",
+        "Θέλω προσφορά",
         "Πώς λειτουργεί;",
         "Δείτε δείγματα",
       ],
-      askLink: "Τέλεια! Στείλε μου το Booking ή Airbnb link του καταλύματός σου και σου ετοιμάζουμε δωρεάν demo σε 48 ώρες.",
+      askLink: "Τέλεια! Στείλε μου το Booking ή Airbnb link του καταλύματός σου και σου ετοιμάζουμε αναλυτική προσφορά σε 24 ώρες.",
       askContact: "Ωραία! Τώρα χρειάζομαι το email ή το τηλέφωνό σου για να επικοινωνήσουμε.",
-      pricingReply: "Κάθε κατάλυμα έχει διαφορετικές ανάγκες, γι' αυτό δίνουμε προσωπική προσφορά. Θέλεις να σου ετοιμάσουμε δωρεάν demo;",
-      howReply: "Η διαδικασία είναι πολύ απλή:\n\n1. Μας στέλνεις το Booking/Airbnb link σου\n2. Σε 48 ώρες βλέπεις πώς θα μοιάζει το site σου (δωρεάν)\n3. Σου αρέσει; Προχωράμε. Σε 2-5 ημέρες είσαι online.\n\nΘέλεις να ξεκινήσουμε;",
+      pricingReply: "Κάθε κατάλυμα έχει διαφορετικές ανάγκες, γι' αυτό δίνουμε προσωπική προσφορά. Θέλεις να σου ετοιμάσουμε μία;",
+      howReply: "Η διαδικασία είναι πολύ απλή:\n\n1. Μας στέλνεις το Booking/Airbnb link σου\n2. Σε 24 ώρες λαμβάνεις αναλυτική προσφορά\n3. 30% προκαταβολή για να ξεκινήσουμε. Σε 2-5 ημέρες είσαι online.\n\nΘέλεις να ξεκινήσουμε;",
       samplesReply: "Δες τα live sites μας:\n\n• Villa Afroditi (Αντίπαρος) — antiparos-afroditivillas.gr\n• RODAVGI Apartments (Χαλκιδική) — rodavgiapartments.com\n• Achilleas Peaceful Place (Χαλκιδική) — achilleasplace.gr\n\nΘέλεις να σου ετοιμάσουμε κάτι παρόμοιο;",
-      yesOption: "Ναι, θέλω demo!",
+      yesOption: "Ναι, θέλω προσφορά!",
       thanksTitle: "Ευχαριστούμε!",
       thanks: "Τέλεια! Θα επικοινωνήσουμε σύντομα. Αν έχεις κάποια ερώτηση, στείλε μας στο WhatsApp!",
       linkPlaceholder: "π.χ. booking.com/hotel/...",
@@ -379,21 +379,21 @@ export const translations = {
       faq: "FAQ",
       blog: "Blog",
       contact: "Contact",
-      cta: "Request Demo",
+      cta: "Get a Quote",
     },
     hero: {
       title: "Stop working for Booking.",
       titleHighlight: "Let Booking work for you.",
       subtitle:
         "Your property deserves its own place on Google. We build a professional website with reviews, photos and SEO. When someone searches, they find YOU.",
-      cta: "Request Demo",
+      cta: "Get a Quote",
       ctaSecondary: "See our work ↓",
     },
     trust: {
       delivery: "Delivered in 2-5 days",
       google: "On Google in 14 days",
       greek: "Personal support",
-      mockup: "Free demo before you pay",
+      mockup: "30% deposit to get started",
     },
     proof: {
       stat1: "9.5/10 Booking.com client score",
@@ -583,17 +583,17 @@ export const translations = {
       maintenance:
         "Optional: Monthly maintenance €29/mo (photo changes, pricing, seasonal content)",
       guarantee:
-        "If you don't like the demo, you don't pay anything. Zero risk.",
+        "Unlimited revisions until you're happy. 6-month guarantee.",
       custom: "Need something custom? Talk to us",
       termsLink: "Terms of service & payments",
     },
     guarantee: {
       sectionTitle: "3 guarantees. Zero risk.",
-      subtitle: "We take all the risk. You risk nothing.",
+      subtitle: "Fair collaboration. You know what you pay and what you get.",
       items: [
         {
-          title: "Pay ONLY if you like it",
-          text: "We send you a free demo BEFORE you pay. Don't like it? You don't owe a single euro. Walk away with zero obligations.",
+          title: "Unlimited revisions",
+          text: "We start with a 30% deposit and do as many revisions as needed until you're 100% happy. The remaining 70% is paid on delivery.",
         },
         {
           title: "Google-Ready in 14 days",
@@ -604,18 +604,18 @@ export const translations = {
           text: "If something doesn't work properly within 6 months, we fix it for free. No questions asked, no charges.",
         },
       ],
-      ctaLink: "Request Demo",
+      ctaLink: "Get a Quote",
     },
     faq: {
       sectionTitle: "Answers you're looking for",
       items: [
         {
           q: "How much does it cost?",
-          a: 'Every property has different needs. Request a free demo and we\'ll prepare a personalized quote for you. No commitment. <a href="/#pricing">See packages</a>.',
+          a: 'Every property has different needs. Request a quote and we\'ll prepare a personalized plan. We start with a 30% deposit. <a href="/#pricing">See packages</a>.',
         },
         {
           q: "How long does it take?",
-          a: "2-5 business days after demo approval. Simpler sites can be ready in 2 days.",
+          a: "2-5 business days from the moment we start. Simpler sites can be ready in 2 days.",
         },
         {
           q: "Do I need a domain?",
@@ -634,8 +634,8 @@ export const translations = {
           a: "NO. Never. 0%. Bookings are 100% yours. You pay once for the site and/or monthly maintenance. That's it.",
         },
         {
-          q: "What if I don't like it?",
-          a: 'We send you a demo BEFORE we start. If it doesn\'t satisfy you, you don\'t pay a single euro. Zero obligations. <a href="/#contact">Request Demo</a>.',
+          q: "What if I don't like the result?",
+          a: 'We do unlimited revisions until you\'re 100% happy. We start with a 30% deposit and the rest is paid on delivery. Plus, 6-month bug-free guarantee. <a href="/#contact">Get a Quote</a>.',
         },
         {
           q: "I have a site but it's old. Can you redesign it?",
@@ -647,7 +647,7 @@ export const translations = {
       sectionTitle: "Take your bookings into your own hands",
       subtitle: "Fill in the form or send us a message. We respond within 24 hours.",
       whatsappCta: "Message us on WhatsApp",
-      whatsappPrefill: "Hi! I'm interested in a demo. ",
+      whatsappPrefill: "Hi! I'm interested in building a website. ",
       divider: "or fill in",
       nameLabel: "Name",
       namePlaceholder: "e.g. John Smith",
@@ -657,7 +657,7 @@ export const translations = {
       contactPlaceholder: "e.g. info@villaeleni.gr or +30 69XXXXXXXX",
       messageLabel: "Message (optional)",
       messagePlaceholder: "Tell us a bit about your property...",
-      cta: "Request Demo",
+      cta: "Get a Quote",
       responseTime: "We respond in less than 24 hours",
       success: "Thank you! We'll get in touch with you shortly.",
       error: "Something went wrong. Message us directly on WhatsApp",
@@ -696,28 +696,28 @@ export const translations = {
     },
     mobileCta: {
       whatsapp: "WhatsApp",
-      sendLink: "Request Demo",
+      sendLink: "Get a Quote",
     },
     exitPopup: {
-      title: "Leaving without a free demo?",
-      text: "See what your website will look like in 2-5 days. No commitment.",
-      cta: "Request Demo",
+      title: "Want a professional website?",
+      text: "See how we can help you in 2-5 days. Get a quote with no commitment.",
+      cta: "Get a Quote",
     },
     chatbot: {
       title: "Kyros | MyStaySite",
       subtitle: "We reply in < 1 minute",
       greeting: "Hi! I'm Kyros from MyStaySite. We build websites for vacation rentals. How can I help you?",
       options: [
-        "I want a demo",
+        "I want a quote",
         "How does it work?",
         "See examples",
       ],
-      askLink: "Great! Send me your Booking or Airbnb link and we'll prepare a free demo in 48 hours.",
+      askLink: "Great! Send me your Booking or Airbnb link and we'll prepare a detailed quote in 24 hours.",
       askContact: "Perfect! Now I need your email or phone number so we can get in touch.",
-      pricingReply: "Every property has different needs, so we provide a personalized quote. Would you like a free demo?",
-      howReply: "The process is very simple:\n\n1. Send us your Booking/Airbnb link\n2. In 48 hours you see what your site will look like (free)\n3. You like it? We proceed. In 2-5 days you're online.\n\nWant to get started?",
+      pricingReply: "Every property has different needs, so we provide a personalized quote. Would you like us to prepare one for you?",
+      howReply: "The process is very simple:\n\n1. Send us your Booking/Airbnb link\n2. In 24 hours you receive a detailed quote\n3. 30% deposit to get started. In 2-5 days you're online.\n\nWant to get started?",
       samplesReply: "Check out our live sites:\n\n• Villa Afroditi (Antiparos) — antiparos-afroditivillas.gr\n• RODAVGI Apartments (Halkidiki) — rodavgiapartments.com\n• Achilleas Peaceful Place (Halkidiki) — achilleasplace.gr\n\nWant us to build something similar for you?",
-      yesOption: "Yes, I want a demo!",
+      yesOption: "Yes, I want a quote!",
       thanksTitle: "Thank you!",
       thanks: "Perfect! We'll get in touch shortly. If you have any questions, message us on WhatsApp!",
       linkPlaceholder: "e.g. booking.com/hotel/...",

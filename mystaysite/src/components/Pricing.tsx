@@ -139,8 +139,8 @@ function openWhatsApp(planName: string, lang: string) {
   trackCtaClick("pricing_cta", planName);
   const msg =
     lang === "gr"
-      ? `Γεια σας! Θέλω demo για το πακέτο ${planName}. Μπορούμε να μιλήσουμε;`
-      : `Hi! I'd like a demo for the ${planName} plan. Can we talk?`;
+      ? `Γεια σας! Θέλω προσφορά για το πακέτο ${planName}. Μπορούμε να μιλήσουμε;`
+      : `Hi! I'd like a quote for the ${planName} plan. Can we talk?`;
   window.open(
     `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`,
     "_blank"
