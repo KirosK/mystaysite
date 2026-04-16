@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/blog";
 import BlogCard from "@/components/BlogCard";
+import Newsletter from "@/components/Newsletter";
 import Link from "next/link";
 
 interface PageProps {
@@ -103,6 +104,8 @@ export default async function BlogPage({ params }: PageProps) {
             ))}
           </div>
         )}
+
+        <Newsletter locale={locale} />
       </main>
     </>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { useLang } from "@/lib/language-context";
+import Newsletter from "./Newsletter";
 
 function PaymentIcon({ type }: { type: string }) {
   const className = "w-3.5 h-3.5 text-gray-400 shrink-0";
@@ -62,6 +63,11 @@ export default function Footer() {
   return (
     <footer className="bg-bg-darker py-12 md:py-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        {/* Newsletter banner */}
+        <div className="mb-12 pb-10 border-b border-white/10">
+          <Newsletter locale={urlLocale} variant="compact" />
+        </div>
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div>

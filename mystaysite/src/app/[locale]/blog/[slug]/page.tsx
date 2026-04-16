@@ -8,6 +8,7 @@ import BlogCTA from "@/components/BlogCTA";
 import ShareButtons from "@/components/ShareButtons";
 import TableOfContents from "@/components/TableOfContents";
 import BlogCard from "@/components/BlogCard";
+import Newsletter from "@/components/Newsletter";
 import Link from "next/link";
 
 interface PageProps {
@@ -174,6 +175,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
 
         <ShareButtons title={frontmatter.title} url={url} locale={locale} />
+        <Newsletter locale={locale} />
         <BlogCTA locale={locale} />
 
         {related.length > 0 && (
