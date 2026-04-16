@@ -9,6 +9,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     { path: "", changeFrequency: "weekly" as const, priority: 1 },
     { path: "/blog", changeFrequency: "weekly" as const, priority: 0.7 },
+    { path: "/services", changeFrequency: "monthly" as const, priority: 0.7 },
+    { path: "/services/property-management", changeFrequency: "monthly" as const, priority: 0.7 },
+    { path: "/services/website-audit", changeFrequency: "monthly" as const, priority: 0.7 },
+    { path: "/services/analytics-consulting", changeFrequency: "monthly" as const, priority: 0.7 },
     { path: "/services/google-ads", changeFrequency: "monthly" as const, priority: 0.6 },
     { path: "/services/social-media", changeFrequency: "monthly" as const, priority: 0.6 },
     { path: "/services/seo", changeFrequency: "monthly" as const, priority: 0.6 },

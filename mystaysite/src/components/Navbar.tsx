@@ -119,7 +119,7 @@ export default function Navbar() {
             </button>
             {servicesOpen && (
               <div className="absolute top-full left-0 pt-2">
-                <div className="bg-white rounded-xl shadow-xl border border-gray-200 py-2 min-w-[180px]">
+                <div className="bg-white rounded-xl shadow-xl border border-gray-200 py-2 min-w-[220px]">
                   {t.nav.servicesItems.map((item) => (
                     <a
                       key={item.href}
@@ -129,6 +129,14 @@ export default function Navbar() {
                       {item.label}
                     </a>
                   ))}
+                  <div className="border-t border-gray-100 mt-1 pt-1">
+                    <a
+                      href={`/${urlLocale}/services`}
+                      className="block px-4 py-2.5 text-sm font-bold text-primary hover:bg-gray-50 transition-colors"
+                    >
+                      {t.nav.servicesAll}
+                    </a>
+                  </div>
                 </div>
               </div>
             )}
@@ -217,6 +225,12 @@ export default function Navbar() {
                   {item.label}
                 </a>
               ))}
+              <a
+                href={`/${urlLocale}/services`}
+                className="block w-full text-left text-base font-bold text-primary transition-colors py-2 pl-3"
+              >
+                {t.nav.servicesAll}
+              </a>
             </div>
             <a
               href={`/${urlLocale}#contact`}
