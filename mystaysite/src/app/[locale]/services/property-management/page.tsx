@@ -14,7 +14,7 @@ const content = {
     data: {
       title: "Διαχείριση Καταλύματος (Remote)",
       subtitle:
-        "Σταμάτα να χάνεις χρόνο σε Booking, messages και price adjustments. Αναλαμβάνουμε όλη την online διαχείριση — εσύ εισπράττεις.",
+        "Σταμάτα να χάνεις χρόνο σε Booking, messages και price adjustments. Αναλαμβάνουμε όλη την online διαχείριση. Εσύ εισπράττεις.",
       price: "15% ανά κράτηση ή €299/μήνα",
       features: [
         "Κεντρικό ημερολόγιο: Booking + Airbnb + Expedia + website σε sync (Channel Manager)",
@@ -31,7 +31,7 @@ const content = {
       faq: [
         {
           q: "Τι διαφορά έχει από property manager;",
-          a: "Αναλαμβάνουμε όλη την online διαχείριση remote — δεν φυσική παρουσία. Για καθάρισμα/συντήρηση συνεργαζόμαστε με τοπικούς παρόχους που συντονίζουμε εμείς.",
+          a: "Αναλαμβάνουμε όλη την online διαχείριση remote, χωρίς φυσική παρουσία. Για καθάρισμα και συντήρηση συνεργαζόμαστε με τοπικούς παρόχους που συντονίζουμε εμείς.",
         },
         {
           q: "Πως λειτουργεί η τιμολόγηση;",
@@ -47,11 +47,11 @@ const content = {
         },
         {
           q: "Μπορώ να διακόψω οποιαδήποτε στιγμή;",
-          a: "Ναι. Ειδοποίηση 30 ημερών. Δεν υπάρχει μακροχρόνιο contract — δουλεύουμε με αποτελέσματα.",
+          a: "Ναι. Ειδοποίηση 30 ημερών. Δεν υπάρχει μακροχρόνιο contract. Δουλεύουμε με αποτελέσματα.",
         },
         {
-          q: "Έχω ήδη Booking και Airbnb — θα χαθούν τα reviews μου;",
-          a: "Όχι. Συνεχίζουμε να χρησιμοποιούμε τις υπάρχουσες λίστες σας — απλά τις διαχειριζόμαστε εμείς. Όλα τα reviews και η ιστορία παραμένουν.",
+          q: "Έχω ήδη Booking και Airbnb. Θα χαθούν τα reviews μου;",
+          a: "Όχι. Συνεχίζουμε να χρησιμοποιούμε τις υπάρχουσες λίστες σας. Απλά τις διαχειριζόμαστε εμείς. Όλα τα reviews και η ιστορία παραμένουν.",
         },
       ],
     },
@@ -68,7 +68,7 @@ const content = {
     data: {
       title: "Property Management (Remote)",
       subtitle:
-        "Stop losing time on Booking, messages and price adjustments. We handle the entire online management — you collect.",
+        "Stop losing time on Booking, messages and price adjustments. We handle the entire online management. You collect.",
       price: "15% per booking or €299/month",
       features: [
         "Unified calendar: Booking + Airbnb + Expedia + website in sync (Channel Manager)",
@@ -85,7 +85,7 @@ const content = {
       faq: [
         {
           q: "How is this different from a traditional property manager?",
-          a: "We handle the full online management remotely — no physical presence. For cleaning/maintenance we coordinate with local providers.",
+          a: "We handle the full online management remotely, without physical presence. For cleaning and maintenance we coordinate with local providers.",
         },
         {
           q: "How does pricing work?",
@@ -101,11 +101,11 @@ const content = {
         },
         {
           q: "Can I cancel anytime?",
-          a: "Yes. 30-day notice. No long-term contract — we work on results.",
+          a: "Yes. 30-day notice. No long-term contract. We work on results.",
         },
         {
-          q: "I already have Booking and Airbnb — will I lose my reviews?",
-          a: "No. We continue using your existing listings — we just manage them. All reviews and history remain intact.",
+          q: "I already have Booking and Airbnb. Will I lose my reviews?",
+          a: "No. We continue using your existing listings. We just manage them. All reviews and history remain intact.",
         },
       ],
     },

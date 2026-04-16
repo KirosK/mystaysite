@@ -23,8 +23,8 @@ export default function Newsletter({
   const copy = {
     eyebrow: isEn ? "Newsletter" : "Newsletter",
     heading: isEn
-      ? "Tips για περισσότερες direct bookings — κάθε μήνα"
-      : "Tips για περισσότερες direct bookings — κάθε μήνα",
+      ? "Tips για περισσότερες direct bookings, κάθε μήνα"
+      : "Tips για περισσότερες direct bookings, κάθε μήνα",
     headingEn: "More direct bookings, every month",
     subtitle: isEn
       ? "One email per month with actionable tips on SEO, listings and guest experience for Greek vacation rentals. No spam, unsubscribe anytime."
@@ -49,12 +49,12 @@ export default function Newsletter({
       ? [
           "Actionable SEO & marketing tips",
           "Case studies from real Greek properties",
-          "No spam — unsubscribe with one click",
+          "No spam. Unsubscribe with one click.",
         ]
       : [
           "Πρακτικά tips SEO & marketing",
           "Case studies από ελληνικά καταλύματα",
-          "Χωρίς spam — unsubscribe με ένα click",
+          "Χωρίς spam. Unsubscribe με ένα click.",
         ],
   };
 

@@ -14,7 +14,7 @@ const content = {
     data: {
       title: "Website Technical Audit",
       subtitle:
-        "Έχεις ήδη website, αλλά δεν φέρνει κρατήσεις; Κάνουμε deep dive σε ταχύτητα, SEO, UX και security — και σου λέμε ακριβώς τι να διορθώσεις.",
+        "Έχεις ήδη website, αλλά δεν φέρνει κρατήσεις; Κάνουμε deep dive σε ταχύτητα, SEO, UX και security, και σου λέμε ακριβώς τι να διορθώσεις.",
       price: "€199 one-time",
       features: [
         "Page speed analysis (LCP, CLS, TBT, Core Web Vitals) σε desktop + mobile",
@@ -23,7 +23,7 @@ const content = {
         "On-page SEO: titles, meta descriptions, headings, alt text, internal linking",
         "Content audit: σύγκριση με competitors, keyword gaps",
         "Security check: HTTPS, headers, vulnerabilities (basic scan)",
-        "Conversion audit: CTAs, forms, booking flow — πού χάνεις κρατήσεις",
+        "Conversion audit: CTAs, forms, booking flow, πού χάνεις κρατήσεις",
         "Google Analytics + Search Console review (εάν υπάρχει access)",
         "Accessibility check (WCAG 2.1 basics)",
         "Detailed report (10-15 σελίδες) με priorities & action plan",
@@ -45,7 +45,7 @@ const content = {
         },
         {
           q: "Δουλεύει με οποιοδήποτε CMS;",
-          a: "Ναι — WordPress, Wix, Squarespace, custom React/Next.js, Shopify, ακόμη και static HTML. Το audit είναι platform-agnostic.",
+          a: "Ναι. WordPress, Wix, Squarespace, custom React/Next.js, Shopify, ακόμη και static HTML. Το audit είναι platform-agnostic.",
         },
         {
           q: "Τι είδους problems συνήθως βρίσκετε;",
@@ -66,7 +66,7 @@ const content = {
     data: {
       title: "Website Technical Audit",
       subtitle:
-        "Have a website but it's not driving bookings? We do a deep dive on speed, SEO, UX and security — and tell you exactly what to fix.",
+        "Have a website but it's not driving bookings? We do a deep dive on speed, SEO, UX and security, and tell you exactly what to fix.",
       price: "€199 one-time",
       features: [
         "Page speed analysis (LCP, CLS, TBT, Core Web Vitals) on desktop + mobile",
@@ -75,7 +75,7 @@ const content = {
         "On-page SEO: titles, meta descriptions, headings, alt text, internal linking",
         "Content audit: comparison with competitors, keyword gaps",
         "Security check: HTTPS, headers, vulnerabilities (basic scan)",
-        "Conversion audit: CTAs, forms, booking flow — where you lose bookings",
+        "Conversion audit: CTAs, forms, booking flow, where you lose bookings",
         "Google Analytics + Search Console review (if access available)",
         "Accessibility check (WCAG 2.1 basics)",
         "Detailed report (10-15 pages) with priorities & action plan",
@@ -97,7 +97,7 @@ const content = {
         },
         {
           q: "Does it work with any CMS?",
-          a: "Yes — WordPress, Wix, Squarespace, custom React/Next.js, Shopify, even static HTML. The audit is platform-agnostic.",
+          a: "Yes. WordPress, Wix, Squarespace, custom React/Next.js, Shopify, even static HTML. The audit is platform-agnostic.",
         },
         {
           q: "What kinds of issues do you usually find?",

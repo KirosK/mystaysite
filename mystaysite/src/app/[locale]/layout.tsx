@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "../globals.css";
+import SiteChrome from "@/components/SiteChrome";
 
 const dmSans = DM_Sans({
   subsets: ["latin", "latin-ext"],
@@ -188,7 +189,9 @@ export default async function LocaleLayout({
           }}
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <SiteChrome locale={htmlLang}>{children}</SiteChrome>
+      </body>
     </html>
   );
 }

@@ -21,9 +21,9 @@ export default function ServicePage({ data, locale }: ServicePageProps) {
     faqTitle: isEn ? "Frequently asked questions" : "Συχνές ερωτήσεις",
     ctaTitle: isEn ? "Get started today" : "Ξεκινήστε σήμερα",
     ctaText: isEn
-      ? "Request a free evaluation of your property and see how we can increase your bookings."
-      : "Ζητήστε δωρεάν αξιολόγηση του καταλύματός σας και δείτε πώς μπορούμε να αυξήσουμε τις κρατήσεις σας.",
-    ctaPrimary: isEn ? "Get a Quote" : "Ζητήστε Προσφορά",
+      ? "Tell us about your property and we'll get you started within 24 hours."
+      : "Πες μας για το κατάλυμά σου και ξεκινάμε μέσα σε 24 ώρες.",
+    ctaPrimary: isEn ? "Start now" : "Ξεκινήστε τώρα",
     ctaSecondary: isEn ? "See our work" : "Δείτε δείγματα",
   };
 

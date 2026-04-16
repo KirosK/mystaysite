@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useLang } from "@/lib/language-context";
 
 const content = {
   gr: {
@@ -82,39 +82,13 @@ const content = {
 };
 
 export default function PrivacyPolicy() {
-  const [lang, setLang] = useState<"gr" | "en">("gr");
+  const { lang } = useLang();
   const t = content[lang];
+  const urlLocale = lang === "en" ? "en" : "el";
 
   return (
     <div className="min-h-screen bg-[#FAFBFC]">
-      <header className="bg-white border-b border-gray-100">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 py-5 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-[#0EA5E9] rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
-              <svg className="w-4.5 h-4.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-              </svg>
-            </div>
-            <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              <span className="text-lg font-extrabold text-gray-900">my</span>
-              <span className="text-lg font-extrabold text-[#0EA5E9]">stay</span>
-              <span className="text-lg font-extrabold text-gray-900">site</span>
-            </div>
-          </a>
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setLang(lang === "gr" ? "en" : "gr")}
-              className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors cursor-pointer"
-            >
-              {lang === "gr" ? "EN" : "GR"}
-            </button>
-            <a href="/" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">
-              ← {lang === "gr" ? "Αρχική" : "Home"}
-            </a>
-          </div>
-        </div>
-      </header>
-
+      <div className="h-16 md:h-18" />
       <main className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-2">
           {t.title}
@@ -135,15 +109,15 @@ export default function PrivacyPolicy() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col sm:flex-row items-start sm:items-center gap-3">
-          <a href="/" className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
+          <a href={`/${urlLocale}`} className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
             ← {lang === "gr" ? "Αρχική" : "Home"}
           </a>
           <span className="hidden sm:inline text-gray-300">·</span>
-          <a href="/terms" className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
+          <a href={`/${urlLocale}/terms`} className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
             {lang === "gr" ? "Όροι Χρήσης" : "Terms of Service"}
           </a>
           <span className="hidden sm:inline text-gray-300">·</span>
-          <a href="/#contact" className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
+          <a href={`/${urlLocale}/#contact`} className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
             {lang === "gr" ? "Επικοινωνία" : "Contact"}
           </a>
         </div>

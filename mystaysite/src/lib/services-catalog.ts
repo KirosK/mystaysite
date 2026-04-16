@@ -482,8 +482,8 @@ export const SERVICE_BUNDLES: ServiceBundle[] = [
     id: "manage",
     name: { el: "Managed Package", en: "Managed Package" },
     target: {
-      el: "Θέλεις να ασχολείσαι όσο το δυνατόν λιγότερο — αναλαμβάνουμε όλη τη διαχείριση",
-      en: "You want to be as hands-off as possible — we handle everything",
+      el: "Θέλεις να ασχολείσαι όσο το δυνατόν λιγότερο. Αναλαμβάνουμε όλη τη διαχείριση.",
+      en: "You want to be as hands-off as possible. We handle everything.",
     },
     includes: {
       el: [

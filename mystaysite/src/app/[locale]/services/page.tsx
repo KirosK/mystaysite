@@ -111,11 +111,10 @@ export default async function ServicesHubPage({
   const copy = {
     title: isEn ? "All Services" : "Όλες οι Υπηρεσίες",
     subtitle: isEn
-      ? "Everything a vacation rental needs to grow online — website, marketing, operations and management. Remote-first."
-      : "Ό,τι χρειάζεται ένα κατάλυμα για να αναπτυχθεί online — website, marketing, λειτουργία και διαχείριση. Όλα remote.",
-    heroBadge: isEn ? "Remote-first · EL / EN" : "Remote-first · EL / EN",
+      ? "Everything a vacation rental needs to grow online: website, marketing, operations and management. All remote."
+      : "Ό,τι χρειάζεται ένα κατάλυμα για να αναπτυχθεί online: website, marketing, λειτουργία και διαχείριση. Όλα remote.",
     learnMore: isEn ? "Learn more →" : "Μάθετε περισσότερα →",
-    requestQuote: isEn ? "Get a Quote" : "Ζητήστε Προσφορά",
+    startNow: isEn ? "Start now" : "Ξεκινήστε τώρα",
     bundlesTitle: isEn ? "Bundled Packages" : "Έτοιμα Πακέτα",
     bundlesSubtitle: isEn
       ? "Combine multiple services at a better price."
@@ -129,7 +128,6 @@ export default async function ServicesHubPage({
       : "Στείλε μας το Booking ή Airbnb link σου και σου προτείνουμε το σωστό πακέτο σε 24 ώρες.",
     ctaButton: isEn ? "Get a personalized recommendation" : "Ζήτα εξατομικευμένη πρόταση",
     popular: isEn ? "Most popular" : "Πιο δημοφιλές",
-    from: isEn ? "" : "",
   };
 
   return (
@@ -139,9 +137,6 @@ export default async function ServicesHubPage({
       <section className="relative py-16 md:py-20 overflow-hidden bg-gradient-to-br from-[#0F172A] to-[#1E3A5F]">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_30%_20%,_white_0%,_transparent_50%)]" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <span className="inline-block bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
-            {copy.heroBadge}
-          </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-5">
             {copy.title}
           </h1>
@@ -189,11 +184,11 @@ export default async function ServicesHubPage({
                           </p>
                         </div>
                       </div>
-                      <p className="text-sm text-text-secondary leading-relaxed mb-3">
+                      <p className="text-sm text-text-secondary leading-relaxed">
                         {item.description[loc]}
                       </p>
                       {hasDetailPage && (
-                        <span className="text-sm font-semibold text-primary inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                        <span className="mt-3 text-sm font-semibold text-primary inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                           {copy.learnMore}
                         </span>
                       )}
@@ -211,15 +206,9 @@ export default async function ServicesHubPage({
                   ) : (
                     <div
                       key={item.id}
-                      className="bg-white border border-gray-200 rounded-2xl p-5 hover:border-gray-300 transition-colors"
+                      className="bg-white border border-gray-200 rounded-2xl p-5"
                     >
                       {cardBody}
-                      <Link
-                        href={`/${urlLocale}#contact`}
-                        className="mt-1 text-sm font-semibold text-primary inline-flex items-center gap-1 hover:gap-2 transition-all"
-                      >
-                        {copy.requestQuote} →
-                      </Link>
                     </div>
                   );
                 })}
@@ -288,7 +277,7 @@ export default async function ServicesHubPage({
                       : "bg-gray-900 hover:bg-gray-800 text-white"
                   }`}
                 >
-                  {copy.requestQuote}
+                  {copy.startNow}
                 </Link>
               </div>
             ))}

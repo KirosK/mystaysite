@@ -12,7 +12,7 @@ export default function ShareButtons({ title, url, locale = "el" }: ShareButtons
   const shareLabel = locale === "en" ? "Share:" : "Κοινοποίηση:";
   const [copied, setCopied] = useState(false);
 
-  const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(`${title} — ${url}`)}`;
+  const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(`${title}: ${url}`)}`;
   const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
 
   const copyLink = async () => {

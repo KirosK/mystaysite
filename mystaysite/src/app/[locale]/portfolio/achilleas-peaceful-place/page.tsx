@@ -193,26 +193,7 @@ export default function AchilleasCaseStudy({
 
   return (
     <div className="min-h-screen bg-[#FAFBFC]">
-      <header className="bg-white border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-5 flex items-center justify-between">
-          <a href={`/${urlLocale}`} className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-[#0EA5E9] rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
-              <svg className="w-4.5 h-4.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-              </svg>
-            </div>
-            <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              <span className="text-lg font-extrabold text-gray-900">my</span>
-              <span className="text-lg font-extrabold text-[#0EA5E9]">stay</span>
-              <span className="text-lg font-extrabold text-gray-900">site</span>
-            </div>
-          </a>
-          <a href={`/${urlLocale}`} className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">
-            {copy.backHome}
-          </a>
-        </div>
-      </header>
-
+      <div className="h-16 md:h-18" />
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <div className="max-w-3xl mb-12">
           <div className="flex items-center gap-3 mb-4 flex-wrap">

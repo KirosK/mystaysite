@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useLang } from "@/lib/language-context";
 
 const content = {
   gr: {
@@ -121,59 +121,14 @@ const content = {
   },
 };
 
-type Lang = "gr" | "en";
-
 export default function TermsPage() {
-  const [lang, setLang] = useState<Lang>("gr");
+  const { lang } = useLang();
   const t = content[lang];
+  const urlLocale = lang === "en" ? "en" : "el";
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-bg-darker">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2">
-            <div className="w-7 h-7 bg-primary rounded-lg flex items-center justify-center">
-              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-              </svg>
-            </div>
-            <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              <span className="text-lg font-extrabold text-white">my</span>
-              <span className="text-lg font-extrabold text-primary">stay</span>
-              <span className="text-lg font-extrabold text-white">site</span>
-            </div>
-          </a>
-          <button
-            onClick={() => setLang(lang === "gr" ? "en" : "gr")}
-            className="text-xs font-medium text-gray-300 px-3 py-1.5 rounded-md border border-white/20 hover:bg-white/10 transition-colors flex items-center gap-1.5"
-          >
-            {lang === "gr" ? (
-              <svg viewBox="0 0 640 480" className="w-4 h-3 rounded-sm shrink-0">
-                <rect fill="#005bae" width="640" height="480" />
-                <rect fill="#fff" y="53.3" width="640" height="53.3" />
-                <rect fill="#fff" y="160" width="640" height="53.3" />
-                <rect fill="#fff" y="266.7" width="640" height="53.3" />
-                <rect fill="#fff" y="373.3" width="640" height="53.3" />
-                <rect fill="#005bae" width="266.7" height="266.7" />
-                <rect fill="#fff" x="106.7" width="53.3" height="266.7" />
-                <rect fill="#fff" y="106.7" width="266.7" height="53.3" />
-              </svg>
-            ) : (
-              <svg viewBox="0 0 640 480" className="w-4 h-3 rounded-sm shrink-0">
-                <rect fill="#012169" width="640" height="480" />
-                <path fill="#fff" d="M75 0l244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0z" />
-                <path fill="#C8102E" d="M424 281l216 159v40L369 281zM241 241l-21 17L0 440v-40l200-159zM640 0v3L391 191l2-44L590 0zM0 0l239 176h-60L0 42z" />
-                <path fill="#fff" d="M241 0v480h160V0zM0 160v160h640V160z" />
-                <path fill="#C8102E" d="M0 193v96h640v-96zM273 0v480h96V0z" />
-              </svg>
-            )}
-            {lang === "gr" ? "EL" : "EN"}
-          </button>
-        </div>
-      </header>
-
-      {/* Content */}
+      <div className="h-16 md:h-18" />
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <h1 className="text-3xl sm:text-4xl font-extrabold text-text-primary mb-2">
           {t.title}
@@ -194,15 +149,15 @@ export default function TermsPage() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-start sm:items-center gap-3">
-          <a href="/" className="text-primary hover:text-primary-dark font-medium text-sm transition-colors">
+          <a href={`/${urlLocale}`} className="text-primary hover:text-primary-dark font-medium text-sm transition-colors">
             ← {lang === "gr" ? "Αρχική" : "Home"}
           </a>
           <span className="hidden sm:inline text-gray-300">·</span>
-          <a href="/privacy" className="text-primary hover:text-primary-dark font-medium text-sm transition-colors">
+          <a href={`/${urlLocale}/privacy`} className="text-primary hover:text-primary-dark font-medium text-sm transition-colors">
             {lang === "gr" ? "Πολιτική Απορρήτου" : "Privacy Policy"}
           </a>
           <span className="hidden sm:inline text-gray-300">·</span>
-          <a href="/#pricing" className="text-primary hover:text-primary-dark font-medium text-sm transition-colors">
+          <a href={`/${urlLocale}/#pricing`} className="text-primary hover:text-primary-dark font-medium text-sm transition-colors">
             {lang === "gr" ? "Πακέτα & Τιμές" : "Packages & Pricing"}
           </a>
         </div>

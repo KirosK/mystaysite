@@ -15,16 +15,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: {
       absolute: isEn
-        ? "Blog | MyStaySite — Tips for Vacation Rentals"
-        : "Blog | MyStaySite — Συμβουλές για Τουριστικά Καταλύματα",
+        ? "Blog | MyStaySite: Tips for Vacation Rentals"
+        : "Blog | MyStaySite: Συμβουλές για Τουριστικά Καταλύματα",
     },
     description: isEn
       ? "Practical advice for vacation rental owners. SEO, marketing, direct bookings. From the MyStaySite team."
       : "Πρακτικές συμβουλές για ιδιοκτήτες ενοικιαζόμενων δωματίων. SEO, marketing, direct bookings, μείωση προμηθειών.",
     openGraph: {
       title: isEn
-        ? "Blog | MyStaySite — Tips for Vacation Rentals"
-        : "Blog | MyStaySite — Συμβουλές για Τουριστικά Καταλύματα",
+        ? "Blog | MyStaySite: Tips for Vacation Rentals"
+        : "Blog | MyStaySite: Συμβουλές για Τουριστικά Καταλύματα",
       url: `https://mystaysite.com/${locale}/blog`,
       type: "website",
     },

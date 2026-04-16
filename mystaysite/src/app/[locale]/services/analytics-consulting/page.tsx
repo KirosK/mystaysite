@@ -9,7 +9,7 @@ const content = {
         "Unified dashboard GA4 + Search Console + Booking/Airbnb + μηνιαία strategy calls. €149 setup + €79/μήνα.",
       ogTitle: "Analytics & Consulting για Καταλύματα | MyStaySite",
       ogDescription:
-        "Βλέπεις τα νούμερα — ξέρεις τι να κάνεις. Analytics dashboard + μηνιαίο consulting.",
+        "Βλέπεις τα νούμερα, ξέρεις τι να κάνεις. Analytics dashboard + μηνιαίο consulting.",
     },
     data: {
       title: "Analytics & Consulting Bundle",
@@ -23,7 +23,7 @@ const content = {
         "Booking.com + Airbnb: occupancy, ADR, RevPAR, reviews score",
         "Google Ads performance (εάν υπάρχει)",
         "Competitor benchmarking (2-3 competitors)",
-        "Μηνιαίο strategy call (1 ώρα) — τι δουλεύει, τι να αλλάξεις",
+        "Μηνιαίο strategy call (1 ώρα): τι δουλεύει, τι να αλλάξεις",
         "Μηνιαίο PDF report με insights & recommendations",
         "Alerts για σημαντικές αλλαγές (sudden traffic drop, ranking loss)",
         "Χωρίς περιορισμό ερωτήσεων μέσω email/WhatsApp",
@@ -33,7 +33,7 @@ const content = {
       faq: [
         {
           q: "Τι είναι το Looker Studio;",
-          a: "Δωρεάν εργαλείο της Google για dashboards. Ενώνει δεδομένα από διαφορετικά sources (Analytics, Ads, sheets) σε ωραία γραφικά. Ανανεώνεται live — δεν χρειάζεται να ζητάς report.",
+          a: "Δωρεάν εργαλείο της Google για dashboards. Ενώνει δεδομένα από διαφορετικά sources (Analytics, Ads, sheets) σε ωραία γραφικά. Ανανεώνεται live, δεν χρειάζεται να ζητάς report.",
         },
         {
           q: "Πώς μαζεύετε δεδομένα από Booking και Airbnb;",
@@ -61,7 +61,7 @@ const content = {
         "Unified dashboard GA4 + Search Console + Booking/Airbnb + monthly strategy calls. €149 setup + €79/month.",
       ogTitle: "Analytics & Consulting for Vacation Rentals | MyStaySite",
       ogDescription:
-        "See the numbers — know what to do. Analytics dashboard + monthly consulting.",
+        "See the numbers, know what to do. Analytics dashboard + monthly consulting.",
     },
     data: {
       title: "Analytics & Consulting Bundle",
@@ -75,7 +75,7 @@ const content = {
         "Booking.com + Airbnb: occupancy, ADR, RevPAR, reviews score",
         "Google Ads performance (if available)",
         "Competitor benchmarking (2-3 competitors)",
-        "Monthly strategy call (1 hour) — what's working, what to change",
+        "Monthly strategy call (1 hour): what's working, what to change",
         "Monthly PDF report with insights & recommendations",
         "Alerts for major changes (sudden traffic drop, ranking loss)",
         "Unlimited questions via email/WhatsApp",
@@ -85,7 +85,7 @@ const content = {
       faq: [
         {
           q: "What is Looker Studio?",
-          a: "Google's free dashboard tool. Combines data from different sources (Analytics, Ads, sheets) into beautiful visuals. Updates live — no need to request reports.",
+          a: "Google's free dashboard tool. Combines data from different sources (Analytics, Ads, sheets) into beautiful visuals. Updates live, no need to request reports.",
         },
         {
           q: "How do you collect data from Booking and Airbnb?",
