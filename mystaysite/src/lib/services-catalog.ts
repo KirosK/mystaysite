@@ -39,7 +39,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
           el: "Φροντίζουμε κρατήσεις, τιμές, επικοινωνία, reviews. Εσύ εισπράττεις.",
           en: "We handle bookings, pricing, guest communication and reviews. You collect.",
         },
-        price: { el: "15% ανά κράτηση ή €299/μήνα", en: "15% per booking or €299/month" },
+        price: { el: "Ζητήστε Προσφορά", en: "Get a Quote" },
         href: "/services/property-management",
         iconKey: "building",
         badge: { el: "Νέο", en: "New" },
@@ -501,6 +501,6 @@ export const SERVICE_BUNDLES: ServiceBundle[] = [
         "Monthly strategy call",
       ],
     },
-    price: { el: "15% ανά κράτηση ή €399/μήνα", en: "15% per booking or €399/month" },
+    price: { el: "Ζητήστε Προσφορά", en: "Get a Quote" },
   },
 ];

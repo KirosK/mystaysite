@@ -6,6 +6,7 @@ interface ServiceData {
   price: string;
   features: string[];
   faq: { q: string; a: string }[];
+  priceNote?: string;
 }
 
 interface ServicePageProps {
@@ -16,14 +17,35 @@ interface ServicePageProps {
 export default function ServicePage({ data, locale }: ServicePageProps) {
   const isEn = locale === "en";
   const urlLocale = isEn ? "en" : "el";
+  const isQuote =
+    data.price.toLowerCase().includes("ζητήστε") ||
+    data.price.toLowerCase().includes("προσφορά") ||
+    data.price.toLowerCase().includes("quote") ||
+    data.price.toLowerCase().includes("custom");
   const labels = {
     whatsIncluded: isEn ? "What's included" : "Τι περιλαμβάνει",
     faqTitle: isEn ? "Frequently asked questions" : "Συχνές ερωτήσεις",
-    ctaTitle: isEn ? "Get started today" : "Ξεκινήστε σήμερα",
-    ctaText: isEn
+    ctaTitle: isQuote
+      ? isEn
+        ? "Request your custom quote"
+        : "Ζητήστε εξατομικευμένη προσφορά"
+      : isEn
+      ? "Get started today"
+      : "Ξεκινήστε σήμερα",
+    ctaText: isQuote
+      ? isEn
+        ? "Send us your Booking or Airbnb link and we'll reply with a tailored quote within 24 hours."
+        : "Στείλε μας το Booking ή Airbnb link σου και σου απαντάμε με εξατομικευμένη προσφορά σε 24 ώρες."
+      : isEn
       ? "Tell us about your property and we'll get you started within 24 hours."
       : "Πες μας για το κατάλυμά σου και ξεκινάμε μέσα σε 24 ώρες.",
-    ctaPrimary: isEn ? "Start now" : "Ξεκινήστε τώρα",
+    ctaPrimary: isQuote
+      ? isEn
+        ? "Get a Quote"
+        : "Ζητήστε Προσφορά"
+      : isEn
+      ? "Start now"
+      : "Ξεκινήστε τώρα",
     ctaSecondary: isEn ? "See our work" : "Δείτε δείγματα",
   };
 
@@ -38,8 +60,21 @@ export default function ServicePage({ data, locale }: ServicePageProps) {
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-6">
             {data.subtitle}
           </p>
-          <div className="inline-block bg-white/10 backdrop-blur border border-white/20 rounded-xl px-6 py-3">
-            <span className="text-2xl font-extrabold text-white">{data.price}</span>
+          <div className="inline-flex flex-col items-center gap-1 bg-white/10 backdrop-blur border border-white/20 rounded-xl px-6 py-3">
+            <span className="text-2xl font-extrabold text-white">
+              {isQuote
+                ? isEn
+                  ? "Custom Pricing"
+                  : "Προσαρμοσμένη Τιμή"
+                : data.price}
+            </span>
+            {isQuote && (
+              <span className="text-xs text-gray-300">
+                {isEn
+                  ? "Based on property size & needs"
+                  : "Ανάλογα με το μέγεθος και τις ανάγκες"}
+              </span>
+            )}
           </div>
         </div>
       </section>

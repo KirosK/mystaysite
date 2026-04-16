@@ -229,58 +229,83 @@ export default async function ServicesHubPage({
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {SERVICE_BUNDLES.map((b) => (
-              <div
-                key={b.id}
-                className={`relative bg-white rounded-2xl p-6 border ${
-                  b.highlight
-                    ? "border-accent shadow-xl shadow-accent/10"
-                    : "border-gray-200"
-                }`}
-              >
-                {b.highlight && (
-                  <span className="absolute -top-3 left-6 bg-accent text-white text-[10px] font-bold uppercase tracking-wide px-3 py-1 rounded-full">
-                    {copy.popular}
-                  </span>
-                )}
-                <h3 className="text-xl font-extrabold text-text-primary mb-2">
-                  {b.name[loc]}
-                </h3>
-                <p className="text-sm text-text-secondary mb-4">{b.target[loc]}</p>
-                <div className="text-2xl font-extrabold text-primary mb-5">
-                  {b.price[loc]}
-                </div>
-                <p className="text-xs font-bold uppercase tracking-wider text-text-secondary mb-3">
-                  {copy.bundleIncludes}
-                </p>
-                <ul className="space-y-2 mb-6">
-                  {b.includes[loc].map((inc, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-text-primary">
-                      <svg
-                        className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2.5}
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                      </svg>
-                      <span>{inc}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href={`/${urlLocale}#contact`}
-                  className={`block w-full text-center text-sm font-bold px-5 py-3 rounded-lg transition-colors ${
+            {SERVICE_BUNDLES.map((b) => {
+              const priceStr = b.price[loc].toLowerCase();
+              const isQuoteBundle =
+                priceStr.includes("ζητήστε") ||
+                priceStr.includes("προσφορά") ||
+                priceStr.includes("quote") ||
+                priceStr.includes("custom");
+              return (
+                <div
+                  key={b.id}
+                  className={`relative bg-white rounded-2xl p-6 border ${
                     b.highlight
-                      ? "bg-accent hover:bg-accent-dark text-white shadow-lg shadow-accent/20"
-                      : "bg-gray-900 hover:bg-gray-800 text-white"
+                      ? "border-accent shadow-xl shadow-accent/10"
+                      : "border-gray-200"
                   }`}
                 >
-                  {copy.startNow}
-                </Link>
-              </div>
-            ))}
+                  {b.highlight && (
+                    <span className="absolute -top-3 left-6 bg-accent text-white text-[10px] font-bold uppercase tracking-wide px-3 py-1 rounded-full">
+                      {copy.popular}
+                    </span>
+                  )}
+                  <h3 className="text-xl font-extrabold text-text-primary mb-2">
+                    {b.name[loc]}
+                  </h3>
+                  <p className="text-sm text-text-secondary mb-4">{b.target[loc]}</p>
+                  <div className="mb-5">
+                    <div className="text-2xl font-extrabold text-primary">
+                      {isQuoteBundle
+                        ? isEn
+                          ? "Custom Pricing"
+                          : "Προσαρμοσμένη Τιμή"
+                        : b.price[loc]}
+                    </div>
+                    {isQuoteBundle && (
+                      <div className="text-xs text-text-secondary mt-1">
+                        {isEn
+                          ? "Based on property size & needs"
+                          : "Ανάλογα με το μέγεθος και τις ανάγκες"}
+                      </div>
+                    )}
+                  </div>
+                  <p className="text-xs font-bold uppercase tracking-wider text-text-secondary mb-3">
+                    {copy.bundleIncludes}
+                  </p>
+                  <ul className="space-y-2 mb-6">
+                    {b.includes[loc].map((inc, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-text-primary">
+                        <svg
+                          className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          strokeWidth={2.5}
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <span>{inc}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href={`/${urlLocale}#contact`}
+                    className={`block w-full text-center text-sm font-bold px-5 py-3 rounded-lg transition-colors ${
+                      b.highlight
+                        ? "bg-accent hover:bg-accent-dark text-white shadow-lg shadow-accent/20"
+                        : "bg-gray-900 hover:bg-gray-800 text-white"
+                    }`}
+                  >
+                    {isQuoteBundle
+                      ? isEn
+                        ? "Get a Quote"
+                        : "Ζητήστε Προσφορά"
+                      : copy.startNow}
+                  </Link>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

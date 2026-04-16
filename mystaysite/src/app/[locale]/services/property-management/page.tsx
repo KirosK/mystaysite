@@ -6,7 +6,7 @@ const content = {
     metadata: {
       title: "Διαχείριση Καταλύματος (Remote) | MyStaySite",
       description:
-        "Απομακρυσμένη διαχείριση καταλύματος: κρατήσεις, τιμές, επικοινωνία, reviews, reporting. Από 15% ανά κράτηση ή €299/μήνα.",
+        "Απομακρυσμένη διαχείριση καταλύματος: κρατήσεις, τιμές, επικοινωνία, reviews, reporting. Τιμολόγηση προσαρμοσμένη στο μέγεθος του καταλύματος.",
       ogTitle: "Διαχείριση Καταλύματος (Remote) | MyStaySite",
       ogDescription:
         "Αναλαμβάνουμε την online διαχείριση του καταλύματος σας. Εσύ εισπράττεις.",
@@ -15,7 +15,7 @@ const content = {
       title: "Διαχείριση Καταλύματος (Remote)",
       subtitle:
         "Σταμάτα να χάνεις χρόνο σε Booking, messages και price adjustments. Αναλαμβάνουμε όλη την online διαχείριση. Εσύ εισπράττεις.",
-      price: "15% ανά κράτηση ή €299/μήνα",
+      price: "Ζητήστε Προσφορά",
       features: [
         "Κεντρικό ημερολόγιο: Booking + Airbnb + Expedia + website σε sync (Channel Manager)",
         "Dynamic pricing: αυτόματες τιμές με βάση ζήτηση & ανταγωνισμό (+15-30% revenue)",
@@ -35,7 +35,7 @@ const content = {
         },
         {
           q: "Πως λειτουργεί η τιμολόγηση;",
-          a: "Δύο μοντέλα: (α) 15% ανά κράτηση (performance-based, ιδανικό για καταλύματα με υψηλό όγκο). (β) €299/μήνα flat (προβλεψιμότητα κόστους). Επιλέγεις ό,τι σε συμφέρει.",
+          a: "Η τιμή εξαρτάται από το μέγεθος του καταλύματος, τον αριθμό των listings και τον όγκο κρατήσεων. Ενα μικρό studio χρεώνεται διαφορετικά από μια βίλα 5 δωματίων. Στείλε μας το Booking ή Airbnb link και σου ετοιμάζουμε εξατομικευμένη προσφορά σε 24 ώρες. Συνήθως έχουμε δύο μοντέλα: performance-based (% ανά κράτηση) ή flat monthly fee.",
         },
         {
           q: "Τι γίνεται με τα καθαριστικά και maintenance;",
@@ -60,7 +60,7 @@ const content = {
     metadata: {
       title: "Property Management (Remote) | MyStaySite",
       description:
-        "Remote property management: bookings, pricing, guest communication, reviews, reporting. From 15% per booking or €299/month.",
+        "Remote property management: bookings, pricing, guest communication, reviews, reporting. Pricing tailored to property size.",
       ogTitle: "Property Management (Remote) | MyStaySite",
       ogDescription:
         "We handle the online management of your property. You collect.",
@@ -69,7 +69,7 @@ const content = {
       title: "Property Management (Remote)",
       subtitle:
         "Stop losing time on Booking, messages and price adjustments. We handle the entire online management. You collect.",
-      price: "15% per booking or €299/month",
+      price: "Get a Quote",
       features: [
         "Unified calendar: Booking + Airbnb + Expedia + website in sync (Channel Manager)",
         "Dynamic pricing: auto-pricing based on demand & competition (+15-30% revenue)",
@@ -89,7 +89,7 @@ const content = {
         },
         {
           q: "How does pricing work?",
-          a: "Two models: (a) 15% per booking (performance-based, ideal for high-volume). (b) €299/month flat (cost predictability). You choose.",
+          a: "Pricing depends on property size, number of listings and booking volume. A small studio is priced differently than a 5-bedroom villa. Send us your Booking or Airbnb link and we'll send a tailored quote within 24 hours. We typically offer two models: performance-based (% per booking) or flat monthly fee.",
         },
         {
           q: "What about cleaning and maintenance?",
