@@ -11,7 +11,6 @@ export default function AuthorBio({ locale = "el" }: { locale?: string }) {
         name: "Kyros",
         role: "Founder, MyStaySite",
         bio: "I design professional websites for vacation rentals in Greece. I help property owners grow direct bookings and reduce dependency on Booking.com and Airbnb.",
-        location: "Antiparos, Greece",
         whatsapp: "WhatsApp",
         email: "Email",
         site: "mystaysite.com",
@@ -23,7 +22,6 @@ export default function AuthorBio({ locale = "el" }: { locale?: string }) {
         name: "Κύρος",
         role: "Founder, MyStaySite",
         bio: "Σχεδιάζω επαγγελματικά websites για τουριστικά καταλύματα στην Ελλάδα. Βοηθάω ιδιοκτήτες να αυξήσουν τις direct bookings και να μειώσουν την εξάρτηση από Booking.com και Airbnb.",
-        location: "Αντίπαρος, Ελλάδα",
         whatsapp: "WhatsApp",
         email: "Email",
         site: "mystaysite.com",
@@ -54,24 +52,9 @@ export default function AuthorBio({ locale = "el" }: { locale?: string }) {
           <p className="text-sm text-[#f57c51] font-semibold mb-3">
             {copy.role}
           </p>
-          <p className="text-sm text-gray-600 leading-relaxed mb-4">
+          <p className="text-sm text-gray-600 leading-relaxed mb-5">
             {copy.bio}
           </p>
-          <div className="flex items-center gap-1.5 text-xs text-gray-500 mb-5">
-            <svg
-              className="w-3.5 h-3.5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-            <span>{copy.location}</span>
-          </div>
           <div className="flex flex-wrap gap-2">
             <a
               href={whatsappHref}
