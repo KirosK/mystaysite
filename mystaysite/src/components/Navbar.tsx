@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useLang } from "@/lib/language-context";
+import ThemeToggle from "@/components/ThemeToggle";
 
 function FlagGR() {
   return (
@@ -65,7 +66,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-xl shadow-lg border-b border-border"
+          ? "bg-white/80 dark:bg-[#0B0F1A]/85 backdrop-blur-xl shadow-lg dark:shadow-black/40 border-b border-border"
           : "bg-transparent"
       }`}
     >
@@ -119,20 +120,20 @@ export default function Navbar() {
             </button>
             {servicesOpen && (
               <div className="absolute top-full left-0 pt-2">
-                <div className="bg-white rounded-xl shadow-xl border border-gray-200 py-2 min-w-[220px]">
+                <div className="bg-white dark:bg-[#111827] rounded-xl shadow-xl dark:shadow-black/60 border border-gray-200 dark:border-white/10 py-2 min-w-[220px]">
                   {t.nav.servicesItems.map((item) => (
                     <a
                       key={item.href}
                       href={`/${urlLocale}${item.href}`}
-                      className="block px-4 py-2.5 text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-gray-50 transition-colors"
+                      className="block px-4 py-2.5 text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
                     >
                       {item.label}
                     </a>
                   ))}
-                  <div className="border-t border-gray-100 mt-1 pt-1">
+                  <div className="border-t border-gray-100 dark:border-white/10 mt-1 pt-1">
                     <a
                       href={`/${urlLocale}/services`}
-                      className="block px-4 py-2.5 text-sm font-bold text-primary hover:bg-gray-50 transition-colors"
+                      className="block px-4 py-2.5 text-sm font-bold text-primary hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
                     >
                       {t.nav.servicesAll}
                     </a>
@@ -144,11 +145,12 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
+          <ThemeToggle />
           {/* Language toggle */}
           <button
             type="button"
             onClick={toggleLang}
-            className="text-xs font-medium px-3 py-2 rounded-md border border-border hover:bg-bg-light transition-colors flex items-center gap-1.5 active:bg-bg-light"
+            className="text-xs font-medium px-3 py-2 rounded-md border border-border hover:bg-bg-light dark:hover:bg-white/5 transition-colors flex items-center gap-1.5 active:bg-bg-light dark:active:bg-white/10 text-text-primary"
           >
             {lang === "gr" ? <FlagGR /> : <FlagEN />}
             {lang === "gr" ? "EL" : "EN"}
@@ -166,10 +168,11 @@ export default function Navbar() {
 
         {/* Mobile controls */}
         <div className="flex lg:hidden items-center gap-2">
+          <ThemeToggle />
           <button
             type="button"
             onClick={toggleLang}
-            className="text-xs font-medium px-3 py-2 rounded-md border border-border flex items-center gap-1.5 active:bg-bg-light"
+            className="text-xs font-medium px-3 py-2 rounded-md border border-border flex items-center gap-1.5 active:bg-bg-light dark:active:bg-white/10 text-text-primary"
           >
             {lang === "gr" ? <FlagGR /> : <FlagEN />}
             {lang === "gr" ? "EL" : "EN"}
@@ -192,7 +195,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-border shadow-lg">
+        <div className="lg:hidden bg-white/95 dark:bg-[#0B0F1A]/95 backdrop-blur-xl border-t border-border shadow-lg dark:shadow-black/40">
           <div className="px-4 py-4 space-y-3">
             {links.map((link) =>
               "isRoute" in link && link.isRoute ? (
@@ -214,7 +217,7 @@ export default function Navbar() {
                 </a>
               )
             )}
-            <div className="border-t border-gray-200 pt-2">
+            <div className="border-t border-gray-200 dark:border-white/10 pt-2">
               <p className="text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">{t.nav.services}</p>
               {t.nav.servicesItems.map((item) => (
                 <a

@@ -32,9 +32,9 @@ export default function BlogCard({
   return (
     <Link
       href={`${prefix}/blog/${frontmatter.slug}`}
-      className="group block bg-white rounded-2xl shadow-sm hover:shadow-xl ring-1 ring-gray-100 hover:ring-gray-200 transition-all duration-300 overflow-hidden hover:-translate-y-1"
+      className="group block bg-white dark:bg-[#111827] rounded-2xl shadow-sm dark:shadow-black/30 hover:shadow-xl dark:hover:shadow-black/60 ring-1 ring-gray-100 dark:ring-white/5 hover:ring-gray-200 dark:hover:ring-white/15 transition-all duration-300 overflow-hidden hover:-translate-y-1"
     >
-      <div className="aspect-[16/10] overflow-hidden relative bg-gray-100">
+      <div className="aspect-[16/10] overflow-hidden relative bg-gray-100 dark:bg-[#0B0F1A]">
         {hasImage ? (
           <>
             <Image
@@ -70,13 +70,13 @@ export default function BlogCard({
       </div>
 
       <div className="p-5 md:p-6">
-        <h3 className="text-lg md:text-[1.15rem] font-bold text-[#1a1a2e] mb-2 group-hover:text-[#f57c51] transition-colors line-clamp-2 leading-snug">
+        <h3 className="text-lg md:text-[1.15rem] font-bold text-[#1a1a2e] dark:text-white mb-2 group-hover:text-[#f57c51] transition-colors line-clamp-2 leading-snug">
           {frontmatter.title}
         </h3>
-        <p className="text-sm text-gray-500 line-clamp-2 mb-4 leading-relaxed">
+        <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2 mb-4 leading-relaxed">
           {frontmatter.excerpt}
         </p>
-        <div className="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-gray-100">
+        <div className="flex items-center justify-between text-xs text-gray-400 dark:text-gray-500 pt-3 border-t border-gray-100 dark:border-white/10">
           <time dateTime={frontmatter.date}>
             {new Date(frontmatter.date).toLocaleDateString(
               locale === "en" ? "en-US" : "el-GR",

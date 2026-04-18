@@ -19,10 +19,10 @@ export default function HowItWorks() {
 
           {t.howItWorks.steps.map((step, i) => (
             <div key={i} className="relative text-center">
-              <div className="relative z-10 w-24 h-24 mx-auto mb-6 bg-white border-2 border-primary rounded-full flex items-center justify-center shadow-sm">
+              <div className="relative z-10 w-24 h-24 mx-auto mb-6 bg-white dark:bg-[#111827] border-2 border-primary rounded-full flex items-center justify-center shadow-sm dark:shadow-black/30">
                 <span className="text-2xl font-extrabold text-primary">{i + 1}</span>
               </div>
-              <h3 className="text-base font-bold mb-3">{step.title}</h3>
+              <h3 className="text-base font-bold mb-3 text-text-primary">{step.title}</h3>
               <p className="text-text-secondary text-sm leading-relaxed">{step.text}</p>
             </div>
           ))}

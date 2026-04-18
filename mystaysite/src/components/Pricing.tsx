@@ -32,15 +32,15 @@ const tierStyles: Record<
   }
 > = {
   starter: {
-    card: "bg-white border-border shadow-sm hover:shadow-md",
+    card: "bg-white dark:bg-[#111827] border-border shadow-sm hover:shadow-md dark:shadow-black/30 dark:hover:shadow-black/50",
     badge: "",
     price: "text-text-primary",
-    check: "text-slate-400",
+    check: "text-slate-400 dark:text-slate-500",
     includes: "",
-    btn: "bg-slate-800 hover:bg-slate-700 text-white",
+    btn: "bg-slate-800 hover:bg-slate-700 dark:bg-white dark:hover:bg-slate-100 dark:text-slate-900 text-white",
   },
   professional: {
-    card: "bg-white ring-2 ring-accent shadow-xl scale-[1.02] border-accent",
+    card: "bg-white dark:bg-[#111827] ring-2 ring-accent shadow-xl dark:shadow-black/50 scale-[1.02] border-accent",
     badge: "bg-accent",
     price: "text-accent",
     check: "text-accent",

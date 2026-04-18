@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import type { ReactNode } from "react";
 import { LanguageProvider } from "@/lib/language-context";
+import { ThemeProvider } from "@/lib/theme-context";
 import Navbar from "@/components/Navbar";
 
 const Footer = dynamic(() => import("@/components/Footer"));
@@ -20,15 +21,17 @@ export default function SiteChrome({
   children: ReactNode;
 }) {
   return (
-    <LanguageProvider initialLocale={locale}>
-      <Navbar />
-      {children}
-      <Footer />
-      <MobileStickyCTA />
-      <ChatBot />
-      <ExitIntentPopup />
-      <FloatingCTA />
-      <CookieConsent />
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider initialLocale={locale}>
+        <Navbar />
+        {children}
+        <Footer />
+        <MobileStickyCTA />
+        <ChatBot />
+        <ExitIntentPopup />
+        <FloatingCTA />
+        <CookieConsent />
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }

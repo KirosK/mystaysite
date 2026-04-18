@@ -35,9 +35,9 @@ export default function BlogGrid({ posts, locale }: BlogGridProps) {
   const pillBase =
     "px-4 py-2 rounded-full text-sm font-semibold transition-all border cursor-pointer";
   const pillActive =
-    "bg-[#1a1a2e] text-white border-[#1a1a2e] shadow-sm";
+    "bg-[#1a1a2e] dark:bg-white text-white dark:text-[#0B0F1A] border-[#1a1a2e] dark:border-white shadow-sm";
   const pillInactive =
-    "bg-white text-gray-600 border-gray-200 hover:border-gray-300 hover:text-[#1a1a2e]";
+    "bg-white dark:bg-[#111827] text-gray-600 dark:text-gray-300 border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white/25 hover:text-[#1a1a2e] dark:hover:text-white";
 
   return (
     <div>

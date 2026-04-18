@@ -87,36 +87,36 @@ export default function PrivacyPolicy() {
   const urlLocale = lang === "en" ? "en" : "el";
 
   return (
-    <div className="min-h-screen bg-[#FAFBFC]">
+    <div className="min-h-screen bg-[#FAFBFC] dark:bg-[#0B0F1A]">
       <div className="h-16 md:h-18" />
       <main className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-2">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white mb-2">
           {t.title}
         </h1>
-        <p className="text-sm text-gray-400 mb-10">{t.lastUpdated}</p>
+        <p className="text-sm text-gray-400 dark:text-gray-500 mb-10">{t.lastUpdated}</p>
 
         <div className="space-y-8">
           {t.sections.map((section, i) => (
             <div key={i}>
-              <h2 className="text-lg font-bold text-gray-900 mb-2">
+              <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
                 {section.heading}
               </h2>
-              <p className="text-gray-600 leading-relaxed text-sm">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
                 {section.text}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-white/10 flex flex-col sm:flex-row items-start sm:items-center gap-3">
           <a href={`/${urlLocale}`} className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
             ← {lang === "gr" ? "Αρχική" : "Home"}
           </a>
-          <span className="hidden sm:inline text-gray-300">·</span>
+          <span className="hidden sm:inline text-gray-300 dark:text-gray-600">·</span>
           <a href={`/${urlLocale}/terms`} className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
             {lang === "gr" ? "Όροι Χρήσης" : "Terms of Service"}
           </a>
-          <span className="hidden sm:inline text-gray-300">·</span>
+          <span className="hidden sm:inline text-gray-300 dark:text-gray-600">·</span>
           <a href={`/${urlLocale}/#contact`} className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
             {lang === "gr" ? "Επικοινωνία" : "Contact"}
           </a>

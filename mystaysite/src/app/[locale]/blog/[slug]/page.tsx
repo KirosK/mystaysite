@@ -115,7 +115,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       <div className="h-16 md:h-18" />
 
       <article className="max-w-3xl mx-auto px-4 sm:px-6 py-10 md:py-16">
-        <nav className="flex items-center gap-2 text-sm text-gray-500 mb-8">
+        <nav className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-8">
           <Link href={`/${locale}`} className="hover:text-[#f57c51] transition-colors">
             {isEn ? "Home" : "Αρχική"}
           </Link>
@@ -124,31 +124,31 @@ export default async function BlogPostPage({ params }: PageProps) {
             Blog
           </Link>
           <span>/</span>
-          <span className="text-gray-400 truncate">{frontmatter.title}</span>
+          <span className="text-gray-400 dark:text-gray-500 truncate">{frontmatter.title}</span>
         </nav>
 
         <header className="mb-10">
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[#f57c51]/10 text-[#f57c51]">
+            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[#f57c51]/10 dark:bg-[#f57c51]/20 text-[#f57c51]">
               {frontmatter.category}
             </span>
-            <span className="text-sm text-gray-400">
+            <span className="text-sm text-gray-400 dark:text-gray-500">
               {readingTime} {isEn ? "min read" : "λεπτά ανάγνωση"}
             </span>
           </div>
-          <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-[#1a1a2e] leading-tight mb-6">
+          <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-[#1a1a2e] dark:text-white leading-tight mb-6">
             {frontmatter.title}
           </h1>
 
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#1a1a2e] flex items-center justify-center text-white font-bold text-sm">
+            <div className="w-10 h-10 rounded-full bg-[#1a1a2e] dark:bg-[#f57c51] flex items-center justify-center text-white font-bold text-sm">
               K
             </div>
             <div>
-              <p className="text-sm font-semibold text-[#1a1a2e]">
+              <p className="text-sm font-semibold text-[#1a1a2e] dark:text-white">
                 Κύρος | MyStaySite
               </p>
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-gray-400 dark:text-gray-500">
                 {new Date(frontmatter.date).toLocaleDateString(
                   isEn ? "en-US" : "el-GR",
                   { year: "numeric", month: "long", day: "numeric" }
@@ -159,7 +159,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         </header>
 
         {frontmatter.image && (
-          <figure className="mb-10 rounded-2xl overflow-hidden relative aspect-[16/9] shadow-lg ring-1 ring-gray-200/60 bg-gray-100">
+          <figure className="mb-10 rounded-2xl overflow-hidden relative aspect-[16/9] shadow-lg dark:shadow-black/50 ring-1 ring-gray-200/60 dark:ring-white/10 bg-gray-100 dark:bg-[#0B0F1A]">
             <Image
               src={frontmatter.image}
               alt={frontmatter.title}
@@ -185,7 +185,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         {related.length > 0 && (
           <section className="mt-16">
-            <h2 className="text-2xl font-bold text-[#1a1a2e] mb-6">
+            <h2 className="text-2xl font-bold text-[#1a1a2e] dark:text-white mb-6">
               {isEn ? "Related Articles" : "Σχετικά Άρθρα"}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

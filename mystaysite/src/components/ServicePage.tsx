@@ -50,7 +50,7 @@ export default function ServicePage({ data, locale }: ServicePageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-[#0B0F1A]">
       <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A] to-[#1E3A5F]" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -81,14 +81,14 @@ export default function ServicePage({ data, locale }: ServicePageProps) {
 
       <section className="py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-center mb-12 text-text-primary">
             {labels.whatsIncluded}
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {data.features.map((feature, i) => (
               <div
                 key={i}
-                className="flex items-start gap-3 bg-gray-50 rounded-xl p-4 border border-gray-100"
+                className="flex items-start gap-3 bg-gray-50 dark:bg-white/5 rounded-xl p-4 border border-gray-100 dark:border-white/10"
               >
                 <svg
                   className="w-5 h-5 text-green-500 shrink-0 mt-0.5"
@@ -99,28 +99,28 @@ export default function ServicePage({ data, locale }: ServicePageProps) {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                 </svg>
-                <span className="text-sm font-medium text-gray-800">{feature}</span>
+                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">{feature}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-[#0F172A]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-center mb-12 text-text-primary">
             {labels.faqTitle}
           </h2>
           <div className="space-y-4">
             {data.faq.map((item, i) => (
               <details
                 key={i}
-                className="bg-white rounded-xl border border-gray-200 overflow-hidden group"
+                className="bg-white dark:bg-[#111827] rounded-xl border border-gray-200 dark:border-white/10 overflow-hidden group"
               >
-                <summary className="cursor-pointer px-6 py-4 text-sm font-bold text-gray-900 flex items-center justify-between">
+                <summary className="cursor-pointer px-6 py-4 text-sm font-bold text-gray-900 dark:text-white flex items-center justify-between">
                   {item.q}
                   <svg
-                    className="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform"
+                    className="w-4 h-4 text-gray-400 dark:text-gray-500 group-open:rotate-180 transition-transform"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -129,7 +129,7 @@ export default function ServicePage({ data, locale }: ServicePageProps) {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                   </svg>
                 </summary>
-                <div className="px-6 pb-4 text-sm text-gray-600 leading-relaxed">
+                <div className="px-6 pb-4 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                   {item.a}
                 </div>
               </details>
@@ -140,10 +140,10 @@ export default function ServicePage({ data, locale }: ServicePageProps) {
 
       <section className="py-16 md:py-24">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-2xl sm:text-3xl font-extrabold mb-4">
+          <h2 className="text-2xl sm:text-3xl font-extrabold mb-4 text-text-primary">
             {labels.ctaTitle}
           </h2>
-          <p className="text-gray-600 mb-8">{labels.ctaText}</p>
+          <p className="text-gray-600 dark:text-gray-300 mb-8">{labels.ctaText}</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href={`/${urlLocale}#contact`}

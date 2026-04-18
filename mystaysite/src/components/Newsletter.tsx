@@ -153,7 +153,7 @@ export default function Newsletter({
   }
 
   return (
-    <section className="my-12 rounded-2xl bg-gradient-to-br from-primary/10 via-white to-accent/10 border border-primary/20 p-6 sm:p-8 md:p-10">
+    <section className="my-12 rounded-2xl bg-gradient-to-br from-primary/10 via-white to-accent/10 dark:from-primary/15 dark:via-[#111827] dark:to-accent/15 border border-primary/20 dark:border-primary/30 p-6 sm:p-8 md:p-10">
       <div className="max-w-3xl mx-auto">
         <div className="flex items-center gap-2 mb-3">
           <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -198,7 +198,7 @@ export default function Newsletter({
         </ul>
 
         {status === "success" ? (
-          <div className="flex items-center gap-3 bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+          <div className="flex items-center gap-3 bg-emerald-50 dark:bg-emerald-500/15 border border-emerald-200 dark:border-emerald-500/30 rounded-lg p-4">
             <svg
               className="w-5 h-5 text-emerald-600 shrink-0"
               fill="none"
@@ -210,7 +210,7 @@ export default function Newsletter({
             >
               <path d="M4.5 12.75l6 6 9-13.5" />
             </svg>
-            <p className="text-sm font-semibold text-emerald-800">{copy.success}</p>
+            <p className="text-sm font-semibold text-emerald-800 dark:text-emerald-200">{copy.success}</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-3">
@@ -221,7 +221,7 @@ export default function Newsletter({
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={copy.placeholder}
-                className="flex-1 min-w-0 rounded-lg bg-white border border-gray-300 text-text-primary placeholder:text-gray-400 text-base px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+                className="flex-1 min-w-0 rounded-lg bg-white dark:bg-white/5 border border-gray-300 dark:border-white/15 text-text-primary placeholder:text-gray-400 dark:placeholder:text-gray-500 text-base px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
                 disabled={status === "loading"}
               />
               <button

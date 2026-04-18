@@ -189,7 +189,7 @@ export default function CookieConsent() {
         aria-modal="false"
         aria-labelledby="cookie-consent-title"
       >
-        <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden pointer-events-auto animate-hero-fade-in">
+        <div className="max-w-3xl mx-auto bg-white dark:bg-[#111827] rounded-2xl shadow-2xl dark:shadow-black/60 border border-gray-200 dark:border-white/10 overflow-hidden pointer-events-auto animate-hero-fade-in">
           {!showPrefs ? (
             <div className="p-5 sm:p-6 flex flex-col gap-4">
               <div>
@@ -213,13 +213,13 @@ export default function CookieConsent() {
               <div className="flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-end">
                 <button
                   onClick={() => setShowPrefs(true)}
-                  className="px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors text-center"
+                  className="px-4 py-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 transition-colors text-center"
                 >
                   {copy.prefs}
                 </button>
                 <button
                   onClick={rejectAll}
-                  className="px-4 py-2.5 text-sm font-semibold text-gray-800 border border-gray-300 hover:border-gray-400 rounded-lg transition-colors text-center"
+                  className="px-4 py-2.5 text-sm font-semibold text-gray-800 dark:text-white border border-gray-300 dark:border-white/20 hover:border-gray-400 dark:hover:border-white/30 rounded-lg transition-colors text-center"
                 >
                   {copy.reject}
                 </button>
@@ -240,7 +240,7 @@ export default function CookieConsent() {
                 <button
                   onClick={() => setShowPrefs(false)}
                   aria-label={copy.close}
-                  className="text-gray-400 hover:text-gray-700 transition-colors"
+                  className="text-gray-400 hover:text-gray-700 dark:hover:text-white transition-colors"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -249,22 +249,22 @@ export default function CookieConsent() {
               </div>
 
               <div className="space-y-3">
-                <div className="flex items-start gap-3 p-3 rounded-lg bg-gray-50">
+                <div className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 dark:bg-white/5">
                   <div className="flex-1">
-                    <div className="text-sm font-semibold text-gray-900">{copy.necessary}</div>
-                    <div className="text-xs text-gray-500 mt-0.5">{copy.necessaryDesc}</div>
+                    <div className="text-sm font-semibold text-gray-900 dark:text-white">{copy.necessary}</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{copy.necessaryDesc}</div>
                   </div>
                   <div className="shrink-0 mt-0.5">
-                    <div className="w-10 h-6 bg-gray-300 rounded-full relative">
+                    <div className="w-10 h-6 bg-gray-300 dark:bg-white/20 rounded-full relative">
                       <div className="absolute top-0.5 right-0.5 w-5 h-5 bg-white rounded-full shadow" />
                     </div>
                   </div>
                 </div>
 
-                <label className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <label className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer transition-colors">
                   <div className="flex-1">
-                    <div className="text-sm font-semibold text-gray-900">{copy.analytics}</div>
-                    <div className="text-xs text-gray-500 mt-0.5">{copy.analyticsDesc}</div>
+                    <div className="text-sm font-semibold text-gray-900 dark:text-white">{copy.analytics}</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{copy.analyticsDesc}</div>
                   </div>
                   <div className="shrink-0 mt-0.5">
                     <input
@@ -273,16 +273,16 @@ export default function CookieConsent() {
                       onChange={(e) => setAnalytics(e.target.checked)}
                       className="sr-only peer"
                     />
-                    <div className={`w-10 h-6 rounded-full relative transition-colors ${analytics ? "bg-accent" : "bg-gray-300"}`}>
+                    <div className={`w-10 h-6 rounded-full relative transition-colors ${analytics ? "bg-accent" : "bg-gray-300 dark:bg-white/20"}`}>
                       <div className={`absolute top-0.5 w-5 h-5 bg-white rounded-full shadow transition-all ${analytics ? "right-0.5" : "left-0.5"}`} />
                     </div>
                   </div>
                 </label>
 
-                <label className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <label className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer transition-colors">
                   <div className="flex-1">
-                    <div className="text-sm font-semibold text-gray-900">{copy.marketing}</div>
-                    <div className="text-xs text-gray-500 mt-0.5">{copy.marketingDesc}</div>
+                    <div className="text-sm font-semibold text-gray-900 dark:text-white">{copy.marketing}</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{copy.marketingDesc}</div>
                   </div>
                   <div className="shrink-0 mt-0.5">
                     <input
@@ -291,17 +291,17 @@ export default function CookieConsent() {
                       onChange={(e) => setMarketing(e.target.checked)}
                       className="sr-only peer"
                     />
-                    <div className={`w-10 h-6 rounded-full relative transition-colors ${marketing ? "bg-accent" : "bg-gray-300"}`}>
+                    <div className={`w-10 h-6 rounded-full relative transition-colors ${marketing ? "bg-accent" : "bg-gray-300 dark:bg-white/20"}`}>
                       <div className={`absolute top-0.5 w-5 h-5 bg-white rounded-full shadow transition-all ${marketing ? "right-0.5" : "left-0.5"}`} />
                     </div>
                   </div>
                 </label>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-2 sm:justify-end pt-2 border-t border-gray-100">
+              <div className="flex flex-col sm:flex-row gap-2 sm:justify-end pt-2 border-t border-gray-100 dark:border-white/10">
                 <button
                   onClick={rejectAll}
-                  className="px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors"
+                  className="px-4 py-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
                 >
                   {copy.reject}
                 </button>

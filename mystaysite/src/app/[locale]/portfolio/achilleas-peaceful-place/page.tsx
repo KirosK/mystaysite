@@ -85,7 +85,7 @@ function ImagePanel({ images, color, label, subtitle }: {
     <div>
       <div className="flex items-center gap-2 mb-3">
         <span className={`text-xs font-extrabold px-3 py-1 rounded-full ${badgeBg}`}>{label}</span>
-        <span className="text-sm text-gray-400 truncate">{subtitle}</span>
+        <span className="text-sm text-gray-400 dark:text-gray-500 truncate">{subtitle}</span>
       </div>
 
       <div
@@ -192,25 +192,25 @@ export default function AchilleasCaseStudy({
   const after = buildImages(AFTER_SRC, isEn ? AFTER_LABELS_EN : AFTER_LABELS_EL);
 
   return (
-    <div className="min-h-screen bg-[#FAFBFC]">
+    <div className="min-h-screen bg-[#FAFBFC] dark:bg-[#0B0F1A]">
       <div className="h-16 md:h-18" />
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <div className="max-w-3xl mb-12">
           <div className="flex items-center gap-3 mb-4 flex-wrap">
-            <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full">
+            <span className="bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 text-xs font-bold px-3 py-1 rounded-full">
               {copy.caseStudy}
             </span>
-            <span className="text-sm text-gray-400">{copy.location}</span>
+            <span className="text-sm text-gray-400 dark:text-gray-500">{copy.location}</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
             Achilleas Peaceful Place
           </h1>
-          <p className="text-lg text-gray-500 leading-relaxed">{copy.subtitle}</p>
+          <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed">{copy.subtitle}</p>
         </div>
 
         <div className="mb-16">
-          <h2 className="text-2xl font-extrabold text-gray-900 mb-2">{copy.beforeAfterTitle}</h2>
-          <p className="text-gray-500 mb-8">{copy.beforeAfterText}</p>
+          <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white mb-2">{copy.beforeAfterTitle}</h2>
+          <p className="text-gray-500 dark:text-gray-400 mb-8">{copy.beforeAfterText}</p>
 
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             <ImagePanel images={before} color="red" label={copy.beforeLabel} subtitle="" />
@@ -218,10 +218,10 @@ export default function AchilleasCaseStudy({
           </div>
         </div>
 
-        <div className="bg-white rounded-xl border border-gray-100 p-6 mb-16 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+        <div className="bg-white dark:bg-[#111827] rounded-xl border border-gray-100 dark:border-white/10 p-6 mb-16 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm dark:shadow-black/30">
           <div>
-            <h3 className="font-bold text-gray-900">{copy.liveTitle}</h3>
-            <p className="text-sm text-gray-500 mt-0.5">achilleasplace.gr</p>
+            <h3 className="font-bold text-gray-900 dark:text-white">{copy.liveTitle}</h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">achilleasplace.gr</p>
           </div>
           <a
             href="https://achilleasplace.gr/"
@@ -267,11 +267,11 @@ export default function AchilleasCaseStudy({
           <a href={`/${urlLocale}`} className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
             {copy.backToHome}
           </a>
-          <span className="hidden sm:inline text-gray-300">·</span>
+          <span className="hidden sm:inline text-gray-300 dark:text-gray-600">·</span>
           <a href={`/${urlLocale}#pricing`} className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
             {copy.seePricing}
           </a>
-          <span className="hidden sm:inline text-gray-300">·</span>
+          <span className="hidden sm:inline text-gray-300 dark:text-gray-600">·</span>
           <a href={`/${urlLocale}#portfolio`} className="text-[#0EA5E9] hover:text-[#0284C7] font-medium text-sm transition-colors">
             {copy.seePortfolio}
           </a>

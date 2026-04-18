@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { DM_Sans, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "../globals.css";
 import SiteChrome from "@/components/SiteChrome";
+import { THEME_INIT_SCRIPT } from "@/lib/theme-context";
 
 const dmSans = DM_Sans({
   subsets: ["latin", "latin-ext"],
@@ -121,6 +122,7 @@ export default async function LocaleLayout({
   return (
     <html lang={htmlLang} className={`scroll-smooth ${dmSans.variable} ${plusJakarta.variable} ${jetbrainsMono.variable}`}>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <link rel="alternate" hrefLang="el" href="https://mystaysite.com/el" />
         <link rel="alternate" hrefLang="en" href="https://mystaysite.com/en" />
         <link rel="alternate" hrefLang="x-default" href="https://mystaysite.com/el" />

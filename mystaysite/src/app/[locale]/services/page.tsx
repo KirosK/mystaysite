@@ -199,14 +199,14 @@ export default async function ServicesHubPage({
                     <Link
                       key={item.id}
                       href={`/${urlLocale}${item.href}`}
-                      className="group bg-white border border-gray-200 rounded-2xl p-5 hover:border-primary/40 hover:shadow-md transition-all block"
+                      className="group bg-white dark:bg-[#111827] border border-gray-200 dark:border-white/10 rounded-2xl p-5 hover:border-primary/40 dark:hover:border-primary/50 hover:shadow-md dark:hover:shadow-black/40 transition-all block"
                     >
                       {cardBody}
                     </Link>
                   ) : (
                     <div
                       key={item.id}
-                      className="bg-white border border-gray-200 rounded-2xl p-5"
+                      className="bg-white dark:bg-[#111827] border border-gray-200 dark:border-white/10 rounded-2xl p-5"
                     >
                       {cardBody}
                     </div>
@@ -239,10 +239,10 @@ export default async function ServicesHubPage({
               return (
                 <div
                   key={b.id}
-                  className={`relative bg-white rounded-2xl p-6 border ${
+                  className={`relative bg-white dark:bg-[#111827] rounded-2xl p-6 border ${
                     b.highlight
-                      ? "border-accent shadow-xl shadow-accent/10"
-                      : "border-gray-200"
+                      ? "border-accent shadow-xl shadow-accent/10 dark:shadow-accent/20"
+                      : "border-gray-200 dark:border-white/10"
                   }`}
                 >
                   {b.highlight && (
@@ -294,7 +294,7 @@ export default async function ServicesHubPage({
                     className={`block w-full text-center text-sm font-bold px-5 py-3 rounded-lg transition-colors ${
                       b.highlight
                         ? "bg-accent hover:bg-accent-dark text-white shadow-lg shadow-accent/20"
-                        : "bg-gray-900 hover:bg-gray-800 text-white"
+                        : "bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-200 text-white dark:text-[#0B0F1A]"
                     }`}
                   >
                     {isQuoteBundle

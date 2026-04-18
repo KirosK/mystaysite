@@ -13,10 +13,10 @@ export default function TableOfContents({ items }: { items: TOCItem[] }) {
   if (items.length === 0) return null;
 
   return (
-    <nav className="mb-10 rounded-xl border border-gray-200 bg-gray-50/50 overflow-hidden">
+    <nav className="mb-10 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50/50 dark:bg-white/5 overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-5 py-4 text-left font-bold text-[#1a1a2e] md:cursor-default"
+        className="w-full flex items-center justify-between px-5 py-4 text-left font-bold text-[#1a1a2e] dark:text-white md:cursor-default"
       >
         <span className="text-sm uppercase tracking-wider">
           Περιεχόμενα
@@ -42,7 +42,7 @@ export default function TableOfContents({ items }: { items: TOCItem[] }) {
           <li key={item.id}>
             <a
               href={`#${item.id}`}
-              className="text-sm text-gray-600 hover:text-[#f57c51] transition-colors"
+              className="text-sm text-gray-600 dark:text-gray-300 hover:text-[#f57c51] dark:hover:text-[#f57c51] transition-colors"
             >
               {item.text}
             </a>

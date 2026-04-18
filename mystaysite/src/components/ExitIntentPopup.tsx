@@ -47,10 +47,10 @@ export default function ExitIntentPopup() {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={dismiss} />
-      <div className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center animate-hero-fade-in">
+      <div className="relative bg-white dark:bg-[#111827] rounded-2xl shadow-2xl dark:shadow-black/60 max-w-md w-full p-8 text-center animate-hero-fade-in">
         <button
           onClick={dismiss}
-          className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors text-gray-400 hover:text-gray-600"
+          className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors text-gray-400 hover:text-gray-600 dark:hover:text-white"
           aria-label="Close"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>

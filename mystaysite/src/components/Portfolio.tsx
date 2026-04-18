@@ -65,16 +65,16 @@ function ProjectCard({
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="block bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
+      className="block bg-white dark:bg-[#111827] rounded-2xl shadow-sm dark:shadow-black/30 border border-gray-200 dark:border-white/10 overflow-hidden hover:shadow-xl dark:hover:shadow-black/60 hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
     >
-      <div className="bg-gray-100 px-3 py-2 flex items-center gap-2 border-b border-gray-200">
+      <div className="bg-gray-100 dark:bg-[#0B0F1A] px-3 py-2 flex items-center gap-2 border-b border-gray-200 dark:border-white/10">
         <div className="flex gap-1">
           <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
           <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
           <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
         </div>
         <div className="flex-1 mx-2">
-          <div className="bg-white rounded px-2 py-0.5 text-[10px] text-gray-500 text-center border border-gray-200 flex items-center justify-center gap-1">
+          <div className="bg-white dark:bg-[#111827] rounded px-2 py-0.5 text-[10px] text-gray-500 dark:text-gray-300 text-center border border-gray-200 dark:border-white/10 flex items-center justify-center gap-1">
             <svg className="w-2.5 h-2.5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
             </svg>
@@ -125,20 +125,20 @@ function ProjectCard({
         </div>
       </div>
 
-      <div className="px-4 py-4 border-t border-gray-100">
+      <div className="px-4 py-4 border-t border-gray-100 dark:border-white/10">
         <div className="mb-2">
-          <div className="text-sm font-bold text-gray-900">{project.name}</div>
-          <div className="text-[11px] text-gray-500">{i18n.location}</div>
+          <div className="text-sm font-bold text-gray-900 dark:text-white">{project.name}</div>
+          <div className="text-[11px] text-gray-500 dark:text-gray-400">{i18n.location}</div>
         </div>
         {(project.bookingScore || project.googleScore) && (
           <div className="flex items-center gap-2 mb-3">
             {project.bookingScore && (
-              <span className="bg-blue-50 text-blue-700 text-[10px] font-bold px-2 py-0.5 rounded">
+              <span className="bg-blue-50 dark:bg-blue-500/15 text-blue-700 dark:text-blue-300 text-[10px] font-bold px-2 py-0.5 rounded">
                 Booking {project.bookingScore}
               </span>
             )}
             {project.googleScore && (
-              <span className="bg-yellow-50 text-yellow-700 text-[10px] font-bold px-2 py-0.5 rounded">
+              <span className="bg-yellow-50 dark:bg-yellow-500/15 text-yellow-700 dark:text-yellow-300 text-[10px] font-bold px-2 py-0.5 rounded">
                 Google {project.googleScore}
               </span>
             )}
@@ -146,16 +146,16 @@ function ProjectCard({
         )}
         <div className="flex gap-1.5 flex-wrap">
           {i18n.features.map((f, i) => (
-            <span key={i} className="bg-gray-100 text-gray-600 text-[10px] font-medium px-2 py-0.5 rounded-full">
+            <span key={i} className="bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-300 text-[10px] font-medium px-2 py-0.5 rounded-full">
               {f}
             </span>
           ))}
         </div>
         {(i18n.metricsBefore || i18n.metricsAfter) && (
-          <div className="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2 text-[11px]">
-            <span className="text-red-500 font-semibold">{beforeLabel}: {i18n.metricsBefore}</span>
-            <span className="text-gray-300">→</span>
-            <span className="text-green-600 font-semibold">{afterLabel}: {i18n.metricsAfter}</span>
+          <div className="mt-3 pt-3 border-t border-gray-100 dark:border-white/10 flex items-center gap-2 text-[11px]">
+            <span className="text-red-500 dark:text-red-400 font-semibold">{beforeLabel}: {i18n.metricsBefore}</span>
+            <span className="text-gray-300 dark:text-gray-600">→</span>
+            <span className="text-green-600 dark:text-green-400 font-semibold">{afterLabel}: {i18n.metricsAfter}</span>
           </div>
         )}
       </div>

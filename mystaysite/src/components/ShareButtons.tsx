@@ -27,12 +27,12 @@ export default function ShareButtons({ title, url, locale = "el" }: ShareButtons
 
   return (
     <div className="flex items-center gap-3 my-8">
-      <span className="text-sm font-semibold text-gray-500">{shareLabel}</span>
+      <span className="text-sm font-semibold text-gray-500 dark:text-gray-400">{shareLabel}</span>
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-50 text-green-600 hover:bg-green-100 transition-colors"
+        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-50 dark:bg-green-500/15 text-green-600 dark:text-green-400 hover:bg-green-100 dark:hover:bg-green-500/25 transition-colors"
         aria-label="Share on WhatsApp"
       >
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -43,7 +43,7 @@ export default function ShareButtons({ title, url, locale = "el" }: ShareButtons
         href={facebookUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors"
+        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-500/15 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-500/25 transition-colors"
         aria-label="Share on Facebook"
       >
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -52,7 +52,7 @@ export default function ShareButtons({ title, url, locale = "el" }: ShareButtons
       </a>
       <button
         onClick={copyLink}
-        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
+        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-white/20 transition-colors"
         aria-label="Copy link"
       >
         {copied ? (

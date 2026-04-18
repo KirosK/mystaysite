@@ -23,14 +23,14 @@ export default function Solution() {
           {t.solution.features.map((feature, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl border border-border p-6 hover:shadow-md hover:-translate-y-1 transition-all duration-200"
+              className="bg-white dark:bg-[#111827] rounded-2xl border border-border p-6 hover:shadow-md dark:hover:shadow-black/50 hover:-translate-y-1 transition-all duration-200"
             >
               <div className="flex items-start gap-4">
-                <span className="w-8 h-8 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center shrink-0">
+                <span className="w-8 h-8 rounded-full bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold flex items-center justify-center shrink-0">
                   {i + 1}
                 </span>
                 <div>
-                  <h3 className="text-base font-bold mb-2">{feature.title}</h3>
+                  <h3 className="text-base font-bold mb-2 text-text-primary">{feature.title}</h3>
                   <p className="text-text-secondary text-sm leading-relaxed">
                     {feature.text}
                   </p>

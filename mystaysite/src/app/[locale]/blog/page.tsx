@@ -53,7 +53,7 @@ export default async function BlogPage({ params }: PageProps) {
         <div className="text-center mb-12">
           <Link
             href={`/${locale}`}
-            className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#f57c51] transition-colors mb-6"
+            className="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-[#f57c51] dark:hover:text-[#f57c51] transition-colors mb-6"
           >
             <svg
               className="w-4 h-4"
@@ -70,10 +70,10 @@ export default async function BlogPage({ params }: PageProps) {
             </svg>
             {isEn ? "Home" : "Αρχική"}
           </Link>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a1a2e] mb-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a1a2e] dark:text-white mb-4">
             Blog
           </h1>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
             {isEn
               ? "Tips, guides and case studies for vacation rental owners in Greece."
               : "Συμβουλές, οδηγοί και case studies για ιδιοκτήτες τουριστικών καταλυμάτων στην Ελλάδα."}
@@ -81,7 +81,7 @@ export default async function BlogPage({ params }: PageProps) {
         </div>
 
         {posts.length === 0 ? (
-          <p className="text-center text-gray-400 py-20">
+          <p className="text-center text-gray-400 dark:text-gray-500 py-20">
             {isEn
               ? "No articles yet. Stay tuned!"
               : "Δεν υπάρχουν ακόμα άρθρα. Μείνετε συντονισμένοι!"}

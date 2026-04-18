@@ -23,13 +23,13 @@ export default function GuaranteeStack() {
           {t.guarantee.items.map((item, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl border border-border p-6 md:p-8 flex items-start gap-5 hover:shadow-md transition-shadow"
+              className="bg-white dark:bg-[#111827] rounded-2xl border border-border p-6 md:p-8 flex items-start gap-5 hover:shadow-md dark:hover:shadow-black/40 transition-shadow"
             >
-              <div className="w-10 h-10 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-full bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold flex items-center justify-center shrink-0">
                 {i + 1}
               </div>
               <div>
-                <h3 className="text-base font-bold mb-2">{item.title}</h3>
+                <h3 className="text-base font-bold mb-2 text-text-primary">{item.title}</h3>
                 <p className="text-text-secondary text-sm leading-relaxed">{item.text}</p>
               </div>
             </div>

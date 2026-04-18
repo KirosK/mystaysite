@@ -127,7 +127,7 @@ export default function TermsPage() {
   const urlLocale = lang === "en" ? "en" : "el";
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-[#0B0F1A]">
       <div className="h-16 md:h-18" />
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <h1 className="text-3xl sm:text-4xl font-extrabold text-text-primary mb-2">
@@ -152,11 +152,11 @@ export default function TermsPage() {
           <a href={`/${urlLocale}`} className="text-primary hover:text-primary-dark font-medium text-sm transition-colors">
             ← {lang === "gr" ? "Αρχική" : "Home"}
           </a>
-          <span className="hidden sm:inline text-gray-300">·</span>
+          <span className="hidden sm:inline text-gray-300 dark:text-gray-600">·</span>
           <a href={`/${urlLocale}/privacy`} className="text-primary hover:text-primary-dark font-medium text-sm transition-colors">
             {lang === "gr" ? "Πολιτική Απορρήτου" : "Privacy Policy"}
           </a>
-          <span className="hidden sm:inline text-gray-300">·</span>
+          <span className="hidden sm:inline text-gray-300 dark:text-gray-600">·</span>
           <a href={`/${urlLocale}/#pricing`} className="text-primary hover:text-primary-dark font-medium text-sm transition-colors">
             {lang === "gr" ? "Πακέτα & Τιμές" : "Packages & Pricing"}
           </a>

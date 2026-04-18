@@ -24,13 +24,13 @@ export default function PainPoints() {
           {cards.map((card, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl shadow-sm border border-border p-6 hover:shadow-md hover:-translate-y-1 transition-all duration-200 flex flex-col"
+              className="bg-white dark:bg-[#111827] rounded-2xl shadow-sm dark:shadow-black/30 border border-border p-6 hover:shadow-md dark:hover:shadow-black/50 hover:-translate-y-1 transition-all duration-200 flex flex-col"
             >
-              <h3 className="text-lg font-bold mb-3">{card.title}</h3>
+              <h3 className="text-lg font-bold mb-3 text-text-primary">{card.title}</h3>
               <p className="text-text-secondary text-sm leading-relaxed flex-1">{card.text}</p>
               {card.cost && (
                 <div className="mt-4 pt-3 border-t border-border">
-                  <span className="inline-block bg-red-50 text-red-600 text-sm font-bold px-3 py-1.5 rounded-lg font-mono-nums">
+                  <span className="inline-block bg-red-50 dark:bg-red-500/15 text-red-600 dark:text-red-300 text-sm font-bold px-3 py-1.5 rounded-lg font-mono-nums">
                     {card.cost}
                   </span>
                 </div>

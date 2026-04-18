@@ -8,12 +8,12 @@ function AccordionItem({ question, answer }: { question: string; answer: string 
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border border-border rounded-xl overflow-hidden bg-white">
+    <div className="border border-border rounded-xl overflow-hidden bg-white dark:bg-[#111827]">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-gray-50 transition-colors"
+        className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
       >
-        <span className="text-sm font-semibold pr-4">{question}</span>
+        <span className="text-sm font-semibold pr-4 text-text-primary">{question}</span>
         <svg
           className={`w-5 h-5 shrink-0 text-text-secondary transition-transform duration-200 ${open ? "rotate-180" : ""}`}
           fill="none"

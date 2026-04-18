@@ -131,7 +131,7 @@ export default function ChatBot() {
     <>
       {/* Chat window */}
       {open && (
-        <div className="fixed bottom-20 right-4 lg:bottom-24 lg:right-6 z-50 w-[340px] sm:w-[380px] max-h-[520px] flex flex-col bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden animate-fade-in-up">
+        <div className="fixed bottom-20 right-4 lg:bottom-24 lg:right-6 z-50 w-[340px] sm:w-[380px] max-h-[520px] flex flex-col bg-white dark:bg-[#111827] rounded-2xl shadow-2xl dark:shadow-black/60 border border-gray-200 dark:border-white/10 overflow-hidden animate-fade-in-up">
           {/* Header */}
           <div className="bg-[#0F172A] px-4 py-3 flex items-center justify-between shrink-0">
             <div className="flex items-center gap-3">
@@ -157,7 +157,7 @@ export default function ChatBot() {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto px-4 py-4 space-y-3 bg-gray-50 min-h-0">
+          <div className="flex-1 overflow-y-auto px-4 py-4 space-y-3 bg-gray-50 dark:bg-[#0B0F1A] min-h-0">
             {messages.map((msg, i) => (
               <div
                 key={i}
@@ -167,7 +167,7 @@ export default function ChatBot() {
                   className={`max-w-[85%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-line ${
                     msg.from === "user"
                       ? "bg-primary text-white rounded-br-md"
-                      : "bg-white text-text-primary border border-gray-100 shadow-sm rounded-bl-md"
+                      : "bg-white dark:bg-[#111827] text-text-primary border border-gray-100 dark:border-white/10 shadow-sm dark:shadow-black/30 rounded-bl-md"
                   }`}
                 >
                   {msg.text}
@@ -182,7 +182,7 @@ export default function ChatBot() {
                   <button
                     key={i}
                     onClick={() => handleQuickReply(i)}
-                    className="text-left px-3.5 py-2.5 rounded-xl border border-primary/30 text-primary text-sm font-medium hover:bg-primary/5 transition-colors"
+                    className="text-left px-3.5 py-2.5 rounded-xl border border-primary/30 dark:border-primary/40 bg-white dark:bg-[#111827] text-primary text-sm font-medium hover:bg-primary/5 dark:hover:bg-primary/15 transition-colors"
                   >
                     {opt}
                   </button>
@@ -195,7 +195,7 @@ export default function ChatBot() {
               <div className="flex flex-col gap-2 pt-1">
                 <button
                   onClick={handleYesMockup}
-                  className="text-left px-3.5 py-2.5 rounded-xl border border-primary/30 text-primary text-sm font-medium hover:bg-primary/5 transition-colors"
+                  className="text-left px-3.5 py-2.5 rounded-xl border border-primary/30 dark:border-primary/40 bg-white dark:bg-[#111827] text-primary text-sm font-medium hover:bg-primary/5 dark:hover:bg-primary/15 transition-colors"
                 >
                   {t.chatbot.yesOption}
                 </button>
@@ -207,7 +207,7 @@ export default function ChatBot() {
 
           {/* Input area */}
           {showInput && (
-            <div className="border-t border-gray-200 px-3 py-3 bg-white shrink-0">
+            <div className="border-t border-gray-200 dark:border-white/10 px-3 py-3 bg-white dark:bg-[#111827] shrink-0">
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -225,7 +225,7 @@ export default function ChatBot() {
                       ? t.chatbot.linkPlaceholder
                       : t.chatbot.contactPlaceholder
                   }
-                  className="flex-1 px-3.5 py-2.5 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
+                  className="flex-1 px-3.5 py-2.5 rounded-lg border border-gray-200 dark:border-white/15 bg-white dark:bg-[#0B0F1A] text-text-primary placeholder:text-gray-400 dark:placeholder:text-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
                   autoFocus
                 />
                 <button
@@ -241,7 +241,7 @@ export default function ChatBot() {
 
           {/* Done state - no input */}
           {step === "done" && (
-            <div className="border-t border-gray-200 px-4 py-3 bg-white text-center shrink-0">
+            <div className="border-t border-gray-200 dark:border-white/10 px-4 py-3 bg-white dark:bg-[#111827] text-center shrink-0">
               <p className="text-xs text-text-secondary">{t.chatbot.thanksTitle}</p>
             </div>
           )}
