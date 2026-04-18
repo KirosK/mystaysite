@@ -75,13 +75,10 @@ export default async function BlogPage({ params }: PageProps) {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {posts.map((post, i) => (
-              <>
-                <BlogCard key={post.frontmatter.slug} post={post} locale={locale} />
+              <div key={post.frontmatter.slug} className="contents">
+                <BlogCard post={post} locale={locale} />
                 {i === 2 && posts.length > 3 && (
-                  <div
-                    key="cta-banner"
-                    className="md:col-span-2 lg:col-span-3 rounded-2xl bg-gradient-to-r from-[#1a1a2e] to-[#2d2d4e] p-8 flex flex-col sm:flex-row items-center justify-between gap-4"
-                  >
+                  <div className="md:col-span-2 lg:col-span-3 rounded-2xl bg-gradient-to-r from-[#1a1a2e] to-[#2d2d4e] p-8 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div>
                       <h3 className="text-xl font-bold text-white">
                         {isEn ? "Want more bookings?" : "Θέλετε περισσότερες κρατήσεις;"}
@@ -100,7 +97,7 @@ export default async function BlogPage({ params }: PageProps) {
                     </a>
                   </div>
                 )}
-              </>
+              </div>
             ))}
           </div>
         )}

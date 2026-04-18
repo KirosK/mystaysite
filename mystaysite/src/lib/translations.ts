@@ -201,7 +201,7 @@ export const translations = {
           "Παράδοση σε 2-5 ημέρες",
           "6 μήνες εγγύηση",
         ],
-        cta: "Ζητήστε Προσφορά",
+        cta: "Ξεκινήστε τώρα",
         ctaSub: "Χωρίς δέσμευση",
       },
       professional: {
@@ -220,7 +220,7 @@ export const translations = {
           "Social media covers",
           "6 μήνες εγγύηση",
         ],
-        cta: "Ζητήστε Προσφορά",
+        cta: "Ξεκινήστε τώρα",
         ctaSub: "Το 80% των πελατών μας επιλέγουν αυτό",
       },
       premium: {
@@ -591,7 +591,7 @@ export const translations = {
           "Delivered in 2-5 days",
           "6 months guarantee",
         ],
-        cta: "Request a Quote",
+        cta: "Start now",
         ctaSub: "No commitment",
       },
       professional: {
@@ -610,7 +610,7 @@ export const translations = {
           "Social media covers",
           "6 months guarantee",
         ],
-        cta: "Request a Quote",
+        cta: "Start now",
         ctaSub: "80% of our clients choose this",
       },
       premium: {

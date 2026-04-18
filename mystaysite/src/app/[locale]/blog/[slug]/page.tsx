@@ -156,7 +156,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         </header>
 
         {frontmatter.image && (
-          <div className="mb-10 rounded-2xl overflow-hidden relative aspect-[16/9]">
+          <figure className="mb-10 rounded-2xl overflow-hidden relative aspect-[16/9] shadow-lg ring-1 ring-gray-200/60 bg-gray-100">
             <Image
               src={frontmatter.image}
               alt={frontmatter.title}
@@ -165,7 +165,8 @@ export default async function BlogPostPage({ params }: PageProps) {
               className="object-cover"
               priority
             />
-          </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+          </figure>
         )}
 
         <TableOfContents items={headings} />
