@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { useLang } from "@/lib/language-context";
+import { updateConsent } from "@/lib/analytics";
 
 const STORAGE_KEY = "mss_cookie_consent_v2";
 const LEGACY_KEY = "mss_cookie_consent";
@@ -54,20 +55,6 @@ function readConsent(): Consent | null {
   }
 }
 
-function loadAnalytics() {
-  if (typeof window === "undefined") return;
-  if (document.querySelector('script[src*="googletagmanager"]')) return;
-
-  const ga = document.createElement("script");
-  ga.src = "https://www.googletagmanager.com/gtag/js?id=G-S05LEDF6JW";
-  ga.async = true;
-  document.head.appendChild(ga);
-
-  const gaInit = document.createElement("script");
-  gaInit.textContent = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S05LEDF6JW',{anonymize_ip:true});`;
-  document.head.appendChild(gaInit);
-}
-
 function loadMarketing() {
   if (typeof window === "undefined") return;
   if ((window as unknown as { fbq?: unknown }).fbq) return;
@@ -78,7 +65,8 @@ function loadMarketing() {
 }
 
 function applyConsent(c: Consent) {
-  if (c.analytics) loadAnalytics();
+  // GA4 is loaded globally via <Analytics/>. We only flip Consent Mode here.
+  updateConsent({ analytics: c.analytics, marketing: c.marketing });
   if (c.marketing) loadMarketing();
 }
 

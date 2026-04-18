@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useLang } from "@/lib/language-context";
+import { trackWhatsApp } from "@/lib/analytics";
 
 const PHONE = "306974585063";
 
@@ -29,6 +30,7 @@ export default function FloatingCTA() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="WhatsApp"
+      onClick={() => trackWhatsApp("floating_cta")}
       className="hidden md:flex fixed bottom-24 right-6 z-40 items-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white font-bold text-sm px-5 py-3 rounded-full shadow-xl shadow-[#25D366]/30 transition-all hover:scale-105 animate-hero-fade-in"
     >
       <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white">

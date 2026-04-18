@@ -2,6 +2,7 @@
 
 import { useLang } from "@/lib/language-context";
 import { useAnimateOnScroll } from "@/lib/use-animate-on-scroll";
+import { trackOutboundClick } from "@/lib/analytics";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -71,6 +72,7 @@ function ProjectCard({
         href={project.url}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackOutboundClick(project.url, `portfolio_${project.name}`)}
         className="block cursor-pointer"
         aria-label={`${project.name} - ${viewLiveLabel}`}
       >

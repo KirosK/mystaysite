@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useLang } from "@/lib/language-context";
+import { trackWhatsApp, trackCtaClick } from "@/lib/analytics";
 
 const PHONE = "306974585063";
 
@@ -28,6 +29,7 @@ export default function MobileStickyCTA() {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackWhatsApp("mobile_sticky_cta")}
           className="flex-1 flex items-center justify-center gap-2 py-3.5 text-white font-semibold text-sm border-r border-white/10 hover:bg-white/5 transition-colors"
         >
           <svg viewBox="0 0 24 24" className="w-4.5 h-4.5 fill-[#25D366]">
@@ -37,6 +39,7 @@ export default function MobileStickyCTA() {
         </a>
         <button
           onClick={() => {
+            trackCtaClick("mobile_sticky_send_link");
             const el = document.querySelector("#contact");
             if (el) el.scrollIntoView({ behavior: "smooth" });
           }}

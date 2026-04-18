@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 import { LanguageProvider } from "@/lib/language-context";
 import { ThemeProvider } from "@/lib/theme-context";
 import Navbar from "@/components/Navbar";
+import Analytics from "@/components/Analytics";
 
 const Footer = dynamic(() => import("@/components/Footer"));
 const MobileStickyCTA = dynamic(() => import("@/components/MobileStickyCTA"), { ssr: false });
@@ -23,6 +24,7 @@ export default function SiteChrome({
   return (
     <ThemeProvider>
       <LanguageProvider initialLocale={locale}>
+        <Analytics locale={locale} />
         <Navbar />
         {children}
         <Footer />

@@ -11,6 +11,7 @@ import BlogCard from "@/components/BlogCard";
 import Newsletter from "@/components/Newsletter";
 import AuthorBio from "@/components/AuthorBio";
 import ReadingProgress from "@/components/ReadingProgress";
+import TrackBlogRead from "@/components/TrackBlogRead";
 import Link from "next/link";
 
 interface PageProps {
@@ -157,6 +158,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   return (
     <>
       <ReadingProgress />
+      <TrackBlogRead slug={slug} category={post.frontmatter.category} />
       <div className="h-16 md:h-18" />
 
       <article className="max-w-3xl mx-auto px-4 sm:px-6 py-10 md:py-16">

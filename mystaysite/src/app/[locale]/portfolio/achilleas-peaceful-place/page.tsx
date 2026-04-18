@@ -2,6 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect, use } from "react";
 import Image from "next/image";
+import { trackWhatsApp, trackOutboundClick } from "@/lib/analytics";
 
 const BEFORE_SRC = [
   "/portfolio/achilleas/before-01-hero.jpg",
@@ -227,6 +228,12 @@ export default function AchilleasCaseStudy({
             href="https://achilleasplace.gr/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() =>
+              trackOutboundClick(
+                "https://achilleasplace.gr/",
+                "achilleas_case_study"
+              )
+            }
             className="inline-flex items-center gap-2 bg-[#0EA5E9] hover:bg-[#0284C7] text-white font-bold px-6 py-3 rounded-xl transition-colors"
           >
             {copy.openSite}
@@ -247,6 +254,7 @@ export default function AchilleasCaseStudy({
               )}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsApp("achilleas_case_study")}
               className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white font-bold px-6 py-3.5 rounded-xl transition-colors shadow-lg shadow-[#25D366]/20"
             >
               <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white">

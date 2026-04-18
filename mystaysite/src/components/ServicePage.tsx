@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TrackServiceView from "@/components/TrackServiceView";
 
 interface ServiceData {
   title: string;
@@ -90,6 +91,7 @@ export default function ServicePage({ data, locale, slug }: ServicePageProps) {
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#0B0F1A]">
+      <TrackServiceView name={data.title} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useLang } from "@/lib/language-context";
 import { useAnimateOnScroll } from "@/lib/use-animate-on-scroll";
-import { trackLead } from "@/lib/analytics";
+import { trackLead, trackWhatsApp, trackPhone, trackEmail } from "@/lib/analytics";
 
 const PHONE = "306974585063";
 const EMAIL = "info@mystaysite.com";
@@ -216,6 +216,7 @@ export default function Contact() {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsApp("contact_form_error")}
                     className="block text-center text-sm text-[#25D366] hover:underline pt-1"
                   >
                     {t.contact.error}
@@ -229,6 +230,7 @@ export default function Contact() {
             <div className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-5">
               <a
                 href={`tel:+${PHONE}`}
+                onClick={() => trackPhone("contact_section")}
                 className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group"
               >
                 <span className="w-10 h-10 rounded-lg bg-white/5 group-hover:bg-white/10 flex items-center justify-center shrink-0 transition-colors">
@@ -243,6 +245,7 @@ export default function Contact() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsApp("contact_section")}
                 className="flex items-center gap-3 text-gray-300 hover:text-[#25D366] transition-colors group"
               >
                 <span className="w-10 h-10 rounded-lg bg-white/5 group-hover:bg-[#25D366]/10 flex items-center justify-center shrink-0 transition-colors">
@@ -253,6 +256,7 @@ export default function Contact() {
 
               <a
                 href={emailUrl}
+                onClick={() => trackEmail("contact_section")}
                 className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group"
               >
                 <span className="w-10 h-10 rounded-lg bg-white/5 group-hover:bg-white/10 flex items-center justify-center shrink-0 transition-colors">
