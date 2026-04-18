@@ -118,6 +118,37 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
   const htmlLang = locale === "en" ? "en" : "el";
+  const isEn = htmlLang === "en";
+
+  const faqEl = [
+    {
+      q: "Πόσο κοστίζει ένα website για ενοικιαζόμενα δωμάτια;",
+      a: "Κάθε κατάλυμα έχει διαφορετικές ανάγκες. Ζητήστε προσφορά και σας ετοιμάζουμε προσωπικό πλάνο. Ξεκινάμε με 30% προκαταβολή.",
+    },
+    {
+      q: "Σε πόσο καιρό παραδίδεται το website;",
+      a: "Το website παραδίδεται σε 2-5 εργάσιμες ημέρες, ανάλογα με το πακέτο.",
+    },
+    {
+      q: "Χρειάζομαι website αν έχω ήδη Booking.com;",
+      a: "Ναι. Με δικό σου website παίρνεις κρατήσεις χωρίς 15-20% προμήθεια, εμφανίζεσαι στο Google, και δείχνεις τις κριτικές σου.",
+    },
+  ];
+  const faqEn = [
+    {
+      q: "How much does a website for vacation rentals cost?",
+      a: "Every property has different needs. Request a quote and we will prepare a tailored plan. We start with a 30% deposit.",
+    },
+    {
+      q: "How long does delivery take?",
+      a: "The website is delivered within 2-5 business days, depending on the package.",
+    },
+    {
+      q: "Do I need a website if I already have Booking.com?",
+      a: "Yes. With your own website you receive bookings without a 15-20% commission, you appear on Google, and you showcase your reviews in one place.",
+    },
+  ];
+  const faq = isEn ? faqEn : faqEl;
 
   return (
     <html lang={htmlLang} className={`scroll-smooth ${dmSans.variable} ${plusJakarta.variable} ${jetbrainsMono.variable}`}>
@@ -132,60 +163,73 @@ export default async function LocaleLayout({
             __html: JSON.stringify([
               {
                 "@context": "https://schema.org",
-                "@type": "ProfessionalService",
+                "@type": "Organization",
+                "@id": "https://mystaysite.com/#organization",
                 name: "MyStaySite",
                 url: "https://mystaysite.com",
-                description:
-                  "Κατασκευή επαγγελματικών websites για ενοικιαζόμενα δωμάτια, βίλες, studios και apartments. Online κρατήσεις, κριτικές, SEO.",
-                areaServed: { "@type": "Place", name: "Worldwide" },
-                serviceType: [
-                  "Κατασκευή ιστοσελίδας",
-                  "Web Design",
-                  "Website για ενοικιαζόμενα δωμάτια",
-                  "SEO για καταλύματα",
-                ],
-                telephone: "+30 697 458 5063",
+                logo: "https://mystaysite.com/icon",
                 email: "info@mystaysite.com",
-                address: { "@type": "PostalAddress", addressCountry: "GR" },
-                priceRange: "€349 - €899+",
+                telephone: "+30 697 458 5063",
                 sameAs: [],
               },
               {
                 "@context": "https://schema.org",
-                "@type": "WebSite",
+                "@type": "ProfessionalService",
+                "@id": "https://mystaysite.com/#business",
                 name: "MyStaySite",
                 url: "https://mystaysite.com",
+                description: isEn
+                  ? "Professional website design for vacation rentals, villas, studios and apartments in Greece. Direct bookings, reviews, SEO."
+                  : "Κατασκευή επαγγελματικών websites για ενοικιαζόμενα δωμάτια, βίλες, studios και apartments στην Ελλάδα. Online κρατήσεις, κριτικές, SEO.",
+                areaServed: [
+                  { "@type": "Country", name: "Greece" },
+                  { "@type": "AdministrativeArea", name: "Cyclades" },
+                  { "@type": "AdministrativeArea", name: "Halkidiki" },
+                  { "@type": "AdministrativeArea", name: "Crete" },
+                ],
+                serviceType: isEn
+                  ? [
+                      "Website design",
+                      "Web development",
+                      "Vacation rental website",
+                      "SEO for accommodations",
+                      "Google Business Profile",
+                    ]
+                  : [
+                      "Κατασκευή ιστοσελίδας",
+                      "Web Design",
+                      "Website για ενοικιαζόμενα δωμάτια",
+                      "SEO για καταλύματα",
+                      "Google Business Profile",
+                    ],
+                telephone: "+30 697 458 5063",
+                email: "info@mystaysite.com",
+                address: { "@type": "PostalAddress", addressCountry: "GR" },
+                priceRange: "€349 - €899+",
                 inLanguage: ["el", "en"],
               },
               {
                 "@context": "https://schema.org",
+                "@type": "WebSite",
+                "@id": "https://mystaysite.com/#website",
+                name: "MyStaySite",
+                url: "https://mystaysite.com",
+                inLanguage: ["el", "en"],
+                publisher: { "@id": "https://mystaysite.com/#organization" },
+                potentialAction: {
+                  "@type": "SearchAction",
+                  target: "https://mystaysite.com/el/blog?q={search_term_string}",
+                  "query-input": "required name=search_term_string",
+                },
+              },
+              {
+                "@context": "https://schema.org",
                 "@type": "FAQPage",
-                mainEntity: [
-                  {
-                    "@type": "Question",
-                    name: "Πόσο κοστίζει ένα website για ενοικιαζόμενα δωμάτια;",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Κάθε κατάλυμα έχει διαφορετικές ανάγκες. Ζητήστε προσφορά και σας ετοιμάζουμε προσωπικό πλάνο. Ξεκινάμε με 30% προκαταβολή.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Σε πόσο καιρό παραδίδεται το website;",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Το website παραδίδεται σε 2-5 εργάσιμες ημέρες, ανάλογα με το πακέτο.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Χρειάζομαι website αν έχω ήδη Booking.com;",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Ναι. Με δικό σου website παίρνεις κρατήσεις χωρίς 15-20% προμήθεια, εμφανίζεσαι στο Google, και δείχνεις τις κριτικές σου.",
-                    },
-                  },
-                ],
+                mainEntity: faq.map((f) => ({
+                  "@type": "Question",
+                  name: f.q,
+                  acceptedAnswer: { "@type": "Answer", text: f.a },
+                })),
               },
             ]),
           }}

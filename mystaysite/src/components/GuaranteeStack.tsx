@@ -4,8 +4,18 @@ import { useLang } from "@/lib/language-context";
 import { useAnimateOnScroll } from "@/lib/use-animate-on-scroll";
 
 export default function GuaranteeStack() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const ref = useAnimateOnScroll();
+  const urlLocale = lang === "en" ? "en" : "el";
+
+  const scrollTo = (id: string): boolean => {
+    const el = document.querySelector(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      return true;
+    }
+    return false;
+  };
 
   return (
     <section className="py-16 md:py-24">
@@ -38,7 +48,8 @@ export default function GuaranteeStack() {
 
         <div className="text-center mt-10">
           <a
-            href="/#contact"
+            href={`/${urlLocale}#contact`}
+            onClick={(e) => { if (scrollTo("#contact")) e.preventDefault(); }}
             className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white text-sm font-semibold px-6 py-3 rounded-lg transition-colors shadow-lg shadow-accent/20"
           >
             {t.guarantee.ctaLink}

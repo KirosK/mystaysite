@@ -52,6 +52,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: frontmatter.title,
       description: frontmatter.excerpt,
+      images: frontmatter.image ? [frontmatter.image] : undefined,
     },
     alternates: {
       canonical: url,
@@ -69,15 +70,21 @@ function extractHeadings(content: string): { id: string; text: string }[] {
   let match;
   while ((match = regex.exec(content)) !== null) {
     const text = match[1].trim();
-    const id = text
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, "")
-      .replace(/\s+/g, "-")
-      .replace(/-+/g, "-")
-      .trim();
+    const id = slugifyHeading(text);
     headings.push({ id, text });
   }
   return headings;
+}
+
+export function slugifyHeading(text: string): string {
+  return text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s-]/gu, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
@@ -91,7 +98,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   const url = `https://mystaysite.com/${locale}/blog/${frontmatter.slug}`;
   const isEn = locale === "en";
 
-  const jsonLd = {
+  const blogPostingJsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: frontmatter.title,
@@ -100,13 +107,51 @@ export default async function BlogPostPage({ params }: PageProps) {
       ? `https://mystaysite.com${frontmatter.image}`
       : undefined,
     datePublished: frontmatter.date,
-    author: { "@type": "Person", name: "Κύρος" },
+    dateModified: frontmatter.dateModified || frontmatter.date,
+    author: {
+      "@type": "Person",
+      name: "Κύρος",
+      url: `https://mystaysite.com/${locale}`,
+    },
     publisher: {
       "@type": "Organization",
+      "@id": "https://mystaysite.com/#organization",
       name: "MyStaySite",
       url: "https://mystaysite.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://mystaysite.com/icon",
+      },
     },
-    mainEntityOfPage: url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    articleSection: frontmatter.category,
+    inLanguage: isEn ? "en" : "el",
+    keywords: frontmatter.keywords?.join(", "),
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: isEn ? "Home" : "Αρχική",
+        item: `https://mystaysite.com/${locale}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `https://mystaysite.com/${locale}/blog`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: frontmatter.title,
+        item: url,
+      },
+    ],
   };
 
   return (
@@ -199,7 +244,11 @@ export default async function BlogPostPage({ params }: PageProps) {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   );

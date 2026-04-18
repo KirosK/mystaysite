@@ -12,11 +12,15 @@ interface ServiceData {
 interface ServicePageProps {
   data: ServiceData;
   locale: string;
+  slug?: string;
 }
 
-export default function ServicePage({ data, locale }: ServicePageProps) {
+export default function ServicePage({ data, locale, slug }: ServicePageProps) {
   const isEn = locale === "en";
   const urlLocale = isEn ? "en" : "el";
+  const serviceUrl = slug
+    ? `https://mystaysite.com/${urlLocale}/services/${slug}`
+    : undefined;
   const isQuote =
     data.price.toLowerCase().includes("ζητήστε") ||
     data.price.toLowerCase().includes("προσφορά") ||
@@ -49,8 +53,51 @@ export default function ServicePage({ data, locale }: ServicePageProps) {
     ctaSecondary: isEn ? "See our work" : "Δείτε δείγματα",
   };
 
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: data.title,
+    description: data.subtitle,
+    url: serviceUrl,
+    provider: { "@id": "https://mystaysite.com/#organization" },
+    areaServed: [
+      { "@type": "Country", name: "Greece" },
+      { "@type": "AdministrativeArea", name: "Cyclades" },
+      { "@type": "AdministrativeArea", name: "Halkidiki" },
+    ],
+    ...(isQuote
+      ? {}
+      : {
+          offers: {
+            "@type": "Offer",
+            price: data.price.replace(/[^\d]/g, ""),
+            priceCurrency: "EUR",
+            availability: "https://schema.org/InStock",
+            url: serviceUrl,
+          },
+        }),
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: data.faq.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-white dark:bg-[#0B0F1A]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A] to-[#1E3A5F]" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">

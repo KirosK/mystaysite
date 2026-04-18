@@ -3,6 +3,7 @@
 import { useLang } from "@/lib/language-context";
 import { useAnimateOnScroll } from "@/lib/use-animate-on-scroll";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Project {
   name: string;
@@ -53,20 +54,26 @@ function ProjectCard({
   viewLiveLabel,
   beforeLabel,
   afterLabel,
+  caseStudyLabel,
+  urlLocale,
 }: {
   project: Project;
   i18n: ProjectI18n;
   viewLiveLabel: string;
   beforeLabel: string;
   afterLabel: string;
+  caseStudyLabel: string;
+  urlLocale: string;
 }) {
   return (
-    <a
-      href={project.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block bg-white dark:bg-[#111827] rounded-2xl shadow-sm dark:shadow-black/30 border border-gray-200 dark:border-white/10 overflow-hidden hover:shadow-xl dark:hover:shadow-black/60 hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
-    >
+    <div className="bg-white dark:bg-[#111827] rounded-2xl shadow-sm dark:shadow-black/30 border border-gray-200 dark:border-white/10 overflow-hidden hover:shadow-xl dark:hover:shadow-black/60 hover:-translate-y-1 transition-all duration-300 group">
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block cursor-pointer"
+        aria-label={`${project.name} - ${viewLiveLabel}`}
+      >
       <div className="bg-gray-100 dark:bg-[#0B0F1A] px-3 py-2 flex items-center gap-2 border-b border-gray-200 dark:border-white/10">
         <div className="flex gap-1">
           <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
@@ -86,7 +93,7 @@ function ProjectCard({
       <div className="relative overflow-hidden">
         <Image
           src={project.image}
-          alt={project.name}
+          alt={`${project.name} - ${i18n.location} | Επαγγελματικό website καταλύματος από MyStaySite`}
           width={800}
           height={500}
           sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 380px"
@@ -125,6 +132,7 @@ function ProjectCard({
         </div>
       </div>
 
+      </a>
       <div className="px-4 py-4 border-t border-gray-100 dark:border-white/10">
         <div className="mb-2">
           <div className="text-sm font-bold text-gray-900 dark:text-white">{project.name}</div>
@@ -158,8 +166,16 @@ function ProjectCard({
             <span className="text-green-600 dark:text-green-400 font-semibold">{afterLabel}: {i18n.metricsAfter}</span>
           </div>
         )}
+        {project.caseStudyUrl && (
+          <Link
+            href={`/${urlLocale}${project.caseStudyUrl}`}
+            className="mt-3 inline-flex items-center gap-1 text-[11px] font-bold text-accent hover:text-accent-dark dark:text-orange-300 dark:hover:text-orange-200 transition-colors"
+          >
+            {caseStudyLabel} →
+          </Link>
+        )}
       </div>
-    </a>
+    </div>
   );
 }
 
@@ -198,6 +214,8 @@ export default function Portfolio() {
               viewLiveLabel={t.portfolio.viewLive}
               beforeLabel={t.portfolio.before}
               afterLabel={t.portfolio.after}
+              caseStudyLabel={lang === "en" ? "View case study" : "Δες το case study"}
+              urlLocale={urlLocale}
             />
           ))}
         </div>

@@ -95,7 +95,7 @@ function ImagePanel({ images, color, label, subtitle }: {
         onTouchEnd={() => { const d = touchStart.current - touchEnd.current; if (Math.abs(d) > 50) { d > 0 ? next() : prev(); } }}
       >
         <div className={`transition-opacity duration-150 ${fading ? "opacity-0" : "opacity-100"}`}>
-          <Image src={current.src} alt={current.label} width={1440} height={900}
+          <Image src={current.src} alt={`Achilleas Peaceful Place ${label.toLowerCase()}: ${current.label}`} width={1440} height={900}
             className={`w-full h-auto ${imgFilter}`}
           />
         </div>
@@ -129,7 +129,7 @@ function ImagePanel({ images, color, label, subtitle }: {
             className={`shrink-0 w-[72px] rounded-md overflow-hidden border-2 transition-all duration-200 cursor-pointer ${
               i === idx ? `${thumbActive} shadow-md scale-105` : "border-transparent opacity-40 hover:opacity-70"
             }`}>
-            <Image src={img.src} alt={img.label} width={144} height={90} className="w-full h-auto" />
+            <Image src={img.src} alt={`${label} thumbnail ${i + 1}: ${img.label}`} width={144} height={90} className="w-full h-auto" />
           </button>
         ))}
       </div>

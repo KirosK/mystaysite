@@ -2,11 +2,13 @@ import type { MDXComponents as MDXComponentsType } from "mdx/types";
 
 function slugify(text: string): string {
   return text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
-    .replace(/[^\w\s-]/g, "")
+    .replace(/[^\p{L}\p{N}\s-]/gu, "")
+    .trim()
     .replace(/\s+/g, "-")
-    .replace(/-+/g, "-")
-    .trim();
+    .replace(/-+/g, "-");
 }
 
 function prefixLocale(href: string | undefined, locale: string): string | undefined {

@@ -8,6 +8,7 @@ export interface PostFrontmatter {
   title: string;
   slug: string;
   date: string;
+  dateModified?: string;
   category: string;
   excerpt: string;
   keywords: string[];

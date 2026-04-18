@@ -148,5 +148,5 @@ export default async function PropertyManagementPage({
 }) {
   const { locale } = await params;
   const data = content[locale === "en" ? "en" : "el"].data;
-  return <ServicePage data={data} locale={locale} />;
+  return <ServicePage data={data} locale={locale} slug="property-management" />;
 }

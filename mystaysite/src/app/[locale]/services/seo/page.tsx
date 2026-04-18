@@ -4,12 +4,12 @@ import ServicePage from "@/components/ServicePage";
 const content = {
   el: {
     metadata: {
-      title: "SEO για Καταλύματα | MyStaySite",
+      title: "SEO για Καταλύματα Ελλάδα | Αύξηση Organic Traffic | MyStaySite",
       description:
-        "SEO υπηρεσίες για ενοικιαζόμενα δωμάτια και βίλες. Εμφανιστείτε στο Google χωρίς διαφημίσεις, από €79/μήνα.",
-      ogTitle: "SEO για Καταλύματα | MyStaySite",
+        "SEO υπηρεσίες για ενοικιαζόμενα δωμάτια, βίλες και ξενοδοχεία σε Ελλάδα, Κυκλάδες, Χαλκιδική. Organic traffic χωρίς διαφημίσεις, από €79/μήνα.",
+      ogTitle: "SEO για Καταλύματα & Βίλες Ελλάδα | MyStaySite",
       ogDescription:
-        "SEO υπηρεσίες για καταλύματα. Εμφανιστείτε στο Google χωρίς διαφημίσεις.",
+        "Εμφανιστείτε στο Google χωρίς διαφημίσεις. Local SEO για Αντίπαρο, Νάξο, Μύκονο, Χαλκιδική και κάθε ελληνικό προορισμό.",
     },
     data: {
       title: "SEO για Καταλύματα",
@@ -46,12 +46,12 @@ const content = {
   },
   en: {
     metadata: {
-      title: "SEO for Vacation Rentals | MyStaySite",
+      title: "SEO for Vacation Rentals in Greece | Organic Traffic Growth | MyStaySite",
       description:
-        "SEO services for vacation rentals and villas. Appear on Google without ads, from €79/month.",
-      ogTitle: "SEO for Vacation Rentals | MyStaySite",
+        "SEO services for vacation rentals, villas and hotels in Greece, Cyclades, Halkidiki. Organic traffic without ads, from €79/month.",
+      ogTitle: "SEO for Vacation Rentals in Greece | MyStaySite",
       ogDescription:
-        "SEO services for vacation rentals. Appear on Google without ads.",
+        "Appear on Google without ads. Local SEO for Antiparos, Naxos, Mykonos, Halkidiki and every Greek destination.",
     },
     data: {
       title: "SEO for Vacation Rentals",
@@ -120,5 +120,5 @@ export default async function SEOPage({
 }) {
   const { locale } = await params;
   const data = content[locale === "en" ? "en" : "el"].data;
-  return <ServicePage data={data} locale={locale} />;
+  return <ServicePage data={data} locale={locale} slug="seo" />;
 }
