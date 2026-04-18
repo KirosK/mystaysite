@@ -3,11 +3,11 @@
 import Image from "next/image";
 import { useLang } from "@/lib/language-context";
 
-function BrowserMockup({ viewLiveLabel }: { viewLiveLabel: string }) {
+function BrowserMockup({ viewLiveLabel, locationLabel }: { viewLiveLabel: string; locationLabel: string }) {
   return (
     <div className="animate-float relative animate-hero-fade-in">
       <a
-        href="https://rodavgiapartments.com/"
+        href="https://www.antiparos-afroditivillas.gr/"
         target="_blank"
         rel="noopener noreferrer"
         className="block bg-white dark:bg-[#111827] rounded-xl shadow-2xl dark:shadow-black/60 overflow-hidden border border-gray-200 dark:border-white/10 hover:shadow-3xl transition-shadow duration-300 group"
@@ -21,7 +21,7 @@ function BrowserMockup({ viewLiveLabel }: { viewLiveLabel: string }) {
           <div className="flex-1 mx-3">
             <div className="bg-white dark:bg-[#111827] rounded-md px-3 py-1 text-xs text-gray-500 dark:text-gray-300 text-center border border-gray-200 dark:border-white/10 flex items-center justify-center gap-1.5">
               <svg className="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" /></svg>
-              rodavgiapartments.com
+              antiparos-afroditivillas.gr
             </div>
           </div>
           <div className="text-[10px] text-gray-400 dark:text-gray-500 font-medium">GR / EN</div>
@@ -29,8 +29,8 @@ function BrowserMockup({ viewLiveLabel }: { viewLiveLabel: string }) {
 
         <div className="relative w-full overflow-hidden">
           <Image
-            src="/portfolio/rodavgi/hero.jpg"
-            alt="RODAVGI Apartments - Επαγγελματικό website καταλύματος"
+            src="/portfolio/afroditi/hero.jpg"
+            alt="Villa Afroditi Antiparos - Επαγγελματικό website καταλύματος"
             width={1200}
             height={800}
             priority
@@ -45,14 +45,16 @@ function BrowserMockup({ viewLiveLabel }: { viewLiveLabel: string }) {
         </div>
       </a>
 
-      {/* Floating badge: Booking score */}
+      {/* Floating badge: Location */}
       <div className="absolute -top-3 -right-3 md:-right-5 bg-white dark:bg-[#111827] rounded-xl shadow-lg dark:shadow-black/50 border border-gray-100 dark:border-white/10 px-3 py-2 flex items-center gap-2 z-10">
-        <div className="w-8 h-8 bg-[#003580] rounded-lg flex items-center justify-center">
-          <span className="text-white text-[10px] font-extrabold leading-none">B.</span>
+        <div className="w-8 h-8 bg-gradient-to-br from-sky-500 to-blue-600 rounded-lg flex items-center justify-center">
+          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+          </svg>
         </div>
         <div>
-          <div className="text-sm font-extrabold text-text-primary leading-none">9.5</div>
-          <div className="text-[10px] text-text-secondary leading-tight mt-0.5">Booking.com</div>
+          <div className="text-sm font-extrabold text-text-primary leading-none">{locationLabel}</div>
+          <div className="text-[10px] text-text-secondary leading-tight mt-0.5">Villa Afroditi</div>
         </div>
       </div>
 
@@ -118,7 +120,10 @@ export default function Hero() {
           <div className="relative">
             <div className="absolute -top-10 -right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
-            <BrowserMockup viewLiveLabel={t.portfolio.mockupViewLive} />
+            <BrowserMockup
+              viewLiveLabel={t.portfolio.mockupViewLive}
+              locationLabel={lang === "en" ? "Antiparos" : "Αντίπαρος"}
+            />
           </div>
         </div>
 
