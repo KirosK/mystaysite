@@ -9,6 +9,8 @@ import ShareButtons from "@/components/ShareButtons";
 import TableOfContents from "@/components/TableOfContents";
 import BlogCard from "@/components/BlogCard";
 import Newsletter from "@/components/Newsletter";
+import AuthorBio from "@/components/AuthorBio";
+import ReadingProgress from "@/components/ReadingProgress";
 import Link from "next/link";
 
 interface PageProps {
@@ -109,6 +111,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <>
+      <ReadingProgress />
       <div className="h-16 md:h-18" />
 
       <article className="max-w-3xl mx-auto px-4 sm:px-6 py-10 md:py-16">
@@ -176,6 +179,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
 
         <ShareButtons title={frontmatter.title} url={url} locale={locale} />
+        <AuthorBio locale={locale} />
         <Newsletter locale={locale} />
         <BlogCTA locale={locale} />
 
