@@ -122,6 +122,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       "@type": "Person",
       name: "Κύρος",
       url: `https://mystaysite.com/${locale}`,
+      image: "https://mystaysite.com/team/kyros.jpg",
       jobTitle: isEn ? "Founder, MyStaySite" : "Founder, MyStaySite",
       worksFor: { "@id": "https://mystaysite.com/#organization" },
     },

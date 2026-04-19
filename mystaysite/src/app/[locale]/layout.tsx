@@ -190,6 +190,13 @@ export default async function LocaleLayout({
                     areaServed: "GR",
                   },
                 ],
+                founder: {
+                  "@type": "Person",
+                  name: "Κύρος",
+                  jobTitle: "Founder",
+                  image: "https://mystaysite.com/team/kyros.jpg",
+                  worksFor: { "@id": "https://mystaysite.com/#organization" },
+                },
               },
               {
                 "@context": "https://schema.org",

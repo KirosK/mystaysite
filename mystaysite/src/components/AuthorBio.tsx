@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { trackWhatsApp, trackEmail } from "@/lib/analytics";
 
@@ -44,8 +45,15 @@ export default function AuthorBio({ locale = "el" }: { locale?: string }) {
       </p>
       <div className="flex flex-col sm:flex-row gap-5 sm:gap-6">
         <div className="shrink-0">
-          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-[#1a1a2e] to-[#2d2d4e] dark:from-[#f57c51] dark:to-[#e06a42] flex items-center justify-center text-white font-extrabold text-2xl sm:text-3xl shadow-md ring-2 ring-white dark:ring-[#111827]">
-            {copy.name.charAt(0)}
+          <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden shadow-md ring-2 ring-white dark:ring-[#111827] bg-gradient-to-br from-[#1a1a2e] to-[#2d2d4e]">
+            <Image
+              src="/team/kyros.jpg"
+              alt={isEn ? "Kyros, Founder of MyStaySite" : "Κύρος, Founder MyStaySite"}
+              fill
+              sizes="80px"
+              className="object-cover"
+              priority={false}
+            />
           </div>
         </div>
         <div className="flex-1 min-w-0">
