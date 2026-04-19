@@ -209,8 +209,9 @@ export default async function LocaleLayout({
                   : "Κατασκευή επαγγελματικών websites για ενοικιαζόμενα δωμάτια, βίλες, studios και apartments στην Ελλάδα. Online κρατήσεις, κριτικές, SEO.",
                 areaServed: [
                   { "@type": "Country", name: "Greece" },
-                  { "@type": "AdministrativeArea", name: "Cyclades" },
+                  { "@type": "AdministrativeArea", name: "Central Macedonia" },
                   { "@type": "AdministrativeArea", name: "Halkidiki" },
+                  { "@type": "AdministrativeArea", name: "Cyclades" },
                   { "@type": "AdministrativeArea", name: "Crete" },
                 ],
                 serviceType: isEn
@@ -235,8 +236,8 @@ export default async function LocaleLayout({
                 address: {
                   "@type": "PostalAddress",
                   addressCountry: "GR",
-                  addressLocality: "Antiparos",
-                  addressRegion: "Cyclades",
+                  addressLocality: "Thessaloniki",
+                  addressRegion: "Central Macedonia",
                 },
                 priceRange: "€349 - €899+",
                 inLanguage: ["el", "en"],

@@ -33,7 +33,8 @@ MyStaySite builds professional websites for accommodation owners (villas, studio
 - Phone: +30 697 458 5063
 - WhatsApp: https://wa.me/306974585063
 - Languages: Greek (el), English (en)
-- Areas served: Greece, Cyclades (Antiparos, Paros, etc.), Halkidiki (Sithonia), Crete
+- Based in: Thessaloniki, Central Macedonia, Greece
+- Areas served: Greece nationwide; focus on Central Macedonia (Thessaloniki), Halkidiki (Sithonia, Kassandra), Cyclades (Antiparos, Paros, Naxos), Crete
 
 ## Core services
 

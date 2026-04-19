@@ -13,10 +13,10 @@
   "languages": ["el", "en"],
   "areaServed": [
     { "type": "Country", "name": "Greece" },
-    { "type": "Region", "name": "Cyclades" },
+    { "type": "Region", "name": "Central Macedonia" },
     { "type": "Region", "name": "Halkidiki" },
-    { "type": "Region", "name": "Crete" },
-    { "type": "Region", "name": "Antiparos" }
+    { "type": "Region", "name": "Cyclades" },
+    { "type": "Region", "name": "Crete" }
   ],
   "documents": {
     "llms.txt": "https://mystaysite.com/llms.txt",
