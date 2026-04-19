@@ -1,6 +1,6 @@
 # MyStaySite
 
-> Professional websites for vacation rentals, villas, studios and apartments worldwide. Direct bookings, SEO, reviews integration. Request a demo.
+> Professional websites for vacation rentals, villas, studios and apartments in Greece. Direct bookings, SEO, reviews integration. Request a quote.
 
 ## About
 
@@ -17,20 +17,23 @@ MyStaySite builds professional websites for accommodation owners who want to red
 - Google Business Profile setup and optimization
 - Google Ads campaign setup
 - Social media setup and content creation
+- Website technical audit
+- Analytics consulting bundles
+- Room/property management services
 - Monthly maintenance and updates
 
 ## Packages
 
-- Starter — One-page website, photos, SEO basics, SSL, Google Business Profile, delivered in 2-5 days
-- Professional — Full website with booking system, reviews section, 2 languages, Google Analytics, photo gallery
-- Premium — Complete digital setup with online payments, iCal sync, 3+ languages, blog, copywriting, Google Ads, social media, PMS integration
+- Starter (€450) — One-page website, photos, SEO basics, SSL, Google Business Profile, delivered in 2-5 days
+- Professional (€890) — Full website with booking system, reviews section, 2 languages, Google Analytics, photo gallery
+- Premium (€1890) — Complete digital setup with online payments, iCal sync, 3+ languages, blog, copywriting, Google Ads, social media, PMS integration
 - Monthly maintenance available (optional)
 
-Contact us for pricing.
+Variable-scope services quoted on request.
 
 ## Guarantees
 
-- Free demo before you pay — don't like it, don't pay
+- Free quote before you pay — no obligation
 - Google-indexed in 14 days or we work for free until it is
 - 6 months bug-free guarantee
 
@@ -42,11 +45,20 @@ Contact us for pricing.
 
 ## Pages
 
-- Homepage: https://mystaysite.com
-- Portfolio case study: https://mystaysite.com/portfolio/achilleas-peaceful-place
-- Terms of Service: https://mystaysite.com/terms
-- Privacy Policy: https://mystaysite.com/privacy
-- Embeddable badge: https://mystaysite.com/badge
+- Homepage: https://mystaysite.com/el
+- English homepage: https://mystaysite.com/en
+- All services: https://mystaysite.com/el/services
+- Blog: https://mystaysite.com/el/blog
+- Portfolio case study: https://mystaysite.com/el/portfolio/achilleas-peaceful-place
+- Terms of Service: https://mystaysite.com/el/terms
+- Privacy Policy: https://mystaysite.com/el/privacy
+
+## Machine-readable manifests
+
+- Full content index: https://mystaysite.com/llms-full.txt
+- Agents manifest (JSON): https://mystaysite.com/agents.json
+- Sitemap: https://mystaysite.com/sitemap.xml
+- RSS feed: https://mystaysite.com/feed.xml
 
 ## Contact
 

@@ -1,0 +1,42 @@
+{
+  "schema_version": "2025-03-26",
+  "name": "mystaysite",
+  "title": "MyStaySite",
+  "description": "Discovery manifest for MyStaySite — professional websites for vacation rentals in Greece.",
+  "vendor": {
+    "name": "MyStaySite",
+    "url": "https://mystaysite.com",
+    "email": "info@mystaysite.com"
+  },
+  "homepage": "https://mystaysite.com",
+  "documentation": "https://mystaysite.com/llms-full.txt",
+  "resources": [
+    {
+      "uri": "https://mystaysite.com/agents.json",
+      "name": "Agents manifest",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "https://mystaysite.com/llms.txt",
+      "name": "LLM content index (concise)",
+      "mimeType": "text/plain"
+    },
+    {
+      "uri": "https://mystaysite.com/llms-full.txt",
+      "name": "LLM content index (full)",
+      "mimeType": "text/plain"
+    },
+    {
+      "uri": "https://mystaysite.com/sitemap.xml",
+      "name": "Sitemap",
+      "mimeType": "application/xml"
+    },
+    {
+      "uri": "https://mystaysite.com/feed.xml",
+      "name": "Blog RSS feed",
+      "mimeType": "application/rss+xml"
+    }
+  ],
+  "tools": [],
+  "prompts": []
+}

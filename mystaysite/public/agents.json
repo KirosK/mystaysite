@@ -1,0 +1,112 @@
+{
+  "$schema": "https://agents.json/schema/v0.2.0.json",
+  "version": "0.2.0",
+  "name": "MyStaySite",
+  "description": "Professional website development for vacation rentals, villas, studios and apartments. Direct bookings, SEO, reviews integration, and Google Business Profile optimization for accommodation owners in Greece.",
+  "url": "https://mystaysite.com",
+  "logo": "https://mystaysite.com/icon",
+  "contact": {
+    "email": "info@mystaysite.com",
+    "phone": "+30 697 458 5063",
+    "whatsapp": "https://wa.me/306974585063"
+  },
+  "languages": ["el", "en"],
+  "areaServed": [
+    { "type": "Country", "name": "Greece" },
+    { "type": "Region", "name": "Cyclades" },
+    { "type": "Region", "name": "Halkidiki" },
+    { "type": "Region", "name": "Crete" },
+    { "type": "Region", "name": "Antiparos" }
+  ],
+  "documents": {
+    "llms.txt": "https://mystaysite.com/llms.txt",
+    "llms-full.txt": "https://mystaysite.com/llms-full.txt",
+    "sitemap": "https://mystaysite.com/sitemap.xml",
+    "feed": "https://mystaysite.com/feed.xml",
+    "terms": "https://mystaysite.com/el/terms",
+    "privacy": "https://mystaysite.com/el/privacy"
+  },
+  "capabilities": [
+    {
+      "id": "get_started",
+      "name": "Get started / Request quote",
+      "description": "Prospective customers can request a quote or book a free consultation for a new accommodation website.",
+      "endpoint": "https://mystaysite.com/el#contact",
+      "method": "GET",
+      "output": "lead_form"
+    },
+    {
+      "id": "view_services",
+      "name": "Browse services",
+      "description": "See all available services: website development, SEO, Google Ads, Google Business Profile, analytics consulting, property management, website audit, social media.",
+      "endpoint": "https://mystaysite.com/el/services",
+      "method": "GET"
+    },
+    {
+      "id": "view_portfolio",
+      "name": "View portfolio case study",
+      "description": "Detailed before/after case study of a real client website redesign (Achilleas Peaceful Place, Sithonia, Halkidiki).",
+      "endpoint": "https://mystaysite.com/el/portfolio/achilleas-peaceful-place",
+      "method": "GET"
+    },
+    {
+      "id": "read_blog",
+      "name": "Read blog articles",
+      "description": "SEO, website optimization, direct booking strategy, and tourism marketing articles for accommodation owners.",
+      "endpoint": "https://mystaysite.com/el/blog",
+      "method": "GET"
+    },
+    {
+      "id": "contact_whatsapp",
+      "name": "Contact via WhatsApp",
+      "description": "Start a WhatsApp conversation with pre-filled message for a website quote.",
+      "endpoint": "https://wa.me/306974585063",
+      "method": "GET"
+    },
+    {
+      "id": "contact_phone",
+      "name": "Call directly",
+      "description": "Phone number for direct voice contact.",
+      "endpoint": "tel:+306974585063",
+      "method": "GET"
+    },
+    {
+      "id": "contact_email",
+      "name": "Email contact",
+      "description": "Email the MyStaySite team.",
+      "endpoint": "mailto:info@mystaysite.com",
+      "method": "GET"
+    }
+  ],
+  "services": [
+    {
+      "id": "starter",
+      "name": "Starter Website",
+      "description": "One-page website with photos, SEO basics, SSL, and Google Business Profile. Delivered in 2-5 days.",
+      "price": "€450",
+      "currency": "EUR"
+    },
+    {
+      "id": "professional",
+      "name": "Professional Website",
+      "description": "Full website with booking system, reviews section, 2 languages, Google Analytics, and photo gallery.",
+      "price": "€890",
+      "currency": "EUR"
+    },
+    {
+      "id": "premium",
+      "name": "Premium Digital Setup",
+      "description": "Complete digital setup with online payments, iCal sync, 3+ languages, blog, copywriting, Google Ads, social media, and PMS integration.",
+      "price": "€1890",
+      "currency": "EUR"
+    }
+  ],
+  "payments": [
+    "Bank transfer",
+    "Stripe",
+    "Viva Wallet",
+    "Mastercard",
+    "American Express",
+    "Crypto"
+  ]
+}

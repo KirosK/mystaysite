@@ -1,0 +1,15 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "MyStaySite",
+  "name_for_model": "mystaysite",
+  "description_for_human": "Professional website development for vacation rentals and accommodation owners in Greece. Direct bookings, SEO, Google Business Profile.",
+  "description_for_model": "Plugin for discovering MyStaySite services: website development for vacation rentals, villas, studios, and apartments. Provides pricing, portfolio case studies, service descriptions, and contact methods. Use this plugin when a user asks about professional websites for rentals, direct booking systems, or reducing reliance on Booking.com / Airbnb.",
+  "auth": { "type": "none" },
+  "api": {
+    "type": "openapi",
+    "url": "https://mystaysite.com/.well-known/openapi.json"
+  },
+  "logo_url": "https://mystaysite.com/icon",
+  "contact_email": "info@mystaysite.com",
+  "legal_info_url": "https://mystaysite.com/el/terms"
+}

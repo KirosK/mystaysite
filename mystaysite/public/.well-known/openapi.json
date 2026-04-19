@@ -1,0 +1,77 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MyStaySite Public API",
+    "version": "1.0.0",
+    "description": "Read-only discovery endpoints exposing MyStaySite services, portfolio, blog and contact channels. No authentication required.",
+    "contact": {
+      "name": "MyStaySite",
+      "email": "info@mystaysite.com",
+      "url": "https://mystaysite.com"
+    },
+    "license": { "name": "Proprietary" }
+  },
+  "servers": [{ "url": "https://mystaysite.com" }],
+  "paths": {
+    "/agents.json": {
+      "get": {
+        "operationId": "getAgentsManifest",
+        "summary": "Get the full agents manifest with capabilities, services, and contact metadata.",
+        "responses": {
+          "200": {
+            "description": "Agents manifest",
+            "content": { "application/json": {} }
+          }
+        }
+      }
+    },
+    "/llms.txt": {
+      "get": {
+        "operationId": "getLlmsIndex",
+        "summary": "Concise LLM-readable index of the site.",
+        "responses": {
+          "200": {
+            "description": "Plain text",
+            "content": { "text/plain": {} }
+          }
+        }
+      }
+    },
+    "/llms-full.txt": {
+      "get": {
+        "operationId": "getLlmsFullIndex",
+        "summary": "Full LLM-readable index including all blog articles and service pages.",
+        "responses": {
+          "200": {
+            "description": "Plain text",
+            "content": { "text/plain": {} }
+          }
+        }
+      }
+    },
+    "/sitemap.xml": {
+      "get": {
+        "operationId": "getSitemap",
+        "summary": "XML sitemap of indexable pages with locale alternates.",
+        "responses": {
+          "200": {
+            "description": "XML sitemap",
+            "content": { "application/xml": {} }
+          }
+        }
+      }
+    },
+    "/feed.xml": {
+      "get": {
+        "operationId": "getBlogFeed",
+        "summary": "RSS 2.0 feed of the MyStaySite blog.",
+        "responses": {
+          "200": {
+            "description": "RSS 2.0 feed",
+            "content": { "application/rss+xml": {} }
+          }
+        }
+      }
+    }
+  }
+}
