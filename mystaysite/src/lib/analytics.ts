@@ -18,6 +18,32 @@ declare global {
   }
 }
 
+// ---------- User properties (custom dimensions) ----------
+
+/**
+ * Attach `locale` and `theme` as user properties so they can be used as
+ * custom dimensions in GA4 reports. Must be called after `gtag('config',...)`.
+ *
+ * Create the matching custom dimensions in GA4:
+ *   Admin → Custom definitions → Create custom dimension
+ *     - Dimension name: locale, Scope: User, User property: locale
+ *     - Dimension name: theme,  Scope: User, User property: theme
+ */
+export function setUserProperties({
+  locale,
+  theme,
+}: {
+  locale?: string;
+  theme?: "light" | "dark";
+}) {
+  if (typeof window === "undefined") return;
+  const props: Record<string, string> = {};
+  if (locale) props.locale = locale;
+  if (theme) props.theme = theme;
+  if (Object.keys(props).length === 0) return;
+  window.gtag?.("set", "user_properties", props);
+}
+
 // ---------- Consent Mode v2 ----------
 
 type ConsentState = "granted" | "denied";

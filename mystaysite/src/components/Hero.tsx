@@ -1,15 +1,76 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useMemo, useState } from "react";
 import { useLang } from "@/lib/language-context";
 
-function BrowserMockup({ viewLiveLabel, locationLabel }: { viewLiveLabel: string; locationLabel: string }) {
+type Slide = {
+  src: string;
+  alt: string;
+  domain: string;
+  url: string;
+  location: { el: string; en: string };
+  name: string;
+};
+
+const SLIDES: Slide[] = [
+  {
+    src: "/portfolio/afroditi/hero.jpg",
+    alt: "Villa Afroditi Antiparos — Επαγγελματικό website καταλύματος",
+    domain: "antiparos-afroditivillas.gr",
+    url: "https://www.antiparos-afroditivillas.gr/",
+    location: { el: "Αντίπαρος", en: "Antiparos" },
+    name: "Villa Afroditi",
+  },
+  {
+    src: "/portfolio/rodavgi/hero.jpg",
+    alt: "Rodavgi Apartments — Website καταλύματος",
+    domain: "rodavgiapartments.com",
+    url: "https://rodavgiapartments.com",
+    location: { el: "Παξοί", en: "Paxos" },
+    name: "Rodavgi Apartments",
+  },
+  {
+    src: "/portfolio/achilleas/after-01-hero.jpg",
+    alt: "Achilleas Peaceful Place — Website καταλύματος",
+    domain: "achilleaspeacefulplace.gr",
+    url: "https://achilleaspeacefulplace.gr",
+    location: { el: "Λευκάδα", en: "Lefkada" },
+    name: "Achilleas Peaceful",
+  },
+];
+
+function BrowserMockup({
+  viewLiveLabel,
+  lang,
+}: {
+  viewLiveLabel: string;
+  lang: "el" | "en";
+}) {
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (paused) return;
+    const id = window.setInterval(() => {
+      setIndex((i) => (i + 1) % SLIDES.length);
+    }, 4500);
+    return () => window.clearInterval(id);
+  }, [paused]);
+
+  const active = useMemo(() => SLIDES[index], [index]);
+
   return (
-    <div className="animate-float relative animate-hero-fade-in">
+    <div
+      className="animate-float relative animate-hero-fade-in"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       <a
-        href="https://www.antiparos-afroditivillas.gr/"
+        href={active.url}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label={`${viewLiveLabel} — ${active.name}`}
         className="block bg-white dark:bg-[#111827] rounded-xl shadow-2xl dark:shadow-black/60 overflow-hidden border border-gray-200 dark:border-white/10 hover:shadow-3xl transition-shadow duration-300 group"
       >
         <div className="bg-gray-100 dark:bg-[#0B0F1A] px-4 py-2.5 flex items-center gap-2 border-b border-gray-200 dark:border-white/10">
@@ -19,25 +80,35 @@ function BrowserMockup({ viewLiveLabel, locationLabel }: { viewLiveLabel: string
             <div className="w-3 h-3 rounded-full bg-green-400" />
           </div>
           <div className="flex-1 mx-3">
-            <div className="bg-white dark:bg-[#111827] rounded-md px-3 py-1 text-xs text-gray-500 dark:text-gray-300 text-center border border-gray-200 dark:border-white/10 flex items-center justify-center gap-1.5">
+            <div
+              key={active.domain}
+              className="bg-white dark:bg-[#111827] rounded-md px-3 py-1 text-xs text-gray-500 dark:text-gray-300 text-center border border-gray-200 dark:border-white/10 flex items-center justify-center gap-1.5 transition-opacity duration-300 url-bar-fade"
+            >
               <svg className="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" /></svg>
-              antiparos-afroditivillas.gr
+              {active.domain}
             </div>
           </div>
           <div className="text-[10px] text-gray-400 dark:text-gray-500 font-medium">GR / EN</div>
         </div>
 
-        <div className="relative w-full overflow-hidden">
-          <Image
-            src="/portfolio/afroditi/hero.jpg"
-            alt="Villa Afroditi Antiparos - Επαγγελματικό website καταλύματος"
-            width={1200}
-            height={800}
-            priority
-            sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 600px"
-            className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
-          />
-          <div className="absolute inset-0 bg-transparent group-hover:bg-black/5 transition-colors flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100">
+        <div
+          className="relative w-full overflow-hidden"
+          style={{ aspectRatio: "1200 / 750" }}
+        >
+          {SLIDES.map((s, i) => (
+            <Image
+              key={s.src}
+              src={s.src}
+              alt={s.alt}
+              fill
+              priority={i === 0}
+              sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 600px"
+              className={`object-cover transition-opacity duration-700 ease-in-out group-hover:scale-[1.02] ${
+                i === index ? "opacity-100 z-10" : "opacity-0 z-0"
+              }`}
+            />
+          ))}
+          <div className="absolute inset-0 bg-transparent group-hover:bg-black/5 transition-colors flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 z-20">
             <span className="bg-white/90 dark:bg-[#111827]/90 backdrop-blur text-xs font-semibold text-text-primary px-4 py-2 rounded-full shadow-lg">
               {viewLiveLabel}
             </span>
@@ -45,16 +116,44 @@ function BrowserMockup({ viewLiveLabel, locationLabel }: { viewLiveLabel: string
         </div>
       </a>
 
-      {/* Floating badge: Location */}
-      <div className="absolute -top-3 -right-3 md:-right-5 bg-white dark:bg-[#111827] rounded-xl shadow-lg dark:shadow-black/50 border border-gray-100 dark:border-white/10 px-3 py-2 flex items-center gap-2 z-10">
+      {/* Carousel dots */}
+      <div
+        className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10"
+        role="tablist"
+        aria-label="Featured sites"
+      >
+        {SLIDES.map((s, i) => (
+          <button
+            key={s.src}
+            type="button"
+            role="tab"
+            aria-selected={i === index}
+            aria-label={s.name}
+            onClick={() => setIndex(i)}
+            className={`h-1.5 rounded-full transition-all ${
+              i === index
+                ? "w-6 bg-primary"
+                : "w-1.5 bg-gray-300 dark:bg-white/30 hover:bg-gray-400 dark:hover:bg-white/50"
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Floating badge: Location (switches with slide) */}
+      <div
+        key={`loc-${active.domain}`}
+        className="absolute -top-3 -right-3 md:-right-5 bg-white dark:bg-[#111827] rounded-xl shadow-lg dark:shadow-black/50 border border-gray-100 dark:border-white/10 px-3 py-2 flex items-center gap-2 z-10 animate-hero-fade-in"
+      >
         <div className="w-8 h-8 bg-gradient-to-br from-sky-500 to-blue-600 rounded-lg flex items-center justify-center">
           <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
           </svg>
         </div>
         <div>
-          <div className="text-sm font-extrabold text-text-primary leading-none">{locationLabel}</div>
-          <div className="text-[10px] text-text-secondary leading-tight mt-0.5">Villa Afroditi</div>
+          <div className="text-sm font-extrabold text-text-primary leading-none">
+            {active.location[lang]}
+          </div>
+          <div className="text-[10px] text-text-secondary leading-tight mt-0.5">{active.name}</div>
         </div>
       </div>
 
@@ -122,7 +221,7 @@ export default function Hero() {
             <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
             <BrowserMockup
               viewLiveLabel={t.portfolio.mockupViewLive}
-              locationLabel={lang === "en" ? "Antiparos" : "Αντίπαρος"}
+              lang={lang === "en" ? "en" : "el"}
             />
           </div>
         </div>

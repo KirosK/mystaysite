@@ -8,7 +8,9 @@ import {
   GA_MEASUREMENT_ID,
   trackPageView,
   trackWebVital,
+  setUserProperties,
 } from "@/lib/analytics";
+import { useTheme } from "@/lib/theme-context";
 
 /**
  * Global analytics loader.
@@ -33,6 +35,7 @@ function isLocalHost(): boolean {
 
 export default function Analytics({ locale }: { locale?: string }) {
   const pathname = usePathname();
+  const { theme } = useTheme();
 
   // Core Web Vitals -> GA4
   useReportWebVitals((metric) => {
@@ -54,6 +57,12 @@ export default function Analytics({ locale }: { locale?: string }) {
     if (typeof window === "undefined") return;
     trackPageView(window.location.href, locale);
   }, [pathname, locale]);
+
+  // User properties (custom dimensions) — updated whenever locale or theme changes.
+  useEffect(() => {
+    if (!isProd || isLocalHost()) return;
+    setUserProperties({ locale, theme });
+  }, [locale, theme]);
 
   // Do not load scripts on localhost / dev to avoid polluting analytics
   if (!isProd || (typeof window !== "undefined" && isLocalHost())) {

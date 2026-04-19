@@ -166,11 +166,30 @@ export default async function LocaleLayout({
                 "@type": "Organization",
                 "@id": "https://mystaysite.com/#organization",
                 name: "MyStaySite",
+                legalName: "MyStaySite",
                 url: "https://mystaysite.com",
-                logo: "https://mystaysite.com/icon",
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://mystaysite.com/icon",
+                  width: 512,
+                  height: 512,
+                },
+                image: "https://mystaysite.com/og.png",
+                description: isEn
+                  ? "MyStaySite builds professional websites for vacation rentals, villas and studios in Greece."
+                  : "Η MyStaySite κατασκευάζει επαγγελματικά websites για ενοικιαζόμενα δωμάτια, βίλες και studios στην Ελλάδα.",
                 email: "info@mystaysite.com",
                 telephone: "+30 697 458 5063",
-                sameAs: [],
+                contactPoint: [
+                  {
+                    "@type": "ContactPoint",
+                    contactType: "customer service",
+                    telephone: "+30 697 458 5063",
+                    email: "info@mystaysite.com",
+                    availableLanguage: ["Greek", "English"],
+                    areaServed: "GR",
+                  },
+                ],
               },
               {
                 "@context": "https://schema.org",
@@ -204,9 +223,32 @@ export default async function LocaleLayout({
                     ],
                 telephone: "+30 697 458 5063",
                 email: "info@mystaysite.com",
-                address: { "@type": "PostalAddress", addressCountry: "GR" },
+                image: "https://mystaysite.com/og.png",
+                logo: "https://mystaysite.com/icon",
+                address: {
+                  "@type": "PostalAddress",
+                  addressCountry: "GR",
+                  addressLocality: "Antiparos",
+                  addressRegion: "Cyclades",
+                },
                 priceRange: "€349 - €899+",
                 inLanguage: ["el", "en"],
+                currenciesAccepted: "EUR",
+                paymentAccepted: isEn
+                  ? "Bank transfer, Revolut, IRIS"
+                  : "Τραπεζική κατάθεση, Revolut, IRIS",
+                openingHoursSpecification: {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                  ],
+                  opens: "09:00",
+                  closes: "20:00",
+                },
               },
               {
                 "@context": "https://schema.org",

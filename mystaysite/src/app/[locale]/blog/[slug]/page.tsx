@@ -99,13 +99,22 @@ export default async function BlogPostPage({ params }: PageProps) {
   const url = `https://mystaysite.com/${locale}/blog/${frontmatter.slug}`;
   const isEn = locale === "en";
 
+  const wordCount = post.content
+    ? post.content.split(/\s+/).filter(Boolean).length
+    : undefined;
+
   const blogPostingJsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: frontmatter.title,
     description: frontmatter.excerpt,
     image: frontmatter.image
-      ? `https://mystaysite.com${frontmatter.image}`
+      ? {
+          "@type": "ImageObject",
+          url: `https://mystaysite.com${frontmatter.image}`,
+          width: 1200,
+          height: 669,
+        }
       : undefined,
     datePublished: frontmatter.date,
     dateModified: frontmatter.dateModified || frontmatter.date,
@@ -113,6 +122,8 @@ export default async function BlogPostPage({ params }: PageProps) {
       "@type": "Person",
       name: "Κύρος",
       url: `https://mystaysite.com/${locale}`,
+      jobTitle: isEn ? "Founder, MyStaySite" : "Founder, MyStaySite",
+      worksFor: { "@id": "https://mystaysite.com/#organization" },
     },
     publisher: {
       "@type": "Organization",
@@ -122,12 +133,17 @@ export default async function BlogPostPage({ params }: PageProps) {
       logo: {
         "@type": "ImageObject",
         url: "https://mystaysite.com/icon",
+        width: 512,
+        height: 512,
       },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     articleSection: frontmatter.category,
     inLanguage: isEn ? "en" : "el",
     keywords: frontmatter.keywords?.join(", "),
+    wordCount,
+    isAccessibleForFree: true,
+    url,
   };
 
   const breadcrumbJsonLd = {
