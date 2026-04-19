@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Script from "next/script";
 import { useLang } from "@/lib/language-context";
 import { useAnimateOnScroll } from "@/lib/use-animate-on-scroll";
 import { trackLead, trackWhatsApp, trackPhone, trackEmail } from "@/lib/analytics";
 
 const PHONE = "306974585063";
 const EMAIL = "info@mystaysite.com";
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -26,8 +28,45 @@ export default function Contact() {
   const [link, setLink] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitting, setSubmitting] = useState(false);
 
-  const canSubmit = contact.trim() !== "";
+  // Anti-spam: honeypot + time guard
+  const honeypotRef = useRef<HTMLInputElement>(null);
+  const [mountedAt] = useState<number>(() => Date.now());
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
+  const turnstileWidgetId = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (!TURNSTILE_SITE_KEY) return;
+    const renderWidget = () => {
+      if (!window.turnstile || turnstileWidgetId.current) return;
+      const el = document.getElementById("cf-turnstile-contact");
+      if (!el) return;
+      turnstileWidgetId.current = window.turnstile.render(el, {
+        sitekey: TURNSTILE_SITE_KEY,
+        callback: (token) => setTurnstileToken(token),
+        "expired-callback": () => setTurnstileToken(""),
+        "error-callback": () => setTurnstileToken(""),
+        appearance: "interaction-only",
+        theme: "auto",
+      });
+    };
+    if (window.turnstile) renderWidget();
+    else {
+      const id = window.setInterval(() => {
+        if (window.turnstile) {
+          window.clearInterval(id);
+          renderWidget();
+        }
+      }, 300);
+      return () => window.clearInterval(id);
+    }
+  }, []);
+
+  const canSubmit =
+    contact.trim() !== "" &&
+    !submitting &&
+    (!TURNSTILE_SITE_KEY || turnstileToken !== "");
 
   const whatsappPrefill = encodeURIComponent(t.contact.whatsappPrefill);
   const whatsappUrl = `https://wa.me/${PHONE}?text=${whatsappPrefill}`;
@@ -45,20 +84,31 @@ export default function Contact() {
     e.preventDefault();
     if (!canSubmit) return;
 
+    setSubmitting(true);
+
+    const looksLikeEmail = contact.includes("@");
+    const apiPayload = {
+      type: "contact" as const,
+      name,
+      email: looksLikeEmail ? contact : "",
+      contact: looksLikeEmail ? "" : contact,
+      link,
+      message,
+      locale: lang === "en" ? "en" : "el",
+      source: "mystaysite.com/contact",
+      _gotcha: honeypotRef.current?.value ?? "",
+      _ts: mountedAt,
+      turnstileToken,
+    };
+
     try {
-      await fetch("https://formspree.io/f/xeerjqzn", {
+      await fetch("/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          contact,
-          link: link || "(not provided)",
-          message: message || "(not provided)",
-          source: "mystaysite.com",
-        }),
+        body: JSON.stringify(apiPayload),
       });
     } catch {
-      // Formspree backup failed silently, WhatsApp still works
+      // Silent — WhatsApp fallback still works below.
     }
 
     const msg = [
@@ -76,10 +126,25 @@ export default function Contact() {
     );
     trackLead("contact_form");
     setStatus("success");
+    setSubmitting(false);
+
+    if (TURNSTILE_SITE_KEY && window.turnstile) {
+      try {
+        window.turnstile.reset(turnstileWidgetId.current ?? undefined);
+      } catch {
+        // ignore
+      }
+    }
   };
 
   return (
     <section id="contact" className="relative py-16 md:py-24 overflow-hidden">
+      {TURNSTILE_SITE_KEY && (
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+          strategy="lazyOnload"
+        />
+      )}
       <div className="absolute inset-0 bg-[#0F172A]" />
       <div
         className="absolute inset-0 opacity-[0.08] bg-cover bg-center"
@@ -140,7 +205,31 @@ export default function Contact() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+                {/* Honeypot */}
+                <div
+                  aria-hidden="true"
+                  style={{
+                    position: "absolute",
+                    left: "-5000px",
+                    width: "1px",
+                    height: "1px",
+                    overflow: "hidden",
+                  }}
+                >
+                  <label>
+                    Leave this field empty
+                    <input
+                      ref={honeypotRef}
+                      type="text"
+                      name="_gotcha"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      defaultValue=""
+                    />
+                  </label>
+                </div>
+
                 <div>
                   <label htmlFor="contact-name" className="block text-sm font-semibold text-gray-300 mb-1.5">
                     {t.contact.nameLabel}
@@ -198,6 +287,13 @@ export default function Contact() {
                     className="w-full px-4 py-3.5 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors resize-none"
                   />
                 </div>
+
+                {TURNSTILE_SITE_KEY && (
+                  <div
+                    id="cf-turnstile-contact"
+                    className="flex justify-center"
+                  />
+                )}
 
                 <button
                   type="submit"

@@ -1,8 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Script from "next/script";
 import Link from "next/link";
 import { trackAuditRequest } from "@/lib/analytics";
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (
+        selector: string | HTMLElement,
+        options: {
+          sitekey: string;
+          callback?: (token: string) => void;
+          "error-callback"?: () => void;
+          "expired-callback"?: () => void;
+          theme?: "light" | "dark" | "auto";
+          size?: "normal" | "compact" | "invisible";
+          appearance?: "always" | "execute" | "interaction-only";
+        }
+      ) => string;
+      reset: (widgetId?: string) => void;
+      execute: (widgetId?: string) => void;
+    };
+  }
+}
 
 const PHONE = "306974585063";
 
@@ -352,11 +376,45 @@ export default function FreeAuditLanding({ locale }: { locale: string }) {
 
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
+  // Anti-spam: honeypot + time guard
+  const honeypotRef = useRef<HTMLInputElement>(null);
+  const [mountedAt] = useState<number>(() => Date.now());
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
+  const turnstileWidgetId = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (!TURNSTILE_SITE_KEY) return;
+    const renderWidget = () => {
+      if (!window.turnstile || turnstileWidgetId.current) return;
+      const el = document.getElementById("cf-turnstile-audit");
+      if (!el) return;
+      turnstileWidgetId.current = window.turnstile.render(el, {
+        sitekey: TURNSTILE_SITE_KEY,
+        callback: (token) => setTurnstileToken(token),
+        "expired-callback": () => setTurnstileToken(""),
+        "error-callback": () => setTurnstileToken(""),
+        appearance: "interaction-only",
+        theme: "auto",
+      });
+    };
+    if (window.turnstile) renderWidget();
+    else {
+      const id = window.setInterval(() => {
+        if (window.turnstile) {
+          window.clearInterval(id);
+          renderWidget();
+        }
+      }, 300);
+      return () => window.clearInterval(id);
+    }
+  }, []);
+
   const canSubmit =
     email.trim() !== "" &&
     consent &&
     !submitting &&
-    (noWebsite || website.trim() !== "");
+    (noWebsite || website.trim() !== "") &&
+    (!TURNSTILE_SITE_KEY || turnstileToken !== "");
 
   const whatsappHref = `https://wa.me/${PHONE}?text=${encodeURIComponent(t.bottomCta.whatsappMsg)}`;
 
@@ -367,29 +425,45 @@ export default function FreeAuditLanding({ locale }: { locale: string }) {
     setSubmitting(true);
 
     try {
-      await fetch("https://formspree.io/f/xeerjqzn", {
+      const res = await fetch("/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          _subject: "New Free Video Audit request",
           type: "free_audit",
           name,
           email,
-          whatsapp: whatsapp || "(not provided)",
-          website: noWebsite ? "(no website yet)" : website,
-          bookingLink: bookingLink || "(not provided)",
-          concern: concern || "(not provided)",
+          whatsapp,
+          website: noWebsite ? "" : website,
+          bookingLink,
+          concern,
           locale,
           source: "mystaysite.com/free-audit",
+          _gotcha: honeypotRef.current?.value ?? "",
+          _ts: mountedAt,
+          turnstileToken,
         }),
       });
 
-      trackAuditRequest({ hasWebsite: !noWebsite, source: "landing_page_form" });
-      setStatus("success");
+      if (res.ok) {
+        trackAuditRequest({
+          hasWebsite: !noWebsite,
+          source: "landing_page_form",
+        });
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     } finally {
       setSubmitting(false);
+      if (TURNSTILE_SITE_KEY && window.turnstile) {
+        try {
+          window.turnstile.reset(turnstileWidgetId.current ?? undefined);
+        } catch {
+          // ignore
+        }
+      }
     }
   };
 
@@ -400,6 +474,12 @@ export default function FreeAuditLanding({ locale }: { locale: string }) {
 
   return (
     <div className="min-h-screen bg-[#FAFBFC] dark:bg-[#0B0F1A]">
+      {TURNSTILE_SITE_KEY && (
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+          strategy="lazyOnload"
+        />
+      )}
       <div className="h-16 md:h-18" />
 
       {/* Hero */}
@@ -575,7 +655,31 @@ export default function FreeAuditLanding({ locale }: { locale: string }) {
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+                {/* Honeypot — hidden from humans, filled by bots */}
+                <div
+                  aria-hidden="true"
+                  style={{
+                    position: "absolute",
+                    left: "-5000px",
+                    width: "1px",
+                    height: "1px",
+                    overflow: "hidden",
+                  }}
+                >
+                  <label>
+                    Leave this field empty
+                    <input
+                      ref={honeypotRef}
+                      type="text"
+                      name="_gotcha"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      defaultValue=""
+                    />
+                  </label>
+                </div>
+
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="fa-name" className="block text-sm font-semibold text-gray-300 mb-1.5">
@@ -690,6 +794,13 @@ export default function FreeAuditLanding({ locale }: { locale: string }) {
                     .
                   </span>
                 </label>
+
+                {TURNSTILE_SITE_KEY && (
+                  <div
+                    id="cf-turnstile-audit"
+                    className="flex justify-center pt-1"
+                  />
+                )}
 
                 <button
                   type="submit"

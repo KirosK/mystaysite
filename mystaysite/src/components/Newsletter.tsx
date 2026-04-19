@@ -1,8 +1,6 @@
 "use client";
 
-import { useState } from "react";
-
-const FORMSPREE_FORM_ID = "xeerjqzn";
+import { useRef, useState } from "react";
 
 type Variant = "full" | "compact";
 
@@ -19,6 +17,8 @@ export default function Newsletter({
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [consent, setConsent] = useState(false);
+  const honeypotRef = useRef<HTMLInputElement>(null);
+  const [mountedAt] = useState<number>(() => Date.now());
 
   const copy = {
     eyebrow: isEn ? "Newsletter" : "Newsletter",
@@ -68,17 +68,19 @@ export default function Newsletter({
     }
     setStatus("loading");
     try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+      const res = await fetch("/api/submit", {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          type: "newsletter",
           email,
-          _subject: `Newsletter signup (${locale})`,
           source: "newsletter",
           locale,
+          _gotcha: honeypotRef.current?.value ?? "",
+          _ts: mountedAt,
         }),
       });
       if (res.ok) {
@@ -92,6 +94,31 @@ export default function Newsletter({
     }
   }
 
+  const honeypotField = (
+    <div
+      aria-hidden="true"
+      style={{
+        position: "absolute",
+        left: "-5000px",
+        width: "1px",
+        height: "1px",
+        overflow: "hidden",
+      }}
+    >
+      <label>
+        Leave this field empty
+        <input
+          ref={honeypotRef}
+          type="text"
+          name="_gotcha"
+          tabIndex={-1}
+          autoComplete="off"
+          defaultValue=""
+        />
+      </label>
+    </div>
+  );
+
   const privacyHref = `/${isEn ? "en" : "el"}/privacy`;
 
   if (variant === "compact") {
@@ -100,7 +127,8 @@ export default function Newsletter({
         {status === "success" ? (
           <p className="text-sm text-emerald-400">{copy.success}</p>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-2">
+          <form onSubmit={handleSubmit} className="space-y-2" noValidate>
+            {honeypotField}
             <label className="block text-xs font-bold text-white/90 uppercase tracking-wider mb-1">
               {copy.eyebrow}
             </label>
@@ -213,7 +241,8 @@ export default function Newsletter({
             <p className="text-sm font-semibold text-emerald-800 dark:text-emerald-200">{copy.success}</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-3">
+          <form onSubmit={handleSubmit} className="space-y-3" noValidate>
+            {honeypotField}
             <div className="flex flex-col sm:flex-row gap-2">
               <input
                 type="email"
