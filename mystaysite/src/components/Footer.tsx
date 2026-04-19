@@ -109,6 +109,19 @@ export default function Footer() {
                   </li>
                 );
               })}
+              <li>
+                <a
+                  href={`/${urlLocale}/free-audit`}
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-dark transition-colors"
+                >
+                  <span className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full bg-accent/20">
+                    <svg className="w-2 h-2 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </span>
+                  {isEn ? "Free Video Audit" : "Δωρεάν Video Audit"}
+                </a>
+              </li>
             </ul>
           </div>
 

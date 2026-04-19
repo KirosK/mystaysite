@@ -213,6 +213,20 @@ export default function Hero() {
                 {t.hero.ctaSecondary}
               </a>
             </div>
+
+            <div className="mt-4 flex justify-center lg:justify-start">
+              <a
+                href={`/${urlLocale}/free-audit`}
+                className="inline-flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-primary transition-colors"
+              >
+                <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-accent/15 text-accent">
+                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                </span>
+                {lang === "en"
+                  ? "Or get a free 5-min video audit of your site →"
+                  : "Ή πάρε δωρεάν 5-λεπτο video audit του site σου →"}
+              </a>
+            </div>
           </div>
 
           {/* Right: browser mockup */}

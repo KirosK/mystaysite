@@ -4,6 +4,9 @@ export default function BlogCTA({ locale = "el" }: { locale?: string }) {
     heading: isEn ? "Want a website that brings bookings?" : "Θέλετε website που φέρνει κρατήσεις;",
     subtitle: isEn ? "See samples of our work:" : "Δείτε δείγματα δουλειάς μας:",
     cta: isEn ? "Get a Quote" : "Ζητήστε Προσφορά",
+    auditCta: isEn
+      ? "Or get a free 5-minute video audit of your site →"
+      : "Ή πάρε δωρεάν 5-λεπτο video audit του site σου →",
   };
   const prefix = isEn ? "/en" : "/el";
 
@@ -47,6 +50,14 @@ export default function BlogCTA({ locale = "el" }: { locale?: string }) {
       >
         {copy.cta}
       </a>
+      <div className="mt-5">
+        <a
+          href={`${prefix}/free-audit`}
+          className="text-sm font-medium text-gray-300 hover:text-white underline underline-offset-4 transition-colors"
+        >
+          {copy.auditCta}
+        </a>
+      </div>
     </div>
   );
 }

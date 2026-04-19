@@ -115,6 +115,24 @@ export function trackLead(source: string, plan?: string) {
   });
 }
 
+export function trackAuditRequest(data?: {
+  hasWebsite?: boolean;
+  source?: string;
+}) {
+  if (typeof window === "undefined") return;
+  window.gtag?.("event", "request_audit", {
+    source: data?.source ?? "free_audit_form",
+    has_website: data?.hasWebsite ?? false,
+  });
+  window.gtag?.("event", "generate_lead", {
+    source: "free_audit",
+  });
+  window.fbq?.("track", "Lead", {
+    content_name: "Free Video Audit",
+    content_category: "audit",
+  });
+}
+
 export function trackCtaClick(ctaName: string, plan?: string) {
   if (typeof window === "undefined") return;
   window.gtag?.("event", "cta_click", {
