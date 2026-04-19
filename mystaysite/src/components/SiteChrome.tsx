@@ -6,6 +6,7 @@ import { LanguageProvider } from "@/lib/language-context";
 import { ThemeProvider } from "@/lib/theme-context";
 import Navbar from "@/components/Navbar";
 import Analytics from "@/components/Analytics";
+import WebMCP from "@/components/WebMCP";
 
 const Footer = dynamic(() => import("@/components/Footer"));
 const MobileStickyCTA = dynamic(() => import("@/components/MobileStickyCTA"), { ssr: false });
@@ -25,6 +26,7 @@ export default function SiteChrome({
     <ThemeProvider>
       <LanguageProvider initialLocale={locale}>
         <Analytics locale={locale} />
+        <WebMCP />
         <Navbar />
         {children}
         <Footer />
