@@ -106,6 +106,18 @@ export async function generateMetadata({
     verification: {
       google: "googlefc417ebe34185aed",
     },
+    // Explicit icon declarations so Google, social cards, and older browsers
+    // never have to guess what the favicon is. /icon is a 96x96 PNG (≥ 48x48,
+    // a multiple of 48, square) which meets Google's SERP favicon guidelines:
+    // https://developers.google.com/search/docs/appearance/favicon-in-search
+    icons: {
+      icon: [
+        { url: "/favicon.svg", type: "image/svg+xml" },
+        { url: "/icon", type: "image/png", sizes: "96x96" },
+      ],
+      shortcut: [{ url: "/favicon.ico" }],
+      apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
+    },
   };
 }
 

@@ -188,7 +188,7 @@ export const translations = {
         name: "STARTER",
         tagline: "Η πρώτη σου online παρουσία",
         price: "Από €349",
-        priceSub: "εφάπαξ + €29/μήνα συντήρηση",
+        priceSub: "εφάπαξ · 1ος χρόνος συντήρησης ΔΩΡΕΑΝ",
         target: "Για 1-3 δωμάτια",
         features: [
           "Custom responsive website",
@@ -199,6 +199,8 @@ export const translations = {
           "SSL + custom domain setup",
           "Google Business Profile setup",
           "Παράδοση σε 2-5 ημέρες",
+          "3 μήνες δωρεάν αλλαγές μετά την παράδοση",
+          "1ος χρόνος συντήρησης δωρεάν",
           "6 μήνες εγγύηση",
         ],
         cta: "Ξεκινήστε τώρα",
@@ -208,7 +210,7 @@ export const translations = {
         name: "PROFESSIONAL",
         tagline: "Η μηχανή κρατήσεων",
         price: "Από €599",
-        priceSub: "εφάπαξ + €29/μήνα συντήρηση",
+        priceSub: "εφάπαξ · 1ος χρόνος συντήρησης ΔΩΡΕΑΝ",
         target: "Για 3-10 δωμάτια",
         includes: "Ό,τι έχει το Starter, PLUS:",
         features: [
@@ -218,6 +220,8 @@ export const translations = {
           "2 γλώσσες (GR + EN)",
           "Google Analytics setup",
           "Social media covers",
+          "3 μήνες δωρεάν αλλαγές μετά την παράδοση",
+          "1ος χρόνος συντήρησης δωρεάν",
           "6 μήνες εγγύηση",
         ],
         cta: "Ξεκινήστε τώρα",
@@ -247,7 +251,7 @@ export const translations = {
         ctaSub: "Website + Marketing + Content. Done-for-you.",
       },
       maintenance:
-        "Προαιρετικό: Μηνιαία συντήρηση €29/μήνα (αλλαγές φωτογραφιών, τιμών, σεζόν, νέο content)",
+        "Συντήρηση: €200/χρόνο - 1ος χρόνος ΔΩΡΕΑΝ. Περιλαμβάνει: updates, backups, security patches, μικρές αλλαγές κειμένου/τιμών.",
       guarantee:
         "Απεριόριστα revisions μέχρι να είσαι ικανοποιημένος. 6 μήνες εγγύηση.",
       custom: "Θες κάτι custom; Μίλα μαζί μας",
@@ -289,7 +293,7 @@ export const translations = {
         },
         {
           q: "Μπορώ να αλλάζω μόνος μου πράγματα στο site;",
-          a: "Ναι, αν θέλεις. Αλλά οι περισσότεροι πελάτες μας μας στέλνουν τι θέλουν να αλλάξει και το κάνουμε εμείς. Αυτό καλύπτεται από τη μηνιαία συντήρηση ή χρεώνεται ανά αλλαγή.",
+          a: "Ναι, αν θέλεις. Αλλά οι περισσότεροι πελάτες μας μας στέλνουν τι θέλουν να αλλάξει και το κάνουμε εμείς. Για 3 μήνες μετά την παράδοση οι αλλαγές είναι ΔΩΡΕΑΝ. Μετά καλύπτονται από την ετήσια συντήρηση (€200/χρόνο, 1ος χρόνος δωρεάν) ή χρεώνονται ανά αλλαγή.",
         },
         {
           q: "Θα με βρίσκουν στο Google;",
@@ -297,7 +301,7 @@ export const translations = {
         },
         {
           q: "Παίρνετε ποσοστό από τις κρατήσεις μου;",
-          a: "ΟΧΙ. Ποτέ. 0%. Οι κρατήσεις είναι 100% δικές σου. Πληρώνεις μία φορά για το site ή/και μηνιαία συντήρηση. Τέλος.",
+          a: "ΟΧΙ. Ποτέ. 0%. Οι κρατήσεις είναι 100% δικές σου. Πληρώνεις μία φορά για το site και μετά €200/χρόνο ετήσια συντήρηση (1ος χρόνος δωρεάν). Τέλος.",
         },
         {
           q: "Τι γίνεται αν δεν μου αρέσει το αποτέλεσμα;",
@@ -578,7 +582,7 @@ export const translations = {
         name: "STARTER",
         tagline: "Your first online presence",
         price: "From €349",
-        priceSub: "one-time + €29/mo maintenance",
+        priceSub: "one-time · 1st year maintenance FREE",
         target: "For 1-3 rooms",
         features: [
           "Custom responsive website",
@@ -589,6 +593,8 @@ export const translations = {
           "SSL + custom domain setup",
           "Google Business Profile setup",
           "Delivered in 2-5 days",
+          "3 months of free edits after launch",
+          "1st year maintenance free",
           "6 months guarantee",
         ],
         cta: "Start now",
@@ -598,7 +604,7 @@ export const translations = {
         name: "PROFESSIONAL",
         tagline: "The booking machine",
         price: "From €599",
-        priceSub: "one-time + €29/mo maintenance",
+        priceSub: "one-time · 1st year maintenance FREE",
         target: "For 3-10 rooms",
         includes: "Everything in Starter, PLUS:",
         features: [
@@ -608,6 +614,8 @@ export const translations = {
           "2 languages (GR + EN)",
           "Google Analytics setup",
           "Social media covers",
+          "3 months of free edits after launch",
+          "1st year maintenance free",
           "6 months guarantee",
         ],
         cta: "Start now",
@@ -637,7 +645,7 @@ export const translations = {
         ctaSub: "Website + Marketing + Content. Done-for-you.",
       },
       maintenance:
-        "Optional: Monthly maintenance €29/mo (photo changes, pricing, seasonal content)",
+        "Maintenance: €200/year - 1st year FREE. Includes: updates, backups, security patches, minor text/pricing edits.",
       guarantee:
         "Unlimited revisions until you're happy. 6-month guarantee.",
       custom: "Need something custom? Talk to us",
@@ -679,7 +687,7 @@ export const translations = {
         },
         {
           q: "Can I edit the site myself?",
-          a: "Yes, if you want. But most of our clients send us what they want changed and we do it. This is covered by monthly maintenance or charged per change.",
+          a: "Yes, if you want. But most of our clients send us what they want changed and we do it. For 3 months after launch, edits are FREE. After that, edits are covered by yearly maintenance (€200/year, 1st year free) or charged per edit.",
         },
         {
           q: "Will people find me on Google?",
@@ -687,7 +695,7 @@ export const translations = {
         },
         {
           q: "Do you take a percentage of my bookings?",
-          a: "NO. Never. 0%. Bookings are 100% yours. You pay once for the site and/or monthly maintenance. That's it.",
+          a: "NO. Never. 0%. Bookings are 100% yours. You pay once for the site and then €200/year for yearly maintenance (1st year free). That's it.",
         },
         {
           q: "What if I don't like the result?",

@@ -272,10 +272,10 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
           en: "Website Maintenance & Hosting",
         },
         description: {
-          el: "Updates, backups, security, speed monitoring, 1 ώρα αλλαγών/μήνα.",
-          en: "Updates, backups, security, speed monitoring, 1 hour of changes/month.",
+          el: "Updates, backups, security, speed monitoring, μικρές αλλαγές κειμένου/τιμών. 1ος χρόνος δωρεάν.",
+          en: "Updates, backups, security, speed monitoring, minor text/pricing edits. 1st year free.",
         },
-        price: { el: "€39/μήνα", en: "€39/month" },
+        price: { el: "€200/χρόνο · 1ος χρόνος δωρεάν", en: "€200/year · 1st year free" },
         iconKey: "wrench",
       },
     ],

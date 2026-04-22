@@ -55,7 +55,7 @@ MyStaySite builds professional websites for accommodation owners (villas, studio
 | Professional | €890 | Full site + booking system, reviews, 2 languages, GA4, gallery |
 | Premium | €1890 | Everything + online payments, iCal sync, 3+ languages, blog, copywriting, Google Ads setup, social media, PMS integration |
 
-Monthly maintenance available as add-on. Custom quotes for variable-scope services.
+Yearly maintenance: €200/year (first year FREE). Includes updates, backups, security patches, and minor text/pricing edits. Additionally, clients get 3 months of free edits after launch. Custom quotes for variable-scope services.
 
 ## Guarantees
 

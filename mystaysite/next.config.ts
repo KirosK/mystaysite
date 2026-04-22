@@ -51,6 +51,13 @@ const nextConfig: NextConfig = {
         source: "/.well-known/http-message-signatures-directory",
         destination: "/well-known/http-message-signatures-directory",
       },
+      // Legacy /favicon.ico is still probed by Google, RSS readers, and some
+      // older browsers. Rewrite it to the dynamic /icon endpoint so they get
+      // a real PNG (≥48x48) instead of the HTML fallback.
+      {
+        source: "/favicon.ico",
+        destination: "/icon",
+      },
     ];
   },
 };

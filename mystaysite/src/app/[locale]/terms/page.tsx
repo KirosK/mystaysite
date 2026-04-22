@@ -17,7 +17,7 @@ const content = {
       },
       {
         heading: "3. Τιμολόγηση & Πληρωμές",
-        text: "Οι τιμές αναφέρονται σε εφάπαξ κόστος κατασκευής, εκτός αν ορίζεται διαφορετικά. Η μηνιαία συντήρηση είναι προαιρετική. Η συνεργασία ξεκινά με προκαταβολή 30% της αξίας του πακέτου, ενώ το υπόλοιπο 70% καταβάλλεται με την παράδοση και έγκριση του τελικού site. Αποδεκτοί τρόποι πληρωμής: τραπεζική μεταφορά, Stripe, Viva Wallet, Crypto, Mastercard, Amex.",
+        text: "Οι τιμές αναφέρονται σε εφάπαξ κόστος κατασκευής, εκτός αν ορίζεται διαφορετικά. Η ετήσια συντήρηση ανέρχεται σε €200/χρόνο, με τον πρώτο χρόνο δωρεάν για όλα τα νέα πακέτα. Η συνεργασία ξεκινά με προκαταβολή 30% της αξίας του πακέτου, ενώ το υπόλοιπο 70% καταβάλλεται με την παράδοση και έγκριση του τελικού site. Αποδεκτοί τρόποι πληρωμής: τραπεζική μεταφορά, Stripe, Viva Wallet, Crypto, Mastercard, Amex.",
       },
       {
         heading: "4. Εγγυήσεις",
@@ -33,11 +33,11 @@ const content = {
       },
       {
         heading: "7. Αλλαγές & Τροποποιήσεις",
-        text: "Αλλαγές εντός του αρχικού brief γίνονται δωρεάν πριν το site πάει live. Αλλαγές μετά την παράδοση καλύπτονται από τη μηνιαία συντήρηση ή χρεώνονται ανά περίπτωση. Μεγάλες αλλαγές scope (π.χ. αλλαγή δομής, νέα features) μπορεί να απαιτούν πρόσθετη χρέωση.",
+        text: "Αλλαγές εντός του αρχικού brief γίνονται δωρεάν πριν το site πάει live. Για 3 μήνες μετά την παράδοση, οι αλλαγές κειμένου, τιμών και φωτογραφιών είναι επίσης δωρεάν. Μετά την περίοδο αυτή καλύπτονται από την ετήσια συντήρηση (€200/χρόνο, 1ος χρόνος δωρεάν) ή χρεώνονται ανά περίπτωση. Μεγάλες αλλαγές scope (π.χ. αλλαγή δομής, νέα features) μπορεί να απαιτούν πρόσθετη χρέωση.",
       },
       {
         heading: "8. Ακύρωση",
-        text: "Η προκαταβολή 30% δεν επιστρέφεται μετά την έναρξη των εργασιών, καθώς καλύπτει το αρχικό σχεδιαστικό και τεχνικό έργο. Αν ο πελάτης ζητήσει ακύρωση μετά την παράδοση του αρχικού design αλλά πριν την ολοκλήρωση, το υπόλοιπο 70% δεν οφείλεται. Η μηνιαία συντήρηση μπορεί να ακυρωθεί ανά πάσα στιγμή.",
+        text: "Η προκαταβολή 30% δεν επιστρέφεται μετά την έναρξη των εργασιών, καθώς καλύπτει το αρχικό σχεδιαστικό και τεχνικό έργο. Αν ο πελάτης ζητήσει ακύρωση μετά την παράδοση του αρχικού design αλλά πριν την ολοκλήρωση, το υπόλοιπο 70% δεν οφείλεται. Η ετήσια συντήρηση μπορεί να ακυρωθεί πριν την ανανέωσή της κάθε έτος.",
       },
       {
         heading: "9. Περιορισμός Ευθύνης",
@@ -75,7 +75,7 @@ const content = {
       },
       {
         heading: "3. Pricing & Payments",
-        text: "Prices refer to a one-time development cost, unless otherwise stated. Monthly maintenance is optional. The engagement starts with a 30% deposit of the package value, with the remaining 70% paid upon delivery and approval of the final site. Accepted payment methods: bank transfer, Stripe, Viva Wallet, Crypto, Mastercard, Amex.",
+        text: "Prices refer to a one-time development cost, unless otherwise stated. Yearly maintenance is €200/year, with the first year free for all new packages. The engagement starts with a 30% deposit of the package value, with the remaining 70% paid upon delivery and approval of the final site. Accepted payment methods: bank transfer, Stripe, Viva Wallet, Crypto, Mastercard, Amex.",
       },
       {
         heading: "4. Guarantees",
@@ -91,11 +91,11 @@ const content = {
       },
       {
         heading: "7. Changes & Modifications",
-        text: "Changes within the original brief are made free of charge before the site goes live. Post-delivery changes are covered by monthly maintenance or charged on a case-by-case basis. Major scope changes (e.g., structural changes, new features) may require additional charges.",
+        text: "Changes within the original brief are made free of charge before the site goes live. For 3 months after delivery, text, pricing and photo edits are also free of charge. After that period they are covered by yearly maintenance (€200/year, 1st year free) or charged on a case-by-case basis. Major scope changes (e.g., structural changes, new features) may require additional charges.",
       },
       {
         heading: "8. Cancellation",
-        text: "The 30% deposit is non-refundable once work has begun, as it covers the initial design and technical work. If the client cancels after initial design delivery but before completion, the remaining 70% is not owed. Monthly maintenance can be cancelled at any time.",
+        text: "The 30% deposit is non-refundable once work has begun, as it covers the initial design and technical work. If the client cancels after initial design delivery but before completion, the remaining 70% is not owed. Yearly maintenance can be cancelled before renewal each year.",
       },
       {
         heading: "9. Limitation of Liability",

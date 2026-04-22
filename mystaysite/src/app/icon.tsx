@@ -1,6 +1,10 @@
 import { ImageResponse } from "next/og";
 
-export const size = { width: 32, height: 32 };
+// Google requires favicons to be at least 48x48 (and a multiple of 48) to show
+// in search results. We render 96x96 so the image is crisp on HiDPI screens
+// and comfortably above Google's minimum.
+// https://developers.google.com/search/docs/appearance/favicon-in-search
+export const size = { width: 96, height: 96 };
 export const contentType = "image/png";
 
 export default function Icon() {
@@ -8,9 +12,9 @@ export default function Icon() {
     (
       <div
         style={{
-          width: 32,
-          height: 32,
-          borderRadius: 8,
+          width: 96,
+          height: 96,
+          borderRadius: 20,
           background: "#3B82F6",
           display: "flex",
           alignItems: "center",
@@ -18,8 +22,8 @@ export default function Icon() {
         }}
       >
         <svg
-          width="20"
-          height="20"
+          width="60"
+          height="60"
           viewBox="0 0 24 24"
           fill="none"
           stroke="white"

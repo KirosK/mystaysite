@@ -37,6 +37,26 @@ export function middleware(request: NextRequest) {
   // Never rewrite discovery endpoints into a locale path.
   if (pathname.startsWith("/well-known/")) return;
 
+  // Never redirect Next.js special metadata files (favicons, app icons, robots,
+  // sitemap, opengraph images). Google needs these reachable at stable URLs
+  // without 3xx redirects, otherwise the favicon won't show up in SERPs.
+  if (
+    pathname === "/icon" ||
+    pathname.startsWith("/icon/") ||
+    pathname === "/apple-icon" ||
+    pathname.startsWith("/apple-icon/") ||
+    pathname === "/favicon.ico" ||
+    pathname === "/favicon.svg" ||
+    pathname === "/opengraph-image" ||
+    pathname.startsWith("/opengraph-image/") ||
+    pathname === "/twitter-image" ||
+    pathname.startsWith("/twitter-image/") ||
+    pathname === "/manifest.json" ||
+    pathname === "/manifest.webmanifest"
+  ) {
+    return;
+  }
+
   const acceptLang = request.headers.get("accept-language") || "";
   const preferredLocale = acceptLang.toLowerCase().startsWith("en")
     ? "en"
