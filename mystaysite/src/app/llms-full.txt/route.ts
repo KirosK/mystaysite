@@ -59,10 +59,12 @@ Yearly maintenance: €200/year (first year FREE). Includes updates, backups, se
 
 ## Guarantees
 
-- Free quote with no obligation
+- Free quote with no obligation (delivered within 24 hours)
 - Google-indexed in 14 days or we work for free until it is
 - 6 months bug-free guarantee
-- Free demo iteration before final payment
+- Unlimited revisions during the build until the client is 100% satisfied
+- 3 months of free edits after launch
+- Free 5-minute video audit available at /el/free-audit for prospects who already have a site
 
 ## Portfolio
 

@@ -142,12 +142,12 @@ export const translations = {
           text: "Στείλε μας το Booking + Airbnb link σου. Τραβάμε φωτογραφίες, κριτικές, περιγραφές - αυτόματα. Δεν χρειάζεται να μας στείλεις τίποτα άλλο.",
         },
         {
-          title: 'Πες "ναι" ή "όχι"',
-          text: "Σε 48 ώρες βλέπεις ακριβώς πώς θα μοιάζει το site σου. Δωρεάν. Θέλεις αλλαγές; Τις κάνουμε μέχρι να είσαι 100% ευχαριστημένος. Προχωράμε μόνο όταν πεις \"τέλειο.\"",
+          title: "Λαμβάνεις προσωπική προσφορά",
+          text: "Σε 24 ώρες έχεις στα χέρια σου αναλυτική προσφορά με το πακέτο που ταιριάζει στο κατάλυμά σου. Ζητάς διευκρινίσεις ή αλλαγές πριν αποφασίσεις. Χωρίς δέσμευση, χωρίς πίεση.",
         },
         {
           title: "Υπάρχεις στο Google",
-          text: "2-5 ημέρες μετά, το site σου είναι live. Σε 14 ημέρες εμφανίζεσαι στο Google. Όταν κάποιος ψάξει το κατάλυμά σου - βρίσκει ΕΣΕΝΑ, όχι το Booking.com.",
+          text: "Με 30% προκαταβολή ξεκινάμε. Σε 2-5 ημέρες το site σου είναι live, σε 14 ημέρες εμφανίζεσαι στο Google. Απεριόριστες αλλαγές μέχρι να είσαι 100% ευχαριστημένος, και 3 μήνες δωρεάν edits μετά την παράδοση.",
         },
       ],
     },
@@ -537,12 +537,12 @@ export const translations = {
           text: "Send us your Booking + Airbnb link. We pull photos, reviews, descriptions - automatically. You don't need to send anything else.",
         },
         {
-          title: 'Say "yes" or "no"',
-          text: "In 48 hours you see exactly what your site will look like. Free. Want changes? We refine it until you're 100% happy. We only move forward when you say \"perfect.\"",
+          title: "Get a personalized quote",
+          text: "Within 24 hours you receive a detailed quote with the package that fits your property. Ask questions or request changes before deciding. No commitment, no pressure.",
         },
         {
           title: "You exist on Google",
-          text: "2-5 days later, your site is live. In 14 days you appear on Google. When someone searches for your property - they find YOU, not Booking.com.",
+          text: "With a 30% deposit we start. In 2-5 days your site is live, in 14 days you appear on Google. Unlimited revisions until you're 100% happy, plus 3 months of free edits after launch.",
         },
       ],
     },
