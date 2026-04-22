@@ -13,7 +13,7 @@ const content = {
       },
       {
         heading: "2. Δεδομένα που συλλέγουμε",
-        text: "Συλλέγουμε τα εξής δεδομένα: (α) Στοιχεία επικοινωνίας που μας δίνετε εσείς μέσω της φόρμας επικοινωνίας (email, τηλέφωνο, Booking/Airbnb link). (β) Δεδομένα χρήσης μέσω Google Analytics (ανώνυμα στατιστικά επισκεψιμότητας). (γ) Δεδομένα cookies μέσω Meta Pixel για τη βελτιστοποίηση διαφημίσεων.",
+        text: "Συλλέγουμε τα εξής δεδομένα: (α) Στοιχεία επικοινωνίας που μας δίνετε εσείς μέσω της φόρμας επικοινωνίας (email, τηλέφωνο, Booking/Airbnb link). (β) Δεδομένα χρήσης μέσω Google Analytics (ανώνυμα στατιστικά επισκεψιμότητας). (γ) Δεδομένα cookies μέσω Meta Pixel για τη βελτιστοποίηση διαφημίσεων. (δ) Δεδομένα αλληλεπίδρασης μέσω Microsoft Clarity (heatmaps και ανώνυμες εγγραφές συνεδρίας) για τη βελτίωση της εμπειρίας χρήσης.",
       },
       {
         heading: "3. Πώς χρησιμοποιούμε τα δεδομένα",
@@ -21,7 +21,7 @@ const content = {
       },
       {
         heading: "4. Cookies & Tracking",
-        text: "Ο ιστότοπος χρησιμοποιεί: (α) Google Analytics (GA4) για ανώνυμα στατιστικά επισκεψιμότητας. (β) Meta Pixel για τη βελτιστοποίηση διαφημίσεων στο Facebook/Instagram. (γ) Απαραίτητα cookies για τη λειτουργία του ιστότοπου. Μπορείτε να απενεργοποιήσετε τα cookies μέσω των ρυθμίσεων του browser σας.",
+        text: "Ο ιστότοπος χρησιμοποιεί: (α) Google Analytics (GA4) για ανώνυμα στατιστικά επισκεψιμότητας. (β) Meta Pixel για τη βελτιστοποίηση διαφημίσεων στο Facebook/Instagram. (γ) Microsoft Clarity για heatmaps και ανώνυμες εγγραφές συνεδρίας. (δ) Απαραίτητα cookies για τη λειτουργία του ιστότοπου. Μπορείτε να απενεργοποιήσετε τα cookies μέσω των ρυθμίσεων του browser σας ή του cookie banner.",
       },
       {
         heading: "5. Τα δικαιώματά σας (GDPR)",
@@ -51,7 +51,7 @@ const content = {
       },
       {
         heading: "2. Data we collect",
-        text: "We collect: (a) Contact information you provide via the contact form (email, phone, Booking/Airbnb link). (b) Usage data via Google Analytics (anonymous traffic statistics). (c) Cookie data via Meta Pixel for advertising optimization.",
+        text: "We collect: (a) Contact information you provide via the contact form (email, phone, Booking/Airbnb link). (b) Usage data via Google Analytics (anonymous traffic statistics). (c) Cookie data via Meta Pixel for advertising optimization. (d) Interaction data via Microsoft Clarity (heatmaps and anonymized session recordings) to improve the user experience.",
       },
       {
         heading: "3. How we use your data",
@@ -59,7 +59,7 @@ const content = {
       },
       {
         heading: "4. Cookies & Tracking",
-        text: "Our website uses: (a) Google Analytics (GA4) for anonymous traffic statistics. (b) Meta Pixel for Facebook/Instagram ad optimization. (c) Essential cookies for website functionality. You can disable cookies through your browser settings.",
+        text: "Our website uses: (a) Google Analytics (GA4) for anonymous traffic statistics. (b) Meta Pixel for Facebook/Instagram ad optimization. (c) Microsoft Clarity for heatmaps and anonymized session recordings. (d) Essential cookies for website functionality. You can disable cookies through your browser settings or via the cookie banner.",
       },
       {
         heading: "5. Your rights (GDPR)",

@@ -10,6 +10,7 @@ import {
   trackWebVital,
   setUserProperties,
 } from "@/lib/analytics";
+import { setClarityTag } from "@/lib/clarity";
 import { useTheme } from "@/lib/theme-context";
 
 /**
@@ -62,6 +63,10 @@ export default function Analytics({ locale }: { locale?: string }) {
   useEffect(() => {
     if (!isProd || isLocalHost()) return;
     setUserProperties({ locale, theme });
+    // Mirror the same attributes into Clarity so we can filter recordings by
+    // language + theme. No-op if Clarity hasn't been granted consent yet.
+    if (locale) setClarityTag("locale", locale);
+    if (theme) setClarityTag("theme", theme);
   }, [locale, theme]);
 
   // Do not load scripts on localhost / dev to avoid polluting analytics

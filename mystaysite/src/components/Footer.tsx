@@ -122,6 +122,19 @@ export default function Footer() {
                   {isEn ? "Free Video Audit" : "Δωρεάν Video Audit"}
                 </a>
               </li>
+              <li>
+                <a
+                  href={`/${urlLocale}/odigos-direct-bookings`}
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-dark transition-colors"
+                >
+                  <span className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full bg-accent/20">
+                    <svg className="w-2 h-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 6v12M6 12h12" />
+                    </svg>
+                  </span>
+                  {isEn ? "Free 10-mistakes Guide" : "Δωρεάν Οδηγός 10 λαθών"}
+                </a>
+              </li>
             </ul>
           </div>
 

@@ -3,6 +3,11 @@
 import { useState, useEffect, useCallback } from "react";
 import { useLang } from "@/lib/language-context";
 import { updateConsent } from "@/lib/analytics";
+import {
+  loadClarity,
+  grantClarityConsent,
+  CLARITY_PROJECT_ID,
+} from "@/lib/clarity";
 
 const STORAGE_KEY = "mss_cookie_consent_v2";
 const LEGACY_KEY = "mss_cookie_consent";
@@ -68,6 +73,22 @@ function applyConsent(c: Consent) {
   // GA4 is loaded globally via <Analytics/>. We only flip Consent Mode here.
   updateConsent({ analytics: c.analytics, marketing: c.marketing });
   if (c.marketing) loadMarketing();
+  // Microsoft Clarity (heatmaps + session replay) is tied to the `analytics`
+  // consent because it stores first-party cookies and records interactions.
+  if (c.analytics && CLARITY_PROJECT_ID) {
+    loadClarity();
+    // Retry granting consent for up to ~2s while the script finishes loading.
+    let attempts = 0;
+    const i = setInterval(() => {
+      attempts += 1;
+      if (typeof window !== "undefined" && typeof window.clarity === "function") {
+        grantClarityConsent();
+        clearInterval(i);
+      } else if (attempts >= 20) {
+        clearInterval(i);
+      }
+    }, 100);
+  }
 }
 
 export default function CookieConsent() {

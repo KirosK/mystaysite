@@ -20,42 +20,49 @@ export default function Newsletter({
   const honeypotRef = useRef<HTMLInputElement>(null);
   const [mountedAt] = useState<number>(() => Date.now());
 
+  const guideHref = `/${isEn ? "en" : "el"}/odigos-direct-bookings`;
+
   const copy = {
-    eyebrow: isEn ? "Newsletter" : "Newsletter",
+    eyebrow: isEn ? "Free guide + newsletter" : "Δωρεάν οδηγός + newsletter",
     heading: isEn
-      ? "Tips για περισσότερες direct bookings, κάθε μήνα"
-      : "Tips για περισσότερες direct bookings, κάθε μήνα",
-    headingEn: "More direct bookings, every month",
+      ? "Get the 10-mistakes guide + 1 practical tip every month"
+      : "Πάρε τον οδηγό με τα 10 λάθη + 1 πρακτικό tip τον μήνα",
+    headingEn: "Get the 10-mistakes guide + 1 practical tip every month",
     subtitle: isEn
-      ? "One email per month with actionable tips on SEO, listings and guest experience for Greek vacation rentals. No spam, unsubscribe anytime."
-      : "Ένα email τον μήνα με πρακτικά tips για SEO, listings και guest experience σε ελληνικά καταλύματα. Χωρίς spam, unsubscribe όποτε θες.",
-    placeholder: isEn ? "your@email.com" : "your@email.com",
-    cta: isEn ? "Subscribe" : "Εγγραφή",
+      ? "The guide 9 out of 10 Greek vacation rentals need - and one short email per month with concrete tips to bring more direct bookings. No spam. Unsubscribe anytime."
+      : "Ο οδηγός που χρειάζονται 9 στα 10 ελληνικά καταλύματα, και ένα σύντομο email τον μήνα με πρακτικά tips για περισσότερες direct κρατήσεις. Χωρίς spam. Unsubscribe όποτε θες.",
+    placeholder: "your@email.com",
+    cta: isEn ? "Send me the guide" : "Στείλε μου τον οδηγό",
     ctaLoading: isEn ? "Sending..." : "Αποστολή...",
     success: isEn
-      ? "You're in! Check your inbox for a confirmation."
-      : "Εγγράφηκες! Θα λάβεις επιβεβαίωση στο email σου.",
+      ? "You're in! The guide is on its way to your inbox."
+      : "Εγγράφηκες! Ο οδηγός έρχεται στο inbox σου.",
+    successReadNow: isEn ? "Read the guide now →" : "Διάβασε τον οδηγό τώρα →",
     error: isEn
       ? "Something went wrong. Please try again."
       : "Κάτι πήγε στραβά. Δοκίμασε ξανά.",
     privacy: isEn
-      ? "I agree to receive email updates. See our"
-      : "Συμφωνώ να λαμβάνω email updates. Δες την",
+      ? "I agree to receive the guide + monthly emails. See our"
+      : "Συμφωνώ να λάβω τον οδηγό και emails μία φορά τον μήνα. Δες την",
     privacyLink: isEn ? "Privacy Policy" : "Πολιτική Απορρήτου",
     privacyRequired: isEn
       ? "Please accept the privacy policy."
       : "Παρακαλώ αποδέξου την πολιτική απορρήτου.",
     bullets: isEn
       ? [
-          "Actionable SEO & marketing tips",
-          "Case studies from real Greek properties",
+          "10 concrete mistakes + 10 concrete fixes",
+          "1 short email per month with new case studies",
           "No spam. Unsubscribe with one click.",
         ]
       : [
-          "Πρακτικά tips SEO & marketing",
-          "Case studies από ελληνικά καταλύματα",
+          "10 συγκεκριμένα λάθη + 10 συγκεκριμένες διορθώσεις",
+          "1 σύντομο email τον μήνα με νέα case studies",
           "Χωρίς spam. Unsubscribe με ένα click.",
         ],
+    guideLinkText: isEn
+      ? "Or read the full guide right here →"
+      : "Ή διάβασε τον πλήρη οδηγό εδώ →",
+    guideHref,
   };
 
   const headline = isEn ? copy.headingEn : copy.heading;
@@ -77,7 +84,7 @@ export default function Newsletter({
         body: JSON.stringify({
           type: "newsletter",
           email,
-          source: "newsletter",
+          source: "newsletter_10_mistakes_guide",
           locale,
           _gotcha: honeypotRef.current?.value ?? "",
           _ts: mountedAt,
@@ -125,7 +132,15 @@ export default function Newsletter({
     return (
       <div className="w-full">
         {status === "success" ? (
-          <p className="text-sm text-emerald-400">{copy.success}</p>
+          <div className="space-y-2">
+            <p className="text-sm text-emerald-400">{copy.success}</p>
+            <a
+              href={copy.guideHref}
+              className="inline-block text-xs font-bold text-primary hover:text-primary-dark underline underline-offset-4"
+            >
+              {copy.successReadNow}
+            </a>
+          </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-2" noValidate>
             {honeypotField}
@@ -226,19 +241,27 @@ export default function Newsletter({
         </ul>
 
         {status === "success" ? (
-          <div className="flex items-center gap-3 bg-emerald-50 dark:bg-emerald-500/15 border border-emerald-200 dark:border-emerald-500/30 rounded-lg p-4">
-            <svg
-              className="w-5 h-5 text-emerald-600 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
+          <div className="bg-emerald-50 dark:bg-emerald-500/15 border border-emerald-200 dark:border-emerald-500/30 rounded-lg p-4 space-y-2">
+            <div className="flex items-center gap-3">
+              <svg
+                className="w-5 h-5 text-emerald-600 shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+              <p className="text-sm font-semibold text-emerald-800 dark:text-emerald-200">{copy.success}</p>
+            </div>
+            <a
+              href={copy.guideHref}
+              className="inline-block text-sm font-bold text-emerald-700 dark:text-emerald-300 hover:text-emerald-900 dark:hover:text-emerald-200 underline underline-offset-4"
             >
-              <path d="M4.5 12.75l6 6 9-13.5" />
-            </svg>
-            <p className="text-sm font-semibold text-emerald-800 dark:text-emerald-200">{copy.success}</p>
+              {copy.successReadNow}
+            </a>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-3" noValidate>
@@ -284,6 +307,14 @@ export default function Newsletter({
                 {!consent ? copy.privacyRequired : copy.error}
               </p>
             )}
+            <p className="text-xs text-text-secondary pt-1">
+              <a
+                href={copy.guideHref}
+                className="underline underline-offset-4 hover:text-text-primary"
+              >
+                {copy.guideLinkText}
+              </a>
+            </p>
           </form>
         )}
       </div>
