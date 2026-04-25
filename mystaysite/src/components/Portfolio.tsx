@@ -26,6 +26,15 @@ const projects: Project[] = [
     isNew: true,
   },
   {
+    name: "Luna Rossa Santorini",
+    bookingScore: "9.4",
+    googleScore: "",
+    url: "https://www.santorini-lunarossa.gr/en",
+    image: "/portfolio/lunarossa/after-01-hero.png",
+    caseStudyUrl: "/portfolio/luna-rossa-santorini",
+    isNew: true,
+  },
+  {
     name: "RODAVGI Apartments",
     bookingScore: "9.5",
     googleScore: "5.0",

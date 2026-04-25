@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/services/google-ads", changeFrequency: "monthly" as const, priority: 0.6 },
     { path: "/services/social-media", changeFrequency: "monthly" as const, priority: 0.6 },
     { path: "/services/seo", changeFrequency: "monthly" as const, priority: 0.6 },
+    { path: "/portfolio/luna-rossa-santorini", changeFrequency: "monthly" as const, priority: 0.8 },
     { path: "/portfolio/achilleas-peaceful-place", changeFrequency: "monthly" as const, priority: 0.8 },
     { path: "/badge", changeFrequency: "monthly" as const, priority: 0.3 },
     { path: "/terms", changeFrequency: "yearly" as const, priority: 0.2 },

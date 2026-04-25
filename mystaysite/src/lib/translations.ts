@@ -120,6 +120,12 @@ export const translations = {
           metricsAfter: "3γλωσσο site σε 5 μέρες",
         },
         {
+          location: "Ημεροβίγλι, Σαντορίνη",
+          features: ["Direct κρατήσεις", "Reviews", "SEO", "EN/EL"],
+          metricsBefore: "",
+          metricsAfter: "",
+        },
+        {
           location: "Παραλία Συκιάς, Σιθωνία, Χαλκιδική",
           features: ["Κρατήσεις", "Reviews", "SEO", "Παραλίες"],
           metricsBefore: "0 direct bookings",
@@ -129,7 +135,7 @@ export const translations = {
           location: "Σκάλα Συκιάς, Σιθωνία, Χαλκιδική",
           features: ["Κρατήσεις", "Reviews", "SEO", "6 Διαμ/τα"],
           metricsBefore: "Μόνο Booking",
-          metricsAfter: "40% λιγότερες προμήθειες",
+          metricsAfter: "Direct κρατήσεις χωρίς προμήθεια",
         },
       ],
     },
@@ -343,6 +349,7 @@ export const translations = {
       portfolio: "Portfolio",
       portfolioItems: [
         { label: "Villa Afroditi", url: "https://www.antiparos-afroditivillas.gr" },
+        { label: "Luna Rossa Santorini", url: "https://www.santorini-lunarossa.gr/en" },
         { label: "RODAVGI Apartments", url: "https://rodavgiapartments.com" },
         { label: "Achilleas Peaceful Place", url: "https://achilleasplace.gr" },
       ],
@@ -515,6 +522,12 @@ export const translations = {
           metricsAfter: "3-language site in 5 days",
         },
         {
+          location: "Imerovigli, Santorini",
+          features: ["Direct bookings", "Reviews", "SEO", "EN/EL"],
+          metricsBefore: "",
+          metricsAfter: "",
+        },
+        {
           location: "Sykia Beach, Sithonia, Halkidiki",
           features: ["Bookings", "Reviews", "SEO", "Beaches"],
           metricsBefore: "0 direct bookings",
@@ -524,7 +537,7 @@ export const translations = {
           location: "Skala Sykias, Sithonia, Halkidiki",
           features: ["Bookings", "Reviews", "SEO", "6 Apartments"],
           metricsBefore: "Booking.com only",
-          metricsAfter: "40% fewer commissions",
+          metricsAfter: "Direct bookings, zero commission",
         },
       ],
     },
@@ -737,6 +750,7 @@ export const translations = {
       portfolio: "Portfolio",
       portfolioItems: [
         { label: "Villa Afroditi", url: "https://www.antiparos-afroditivillas.gr" },
+        { label: "Luna Rossa Santorini", url: "https://www.santorini-lunarossa.gr/en" },
         { label: "RODAVGI Apartments", url: "https://rodavgiapartments.com" },
         { label: "Achilleas Peaceful Place", url: "https://achilleasplace.gr" },
       ],

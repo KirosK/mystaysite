@@ -69,6 +69,7 @@ Yearly maintenance: €200/year (first year FREE). Includes updates, backups, se
 ## Portfolio
 
 - **Villa Afroditi** — Luxury seafront villas, Glyfa, Antiparos. Two independent villas with private pools. https://www.antiparos-afroditivillas.gr
+- **Luna Rossa Santorini** — Family-run studios & apartments in Imerovigli, Santorini. Direct booking focused website with bilingual content, local guide sections, reviews, room pages, and before/after case study. https://www.santorini-lunarossa.gr/en
 - **Achilleas Peaceful Place** — Apartments in Sithonia, Halkidiki. Full before/after case study available. https://achilleasplace.gr
 - **RODAVGI Apartments** — Apartments in Sithonia, Halkidiki. Booking score 9.5, Google 5.0. https://rodavgiapartments.com
 
@@ -79,6 +80,7 @@ Yearly maintenance: €200/year (first year FREE). Includes updates, backups, se
 - All services: ${SITE_URL}/el/services
 - Blog: ${SITE_URL}/el/blog
 - Portfolio case study: ${SITE_URL}/el/portfolio/achilleas-peaceful-place
+- Luna Rossa case study: ${SITE_URL}/el/portfolio/luna-rossa-santorini
 - Terms: ${SITE_URL}/el/terms
 - Privacy: ${SITE_URL}/el/privacy
 
